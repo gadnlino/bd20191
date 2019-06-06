@@ -34,7 +34,6 @@ DROP TABLE IF exists Navio;
 DROP TABLE IF exists Trem;
 DROP TABLE IF exists Conduz;
 DROP TABLE IF exists Transporta_Transporte;
-DROP TABLE IF EXISTS Veiculo_TipoVeiculo;
 DROP TABLE IF exists Veiculo;
 
 CREATE TABLE PessoaFisica(
@@ -146,18 +145,18 @@ CREATE TABLE Trem (
 idVeiculo_SPK INT
 );
 
-CREATE TABLE Veiculo_TipoVeiculo (
-idVeiculo_SPK INT PRIMARY KEY,
-numMaxContainers VARCHAR(20),
-localizacao VARCHAR(20),
+CREATE TABLE Veiculo (
+idVeiculo_PK INT PRIMARY KEY,
+numMaxContainers INT,
+localizacao VARCHAR(30),
 fabricante VARCHAR(20),
-capacidadeCombustivel VARCHAR(20),
-cargaMaxima VARCHAR(20),
+capacidadeCombustivel DOUBLE,
+cargaMaxima DOUBLE,
 statusVeiculo VARCHAR(20),
-unidadeOrigem VARCHAR(20),
-tempoUtilizacao VARCHAR(20),
-lotacaoAtual VARCHAR(20),
-disponibilidade VARCHAR(20)
+unidadeOrigem_FK INT,
+tempoUtilizacao INT,
+lotacaoAtual INT,
+disponibilidade BOOLEAN
 );
 
 CREATE TABLE Container (
@@ -250,7 +249,7 @@ dataInicio VARCHAR(20),
 dataFim VARCHAR(20),
 idVeiculo_FK INT,
 idContainer_FK INT,
-FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK),
+FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK),
 FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 );
 
@@ -279,12 +278,13 @@ FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 
 CREATE TABLE Conduz (
 idVeiculo_FK INT,
-FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK)
+FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
 );
 
 ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
-ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
-ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
-ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
+ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Veiculo ADD FOREIGN KEY(unidadeOrigem_FK) REFERENCES Unidade(idUnidade_PK);
