@@ -64,8 +64,7 @@ idArmazem_PK INT PRIMARY KEY not null,
 numMaxContainers INT,
 comprimento FLOAT,
 lotacaoAtual VARCHAR(20),
-idUnidade_FK INT NOT NULL,
-FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+idUnidade_FK INT NOT NULL
 );
 
 CREATE TABLE Seguradora (
@@ -150,7 +149,7 @@ CREATE TABLE Veiculo (
 idVeiculo_PK INT PRIMARY KEY,
 numMaxContainers INT,
 localizacao VARCHAR(30),
-fabricante VARCHAR(20),
+fabricante VARCHAR(30),
 capacidadeCombustivel DOUBLE,
 cargaMaxima DOUBLE,
 statusVeiculo VARCHAR(20),
