@@ -157,6 +157,9 @@ unidadeOrigem_FK INT,
 tempoUtilizacao INT,
 lotacaoAtual INT,
 disponibilidade BOOLEAN
+ehTrem BOOLEAN,
+ehCaminhao BOOLEAN,
+ehNavio BOOLEAN
 );
 
 CREATE TABLE Container (
