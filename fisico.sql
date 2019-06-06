@@ -28,13 +28,13 @@ DROP TABLE IF exists Estoca;
 DROP TABLE IF exists Container;
 DROP TABLE IF exists Lote;
 DROP TABLE IF exists Armazem;
-DROP TABLE IF exists Unidade;
 DROP TABLE IF exists Caminhao;
 DROP TABLE IF exists Navio;
 DROP TABLE IF exists Trem;
 DROP TABLE IF exists Conduz;
 DROP TABLE IF exists Transporta_Transporte;
 DROP TABLE IF exists Veiculo;
+DROP TABLE IF exists Unidade;
 
 CREATE TABLE PessoaFisica(
 cpf VARCHAR(20),
@@ -232,8 +232,8 @@ FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
 CREATE TABLE Transporta_Transporte (
 idContainer_SPK INT,
 idVeiculo_SPK INT,
-dataDespacho VARCHAR(20),
-dataChegada VARCHAR(20),
+dataDespacho DATE,
+dataChegada DATE,
 PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
 );
 
