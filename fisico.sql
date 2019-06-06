@@ -156,7 +156,7 @@ statusVeiculo VARCHAR(20),
 unidadeOrigem_FK INT,
 tempoUtilizacao INT,
 lotacaoAtual INT,
-disponibilidade BOOLEAN
+disponibilidade BOOLEAN,
 ehTrem BOOLEAN,
 ehCaminhao BOOLEAN,
 ehNavio BOOLEAN
