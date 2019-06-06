@@ -58,13 +58,14 @@ telefone VARCHAR(20)
 );
 
 CREATE TABLE Armazem (
-largura VARCHAR(20),
-altura VARCHAR(20),
-idArmazem_PK INT PRIMARY KEY,
-numMaxContainers VARCHAR(20),
-comprimento VARCHAR(20),
+largura FLOAT,
+altura FLOAT,
+idArmazem_PK INT PRIMARY KEY not null,
+numMaxContainers INT,
+comprimento FLOAT,
 lotacaoAtual VARCHAR(20),
-idUnidade_FK INT
+idUnidade_FK INT NOT NULL,
+FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Seguradora (
@@ -85,11 +86,11 @@ data VARCHAR(20)
 CREATE TABLE Unidade (
 email VARCHAR(20),
 endereco VARCHAR(20),
-idUnidade_PK INT PRIMARY KEY,
-cep VARCHAR(20),
-telefone VARCHAR(20),
-dataFim VARCHAR(20),
-dataInicio VARCHAR(20)
+idUnidade_PK INT PRIMARY KEY not null,
+cep VARCHAR(08),
+telefone VARCHAR(11),
+dataFim date,
+dataInicio date
 );
 
 CREATE TABLE Pedido (
@@ -111,34 +112,34 @@ FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Funcionario (
-email VARCHAR(20),
-dataContratacao VARCHAR(20),
-salario VARCHAR(20),
-endereco VARCHAR(20),
-matricula VARCHAR(20),
-rg VARCHAR(20),
-idFuncionario_PK INT PRIMARY KEY,
-telefone VARCHAR(20),
-dataNascimento VARCHAR(20),
+email VARCHAR(30),
+dataContratacao date,
+salario float,
+endereco VARCHAR(30),
+matricula VARCHAR(20) unique,
+rg VARCHAR(20) unique,
+idFuncionario_PK INT not null PRIMARY KEY,
+telefone VARCHAR(11),
+dataNascimento date,
 departamento VARCHAR(20),
 idUnidade_FK INT,
 FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Lote (
-idLote_PK INT PRIMARY KEY,
+idLote_PK INT not null PRIMARY KEY,
 setor VARCHAR(20),
 posicao VARCHAR(20),
-idArmazem_FK INT,
+idArmazem_FK INT not null,
 FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK)
 );
 
 CREATE TABLE Caminhao (
-idVeiculo_SPK INT
+idVeiculo_SPK INT not null primary key
 );
 
 CREATE TABLE Navio (
-idVeiculo_SPK INT
+idVeiculo_SPK INT not null primary key
 );
 
 CREATE TABLE Trem (
@@ -157,9 +158,7 @@ unidadeOrigem_FK INT,
 tempoUtilizacao INT,
 lotacaoAtual INT,
 disponibilidade BOOLEAN,
-ehTrem BOOLEAN,
-ehCaminhao BOOLEAN,
-ehNavio BOOLEAN
+tipo enum ('Trem', 'Navio', 'Caminhão')
 );
 
 CREATE TABLE Container (
@@ -189,7 +188,9 @@ FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK)
 );
 
 CREATE TABLE Capitao (
-ARRAIS VARCHAR(20)
+ARRAIS VARCHAR(20) unique,
+idFuncionario_SPK INT unique not null primary key,
+FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
 CREATE TABLE Estoquista (
@@ -198,16 +199,20 @@ FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
 CREATE TABLE Maquinista (
-autorizacao VARCHAR(20)
+autorizacao VARCHAR(20) unique,
+idFuncionario_SPK INT unique not null primary key,
+FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
 CREATE TABLE Caminhoneiro (
-cnh VARCHAR(20)
+cnh VARCHAR(11) unique,
+idFuncionario_SPK INT unique not null primary key,
+FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
 CREATE TABLE Motorista (
-emViagem VARCHAR(20),
-idFuncionario_SPK INT,
+emViagem boolean,
+idFuncionario_SPK INT unique not null primary key,
 FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
