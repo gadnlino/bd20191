@@ -1,7 +1,7 @@
--- Geração de Modelo físico
+-- Geracao de Modelo fisico
 -- Sql ANSI 2003 - brModelo.
 
-use remote_mysql;
+USE remote_mysql;
 
 DROP TABLE IF exists PessoaFisica;
 DROP TABLE IF exists PessoaJuridica;
@@ -33,259 +33,258 @@ DROP TABLE IF exists Caminhao;
 DROP TABLE IF exists Navio;
 DROP TABLE IF exists Trem;
 DROP TABLE IF exists Conduz;
-DROP TABLE IF exists Veiculo;
 DROP TABLE IF exists Transporta_Transporte;
+DROP TABLE IF EXISTS Veiculo_TipoVeiculo;
+DROP TABLE IF exists Veiculo;
 
-
-CREATE TABLE PessoaFisica (
-cpf VARCHAR(11) NOT NULL UNIQUE,
-rg VARCHAR(9) NOT NULL UNIQUE,
-idCliente INT PRIMARY KEY
+CREATE TABLE PessoaFisica(
+cpf VARCHAR(20),
+rg VARCHAR(20),
+idCliente_SPK INT
 );
 
 CREATE TABLE PessoaJuridica (
-cnpj VARCHAR(10),
-razaoSocial VARCHAR(10),
-idCliente INT PRIMARY KEY
-);
-
-CREATE TABLE Produto (
-idProduto VARCHAR(10) PRIMARY KEY,
-comprimento VARCHAR(10),
-descrição VARCHAR(10),
-peso VARCHAR(10),
-largura VARCHAR(10),
-altura VARCHAR(10),
-idPedido VARCHAR(10)
+cnpj VARCHAR(20),
+razaoSocial VARCHAR(20),
+idCliente_SPK INT
 );
 
 CREATE TABLE Cliente (
-idCliente INT PRIMARY KEY NOT NULL UNIQUE,
-cep VARCHAR(10),
-email VARCHAR(10),
-telefone VARCHAR(10),
-nome VARCHAR(10),
-endereco VARCHAR(10)
+idCliente_PK INT PRIMARY KEY,
+cep VARCHAR(20),
+email VARCHAR(20),
+nome VARCHAR(20),
+endereco VARCHAR(20),
+telefone VARCHAR(20)
 );
 
 CREATE TABLE Armazem (
-largura VARCHAR(10),
-altura VARCHAR(10),
-idArmazem VARCHAR(10) PRIMARY KEY,
-numMaxContainers VARCHAR(10),
-comprimento VARCHAR(10),
-lotacaoAtual VARCHAR(10),
-idUnidade VARCHAR(10)
+largura VARCHAR(20),
+altura VARCHAR(20),
+idArmazem_PK INT PRIMARY KEY,
+numMaxContainers VARCHAR(20),
+comprimento VARCHAR(20),
+lotacaoAtual VARCHAR(20),
+idUnidade_FK INT
 );
 
 CREATE TABLE Seguradora (
-idSeguradora VARCHAR(10) PRIMARY KEY,
-telefone VARCHAR(10),
-email VARCHAR(10),
-cnpj VARCHAR(10),
-razaoSocial VARCHAR(10),
-nome VARCHAR(10)
+idSeguradora_PK INT PRIMARY KEY,
+email VARCHAR(20),
+cnpj VARCHAR(20),
+razaoSocial VARCHAR(20),
+nome VARCHAR(20),
+telefone VARCHAR(20)
 );
 
 CREATE TABLE Acidente (
-idAcidente VARCHAR(10) PRIMARY KEY,
-descricao VARCHAR(10),
-data VARCHAR(10)
+idAcidente_PK INT PRIMARY KEY,
+descricao VARCHAR(20),
+data VARCHAR(20)
 );
 
 CREATE TABLE Unidade (
-email VARCHAR(10),
-endereco VARCHAR(10),
-telefone VARCHAR(10),
-cep VARCHAR(10),
-idUnidade VARCHAR(10) PRIMARY KEY,
-dataFim VARCHAR(10),
-dataInicio VARCHAR(10)
+email VARCHAR(20),
+endereco VARCHAR(20),
+idUnidade_PK INT PRIMARY KEY,
+cep VARCHAR(20),
+telefone VARCHAR(20),
+dataFim VARCHAR(20),
+dataInicio VARCHAR(20)
 );
 
 CREATE TABLE Pedido (
-idPedido VARCHAR(10) PRIMARY KEY,
-dataEntrega VARCHAR(10),
-dataSolicitacao VARCHAR(10),
-destino VARCHAR(10),
-status VARCHAR(10),
-destinatário VARCHAR(10),
-idCliente INT
+idPedido_PK INT PRIMARY KEY,
+dataEntrega VARCHAR(20),
+dataSolicitacao VARCHAR(20),
+destino VARCHAR(20),
+status VARCHAR(20),
+destinatario VARCHAR(20),
+idCliente_FK INT,
+FOREIGN KEY(idCliente_FK) REFERENCES Cliente (idCliente_PK)
 );
 
 CREATE TABLE Rota (
-idUnidade VARCHAR(10),
-FOREIGN KEY(idUnidade) REFERENCES Unidade (idUnidade)
+idUnidadeOrigem_SPK INT,
+idUnidadeDestino_SPK INT,
+FOREIGN KEY(idUnidadeOrigem_SPK) REFERENCES Unidade (idUnidade_PK),
+FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Funcionario (
-email VARCHAR(10),
-dataContratacao VARCHAR(10),
-salario VARCHAR(10),
-endereco VARCHAR(10),
-matricula VARCHAR(10),
-rg VARCHAR(10),
-idFuncionario VARCHAR(10) PRIMARY KEY,
-telefone VARCHAR(10),
-dataNascimento VARCHAR(10),
-departamento VARCHAR(10),
-idUnidade VARCHAR(10),
-FOREIGN KEY(idUnidade) REFERENCES Unidade (idUnidade)
-);
-
-CREATE TABLE Veiculo (
-idVeículo VARCHAR(10) PRIMARY KEY,
-numMaxContainers VARCHAR(10),
-localizacao VARCHAR(10),
-fabricante VARCHAR(10),
-capacidadeCombustivel VARCHAR(10),
-cargaMaxima VARCHAR(10),
-status VARCHAR(10),
-unidadeOrigem VARCHAR(10),
-tempoUtilizacao VARCHAR(10),
-lotacaoAtual VARCHAR(10),
-disponibilidade VARCHAR(10)
-);
-
-CREATE TABLE Estoquista (
-idFuncionario VARCHAR(10),
-FOREIGN KEY(idFuncionario) REFERENCES Funcionario (idFuncionario)
+email VARCHAR(20),
+dataContratacao VARCHAR(20),
+salario VARCHAR(20),
+endereco VARCHAR(20),
+matricula VARCHAR(20),
+rg VARCHAR(20),
+idFuncionario_PK INT PRIMARY KEY,
+telefone VARCHAR(20),
+dataNascimento VARCHAR(20),
+departamento VARCHAR(20),
+idUnidade_FK INT,
+FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Lote (
-idLote VARCHAR(10) PRIMARY KEY,
-setor VARCHAR(10),
-posicao VARCHAR(10),
-idArmazem VARCHAR(10),
-FOREIGN KEY(idArmazem) REFERENCES Armazem (idArmazem)
-);
-
-CREATE TABLE Container (
-idContainer VARCHAR(10) PRIMARY KEY,
-dataAquisicao VARCHAR(10),
-comprimento VARCHAR(10),
-capacidade VARCHAR(10),
-status VARCHAR(10),
-vidaUtil VARCHAR(10),
-largura VARCHAR(10),
-lotacaoAtual VARCHAR(10),
-disponibilidade VARCHAR(10),
-altura VARCHAR(10),
-idLote VARCHAR(10),
-FOREIGN KEY(idLote) REFERENCES Lote (idLote)
-);
-
-CREATE TABLE Motorista (
-emViagem VARCHAR(10),
-idFuncionario VARCHAR(10) PRIMARY KEY,
-FOREIGN KEY(idFuncionario) REFERENCES Funcionario (idFuncionario)
+idLote_PK INT PRIMARY KEY,
+setor VARCHAR(20),
+posicao VARCHAR(20),
+idArmazem_FK INT,
+FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK)
 );
 
 CREATE TABLE Caminhao (
-idVeículo VARCHAR(10) PRIMARY KEY,
-FOREIGN KEY(idVeículo) REFERENCES Veiculo (idVeículo)
+idVeiculo_SPK INT
 );
 
 CREATE TABLE Navio (
-idVeículo VARCHAR(10),
-FOREIGN KEY(idVeículo) REFERENCES Veiculo (idVeículo)
+idVeiculo_SPK INT
 );
 
 CREATE TABLE Trem (
-idVeículo VARCHAR(10),
-FOREIGN KEY(idVeículo) REFERENCES Veiculo (idVeículo)
+idVeiculo_SPK INT
 );
 
-CREATE TABLE Maquinista (
-autorizacao VARCHAR(10)
+CREATE TABLE Veiculo_TipoVeiculo (
+idVeiculo_SPK INT PRIMARY KEY,
+numMaxContainers VARCHAR(20),
+localizacao VARCHAR(20),
+fabricante VARCHAR(20),
+capacidadeCombustivel VARCHAR(20),
+cargaMaxima VARCHAR(20),
+statusVeiculo VARCHAR(20),
+unidadeOrigem VARCHAR(20),
+tempoUtilizacao VARCHAR(20),
+lotacaoAtual VARCHAR(20),
+disponibilidade VARCHAR(20)
+);
+
+CREATE TABLE Container (
+idContainer_PK INT PRIMARY KEY,
+dataAquisicao VARCHAR(20),
+comprimento VARCHAR(20),
+capacidade VARCHAR(20),
+statusContainer VARCHAR(20),
+vidaUtil VARCHAR(20),
+largura VARCHAR(20),
+lotacaoAtual VARCHAR(20),
+disponibilidade VARCHAR(20),
+altura VARCHAR(20),
+idLote_FK INT,
+FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK)
+);
+
+CREATE TABLE Produto (
+idProduto_PK INT PRIMARY KEY,
+comprimento DOUBLE,
+descricao VARCHAR(20),
+peso DOUBLE,
+largura DOUBLE,
+altura DOUBLE,
+idPedido_FK INT,
+FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK)
 );
 
 CREATE TABLE Capitao (
-ARRAIS VARCHAR(10)
+ARRAIS VARCHAR(20)
+);
+
+CREATE TABLE Estoquista (
+idFuncionario_SPK INT,
+FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+);
+
+CREATE TABLE Maquinista (
+autorizacao VARCHAR(20)
 );
 
 CREATE TABLE Caminhoneiro (
-CNH VARCHAR(10)
+cnh VARCHAR(20)
 );
 
-
-CREATE TABLE TipoProduto (
-tipoProduto_PK INTEGER PRIMARY KEY,
-tipoProduto VARCHAR(10),
-idProduto_FK VARCHAR(10),
-FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto)
+CREATE TABLE Motorista (
+emViagem VARCHAR(20),
+idFuncionario_SPK INT,
+FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
-
 
 CREATE TABLE TransportesDisponiveis (
-transportesDisponiveis_PK INTEGER PRIMARY KEY,
-transportesDisponiveis VARCHAR(10),
-idUnidade_FK VARCHAR(10),
-FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade)
+transportesDisponiveis_PK INT PRIMARY KEY,
+transportesDisponiveis VARCHAR(20),
+idUnidade_FK INT,
+FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
-
 CREATE TABLE ProdutosSuportados (
-produtosSuportados_PK INTEGER PRIMARY KEY,
-produtosSuportados VARCHAR(10),
-idContainer_FK VARCHAR(10),
-FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer)
+produtosSuportados_PK INT PRIMARY KEY,
+produtosSuportados VARCHAR(20),
+idContainer_FK INT,
+FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+);
+
+CREATE TABLE TipoProduto (
+tipoProduto_PK INT PRIMARY KEY,
+descricaoTipoProduto VARCHAR(20),
+idProduto_FK INT,
+FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
 );
 
 CREATE TABLE Transporta_Transporte (
-idContainer VARCHAR(10),
-idVeículo VARCHAR(10),
-dataDespacho VARCHAR(10),
-dataChegada VARCHAR(10),
-PRIMARY KEY(idContainer,idVeículo)
+idContainer_SPK INT,
+idVeiculo_SPK INT,
+dataDespacho VARCHAR(20),
+dataChegada VARCHAR(20),
+PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
 );
 
 CREATE TABLE Cobre (
-idPedido VARCHAR(10),
-idAcidente VARCHAR(10),
-idSeguradora VARCHAR(10),
-PRIMARY KEY(idPedido,idAcidente,idSeguradora)
+idPedido_SPK INT,
+idAcidente_SPK INT,
+idSeguradora_SPK INT,
+PRIMARY KEY(idPedido_SPK,idAcidente_SPK,idSeguradora_SPK)
 );
 
 CREATE TABLE Leva (
-dataInicio VARCHAR(10),
-dataFim VARCHAR(10),
-idVeículo VARCHAR(10),
-idContainer VARCHAR(10),
-FOREIGN KEY(idVeículo) REFERENCES Veiculo (idVeículo),
-FOREIGN KEY(idContainer) REFERENCES Container (idContainer)
+dataInicio VARCHAR(20),
+dataFim VARCHAR(20),
+idVeiculo_FK INT,
+idContainer_FK INT,
+FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK),
+FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 );
 
 CREATE TABLE Despacha (
-dataRecebimento VARCHAR(10),
-dataDespacho VARCHAR(10),
-idPedido VARCHAR(10),
-idUnidade VARCHAR(10),
-FOREIGN KEY(idPedido) REFERENCES Pedido (idPedido),
-FOREIGN KEY(idUnidade) REFERENCES Unidade (idUnidade)
+dataRecebimento VARCHAR(20),
+dataDespacho VARCHAR(20),
+idPedido_FK INT,
+idUnidade_FK INT,
+FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK),
+FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Estoca (
-data VARCHAR(10),
-idLote VARCHAR(10),
-idContainer VARCHAR(10),
-PRIMARY KEY(idLote,idContainer)
+dataEstoc VARCHAR(20),
+idLote_SPK INT,
+idContainer_SPK INT,
+PRIMARY KEY(idLote_SPK,idContainer_SPK)
 );
 
 CREATE TABLE Contem (
-idProduto VARCHAR(10),
-idContainer VARCHAR(10),
-FOREIGN KEY(idProduto) REFERENCES Produto (idProduto),
-FOREIGN KEY(idContainer) REFERENCES Container (idContainer)
+idProduto_FK INT,
+idContainer_FK INT,
+FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK),
+FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 );
 
 CREATE TABLE Conduz (
-idVeículo VARCHAR(10),
-FOREIGN KEY(idVeículo) REFERENCES Veiculo (idVeículo)
+idVeiculo_FK INT,
+FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK)
 );
 
-ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente);
-ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente);
-ALTER TABLE Produto ADD FOREIGN KEY(idPedido) REFERENCES Pedido (idPedido);
-ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade) REFERENCES Unidade (idUnidade);
-ALTER TABLE Pedido ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente);
+ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
+ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
+ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo_TipoVeiculo (idVeiculo_SPK);
