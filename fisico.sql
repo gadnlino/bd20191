@@ -91,7 +91,10 @@ idUnidade_PK INT PRIMARY KEY not null,
 cep VARCHAR(08),
 telefone VARCHAR(11),
 dataFim date,
-dataInicio date
+dataInicio date,
+caminhaoDisponivel boolean,
+navioDisponivel boolean,
+tremDisponivel boolean
 );
 
 CREATE TABLE Pedido (
@@ -164,15 +167,20 @@ tipoVeiculo ENUM('Trem', 'Navio', 'Caminhão')
 
 CREATE TABLE Container (
 idContainer_PK INT PRIMARY KEY,
-dataAquisicao VARCHAR(20),
-comprimento VARCHAR(20),
-capacidade VARCHAR(20),
+dataAquisicao date,
+comprimento DOUBLE,
+altura DOUBLE,
+largura DOUBLE,
+capacidade DOUBLE,
+
+/* Os status em geral poderiam ser um ENUM, assim como na tabela Veiculo, tipoVeiculo é ENUM ('Trem', 'Navio', 'Caminhão').
+	Assim teriamos uma padronizacao dos status possiveis. */
 statusContainer VARCHAR(20),
-vidaUtil VARCHAR(20),
-largura VARCHAR(20),
+
+/* Vida util em meses */
+vidaUtil INT,
 lotacaoAtual VARCHAR(20),
-disponibilidade VARCHAR(20),
-altura VARCHAR(20),
+disponibilidade BOOLEAN,
 idLote_FK INT,
 FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK)
 );
@@ -217,6 +225,15 @@ idFuncionario_SPK INT unique not null primary key,
 FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
 );
 
+/*
+Tabela deletada. E a informacao foi colocada como 3 booleanos na
+tabela Unidade.
+Atributos adicionados na tabela unidade:
+
+caminhaoDisponivel boolean
+navioDisponivel boolean
+tremDisponivel boolean
+
 CREATE TABLE TransportesDisponiveis (
 transportesDisponiveis_PK INT PRIMARY KEY,
 transportesDisponiveis VARCHAR(20),
@@ -224,9 +241,16 @@ idUnidade_FK INT,
 FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
+*/
+
+/*
+	ProdutosSuportados pega guarda um PK para produto e uma descricao. Isso tudo é ligado a uma FK que referencia um container caso ele esteja alocado em um.
+    Problema: Se o mesmo produto estiver alocado em mais de um container, não vamos conseguir guardar os dois já que a chave primaria é apenas ProdutosSuportados_PK.
+		Se tentarmos mudar para uma chave primaria (produtosSuportados_PK, idContainer_FK) nao vamos poder ter um produto que não está alocado em nenhum container.
+*/
 CREATE TABLE ProdutosSuportados (
 produtosSuportados_PK INT PRIMARY KEY,
-produtosSuportados VARCHAR(20),
+descricaoProduto VARCHAR(30),
 idContainer_FK INT,
 FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 );
@@ -272,7 +296,9 @@ FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 );
 
 CREATE TABLE Estoca (
-dataEstoc VARCHAR(20),
+
+/* Exemplo de TIMESTAMP (AAAA-MM-DD HH-MM-SS): '2002-09-27 09:12:47' */
+dataEstoc Timestamp,
 idLote_SPK INT,
 idContainer_SPK INT,
 PRIMARY KEY(idLote_SPK,idContainer_SPK)
