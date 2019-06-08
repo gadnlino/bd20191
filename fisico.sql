@@ -157,7 +157,7 @@ unidadeOrigem_FK INT,
 tempoUtilizacao INT,
 lotacaoAtual INT,
 disponibilidade BOOLEAN,
-tipo enum ('Trem', 'Navio', 'Caminhão')
+tipoVeiculo ENUM('Trem', 'Navio', 'Caminhão')
 );
 
 CREATE TABLE Container (
@@ -284,8 +284,7 @@ FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 );
 
 CREATE TABLE Conduz (
-idVeiculo_FK INT,
-FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
+idVeiculo_FK INT
 );
 
 ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
@@ -295,3 +294,4 @@ ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeicul
 ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
 ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
 ALTER TABLE Veiculo ADD FOREIGN KEY(unidadeOrigem_FK) REFERENCES Unidade(idUnidade_PK);
+ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
