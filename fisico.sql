@@ -79,7 +79,9 @@ telefone VARCHAR(20)
 CREATE TABLE Acidente (
 idAcidente_PK INT PRIMARY KEY,
 descricao VARCHAR(20),
-data VARCHAR(20)
+data_acidente DATE,
+id_seguradora_FK INT,
+id_pedido_FK INT
 );
 
 CREATE TABLE Unidade (
@@ -178,7 +180,7 @@ FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK)
 CREATE TABLE Produto (
 idProduto_PK INT PRIMARY KEY,
 comprimento DOUBLE,
-descricao VARCHAR(20),
+descricao VARCHAR(40),
 peso DOUBLE,
 largura DOUBLE,
 altura DOUBLE,
@@ -252,8 +254,8 @@ PRIMARY KEY(idPedido_SPK,idAcidente_SPK,idSeguradora_SPK)
 );
 
 CREATE TABLE Leva (
-dataInicio VARCHAR(20),
-dataFim VARCHAR(20),
+dataInicio DATE,
+dataFim DATE,
 idVeiculo_FK INT,
 idContainer_FK INT,
 FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK),
@@ -294,4 +296,9 @@ ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeicul
 ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
 ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
 ALTER TABLE Veiculo ADD FOREIGN KEY(unidadeOrigem_FK) REFERENCES Unidade(idUnidade_PK);
+ALTER TABLE Cobre ADD FOREIGN KEY(idPedido_SPK) REFERENCES Pedido(idPedido_PK);
+ALTER TABLE Cobre ADD FOREIGN KEY(idAcidente_SPK) REFERENCES Acidente(idAcidente_PK);
+ALTER TABLE Cobre ADD FOREIGN KEY(idSeguradora_SPK) REFERENCES Seguradora(idSeguradora_PK);
+ALTER TABLE Acidente ADD FOREIGN KEY (id_seguradora_FK) REFERENCES Seguradora(idSeguradora_PK);
+ALTER TABLE Acidente ADD FOREIGN KEY (id_pedido_FK) REFERENCES Pedido(idPedido_PK);
 ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
