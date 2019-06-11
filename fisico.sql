@@ -11,8 +11,8 @@ DROP TABLE IF exists Despacha;
 DROP TABLE IF exists Leva;
 DROP TABLE IF exists Cobre;
 DROP TABLE IF exists Produto;
-DROP TABLE IF exists Seguradora;
 DROP TABLE IF exists Acidente;
+DROP TABLE IF exists Seguradora;
 DROP TABLE IF exists Pedido;
 DROP TABLE IF exists Cliente;
 DROP TABLE IF exists Rota;
@@ -101,15 +101,12 @@ dataSolicitacao VARCHAR(20),
 destino VARCHAR(20),
 status VARCHAR(20),
 destinatario VARCHAR(20),
-idCliente_FK INT,
-FOREIGN KEY(idCliente_FK) REFERENCES Cliente (idCliente_PK)
+idCliente_FK INT
 );
 
 CREATE TABLE Rota (
 idUnidadeOrigem_SPK INT,
-idUnidadeDestino_SPK INT,
-FOREIGN KEY(idUnidadeOrigem_SPK) REFERENCES Unidade (idUnidade_PK),
-FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK)
+idUnidadeDestino_SPK INT
 );
 
 CREATE TABLE Funcionario (
@@ -123,16 +120,14 @@ idFuncionario_PK INT not null PRIMARY KEY,
 telefone VARCHAR(11),
 dataNascimento date,
 departamento VARCHAR(20),
-idUnidade_FK INT,
-FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+idUnidade_FK INT
 );
 
 CREATE TABLE Lote (
 idLote_PK INT not null PRIMARY KEY,
 setor VARCHAR(20),
 posicao VARCHAR(20),
-idArmazem_FK INT not null,
-FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK)
+idArmazem_FK INT not null
 );
 
 CREATE TABLE Caminhao (
@@ -173,8 +168,7 @@ largura VARCHAR(20),
 lotacaoAtual VARCHAR(20),
 disponibilidade VARCHAR(20),
 altura VARCHAR(20),
-idLote_FK INT,
-FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK)
+idLote_FK INT
 );
 
 CREATE TABLE Produto (
@@ -184,58 +178,49 @@ descricao VARCHAR(40),
 peso DOUBLE,
 largura DOUBLE,
 altura DOUBLE,
-idPedido_FK INT,
-FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK)
+idPedido_FK INT
 );
 
 CREATE TABLE Capitao (
 ARRAIS VARCHAR(20) unique,
-idFuncionario_SPK INT unique not null primary key,
-FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+idFuncionario_SPK INT unique not null primary key
 );
 
 CREATE TABLE Estoquista (
-idFuncionario_SPK INT,
-FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+idFuncionario_SPK INT
 );
 
 CREATE TABLE Maquinista (
 autorizacao VARCHAR(20) unique,
-idFuncionario_SPK INT unique not null primary key,
-FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+idFuncionario_SPK INT unique not null primary key
 );
 
 CREATE TABLE Caminhoneiro (
 cnh VARCHAR(11) unique,
-idFuncionario_SPK INT unique not null primary key,
-FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+idFuncionario_SPK INT unique not null primary key
 );
 
 CREATE TABLE Motorista (
 emViagem boolean,
-idFuncionario_SPK INT unique not null primary key,
-FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+idFuncionario_SPK INT unique not null primary key
 );
 
 CREATE TABLE TransportesDisponiveis (
 transportesDisponiveis_PK INT PRIMARY KEY,
 transportesDisponiveis VARCHAR(20),
-idUnidade_FK INT,
-FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+idUnidade_FK INT
 );
 
 CREATE TABLE ProdutosSuportados (
 produtosSuportados_PK INT PRIMARY KEY,
 produtosSuportados VARCHAR(20),
-idContainer_FK INT,
-FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+idContainer_FK INT
 );
 
 CREATE TABLE TipoProduto (
 tipoProduto_PK INT PRIMARY KEY,
 descricaoTipoProduto VARCHAR(20),
-idProduto_FK INT,
-FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
+idProduto_FK INT
 );
 
 CREATE TABLE Transporta_Transporte (
@@ -257,18 +242,14 @@ CREATE TABLE Leva (
 dataInicio DATE,
 dataFim DATE,
 idVeiculo_FK INT,
-idContainer_FK INT,
-FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK),
-FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+idContainer_FK INT
 );
 
 CREATE TABLE Despacha (
 dataRecebimento VARCHAR(20),
 dataDespacho VARCHAR(20),
 idPedido_FK INT,
-idUnidade_FK INT,
-FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK),
-FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+idUnidade_FK INT
 );
 
 CREATE TABLE Estoca (
@@ -280,9 +261,7 @@ PRIMARY KEY(idLote_SPK,idContainer_SPK)
 
 CREATE TABLE Contem (
 idProduto_FK INT,
-idContainer_FK INT,
-FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK),
-FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+idContainer_FK INT
 );
 
 CREATE TABLE Conduz (
@@ -302,3 +281,24 @@ ALTER TABLE Cobre ADD FOREIGN KEY(idSeguradora_SPK) REFERENCES Seguradora(idSegu
 ALTER TABLE Acidente ADD FOREIGN KEY (id_seguradora_FK) REFERENCES Seguradora(idSeguradora_PK);
 ALTER TABLE Acidente ADD FOREIGN KEY (id_pedido_FK) REFERENCES Pedido(idPedido_PK);
 ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Pedido ADD FOREIGN KEY(idCliente_FK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeOrigem_SPK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Funcionario ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Lote ADD FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK);
+ALTER TABLE Container ADD FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK);
+ALTER TABLE Produto ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
+ALTER TABLE Capitao ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Estoquista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Motorista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE TransportesDisponiveis ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE ProdutosSuportados ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE TipoProduto ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
+ALTER TABLE Leva ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE Despacha ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
+ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
+ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
