@@ -90,8 +90,8 @@ endereco VARCHAR(30),
 idUnidade_PK INT PRIMARY KEY NOT NULL,
 cep VARCHAR(8),
 telefone VARCHAR(11),
-dataFim DATE,
-dataInicio DATE,
+/*dataFim DATE,
+dataInicio DATE*/
 caminhaoDisponivel BOOLEAN,
 navioDisponivel BOOLEAN,
 tremDisponivel BOOLEAN
