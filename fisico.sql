@@ -280,7 +280,7 @@ idUnidade_FK INT
 CREATE TABLE Estoca (
 
 /* Exemplo de TIMESTAMP (AAAA-MM-DD HH-MM-SS): '2002-09-27 09:12:47' */
-dataEstoc TIMESTAMP,
+dataEstoc DATETIME,
 idLote_SPK INT,
 idContainer_SPK INT,
 PRIMARY KEY(idLote_SPK,idContainer_SPK)
