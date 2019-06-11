@@ -37,43 +37,43 @@ DROP TABLE IF exists Veiculo;
 DROP TABLE IF exists Unidade;
 
 CREATE TABLE PessoaFisica(
-cpf VARCHAR(20),
-rg VARCHAR(20),
+cpf VARCHAR(11),
+rg VARCHAR(9),
 idCliente_SPK INT
 );
 
 CREATE TABLE PessoaJuridica (
-cnpj VARCHAR(20),
-razaoSocial VARCHAR(20),
+cnpj VARCHAR(14),
+razaoSocial VARCHAR(30),
 idCliente_SPK INT
 );
 
 CREATE TABLE Cliente (
 idCliente_PK INT PRIMARY KEY,
-cep VARCHAR(20),
+cep VARCHAR(8),
 email VARCHAR(20),
-nome VARCHAR(20),
-endereco VARCHAR(20),
-telefone VARCHAR(20)
+nome VARCHAR(30),
+endereco VARCHAR(30),
+telefone VARCHAR(11)
 );
 
 CREATE TABLE Armazem (
 largura FLOAT,
 altura FLOAT,
-idArmazem_PK INT PRIMARY KEY not null,
+idArmazem_PK INT PRIMARY KEY NOT NULL,
 numMaxContainers INT,
 comprimento FLOAT,
-lotacaoAtual VARCHAR(20),
+lotacaoAtual INT,
 idUnidade_FK INT NOT NULL
 );
 
 CREATE TABLE Seguradora (
 idSeguradora_PK INT PRIMARY KEY,
 email VARCHAR(20),
-cnpj VARCHAR(20),
-razaoSocial VARCHAR(20),
-nome VARCHAR(20),
-telefone VARCHAR(20)
+cnpj VARCHAR(14),
+razaoSocial VARCHAR(30),
+nome VARCHAR(30),
+telefone VARCHAR(11)
 );
 
 CREATE TABLE Acidente (
@@ -86,24 +86,24 @@ id_pedido_FK INT
 
 CREATE TABLE Unidade (
 email VARCHAR(20),
-endereco VARCHAR(20),
-idUnidade_PK INT PRIMARY KEY not null,
-cep VARCHAR(08),
+endereco VARCHAR(30),
+idUnidade_PK INT PRIMARY KEY NOT NULL,
+cep VARCHAR(8),
 telefone VARCHAR(11),
-dataFim date,
-dataInicio date,
-caminhaoDisponivel boolean,
-navioDisponivel boolean,
-tremDisponivel boolean
+dataFim DATE,
+dataInicio DATE,
+caminhaoDisponivel BOOLEAN,
+navioDisponivel BOOLEAN,
+tremDisponivel BOOLEAN
 );
 
 CREATE TABLE Pedido (
 idPedido_PK INT PRIMARY KEY,
-dataEntrega VARCHAR(20),
-dataSolicitacao VARCHAR(20),
-destino VARCHAR(20),
-status VARCHAR(20),
-destinatario VARCHAR(20),
+dataEntrega DATE,
+dataSolicitacao DATE,
+destino VARCHAR(30),
+statusPedido ENUM('OK','Em deslocamento'),
+destinatario VARCHAR(30),
 idCliente_FK INT
 );
 
@@ -113,32 +113,32 @@ idUnidadeDestino_SPK INT
 );
 
 CREATE TABLE Funcionario (
-email VARCHAR(30),
-dataContratacao date,
+email VARCHAR(20),
+dataContratacao DATE,
 salario float,
 endereco VARCHAR(30),
-matricula VARCHAR(20) unique,
-rg VARCHAR(20) unique,
-idFuncionario_PK INT not null PRIMARY KEY,
+matricula INT unique,
+rg VARCHAR(9) unique,
+idFuncionario_PK INT NOT NULL PRIMARY KEY,
 telefone VARCHAR(11),
-dataNascimento date,
+dataNascimento DATE,
 departamento VARCHAR(20),
 idUnidade_FK INT
 );
 
 CREATE TABLE Lote (
-idLote_PK INT not null PRIMARY KEY,
+idLote_PK INT NOT NULL PRIMARY KEY,
 setor VARCHAR(20),
 posicao VARCHAR(20),
-idArmazem_FK INT not null
+idArmazem_FK INT NOT NULL
 );
 
 CREATE TABLE Caminhao (
-idVeiculo_SPK INT not null primary key
+idVeiculo_SPK INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Navio (
-idVeiculo_SPK INT not null primary key
+idVeiculo_SPK INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Trem (
@@ -149,10 +149,10 @@ CREATE TABLE Veiculo (
 idVeiculo_PK INT PRIMARY KEY,
 numMaxContainers INT,
 localizacao VARCHAR(30),
-fabricante VARCHAR(30),
+fabricante VARCHAR(20),
 capacidadeCombustivel DOUBLE,
 cargaMaxima DOUBLE,
-statusVeiculo VARCHAR(20),
+statusVeiculo ENUM('Disponivel','Em uso','Em manutenção','Desmobilizado'),
 unidadeOrigem_FK INT,
 tempoUtilizacao INT,
 lotacaoAtual INT,
@@ -162,7 +162,7 @@ tipoVeiculo ENUM('Trem', 'Navio', 'Caminhão')
 
 CREATE TABLE Container (
 idContainer_PK INT PRIMARY KEY,
-dataAquisicao date,
+dataAquisicao DATE,
 comprimento DOUBLE,
 altura DOUBLE,
 largura DOUBLE,
@@ -174,7 +174,7 @@ statusContainer ENUM('Em uso','Disponivel','Em manutenção', 'Desmobilizado'),
 
 /* Vida util em meses */
 vidaUtil INT,
-lotacaoAtual VARCHAR(20),
+lotacaoAtual INT,
 idLote_FK INT,
 disponibilidade BOOLEAN
 );
@@ -182,7 +182,7 @@ disponibilidade BOOLEAN
 CREATE TABLE Produto (
 idProduto_PK INT PRIMARY KEY,
 comprimento DOUBLE,
-descricao VARCHAR(40),
+descricao VARCHAR(30),
 peso DOUBLE,
 largura DOUBLE,
 altura DOUBLE,
@@ -190,8 +190,8 @@ idPedido_FK INT
 );
 
 CREATE TABLE Capitao (
-ARRAIS VARCHAR(20) unique,
-idFuncionario_SPK INT unique not null primary key
+ARRAIS VARCHAR(10) unique,
+idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Estoquista (
@@ -200,27 +200,27 @@ idFuncionario_SPK INT
 
 CREATE TABLE Maquinista (
 autorizacao VARCHAR(20) unique,
-idFuncionario_SPK INT unique not null primary key
+idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Caminhoneiro (
 cnh VARCHAR(11) unique,
-idFuncionario_SPK INT unique not null primary key
+idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Motorista (
-emViagem boolean,
-idFuncionario_SPK INT unique not null primary key
+emViagem BOOLEAN,
+idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
 );
 
 /*
-Tabela deletada. E a informacao foi colocada como 3 booleanos na
+Tabela deletada. E a informacao foi colocada como 3 BOOLEANos na
 tabela Unidade.
 Atributos adicionados na tabela unidade:
 
-caminhaoDisponivel boolean
-navioDisponivel boolean
-tremDisponivel boolean
+caminhaoDisponivel BOOLEAN
+navioDisponivel BOOLEAN
+tremDisponivel BOOLEAN
 
 CREATE TABLE TransportesDisponiveis (
 transportesDisponiveis_PK INT PRIMARY KEY,
@@ -271,8 +271,8 @@ idContainer_FK INT
 );
 
 CREATE TABLE Despacha (
-dataRecebimento VARCHAR(20),
-dataDespacho VARCHAR(20),
+dataRecebimento DATE,
+dataDespacho DATE,
 idPedido_FK INT,
 idUnidade_FK INT
 );
@@ -280,7 +280,7 @@ idUnidade_FK INT
 CREATE TABLE Estoca (
 
 /* Exemplo de TIMESTAMP (AAAA-MM-DD HH-MM-SS): '2002-09-27 09:12:47' */
-dataEstoc Timestamp,
+dataEstoc TIMESTAMP,
 idLote_SPK INT,
 idContainer_SPK INT,
 PRIMARY KEY(idLote_SPK,idContainer_SPK)
