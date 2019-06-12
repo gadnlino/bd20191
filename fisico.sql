@@ -3,7 +3,7 @@
 
 USE remote_mysql;
 
-DROP TABLE IF exists PessoaFisica;
+/*DROP TABLE IF exists PessoaFisica;
 DROP TABLE IF exists PessoaJuridica;
 DROP TABLE IF exists TipoProduto;
 DROP TABLE IF exists Contem;
@@ -34,7 +34,7 @@ DROP TABLE IF exists Trem;
 DROP TABLE IF exists Conduz;
 DROP TABLE IF exists Transporta_Transporte;
 DROP TABLE IF exists Veiculo;
-DROP TABLE IF exists Unidade;
+DROP TABLE IF exists Unidade;*/
 
 CREATE TABLE PessoaFisica(
 cpf VARCHAR(11) UNIQUE,
@@ -51,9 +51,9 @@ idCliente_SPK INT
 CREATE TABLE Cliente (
 idCliente_PK INT PRIMARY KEY,
 cep VARCHAR(8),
-email VARCHAR(60),
-CONSTRAINT CHK_email
-	CHECK(email LIKE '%_@_%._%'),
+emailCliente VARCHAR(60),
+CONSTRAINT CHK_emailCliente
+	CHECK(emailCliente LIKE '%_@_%._%'),
 nome VARCHAR(30),
 endereco VARCHAR(30),
 telefone VARCHAR(11)
@@ -73,16 +73,18 @@ idUnidade_FK INT NOT NULL
 
 CREATE TABLE Seguradora (
 idSeguradora_PK INT PRIMARY KEY,
-email VARCHAR(60),
+emailSeguradora VARCHAR(60),
+CONSTRAINT CHK_emailSeguradora
+	CHECK(emailSeguradora LIKE '%_@_%._%'),
 cnpj VARCHAR(14) UNIQUE,
-razaoSocial VARCHAR(30),
-nome VARCHAR(30),
+razaoSocial VARCHAR(60),
+nome VARCHAR(60),
 telefone VARCHAR(11)
 );
 
 CREATE TABLE Acidente (
 idAcidente_PK INT PRIMARY KEY,
-descricao VARCHAR(20),
+descricao VARCHAR(600),
 data_acidente DATE,
 
 /*CONSTRAINT CHK_data_acidente
@@ -93,7 +95,9 @@ id_pedido_FK INT
 );
 
 CREATE TABLE Unidade (
-email VARCHAR(60),
+emailUnidade VARCHAR(60),
+CONSTRAINT CHK_emailUnidade
+	CHECK(emailUnidade LIKE '%_@_%._%'),
 endereco VARCHAR(30),
 idUnidade_PK INT PRIMARY KEY NOT NULL,
 cep VARCHAR(8),
@@ -121,7 +125,9 @@ idUnidadeDestino_SPK INT
 );
 
 CREATE TABLE Funcionario (
-email VARCHAR(60),
+emailFuncionario VARCHAR(60),
+CONSTRAINT CHK_emailFuncionario
+	CHECK(emailFuncionario LIKE '%_@_%._%'),
 dataContratacao DATE,
 salario float,
 endereco VARCHAR(30),
@@ -132,7 +138,7 @@ telefone VARCHAR(11),
 dataNascimento DATE,
 CONSTRAINT CHK_dataContratacao
 	CHECK(dataNascimento < dataContratacao),
-departamento VARCHAR(20),
+departamento VARCHAR(30),
 idUnidade_FK INT
 );
 
@@ -191,7 +197,7 @@ disponibilidade BOOLEAN
 CREATE TABLE Produto (
 idProduto_PK INT PRIMARY KEY,
 comprimento DOUBLE,
-descricao VARCHAR(30),
+descricao VARCHAR(500),
 peso DOUBLE,
 largura DOUBLE,
 altura DOUBLE,
@@ -260,10 +266,10 @@ idProduto_FK INT
 CREATE TABLE Transporta_Transporte (
 idContainer_SPK INT,
 idVeiculo_SPK INT,
-dataDespacho DATE,
-dataChegada DATE,
-CONSTRAINT CHK_dataChegada
-	CHECK(dataChegada < dataDespacho),
+dataInicio DATE,
+dataFim DATE,
+CONSTRAINT CHK_dataInicio
+	CHECK(dataInicio < dataFim),
 PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
 );
 
@@ -310,7 +316,7 @@ CREATE TABLE Conduz (
 idVeiculo_FK INT
 );
 
-/*ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
 ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
@@ -342,4 +348,4 @@ ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContain
 ALTER TABLE Despacha ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
 ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
 ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
-ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);*/
+ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
