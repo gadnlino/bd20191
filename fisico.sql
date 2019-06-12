@@ -37,13 +37,13 @@ DROP TABLE IF exists Veiculo;
 DROP TABLE IF exists Unidade;
 
 CREATE TABLE PessoaFisica(
-cpf VARCHAR(11),
-rg VARCHAR(9),
+cpf VARCHAR(11) UNIQUE,
+rg VARCHAR(9) UNIQUE,
 idCliente_SPK INT
 );
 
 CREATE TABLE PessoaJuridica (
-cnpj VARCHAR(14),
+cnpj VARCHAR(14) UNIQUE,
 razaoSocial VARCHAR(30),
 idCliente_SPK INT
 );
@@ -62,6 +62,8 @@ largura FLOAT,
 altura FLOAT,
 idArmazem_PK INT PRIMARY KEY NOT NULL,
 numMaxContainers INT,
+CONSTRAINT CHK_numMaxContainers 
+	CHECK(numMaxContainers >= 50 AND numMaxContainers <= 200),
 comprimento FLOAT,
 lotacaoAtual INT,
 idUnidade_FK INT NOT NULL
@@ -70,7 +72,7 @@ idUnidade_FK INT NOT NULL
 CREATE TABLE Seguradora (
 idSeguradora_PK INT PRIMARY KEY,
 email VARCHAR(20),
-cnpj VARCHAR(14),
+cnpj VARCHAR(14) UNIQUE,
 razaoSocial VARCHAR(30),
 nome VARCHAR(30),
 telefone VARCHAR(11)
@@ -80,6 +82,10 @@ CREATE TABLE Acidente (
 idAcidente_PK INT PRIMARY KEY,
 descricao VARCHAR(20),
 data_acidente DATE,
+
+/*CONSTRAINT CHK_data_acidente
+	CHECK(data_acidente <= GETDATE()),*/
+
 id_seguradora_FK INT,
 id_pedido_FK INT
 );
@@ -90,8 +96,6 @@ endereco VARCHAR(30),
 idUnidade_PK INT PRIMARY KEY NOT NULL,
 cep VARCHAR(8),
 telefone VARCHAR(11),
-/*dataFim DATE,
-dataInicio DATE*/
 caminhaoDisponivel BOOLEAN,
 navioDisponivel BOOLEAN,
 tremDisponivel BOOLEAN
@@ -101,8 +105,10 @@ CREATE TABLE Pedido (
 idPedido_PK INT PRIMARY KEY,
 dataEntrega DATE,
 dataSolicitacao DATE,
+CONSTRAINT CHK_dataEntrega
+	CHECK(dataSolicitacao <= dataEntrega),
 destino VARCHAR(30),
-statusPedido ENUM('OK','Em deslocamento'),
+statusPedido ENUM('Não entregue','Em rota','Entregue'),
 destinatario VARCHAR(30),
 idCliente_FK INT
 );
@@ -117,19 +123,21 @@ email VARCHAR(20),
 dataContratacao DATE,
 salario float,
 endereco VARCHAR(30),
-matricula INT unique,
-rg VARCHAR(9) unique,
+matricula INT UNIQUE,
+rg VARCHAR(9) UNIQUE,
 idFuncionario_PK INT NOT NULL PRIMARY KEY,
 telefone VARCHAR(11),
 dataNascimento DATE,
+CONSTRAINT CHK_dataContratacao
+	CHECK(dataNascimento < dataContratacao),
 departamento VARCHAR(20),
 idUnidade_FK INT
 );
 
 CREATE TABLE Lote (
 idLote_PK INT NOT NULL PRIMARY KEY,
-setor VARCHAR(20),
-posicao VARCHAR(20),
+setor INT,
+posicao INT,
 idArmazem_FK INT NOT NULL
 );
 
@@ -142,7 +150,7 @@ idVeiculo_SPK INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Trem (
-idVeiculo_SPK INT
+idVeiculo_SPK INT PRIMARY KEY
 );
 
 CREATE TABLE Veiculo (
@@ -171,11 +179,10 @@ capacidade DOUBLE,
 /* Os status em geral poderiam ser um ENUM, assim como na tabela Veiculo, tipoVeiculo é ENUM ('Trem', 'Navio', 'Caminhão').
 	Assim teriamos uma padronizacao dos status possiveis. */
 statusContainer ENUM('Em uso','Disponivel','Em manutenção', 'Desmobilizado'),
-
 /* Vida util em meses */
 vidaUtil INT,
 lotacaoAtual INT,
-idLote_FK INT,
+idLote_FK INT/* O lote em que se encontra o container*/,
 disponibilidade BOOLEAN
 );
 
@@ -190,8 +197,8 @@ idPedido_FK INT
 );
 
 CREATE TABLE Capitao (
-ARRAIS VARCHAR(10) unique,
-idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
+ARRAIS VARCHAR(10) UNIQUE,
+idFuncionario_SPK INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Estoquista (
@@ -199,18 +206,18 @@ idFuncionario_SPK INT
 );
 
 CREATE TABLE Maquinista (
-autorizacao VARCHAR(20) unique,
-idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
+autorizacao VARCHAR(20),
+idFuncionario_SPK INT UNIQUE NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Caminhoneiro (
-cnh VARCHAR(11) unique,
-idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
+cnh VARCHAR(11) UNIQUE,
+idFuncionario_SPK INT UNIQUE NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Motorista (
 emViagem BOOLEAN,
-idFuncionario_SPK INT unique NOT NULL PRIMARY KEY
+idFuncionario_SPK INT UNIQUE NOT NULL PRIMARY KEY
 );
 
 /*
@@ -253,6 +260,8 @@ idContainer_SPK INT,
 idVeiculo_SPK INT,
 dataDespacho DATE,
 dataChegada DATE,
+CONSTRAINT CHK_dataChegada
+	CHECK(dataChegada < dataDespacho),
 PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
 );
 
@@ -273,6 +282,8 @@ idContainer_FK INT
 CREATE TABLE Despacha (
 dataRecebimento DATE,
 dataDespacho DATE,
+CONSTRAINT CHK_dataRecebimento
+	CHECK(dataRecebimento < dataDespacho),
 idPedido_FK INT,
 idUnidade_FK INT
 );
@@ -281,6 +292,8 @@ CREATE TABLE Estoca (
 
 /* Exemplo de TIMESTAMP (AAAA-MM-DD HH-MM-SS): '2002-09-27 09:12:47' */
 dataEstoc DATETIME,
+/*CONSTRAINT CHK_dataEstoc
+	CHECK(dataEstoc <= GETDATE()),*/
 idLote_SPK INT,
 idContainer_SPK INT,
 PRIMARY KEY(idLote_SPK,idContainer_SPK)
