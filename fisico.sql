@@ -51,7 +51,9 @@ idCliente_SPK INT
 CREATE TABLE Cliente (
 idCliente_PK INT PRIMARY KEY,
 cep VARCHAR(8),
-email VARCHAR(20),
+email VARCHAR(60),
+CONSTRAINT CHK_email
+	CHECK(email LIKE '%_@_%._%'),
 nome VARCHAR(30),
 endereco VARCHAR(30),
 telefone VARCHAR(11)
@@ -71,7 +73,7 @@ idUnidade_FK INT NOT NULL
 
 CREATE TABLE Seguradora (
 idSeguradora_PK INT PRIMARY KEY,
-email VARCHAR(20),
+email VARCHAR(60),
 cnpj VARCHAR(14) UNIQUE,
 razaoSocial VARCHAR(30),
 nome VARCHAR(30),
@@ -91,7 +93,7 @@ id_pedido_FK INT
 );
 
 CREATE TABLE Unidade (
-email VARCHAR(20),
+email VARCHAR(60),
 endereco VARCHAR(30),
 idUnidade_PK INT PRIMARY KEY NOT NULL,
 cep VARCHAR(8),
@@ -119,7 +121,7 @@ idUnidadeDestino_SPK INT
 );
 
 CREATE TABLE Funcionario (
-email VARCHAR(20),
+email VARCHAR(60),
 dataContratacao DATE,
 salario float,
 endereco VARCHAR(30),
@@ -308,7 +310,7 @@ CREATE TABLE Conduz (
 idVeiculo_FK INT
 );
 
-ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+/*ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
 ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
 ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
@@ -333,7 +335,6 @@ ALTER TABLE Estoquista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario
 ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
 ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
 ALTER TABLE Motorista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
-/*ALTER TABLE TransportesDisponiveis ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);*/
 ALTER TABLE ProdutosSuportados ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
 ALTER TABLE TipoProduto ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
 ALTER TABLE Leva ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
@@ -341,4 +342,4 @@ ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContain
 ALTER TABLE Despacha ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
 ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
 ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
-ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);*/
