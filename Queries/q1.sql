@@ -1,0 +1,1 @@
+select l.idLote_PK,c.idContainer_PK from Lote l inner join Container c;
