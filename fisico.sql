@@ -36,6 +36,7 @@ DROP TABLE IF exists Veiculo;
 DROP TABLE IF exists Unidade;*/
 
 /*____________________________CRIAÇÃO DAS TABELAS______________________________*/
+
 /*OBSERVAÇÃO IMPORTANTE: as definições de chaves estrangeiras estão no final do script,
 na parte "DEFINIÇÃO DE CHAVES ESTRANGEIRAS" */
 
@@ -441,7 +442,7 @@ CREATE TABLE Conduz (
 /*Função: guarda info. de qual motorista conduziu qual tipo de veículo um motorista conduz.*/
 
 /*Chave estrangeira, indica qual o tipo de véiculo*/
-idTipoVeiculo_FK INT
+idVeiculo_FK INT
 );
 
 /*_________________________DEFINIÇÃO DE CHAVES ESTRANGEIRAS_________________________________*/
