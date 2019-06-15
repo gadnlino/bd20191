@@ -373,7 +373,6 @@ CONSTRAINT CHK_dataInicio
 PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
 );
 
-
 CREATE TABLE Cobre (
 /*Função: guarda info. de qual segurado cobriu qual pedido e em qual tipo de acidente*/
 
