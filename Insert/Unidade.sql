@@ -1,3 +1,17 @@
+/*Nome da tabela:Unidade*/
+/*Estrutura da tabela:
+    Unidade (
+    emailUnidade VARCHAR(60),
+    endereco VARCHAR(30),
+    idUnidade_PK INT PRIMARY KEY NOT NULL,
+    cep VARCHAR(8),
+    telefone VARCHAR(11),
+    caminhaoDisponivel BOOLEAN,
+    navioDisponivel BOOLEAN,
+    tremDisponivel BOOLEAN
+    );
+*/
+
 insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hgovey0@chronoengine.com', '74553 Heath Parkway', 1, 82252717, '7021162386', true, true, false);
 insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hbrowett1@mayoclinic.com', '7456 Orin Alley', 2, 79674899, '8462851348', false, false, true);
 insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ecopeland2@shareasale.com', '628 Kedzie Hill', 3, 93773657, '8182297413', false, false, true);

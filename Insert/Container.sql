@@ -1,3 +1,20 @@
+/*Nome da tabela:Container*/
+/*Estrutura da tabela:
+    Container (
+    idContainer_PK INT PRIMARY KEY,
+    dataAquisicao DATE,
+    comprimento DOUBLE,
+    altura DOUBLE,
+    largura DOUBLE,
+    capacidade DOUBLE,
+    statusContainer ENUM('Em uso','Disponivel','Em manutenção', 'Desmobilizado'),
+    vidaUtil INT,
+    lotacaoAtual INT,
+    idLote_FK INT,
+    disponibilidade BOOLEAN
+    );
+*/
+
 insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (1, '2008-01-18', 73.55, 84.84, 77.85, 7499, 'Em uso', 170, 1, 460, true);
 insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (2, '2017-09-17', 43.12, 23.37, 43.0, 118, 'Disponivel', 148, 2, 82, true);
 insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (3, '2011-04-02', 52.68, 37.42, 90.87, 2716, 'Desmobilizado', 225, 2, 425, false);

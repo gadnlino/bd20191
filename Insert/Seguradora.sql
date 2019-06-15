@@ -1,3 +1,15 @@
+/*Nome da tabela:Seguradora*/
+/*Estrutura da tabela:
+    Seguradora (
+    idSeguradora_PK INT PRIMARY KEY,
+    emailSeguradora VARCHAR(60),
+    cnpj VARCHAR(14) UNIQUE,
+    razaoSocial VARCHAR(60),
+    nome VARCHAR(60),
+    telefone VARCHAR(11)
+    );
+*/
+
 insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (1, 'ymartinets0@angelfire.com', 96813001298626, 'HNI Corporation', 'Sanford, Kuvalis and Corwin', '5485836218');
 insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (2, 'tstaterfield1@cornell.edu', 59463364739717, 'Lithia Motors, Inc.', 'Wyman, Heller and Heller', '8573530607');
 insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (3, 'tsellers2@blogger.com', 49712245731953, 'Antero Midstream Partners LP', 'Reinger, Lakin and Berge', '4112737280');

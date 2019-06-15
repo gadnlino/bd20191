@@ -1,3 +1,11 @@
+/*Nome da tabela:Contem*/
+/*Estrutura da tabela:
+    Contem (
+    idProduto_FK INT,
+    idContainer_FK INT
+    );
+*/
+
 insert into Contem (idproduto_fk, idcontainer_fk) values (204, 45);
 insert into Contem (idproduto_fk, idcontainer_fk) values (171, 84);
 insert into Contem (idproduto_fk, idcontainer_fk) values (71, 186);

@@ -1,3 +1,21 @@
+/*Nome da tabela:Veiculo*/
+/*Estrutura da tabela:
+    Veiculo (
+    idVeiculo_PK INT PRIMARY KEY,
+    numMaxContainers INT,
+    localizacao VARCHAR(30),
+    fabricante VARCHAR(20),
+    capacidadeCombustivel DOUBLE,
+    cargaMaxima DOUBLE,
+    statusVeiculo ENUM('Disponivel','Em uso','Em manutenção','Desmobilizado'),
+    unidadeOrigem_FK INT,
+    tempoUtilizacao INT,
+    lotacaoAtual INT,
+    disponibilidade BOOLEAN,
+    tipoVeiculo ENUM('Trem', 'Navio', 'Caminhão')
+    );
+*/
+
 insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (1, 6, '167 Porter Street', 'Hyundai', 36.57, 4087.21, 'Desmobilizado', 23, 129, 2, false, 'Navio');
 insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (2, 20, '00 Manley Hill', 'Plymouth', 97.87, 8182.98, 'Disponivel', 100, 218, 19, true, 'Caminhão');
 insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (3, 10, '244 Johnson Drive', 'Chevrolet', 82.54, 685.26, 'Em manutenção', 87, 98, 2, false, 'Navio');

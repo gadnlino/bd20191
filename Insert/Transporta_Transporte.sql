@@ -1,3 +1,16 @@
+/*Nome da tabela:Transporta_Transporte*/
+/*Estrutura da tabela:
+    Transporta_Transporte (
+    idContainer_SPK INT,
+    idVeiculo_SPK INT,
+    dataInicio DATE,
+    dataFim DATE,
+    CONSTRAINT CHK_dataInicio
+        CHECK(dataInicio < dataFim),
+    PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
+    );
+*/
+
 insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (95, 24, '2018-12-13', '2019-06-02');
 insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (23, 84, '2018-06-19', '2019-03-10');
 insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (173, 24, '2018-08-08', '2019-01-16');

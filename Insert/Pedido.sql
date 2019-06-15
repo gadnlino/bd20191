@@ -1,3 +1,16 @@
+/*Nome da tabela:Pedido*/
+/*Estrutura da tabela:
+    Pedido (
+    idPedido_PK INT PRIMARY KEY,
+    dataEntrega DATE,
+    dataSolicitacao DATE,
+    destino VARCHAR(30),
+    statusPedido ENUM('Não entregue','Em rota','Entregue'),
+    destinatario VARCHAR(30),
+    idCliente_FK INT
+    );
+*/
+
 insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (1, '2019-05-28', '2018-12-27', '36 Vernon Hill', 'Não entregue', 'Marcus Busch', 63);
 insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (2, '2019-03-22', '2018-12-01', '4643 Grasskamp Avenue', 'Entregue', 'Julee Hatcher', 78);
 insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (3, '2019-05-29', '2018-08-27', '2669 2nd Junction', 'Entregue', 'Caril Draycott', 42);

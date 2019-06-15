@@ -1,3 +1,20 @@
+/*Nome da tabela:Funcionario*/
+/*Estrutura da tabela:
+    Funcionario (
+    emailFuncionario VARCHAR(60),
+    dataContratacao DATE,
+    salario float,
+    endereco VARCHAR(30),
+    matricula INT UNIQUE,
+    rg VARCHAR(9) UNIQUE,
+    idFuncionario_PK INT NOT NULL PRIMARY KEY,
+    telefone VARCHAR(11),
+    dataNascimento DATE,
+    departamento VARCHAR(30),
+    idUnidade_FK INT
+    );
+*/
+
 insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pboyes0@sciencedirect.com', '2018-08-24', 3105.52, '1516 Bowman Road', 887551, 632317879, 1, '2695523421', '1971-07-08', 'Product Management', 56);
 insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('wchastenet1@fda.gov', '2018-01-26', 4428.28, '5 Waywood Plaza', 905262, 839860469, 2, '9505780791', '1982-02-12', 'Support', 1);
 insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bgaythwaite2@jiathis.com', '2018-08-10', 9479.16, '20538 Kensington Trail', 960178, 49557806, 3, '1541292145', '1976-09-12', 'Research and Development', 73);

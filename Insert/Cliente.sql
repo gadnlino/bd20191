@@ -1,3 +1,15 @@
+/*Nome da tabela:Cliente*/
+/*Estrutura da tabela:
+    Cliente (
+    idCliente_PK INT PRIMARY KEY,
+    cep VARCHAR(8),
+    emailCliente VARCHAR(60),
+    nome VARCHAR(30),
+    endereco VARCHAR(30),
+    telefone VARCHAR(11)
+    );
+*/
+
 insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (1, 36590952, 'mphaup0@bigcartel.com', 'Mona Phaup', '9828 Crest Line Road', '4428315486');
 insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (2, 61465350, 'dwiddison1@furl.net', 'Dimitri Widdison', '9 Westend Court', '4534232056');
 insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (3, 16660081, 'sthyer2@techcrunch.com', 'Sigfrid Thyer', '998 Hansons Center', '1866259845');

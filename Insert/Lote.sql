@@ -1,3 +1,13 @@
+/*Nome da tabela:Lote*/
+/*Estrutura da tabela:
+    Lote (
+    idLote_PK INT NOT NULL PRIMARY KEY,
+    setor INT,
+    posicao INT,
+    idArmazem_FK INT NOT NULL
+    );
+*/
+
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (1, 2, 48, 19);
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (2, 20, 48, 43);
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (3, 25, 10, 47);

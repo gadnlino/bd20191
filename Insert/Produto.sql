@@ -1,3 +1,16 @@
+/*Nome da tabela:Produto*/
+/*Estrutura da tabela:
+    Produto (
+    idProduto_PK INT PRIMARY KEY,
+    comprimento DOUBLE,
+    descricao VARCHAR(500),
+    peso DOUBLE,
+    largura DOUBLE,
+    altura DOUBLE,
+    idPedido_FK INT
+    );
+*/
+
 insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (1, 6, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 964, 4, 2, 98);
 insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (2, 9, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 304, 7, 8, 122);
 insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (3, 6, 'Pellentesque at nulla.', 674, 8, 2, 150);

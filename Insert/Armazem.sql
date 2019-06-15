@@ -1,3 +1,16 @@
+/*Nome da tabela:Armazem*/
+/*Estrutura da tabela:
+    Armazem (
+    largura FLOAT,
+    altura FLOAT,
+    idArmazem_PK INT PRIMARY KEY NOT NULL,
+    numMaxContainers INT,
+    comprimento FLOAT,
+    lotacaoAtual INT,
+    idUnidade_FK INT NOT NULL
+    );
+*/
+
 insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (66.15, 88.17, 1, 200, 87.34, 1, 12);
 insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (48.71, 83.41, 2, 147, 36.92, 2, 84);
 insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (7.83, 59.51, 3, 173, 25.77, 3, 79);

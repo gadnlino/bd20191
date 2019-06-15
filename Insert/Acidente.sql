@@ -1,3 +1,17 @@
+/*Comando para remoção de todas as tuplas da tabela*/
+/*TRUNCATE TABLE Acidente;*/ 
+
+/*Nome da tabela:Acidente*/
+/*Estrutura da tabela:
+    Acidente (
+    idAcidente_PK INT PRIMARY KEY,
+    descricao VARCHAR(600),
+    data_acidente DATE,
+    id_seguradora_FK INT,
+    id_pedido_FK INT
+    );
+*/
+
 insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (1, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '2019-04-16', 2, 130);
 insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (2, 'Nulla tempus.', '2008-11-26', 18, 85);
 insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (3, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', '2003-01-25', 44, 140);
