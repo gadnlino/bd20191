@@ -1,151 +1,151 @@
 idVeiculo_PK,numMaxContainers,localizacao,fabricante,capacidadeCombustivel,cargaMaxima,statusVeiculo,unidadeOrigem_FK,tempoUtilizacao,lotacaoAtual,disponibilidade,tipoVeiculo
-1,6,"167 Porter Street",Hyundai,36.57,4087.21,Desmobilizado,23,129,2,0,Navio
-2,20,"00 Manley Hill",Plymouth,97.87,8182.98,Disponivel,100,218,19,1,Caminhão
-3,10,"244 Johnson Drive",Chevrolet,82.54,685.26,"Em manutenção",87,98,2,0,Navio
-4,19,"19 Pearson Pass",Chrysler,27.15,8816.57,Disponivel,69,14,2,1,Navio
-5,7,"3 Gulseth Place",Mitsubishi,26.9,9966.27,"Em manutenção",33,107,18,1,Navio
-6,20,"344 Ohio Way",Mazda,1.33,8867.49,"Em manutenção",75,168,10,1,Caminhão
-7,4,"1 Morningstar Junction",Chevrolet,94.91,8040.9,Desmobilizado,50,228,6,1,Caminhão
-8,14,"06213 Westend Trail",Chevrolet,52.35,8103.45,"Em manutenção",67,48,16,0,Trem
-9,4,"5149 Barnett Trail",Suzuki,28.27,9970.72,Disponivel,29,160,10,0,Trem
-10,11,"467 Carey Terrace",Cadillac,99.25,5676.64,"Em uso",89,7,17,0,Navio
-11,8,"47 Corscot Circle",Mitsubishi,11,2811.04,"Em uso",52,223,10,0,Caminhão
-12,19,"855 Anthes Circle",Ford,41.16,8758.67,"Em uso",27,184,20,0,Navio
-13,20,"31 Tomscot Point",Volvo,24.26,7854.18,"Em manutenção",50,215,16,1,Caminhão
-14,11,"85 Redwing Avenue",McLaren,42.05,653.9,Desmobilizado,51,160,20,1,Caminhão
-15,17,"17 Scoville Way",Mitsubishi,83.26,9054.38,Desmobilizado,27,231,9,0,Trem
-16,7,"1 Talmadge Alley",Buick,86.96,1373.22,"Em manutenção",85,111,1,1,Caminhão
-17,18,"30302 Doe Crossing Place",Toyota,43.57,4017.28,Desmobilizado,63,176,10,1,Trem
-18,17,"24716 Nelson Trail",Audi,28.25,8683.92,"Em uso",4,48,4,0,Trem
-19,14,"0284 Oak Point",Chevrolet,83.88,6196.48,Disponivel,91,207,20,0,Trem
-20,13,"5 Oxford Junction",Audi,70.83,1017.03,"Em uso",14,30,20,0,Navio
-21,19,"488 Northridge Crossing",Porsche,10.63,6776.18,Desmobilizado,93,128,6,0,Caminhão
-22,10,"94962 Drewry Street",Cadillac,91.15,935.68,"Em uso",41,53,1,1,Trem
-23,20,"8 Rigney Hill",Toyota,47.24,9117,Disponivel,42,9,1,1,Navio
-24,4,"118 Butterfield Court",Audi,96.15,2566.49,Desmobilizado,46,114,13,1,Caminhão
-25,15,"886 Jana Junction",Saab,55.08,5801.51,"Em manutenção",100,120,19,1,Trem
-26,3,"0530 2nd Lane",GMC,53.5,8757.96,Disponivel,17,92,18,0,Navio
-27,1,"1 Ryan Parkway",Volkswagen,3.08,9517.39,Disponivel,18,40,19,0,Trem
-28,13,"4293 Continental Center",Lexus,85.41,6357.34,Desmobilizado,19,208,2,0,Caminhão
-29,15,"00268 Menomonie Avenue",Audi,39.19,2202.26,Disponivel,14,90,16,1,Navio
-30,9,"4 Onsgard Pass",Buick,84.08,532.91,Disponivel,72,204,1,1,Navio
-31,19,"649 Morningstar Point",Ram,94.58,1334.19,"Em manutenção",15,231,13,0,Trem
-32,17,"2 Petterle Parkway",Mazda,10.65,3098.8,Desmobilizado,50,87,6,1,Trem
-33,11,"1115 Lindbergh Terrace",Chevrolet,51.38,2024.95,"Em uso",12,153,15,1,Navio
-34,11,"9 Loftsgordon Drive",Volvo,63.99,8176.9,Desmobilizado,24,122,11,0,Caminhão
-35,4,"3871 Anzinger Pass",Saab,9.55,2054.98,"Em uso",81,232,10,1,Caminhão
-36,7,"7 Superior Terrace",Toyota,96.61,126.33,Disponivel,23,130,11,0,Trem
-37,15,"13835 Everett Hill",Dodge,22.11,8229.75,"Em manutenção",100,91,12,0,Navio
-38,11,"4951 Mockingbird Park",Chevrolet,70.49,3180.35,"Em manutenção",83,39,6,0,Caminhão
-39,10,"98 Lake View Court",Toyota,52.05,1273.25,Disponivel,81,192,5,0,Navio
-40,6,"8361 Southridge Point",Dodge,45.71,1241.03,"Em uso",44,66,10,1,Trem
-41,1,"57022 Jay Court",Buick,11.49,575.13,"Em manutenção",97,231,11,0,Navio
-42,4,"8501 Amoth Center",Mercedes-Benz,81.21,4286.16,"Em manutenção",66,25,18,1,Trem
-43,8,"96 Warner Hill",Lotus,54.56,848.01,"Em uso",15,99,19,1,Caminhão
-44,5,"28883 Sunfield Parkway",Hyundai,6.76,1005.68,Disponivel,59,115,16,1,Navio
-45,20,"12859 Charing Cross Hill",Hyundai,87.44,7969.7,Desmobilizado,57,96,7,1,Trem
-46,9,"497 8th Street",Plymouth,70.3,4024.03,"Em uso",5,48,3,1,Caminhão
-47,15,"9 Randy Lane",Oldsmobile,96.2,6918.97,"Em manutenção",10,5,14,1,Trem
-48,7,"34 Goodland Park",Mitsubishi,23.21,5467.98,"Em manutenção",86,66,9,1,Caminhão
-49,2,"6589 Schlimgen Trail",Porsche,35.13,6203.45,"Em manutenção",77,62,3,1,Trem
-50,9,"67758 Badeau Junction",GMC,34.21,8775.28,Disponivel,25,127,4,1,Trem
-51,8,"059 Starling Court",Toyota,14.49,3920.26,"Em uso",76,70,2,1,Navio
-52,12,"70 Southridge Road",Pontiac,77.21,9449.53,Disponivel,29,132,7,1,Caminhão
-53,13,"48858 Fallview Hill",Dodge,11.54,4233.63,Disponivel,11,195,20,1,Caminhão
-54,12,"8 Coleman Alley",Toyota,20.9,2095.78,Desmobilizado,63,83,13,1,Caminhão
-55,10,"74048 Coolidge Plaza",GMC,89.77,9657.97,Disponivel,81,33,8,0,Navio
-56,12,"359 Iowa Court",Mitsubishi,89.2,3725.47,Disponivel,100,169,2,0,Caminhão
-57,8,"5630 Kedzie Street",Mercury,51.09,4216.04,"Em manutenção",84,157,16,0,Navio
-58,5,"81 Everett Place",Chevrolet,59.69,8671.92,"Em manutenção",59,125,13,1,Caminhão
-59,17,"94916 Birchwood Lane",Mercedes-Benz,5.13,6117.04,"Em uso",32,156,11,1,Navio
-60,15,"57390 Kipling Plaza",Chevrolet,32,4081.64,Desmobilizado,6,169,1,1,Caminhão
-61,19,"56 Canary Point",Oldsmobile,68.59,8046.66,"Em uso",2,12,18,1,Navio
-62,12,"29 Muir Court",Suzuki,9.22,7382.15,Disponivel,7,196,3,0,Caminhão
-63,13,"5 Merrick Way",GMC,33.34,6172.52,Desmobilizado,36,83,10,1,Navio
-64,19,"29 Little Fleur Lane",Pontiac,57.19,5971.2,"Em manutenção",79,125,1,0,Trem
-65,3,"77 Anzinger Street",Dodge,9.49,1380.25,Desmobilizado,78,177,7,1,Caminhão
-66,19,"6 Pepper Wood Junction",Cadillac,3.29,4892.88,Disponivel,24,218,5,0,Navio
-67,3,"2756 Cherokee Alley",Dodge,9.92,5274.14,Disponivel,76,80,15,1,Navio
-68,11,"90510 Katie Drive",Mitsubishi,63.97,1218.17,Disponivel,23,125,16,0,Navio
-69,4,"0371 Nova Court",Chevrolet,94.78,663.85,"Em manutenção",4,142,1,0,Trem
-70,4,"8113 Anzinger Junction",Honda,54.81,4442.66,"Em uso",18,230,1,0,Trem
-71,2,"63 Waxwing Way",Chevrolet,4.94,3111.6,Disponivel,16,2,1,0,Caminhão
-72,8,"441 Del Sol Lane",Ford,99.93,1685.42,"Em manutenção",9,103,14,1,Caminhão
-73,19,"21 Brickson Park Parkway",Volkswagen,3.35,727.35,"Em manutenção",47,89,12,0,Caminhão
-74,17,"2951 Spaight Parkway",Chevrolet,42.51,5583.16,"Em uso",2,113,18,0,Caminhão
-75,7,"829 Westend Street",Ford,48.7,4249.39,"Em uso",80,240,7,1,Navio
-76,3,"7089 1st Alley",Dodge,69.32,1933.51,"Em manutenção",28,159,9,1,Caminhão
-77,9,"57 Anderson Crossing",Toyota,91.89,7385.85,Desmobilizado,8,169,6,1,Navio
-78,16,"33128 Mendota Circle",Lamborghini,71.91,4410.34,Disponivel,64,233,5,0,Caminhão
-79,9,"41 Granby Court",Porsche,53.12,5672.89,"Em uso",36,145,11,1,Navio
-80,20,"56 Moose Plaza",Volkswagen,98.87,824.2,"Em uso",26,92,15,1,Trem
-81,7,"66698 Mccormick Junction",Chevrolet,58.28,8030.8,"Em uso",96,80,5,1,Trem
-82,10,"2127 Valley Edge Trail",Dodge,2.12,6521.58,Desmobilizado,68,77,11,0,Trem
-83,3,"03950 Melby Circle",Toyota,88.67,6605.91,Desmobilizado,47,191,2,1,Caminhão
-84,6,"39512 Heath Lane",BMW,74.37,6004.07,Desmobilizado,16,122,9,1,Caminhão
-85,10,"47171 Upham Pass",Mazda,88.27,6712.5,"Em uso",26,106,9,1,Navio
-86,9,"84350 Summit Circle",GMC,12.05,2295.76,"Em uso",84,75,20,0,Caminhão
-87,12,"00 Kings Pass",Acura,77.18,3245.74,"Em manutenção",90,3,10,0,Trem
-88,11,"1 Mccormick Drive",Chevrolet,25.34,9085.19,"Em manutenção",75,134,3,0,Navio
-89,11,"790 Anhalt Center",Mercedes-Benz,83.79,1877.96,Desmobilizado,17,119,5,1,Trem
-90,10,"0603 Fair Oaks Parkway",Saturn,39.28,9606.68,"Em uso",77,174,16,0,Trem
-91,10,"9 Holmberg Junction",Ford,71.09,6778.37,Desmobilizado,21,31,5,1,Trem
-92,16,"5373 Pine View Park",Daewoo,21.77,2516.04,Disponivel,50,192,18,1,Trem
-93,8,"97 Boyd Circle",Peugeot,20.14,8151.42,Disponivel,39,197,1,0,Navio
-94,17,"8689 Prentice Avenue",Cadillac,70.78,2648.99,"Em manutenção",44,203,18,0,Trem
-95,8,"03 Browning Park",Pontiac,45.81,2864.58,Disponivel,4,168,15,1,Trem
-96,16,"04239 Commercial Center",Ford,58.77,8605.05,Desmobilizado,16,180,5,0,Navio
-97,14,"4 Ludington Street",Acura,12.34,6022.92,Desmobilizado,88,77,5,0,Trem
-98,10,"06753 Amoth Park","Land Rover",3.96,6071.76,"Em manutenção",96,191,11,1,Trem
-99,12,"167 Manitowish Street",Ford,51.29,3732.88,"Em uso",17,227,15,0,Caminhão
-100,7,"6887 Almo Park","Land Rover",60.43,7838.89,Desmobilizado,91,174,18,0,Trem
-101,1,"8107 Jenna Street",GMC,68.78,6470.71,Desmobilizado,72,134,13,0,Caminhão
-102,14,"4 Graedel Avenue",Maserati,88.33,3179.21,Disponivel,39,238,9,1,Caminhão
-103,13,"821 Schmedeman Hill",Mercedes-Benz,83.08,3353.83,"Em uso",29,199,8,0,Navio
-104,11,"67 Killdeer Trail",BMW,62.98,4743.8,"Em manutenção",48,65,4,0,Caminhão
-105,20,"74325 Luster Junction",Ford,13.93,8817.29,"Em uso",36,220,12,0,Trem
-106,10,"38933 Lake View Court",GMC,48.01,3230.38,Disponivel,70,42,7,1,Navio
-107,15,"3 Northport Point",Oldsmobile,67.78,1446.4,Desmobilizado,73,137,7,0,Trem
-108,11,"5777 Goodland Street",Lincoln,22.81,4342.11,Desmobilizado,86,160,18,1,Caminhão
-109,5,"20473 Gerald Plaza",Oldsmobile,54.6,6061.79,"Em uso",17,151,3,0,Trem
-110,9,"45507 Park Meadow Circle",Kia,49.65,6368.17,Disponivel,69,34,3,0,Trem
-111,7,"69242 Heath Avenue",Mercury,17.71,4340.36,Desmobilizado,46,199,13,1,Navio
-112,8,"9251 Iowa Terrace",Subaru,79.18,1840.65,"Em manutenção",44,187,2,1,Caminhão
-113,15,"8855 Waxwing Street",Ferrari,74.38,3871.04,"Em manutenção",18,226,6,1,Navio
-114,10,"7 Cascade Point",Saturn,76.53,6166.25,"Em uso",88,221,4,0,Caminhão
-115,6,"579 Spohn Crossing",Jeep,75.93,5540.96,"Em manutenção",26,148,6,0,Caminhão
-116,13,"214 Di Loreto Drive",Honda,58.27,8692.13,Disponivel,19,113,11,1,Navio
-117,19,"687 Pawling Drive",Volvo,31.74,9776.28,Disponivel,80,133,8,1,Navio
-118,8,"7521 Derek Point",Ford,38.78,8126.26,Desmobilizado,28,185,20,1,Trem
-119,7,"34 Ludington Drive",Mitsubishi,32.26,4254.67,"Em uso",47,224,18,0,Navio
-120,1,"6202 Doe Crossing Avenue",Buick,53.3,572.42,Desmobilizado,83,60,11,0,Navio
-121,17,"26 Fair Oaks Hill",Lexus,80.81,2005.44,"Em uso",37,49,14,1,Caminhão
-122,7,"94901 Elka Lane",GMC,14.82,2183.7,"Em manutenção",91,62,9,1,Navio
-123,1,"22 Blaine Road",Kia,95.4,4929,Desmobilizado,88,60,19,1,Trem
-124,16,"57687 Summer Ridge Junction",GMC,61.86,2660.79,"Em manutenção",45,53,6,1,Trem
-125,12,"75710 Burning Wood Court",Lexus,35.18,3958.26,Desmobilizado,84,112,1,0,Trem
-126,6,"49 Pepper Wood Trail",Nissan,35.3,7607.69,Disponivel,96,37,10,1,Trem
-127,5,"0 Basil Avenue",Ford,20.94,7613.8,"Em uso",72,101,13,1,Trem
-128,3,"16135 Basil Trail",Acura,60.93,4214.56,Desmobilizado,44,195,5,0,Navio
-129,16,"7669 Trailsway Crossing",Mercury,68.14,2720.89,Disponivel,53,27,16,0,Caminhão
-130,4,"38 Shoshone Alley",Audi,32.32,9221.84,"Em manutenção",20,57,2,1,Caminhão
-131,7,"2 Stuart Drive",Honda,15.33,6354.37,"Em uso",71,81,13,0,Caminhão
-132,11,"66447 Hallows Center",Subaru,6.58,1614.48,"Em uso",19,106,18,1,Navio
-133,15,"2 Ramsey Pass",GMC,98.25,7159.55,"Em uso",61,68,8,1,Caminhão
-134,18,"23623 Golden Leaf Way",Chevrolet,17.29,5807.73,"Em manutenção",70,124,12,0,Trem
-135,16,"42072 Loeprich Place",Audi,28.53,2599.5,Disponivel,79,101,16,0,Navio
-136,8,"9176 Westridge Center",Chevrolet,79.68,6700.23,"Em manutenção",31,142,20,0,Navio
-137,12,"2712 Lukken Street",GMC,87.59,3077.25,"Em uso",31,54,16,1,Navio
-138,2,"7 Loftsgordon Lane",Mercedes-Benz,51.89,697.23,Desmobilizado,93,71,15,0,Trem
-139,14,"85649 Raven Way",Buick,72.64,3878.94,"Em uso",74,138,18,1,Trem
-140,19,"349 Stuart Crossing",Audi,9.23,7202.69,"Em manutenção",10,199,11,0,Navio
-141,16,"46306 Thompson Place",Volkswagen,26.5,618.94,Disponivel,4,34,14,1,Trem
-142,16,"668 Redwing Way",Mazda,73.07,490.28,"Em uso",27,12,1,1,Navio
-143,6,"00372 Erie Court",Ford,25.34,3797,"Em uso",65,78,18,0,Trem
-144,8,"1844 Coleman Alley",Pontiac,50.45,7084.29,Desmobilizado,72,115,10,1,Navio
-145,17,"37541 Colorado Park",Audi,9.26,7667.21,Disponivel,29,224,3,0,Trem
-146,19,"4 Scoville Avenue",Eagle,76.25,3740.37,"Em uso",42,206,1,1,Navio
-147,13,"582 Fulton Crossing",Saab,43.78,7430.28,Disponivel,44,137,20,0,Navio
-148,12,"48059 Summit Point",Chevrolet,24.08,1242.15,"Em uso",27,92,13,0,Trem
-149,17,"0 Onsgard Road",Audi,64.57,4991.67,"Em uso",96,153,18,1,Navio
-150,18,"25077 Southridge Place",Mercedes-Benz,81.05,2148.36,Desmobilizado,42,23,6,0,Caminhão
+1,13,"5063 Crest Line Hill",Audi,43.92,4851.01,"Em manutenção",100,167,1,1,Navio
+2,16,"78 Bunting Way",Chevrolet,45.04,5055.66,"Em uso",15,158,12,1,Caminhão
+3,3,"8 Warbler Alley","Land Rover",48.68,1304.05,"Em uso",1,177,3,1,Caminhão
+4,2,"45 Autumn Leaf Terrace",Nissan,87.46,6400.33,"Em uso",21,91,2,0,Trem
+5,16,"2823 Laurel Street",Mercedes-Benz,2.58,1953.39,"Em uso",28,3,1,0,Trem
+6,8,"8170 Twin Pines Trail",Chevrolet,41,2581.47,"Em uso",88,190,0,1,Navio
+7,8,"28589 Starling Way",Isuzu,85.39,4143.63,"Em manutenção",29,192,2,1,Trem
+8,9,"10 Sycamore Plaza",Dodge,39.05,3021.85,Disponivel,73,149,4,1,Caminhão
+9,19,"71 Bobwhite Pass",Chevrolet,96.64,9188.76,"Em uso",13,219,3,1,Caminhão
+10,10,"450 Service Place",Pontiac,87.75,4383.07,"Em manutenção",100,50,7,1,Trem
+11,17,"24 Westridge Avenue",BMW,8.69,2513.67,Desmobilizado,87,67,12,0,Caminhão
+12,2,"19 Miller Lane",Nissan,28.5,3156.34,Disponivel,75,183,0,1,Navio
+13,10,"56 Old Gate Junction",BMW,22.54,1196,"Em uso",54,28,8,1,Caminhão
+14,2,"146 Granby Place",Audi,26.37,2270.43,"Em uso",58,220,1,0,Trem
+15,10,"4 Gerald Plaza",Volvo,85.22,7833.19,"Em manutenção",97,5,4,1,Trem
+16,10,"09 Summerview Plaza",Dodge,72.57,8693.47,Desmobilizado,63,42,6,0,Trem
+17,2,"628 Everett Trail","Land Rover",54.13,641.67,"Em manutenção",13,36,2,1,Caminhão
+18,3,"36359 Pearson Drive",Chevrolet,10.93,3082.8,"Em uso",82,25,2,1,Navio
+19,2,"49 Carey Center",Ford,35.01,3617.74,Disponivel,11,139,0,1,Trem
+20,20,"9 Valley Edge Drive",Ford,87.2,9688.59,Desmobilizado,58,205,3,0,Caminhão
+21,12,"98 Hollow Ridge Point",Mercedes-Benz,47.49,703.49,Disponivel,3,131,0,1,Navio
+22,10,"15 Jay Lane",Jaguar,4.74,743.19,Disponivel,25,69,9,1,Trem
+23,5,"51289 Moland Pass","Aston Martin",50.48,1836.3,Desmobilizado,92,170,2,0,Caminhão
+24,17,"609 Westend Lane",Volkswagen,81.94,9262.01,"Em manutenção",22,133,7,1,Navio
+25,2,"238 Nova Circle",Dodge,94.15,6673.3,"Em manutenção",20,235,1,0,Navio
+26,12,"47571 Ridge Oak Terrace",Audi,20.14,7010.58,"Em manutenção",90,40,7,1,Navio
+27,6,"1675 Vernon Circle",Kia,31.67,4762.89,Disponivel,94,119,5,1,Navio
+28,18,"4 Badeau Trail",Ford,7.66,3810.33,"Em manutenção",92,95,10,1,Trem
+29,8,"1 Gateway Street",Ford,8.02,582.69,"Em manutenção",39,154,0,0,Caminhão
+30,4,"52121 Springview Crossing",Toyota,94.86,2439.22,Desmobilizado,9,121,2,0,Caminhão
+31,3,"87 Express Crossing",Lotus,42.61,5615.34,"Em manutenção",86,168,0,0,Navio
+32,4,"73 Tomscot Court",BMW,22.83,9457.6,"Em manutenção",98,63,2,1,Navio
+33,10,"0 Truax Avenue",MINI,11.56,1992.79,Desmobilizado,8,24,6,0,Trem
+34,15,"4646 Pierstorff Alley",Lamborghini,78.96,3104.12,Disponivel,84,153,7,1,Navio
+35,5,"1189 Marcy Point",Chevrolet,81.18,1806.25,"Em uso",46,38,4,1,Navio
+36,5,"2 Hazelcrest Avenue",Lotus,21.65,991.55,Disponivel,1,125,5,1,Trem
+37,14,"58902 Bluejay Alley",Mitsubishi,19.29,7411.92,"Em uso",78,129,6,0,Caminhão
+38,17,"597 Carioca Terrace",Ford,61.19,218.78,Desmobilizado,44,36,10,1,Navio
+39,11,"64 Bartillon Lane",Hyundai,27.05,4022.65,Disponivel,20,131,5,0,Navio
+40,19,"8484 Erie Place",Infiniti,76.18,559.21,Desmobilizado,23,62,16,0,Caminhão
+41,10,"27828 Red Cloud Street",Kia,28.95,9520.78,Desmobilizado,75,186,1,0,Caminhão
+42,3,"97 Mcguire Drive",Nissan,67.18,4868.24,Desmobilizado,50,5,1,1,Navio
+43,16,"6516 Dawn Junction",Toyota,80.68,830.46,Desmobilizado,73,218,3,1,Trem
+44,10,"5037 Clarendon Junction",Hyundai,43.56,1996.85,"Em manutenção",37,75,9,0,Trem
+45,8,"0 Del Mar Pass",Austin,85.47,8806.92,Desmobilizado,71,68,4,1,Navio
+46,11,"24722 Calypso Pass",Chevrolet,24.18,1705.73,Disponivel,94,200,6,1,Trem
+47,9,"31180 Montana Pass",Subaru,59.34,2181.32,"Em manutenção",32,32,4,0,Trem
+48,18,"5933 Lakeland Park",Mazda,6.56,2104.13,Desmobilizado,100,65,9,0,Caminhão
+49,2,"4 Delladonna Way",Dodge,29.89,4024.24,"Em manutenção",37,89,1,0,Navio
+50,3,"323 Kedzie Avenue",Cadillac,80.28,1403.28,"Em manutenção",50,234,1,0,Caminhão
+51,18,"716 Sunfield Plaza",Mitsubishi,95.88,5106.72,Desmobilizado,14,65,2,1,Trem
+52,20,"6977 Portage Road",Isuzu,85.44,1020.32,"Em manutenção",46,138,10,0,Navio
+53,1,"79 Talmadge Street",Ford,20.8,290.99,Desmobilizado,42,109,0,0,Caminhão
+54,13,"5382 Pierstorff Place",Mazda,29.36,9153.3,Desmobilizado,27,103,2,1,Trem
+55,16,"832 Roxbury Center",Saturn,40.56,4948.71,Desmobilizado,85,114,5,0,Navio
+56,10,"9 Sherman Street",Nissan,87.4,2508.42,"Em uso",99,83,8,1,Navio
+57,17,"3 1st Crossing",Buick,73.85,7150.98,"Em uso",78,122,2,0,Navio
+58,16,"851 Scott Hill",Lincoln,62.17,4947.58,"Em uso",74,228,16,0,Caminhão
+59,15,"2915 Ludington Junction",Toyota,2.69,7989.95,"Em manutenção",44,130,11,1,Caminhão
+60,18,"593 Forest Dale Center",Mercedes-Benz,69.19,8986.85,"Em uso",56,57,6,0,Trem
+61,19,"840 Hintze Plaza",Ford,57.64,6094.59,Disponivel,46,179,0,1,Trem
+62,18,"157 Debra Drive",Audi,94.94,5004.47,Disponivel,66,171,3,1,Caminhão
+63,12,"0 Declaration Alley",Porsche,36.3,7333.97,Disponivel,14,189,6,0,Trem
+64,14,"26 Vidon Drive",Acura,80.7,7126.51,"Em manutenção",73,85,1,1,Caminhão
+65,2,"20067 Roth Junction","Land Rover",71.07,6558.94,"Em manutenção",88,164,1,0,Caminhão
+66,7,"9705 Tennyson Point",Volkswagen,76.31,6339.53,"Em uso",68,62,2,0,Navio
+67,11,"34774 Bobwhite Pass",GMC,41.35,3801,Disponivel,15,60,4,1,Caminhão
+68,1,"3 Merchant Crossing",Lamborghini,26.76,4012.93,"Em manutenção",91,99,0,1,Navio
+69,6,"04234 Di Loreto Plaza",BMW,88.93,1166.36,"Em manutenção",27,62,0,1,Caminhão
+70,4,"95514 Schlimgen Pass",Lexus,27.13,7795.96,"Em uso",95,100,3,1,Caminhão
+71,12,"74489 Glacier Hill Lane",Ford,50.47,6618.67,Desmobilizado,35,210,12,0,Navio
+72,6,"46143 Eggendart Hill",Mercedes-Benz,9.42,2417.93,Desmobilizado,33,41,4,0,Caminhão
+73,13,"37 Stone Corner Place",Volkswagen,57.4,2601.1,"Em manutenção",72,18,12,1,Caminhão
+74,13,"5 Leroy Avenue",Ford,61.41,9716.16,"Em uso",17,15,5,1,Caminhão
+75,20,"174 Meadow Valley Pass",Lexus,3.4,987.27,Disponivel,13,87,18,0,Trem
+76,14,"868 7th Crossing",Buick,39.65,5656.7,Disponivel,84,49,0,1,Navio
+77,13,"544 Cordelia Park",Toyota,3.55,8015.15,Desmobilizado,12,122,4,0,Caminhão
+78,4,"2007 Loeprich Junction",Mercedes-Benz,2.8,3510.26,"Em manutenção",10,100,2,0,Caminhão
+79,8,"481 Golf Course Pass",GMC,3.22,6720.28,Desmobilizado,9,45,1,0,Caminhão
+80,13,"9440 Havey Road",Nissan,50.06,4600.85,Disponivel,65,213,4,0,Navio
+81,3,"9 Kipling Avenue",Mercedes-Benz,98.46,9459.4,"Em manutenção",53,35,2,0,Caminhão
+82,3,"08 Atwood Street",Dodge,32.27,2229.29,"Em manutenção",11,174,0,1,Caminhão
+83,13,"454 Ohio Drive",Mazda,72.13,7236.71,Disponivel,27,58,0,1,Caminhão
+84,6,"7178 Kim Way",Dodge,98.01,5088.86,Desmobilizado,51,116,3,0,Navio
+85,7,"38700 Schmedeman Way",Honda,99.39,1911.35,"Em manutenção",69,26,4,1,Caminhão
+86,7,"77715 1st Parkway",Mercedes-Benz,35.41,1929.03,"Em uso",9,120,1,0,Trem
+87,15,"2343 Mifflin Pass",Ford,36.75,4040.66,"Em uso",1,149,1,1,Navio
+88,3,"108 Lakewood Gardens Park",Mazda,24.36,8335.05,"Em manutenção",93,37,2,0,Caminhão
+89,19,"09360 Linden Lane",Chevrolet,47.97,4411.14,Desmobilizado,22,22,7,1,Trem
+90,6,"4 Everett Drive",Lincoln,77.54,9829.66,"Em manutenção",85,142,2,0,Navio
+91,1,"1 Little Fleur Pass",Citroën,24.9,6885.68,Desmobilizado,84,136,1,1,Trem
+92,4,"7832 Southridge Court",Ford,7.42,8645.98,Desmobilizado,59,31,3,0,Navio
+93,15,"61 Columbus Avenue","Land Rover",25.94,7266,Desmobilizado,64,188,2,1,Navio
+94,10,"53777 Haas Drive",Mitsubishi,76.28,421.38,"Em manutenção",1,191,1,0,Caminhão
+95,8,"09 Forest Run Parkway",Honda,64.89,759.88,Disponivel,22,106,6,1,Trem
+96,2,"0405 Butterfield Crossing",Lexus,68.62,6532.79,"Em uso",74,147,2,1,Trem
+97,6,"3 Sutteridge Plaza",Saturn,94.12,815.71,"Em manutenção",49,39,4,0,Caminhão
+98,8,"91 Roxbury Place",GMC,94.1,6084.62,Desmobilizado,14,206,4,1,Navio
+99,15,"144 Rutledge Plaza",Dodge,47.75,957.82,"Em manutenção",68,127,12,1,Trem
+100,6,"582 Glendale Junction",Chrysler,25.14,3889.53,"Em uso",74,36,6,1,Trem
+101,1,"4070 Delladonna Crossing",Mitsubishi,53.89,56.8,Desmobilizado,61,59,1,1,Trem
+102,15,"812 Pennsylvania Drive",Mazda,97.47,1220.65,Disponivel,98,136,1,0,Caminhão
+103,20,"71133 Lien Way","Land Rover",10.77,673.41,Desmobilizado,2,60,16,0,Navio
+104,20,"4 Annamark Alley",Toyota,39.17,8693.41,Desmobilizado,87,46,14,1,Trem
+105,14,"4410 Everett Trail",Ford,14.08,2657.58,Desmobilizado,20,75,5,0,Trem
+106,11,"0 Division Trail",Isuzu,68.99,5532.66,"Em manutenção",34,49,2,1,Trem
+107,14,"7321 Badeau Drive",Pontiac,46.29,7406.22,Disponivel,41,21,4,1,Navio
+108,2,"284 Village Green Terrace",Infiniti,76.04,2138.34,"Em uso",13,176,2,1,Navio
+109,15,"84 Cardinal Court",Nissan,51.06,9002.5,Disponivel,62,110,10,1,Trem
+110,20,"6 Bartelt Terrace",Porsche,94.41,360.43,"Em uso",42,155,9,1,Caminhão
+111,8,"7312 Summit Park",Kia,25.17,3950.92,"Em manutenção",78,160,5,0,Caminhão
+112,3,"025 Rowland Alley",Mitsubishi,40.4,5892.23,"Em manutenção",41,60,0,1,Navio
+113,18,"292 Mcguire Park",Volkswagen,93.04,5140.23,Desmobilizado,6,182,4,0,Navio
+114,15,"4 Bonner Way",Chevrolet,85.76,6797.1,"Em manutenção",15,106,12,1,Navio
+115,18,"363 Hoffman Hill",Honda,43.57,8564.26,Desmobilizado,91,4,16,1,Navio
+116,19,"2 Farwell Circle",Mitsubishi,91.14,1126.11,"Em uso",100,172,7,1,Navio
+117,6,"50 Grim Road",Pontiac,20.35,7497.36,Desmobilizado,89,186,5,0,Caminhão
+118,7,"6 Raven Trail","Aston Martin",84.49,9877.65,Desmobilizado,25,158,7,1,Trem
+119,19,"46448 Washington Plaza",Oldsmobile,25.91,7784.64,Disponivel,13,217,16,0,Navio
+120,16,"41414 Ridgeway Place",Chevrolet,60.95,7810.06,"Em manutenção",43,215,12,1,Navio
+121,4,"422 Steensland Terrace","Land Rover",49.72,8228,Desmobilizado,16,7,4,0,Navio
+122,7,"55810 Cody Trail",Lotus,12.84,4964.81,Desmobilizado,32,196,5,0,Navio
+123,4,"03 Towne Terrace",Chevrolet,73.09,6470.85,Disponivel,68,68,0,0,Trem
+124,12,"53 Knutson Street",Toyota,28.09,1914.16,"Em manutenção",18,31,4,0,Caminhão
+125,2,"7282 Jay Junction",Studebaker,59.43,2959.54,"Em uso",3,168,1,1,Navio
+126,2,"48 Hansons Place",Volkswagen,2.35,6279.01,Disponivel,51,81,0,0,Caminhão
+127,4,"25 Shasta Lane",Toyota,81.53,68.05,Disponivel,27,57,0,0,Navio
+128,15,"47293 Lakewood Junction",Pontiac,64.74,5362.98,Disponivel,93,43,14,0,Caminhão
+129,3,"9 Fairview Plaza",Isuzu,22.5,118.84,Disponivel,65,12,3,0,Trem
+130,2,"3938 Hovde Trail",Audi,94.88,8620.65,"Em manutenção",71,131,1,1,Navio
+131,13,"5025 Crescent Oaks Pass",Chevrolet,3.88,8700.76,"Em manutenção",85,185,13,0,Trem
+132,20,"107 Northridge Crossing",Mitsubishi,42.71,7321.02,"Em manutenção",77,228,12,0,Caminhão
+133,2,"7 Norway Maple Drive",Lexus,38.16,3304.61,Desmobilizado,81,2,1,0,Trem
+134,7,"6436 Springs Crossing",Acura,36.21,9081,Disponivel,51,105,3,0,Caminhão
+135,12,"79060 Havey Alley",Buick,54.8,1746.67,"Em manutenção",22,152,4,0,Caminhão
+136,14,"386 Ohio Court",Subaru,25.84,5913.6,"Em uso",62,110,10,0,Trem
+137,18,"05 7th Pass",Chrysler,93.56,2750.49,"Em manutenção",7,199,17,1,Navio
+138,3,"1 Basil Park",Ford,51.99,5064.13,Desmobilizado,36,128,1,1,Trem
+139,4,"56 Mifflin Place",Lamborghini,38.93,2413.28,Desmobilizado,23,113,1,0,Caminhão
+140,9,"0204 Welch Center",Nissan,81.03,7285.03,"Em uso",51,46,6,0,Caminhão
+141,4,"81296 Westridge Parkway",Chevrolet,61.81,2674.53,"Em manutenção",63,118,3,0,Trem
+142,9,"293 Westport Court",Honda,65.03,3139.33,Desmobilizado,79,36,9,0,Trem
+143,9,"854 Golden Leaf Plaza",Dodge,88.39,5299.9,"Em manutenção",38,214,1,1,Navio
+144,2,"6 Eggendart Center",Chevrolet,12.16,7625.44,Desmobilizado,96,105,2,0,Navio
+145,20,"8218 Tony Hill",Nissan,33.98,2684.87,"Em uso",3,121,9,0,Trem
+146,17,"4817 Almo Parkway",Chrysler,88.46,7057.86,Disponivel,51,40,2,1,Navio
+147,5,"485 Boyd Court",Nissan,54.62,1285.86,Disponivel,9,83,3,0,Trem
+148,18,"711 Lerdahl Parkway",Cadillac,32.36,9151.64,"Em uso",85,185,18,1,Caminhão
+149,2,"0 Shopko Way",BMW,33.12,2776.8,Disponivel,57,174,0,0,Caminhão
+150,16,"83932 7th Crossing",Audi,72.8,5308.32,"Em manutenção",6,224,8,1,Navio
