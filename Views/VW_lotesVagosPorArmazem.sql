@@ -1,3 +1,5 @@
+/*Descrição: mostra todos lotes que estão disponiveis, organizados de acordo com as Unidades e Armazens*/
+
 /*DROP VIEW VW_lotesVagosPorUnidade;*/
 CREATE VIEW VW_lotesVagosPorUnidade AS select r.idUnidade_PK,r.idArmazem_PK,
         r.idLote_PK,r.setor,r.posicao from (select l.idLote_PK,a.idArmazem_PK,
