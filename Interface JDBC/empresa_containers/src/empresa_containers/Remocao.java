@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TestaRemocao {
+public class Remocao {
 	
 	/**
 	 * Remove uma ou mais tuplas baseadas na condicao desejada. O SQL formado e no formato
@@ -16,7 +16,9 @@ public class TestaRemocao {
 	 * @param condition Condicao para se deletar uma ou mais tuplas da tabela
 	 * @throws SQLException
 	 */
-	private static void removeTupla(Connection connection, String table, String condition) throws SQLException {
+	public static void removeTupla(String table, String condition) throws SQLException {
+		
+		Connection connection = new ConnectionPool().getConnection();
 		
 		String sql = "DELETE FROM " + table + " WHERE " + condition + ";";
 		Statement statement = connection.createStatement();
@@ -28,13 +30,15 @@ public class TestaRemocao {
 		System.out.println(count + " Linha(s) Alterada(s)");
 		
 		statement.close();
+		
+		connection.close();
 	}
 
 	public static void main(String[] args) throws SQLException {
 
-		Connection connection = new ConnectionPool().getConnection();
-		removeTupla(connection, "Seguradora", "idSeguradora_PK = 101" );
-		connection.close();
+
+		removeTupla("Container", "IdContainer_PK = 301" );
+
 
 	}
 
