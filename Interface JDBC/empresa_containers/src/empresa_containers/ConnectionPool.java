@@ -19,6 +19,14 @@ public class ConnectionPool {
 		pool.setPassword("180897ll");
 		this.dataSource = pool;
 	}
+	
+	ConnectionPool(String strURL, String strUser, String strPass){
+		  MysqlDataSource pool = new MysqlDataSource();
+		  pool.setURL(strURL);
+		  pool.setUser(strUser);
+		  pool.setPassword(strPass);
+		  this.dataSource = pool;
+		 }
 
 	/**
 	 * Abre uma conexao com o banco de dados desejado seguindo os padroes do MySQL.

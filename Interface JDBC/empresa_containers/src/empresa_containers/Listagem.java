@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TestaListagem {
+public class Listagem {
 	
 	/**
 	 * Lista uma linha desejada do nome da tabela recebido
@@ -17,7 +17,10 @@ public class TestaListagem {
 	 * @return Retorna uma String com linhas no formato "NomeDaColuna: Valor"
 	 * @throws SQLException
 	 */
-	static String listaTupla (Connection connection, String table, int numeroLinha) throws SQLException {
+	public static String listaTupla (String table, int numeroLinha) throws SQLException {
+		
+		Connection connection = new ConnectionPool().getConnection();
+		
 		String str = "";
 		String sql = "SELECT * FROM " + table;
 		Statement statement = connection.createStatement();
@@ -37,20 +40,19 @@ public class TestaListagem {
 		
 		resultSet.close();
 		statement.close();
+		connection.close();
+		
+		System.out.println(str);
 		
 		return str;
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		ConnectionPool database = new ConnectionPool();
 		
-		Connection connection = database.getConnection();
 		String str;
 		// listaTupla (Conexao, Nome da Tabela, Numero Da Linha);
-		str = listaTupla(connection, "Seguradora", 101);
-		System.out.println(str);
-		
-		connection.close();
+		str = listaTupla("Seguradora", 101);
+
 	}
 
 

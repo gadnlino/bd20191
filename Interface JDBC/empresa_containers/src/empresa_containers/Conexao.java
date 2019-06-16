@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.hsqldb.DatabaseManager;
 
-public class TestaConexao {
+public class Conexao {
 
 	public static void main(String[] args) throws SQLException {
 

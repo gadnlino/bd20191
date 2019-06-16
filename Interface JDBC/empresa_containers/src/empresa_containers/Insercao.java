@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TestaInsercao {
+public class Insercao {
 	
 	/**
 	 * Retorna uma String no formato "INSERT INTO table VALUES (?, ?, ?, ?, ..., ?);"
@@ -16,7 +16,7 @@ public class TestaInsercao {
 	 * @param strLength Numero de colunas da tabela. Consequentemente o numero de "?"
 	 * @return String
 	 */
-	private static String preparedStatementPreForm_Insertion(String table, int strLength) {
+	public static String preparedStatementPreForm_Insertion(String table, int strLength) {
 		
 		String sql = "INSERT INTO " + table + " VALUES (";
 		for(int i = 1; i <= strLength; i++) {
@@ -37,7 +37,7 @@ public class TestaInsercao {
 	 * @param strings Os valores de cada "?" podem ser passados como parametros separados
 	 * @throws SQLException
 	 */
-	private static void fill_Interrogations_With_Values(PreparedStatement statement, String... strings)
+	public static void fill_Interrogations_With_Values(PreparedStatement statement, String... strings)
 			throws SQLException {
 		for(int i = 1; i <= strings.length; i++) {
 			statement.setString(i, strings[i-1]);
@@ -51,7 +51,9 @@ public class TestaInsercao {
 	 * @param strings N parametros, cada um contendo um valor de uma coluna da tabela
 	 * @throws SQLException
 	 */
-	private static void insereTupla(Connection connection, String table, String ...strings ) throws SQLException {
+	public static void insereTupla(String table, String ...strings ) throws SQLException {
+		
+		Connection connection = new ConnectionPool().getConnection();
 		
 		String sql = preparedStatementPreForm_Insertion(table, strings.length);
 			
@@ -68,16 +70,18 @@ public class TestaInsercao {
 
 		statement.close();
 		
+		connection.close();
+		
 		return;
 	}
 
 
 	public static void main(String[] args) throws SQLException {
-		Connection connection = new ConnectionPool().getConnection();
-		
-		insereTupla(connection, "Seguradora", "101", "contato@vaique.com.br", "54781230257580", "Vai Que S/A", "Vai Que.. Seguradora", "21978445120" );
 
-		connection.close();
+		
+		insereTupla("Seguradora", "101", "contato@vaique.com.br", "54781230257580", "Vai Que S/A", "Vai Que.. Seguradora", "21978445120" );
+
+
 
 	}
 
