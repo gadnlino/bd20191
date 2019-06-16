@@ -58,7 +58,7 @@ CREATE TABLE PessoaJuridica (
 	 é cadastrado como pessoa jurídica(cnpj e razão social, por exemplo).*/
 
 cnpj VARCHAR(14) UNIQUE,
-razaoSocial VARCHAR(30),
+razaoSocial VARCHAR(50),
 
 /*Chave estrangeira, que aponta para a instância 
 	de Cliente que é criada no momento do cadastro*/
@@ -424,7 +424,10 @@ idLote_SPK INT,
 /*Chave estrangeira, indica qual container está transportando*/
 idContainer_SPK INT,
 
-PRIMARY KEY(idLote_SPK,idContainer_SPK)
+/*Chave estrageira, indica qual estoquista estocou o containainer*/
+idEstoquista_SPK INT,
+
+PRIMARY KEY(idLote_SPK,idContainer_SPK,idEstoquista_SPK,dataEstoc)
 );
 
 CREATE TABLE Contem (
@@ -560,4 +563,12 @@ ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade
 ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+
+/*Chaves estrangeiras da tabela Estoca*/
+ALTER TABLE Estoca ADD FOREIGN KEY(idLote_SPK) REFERENCES Lote (idLote_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Estoca ADD FOREIGN KEY(idContainer_SPK) REFERENCES Container (idContainer_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Estoca ADD FOREIGN KEY(idEstoquista_SPK) REFERENCES Estoquista (idFuncionario_SPK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
