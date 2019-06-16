@@ -2,7 +2,7 @@ USE remote_mysql;
 
 /*__________________________REMOÇÃO DAS TABELAS______________________*/
 
-/*DROP TABLE IF exists PessoaFisica;
+DROP TABLE IF exists PessoaFisica;
 DROP TABLE IF exists PessoaJuridica;
 DROP TABLE IF exists TipoProduto;
 DROP TABLE IF exists Contem;
@@ -33,7 +33,7 @@ DROP TABLE IF exists Trem;
 DROP TABLE IF exists Conduz;
 DROP TABLE IF exists Transporta_Transporte;
 DROP TABLE IF exists Veiculo;
-DROP TABLE IF exists Unidade;*/
+DROP TABLE IF exists Unidade;
 
 /*____________________________CRIAÇÃO DAS TABELAS______________________________*/
 
@@ -448,86 +448,116 @@ idVeiculo_FK INT
 /*_________________________DEFINIÇÃO DE CHAVES ESTRANGEIRAS_________________________________*/
 
 /*Chaves estrangeiras da tabela PessoaFisica*/
-ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE PessoaFisica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK) 
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela PessoaJuridica*/
-ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK);
+ALTER TABLE PessoaJuridica ADD FOREIGN KEY(idCliente_SPK) REFERENCES Cliente (idCliente_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Armazem*/
-ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK) 
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Caminhao*/
-ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Navio*/
-ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Trem*/
-ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Veiculo*/
-ALTER TABLE Veiculo ADD FOREIGN KEY(unidadeOrigem_FK) REFERENCES Unidade(idUnidade_PK);
+ALTER TABLE Veiculo ADD FOREIGN KEY(unidadeOrigem_FK) REFERENCES Unidade(idUnidade_PK)
+	ON UPDATE CASCADE ON DELETE SET NULL;
 
 /*Chaves estrangeiras da tabela Cobre*/
-ALTER TABLE Cobre ADD FOREIGN KEY(idPedido_SPK) REFERENCES Pedido(idPedido_PK);
-ALTER TABLE Cobre ADD FOREIGN KEY(idAcidente_SPK) REFERENCES Acidente(idAcidente_PK);
-ALTER TABLE Cobre ADD FOREIGN KEY(idSeguradora_SPK) REFERENCES Seguradora(idSeguradora_PK);
+ALTER TABLE Cobre ADD FOREIGN KEY(idPedido_SPK) REFERENCES Pedido(idPedido_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Cobre ADD FOREIGN KEY(idAcidente_SPK) REFERENCES Acidente(idAcidente_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Cobre ADD FOREIGN KEY(idSeguradora_SPK) REFERENCES Seguradora(idSeguradora_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Acidente*/
-ALTER TABLE Acidente ADD FOREIGN KEY (id_seguradora_FK) REFERENCES Seguradora(idSeguradora_PK);
-ALTER TABLE Acidente ADD FOREIGN KEY (id_pedido_FK) REFERENCES Pedido(idPedido_PK);
+ALTER TABLE Acidente ADD FOREIGN KEY (id_seguradora_FK) REFERENCES Seguradora(idSeguradora_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Acidente ADD FOREIGN KEY (id_pedido_FK) REFERENCES Pedido(idPedido_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Conduz*/
-ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
+ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Pedido*/
 ALTER TABLE Pedido ADD FOREIGN KEY(idCliente_FK) REFERENCES Cliente (idCliente_PK);
 
 /*Chaves estrangeiras da tabela Rota*/
-ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeOrigem_SPK) REFERENCES Unidade (idUnidade_PK);
-ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeOrigem_SPK) REFERENCES Unidade (idUnidade_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeDestino_SPK) REFERENCES Unidade (idUnidade_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Funcionario*/
-ALTER TABLE Funcionario ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Funcionario ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+	ON UPDATE CASCADE ON DELETE SET NULL;
 
 /*Chaves estrangeiras da tabela Lote*/
-ALTER TABLE Lote ADD FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK);
+ALTER TABLE Lote ADD FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Container*/
 ALTER TABLE Container ADD FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK);
 
 /*Chaves estrangeiras da tabela Produto*/
-ALTER TABLE Produto ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
+ALTER TABLE Produto ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Capitao*/
-ALTER TABLE Capitao ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Capitao ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Estoquista*/
-ALTER TABLE Estoquista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Estoquista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Maquinista*/
-ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Caminhoneiro*/
-ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Motorista*/
-ALTER TABLE Motorista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK);
+ALTER TABLE Motorista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela ProdutosSuportados*/
-ALTER TABLE ProdutosSuportados ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE ProdutosSuportados ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela TipoProduto*/
 ALTER TABLE TipoProduto ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
 
 /*Chaves estrangeiras da tabela Leva*/
-ALTER TABLE Leva ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK);
-ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE Leva ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Despacha*/
-ALTER TABLE Despacha ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK);
-ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK);
+ALTER TABLE Despacha ADD FOREIGN KEY(idPedido_FK) REFERENCES Pedido (idPedido_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Despacha ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
+	ON UPDATE CASCADE ON DELETE SET NULL;
 
 /*Chaves estrangeiras da tabela Contem*/
-ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK);
-ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK);
+ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE Contem ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
+	ON UPDATE CASCADE ON DELETE CASCADE;

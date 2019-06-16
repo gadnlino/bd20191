@@ -1,3 +1,5 @@
+USE remote_mysql;
+
 /*_____________________________CLIENTE_____________________________________*/
 
 insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (1, 36590952, 'mphaup0@bigcartel.com', 'Mona Phaup', '9828 Crest Line Road', '4428315486');
