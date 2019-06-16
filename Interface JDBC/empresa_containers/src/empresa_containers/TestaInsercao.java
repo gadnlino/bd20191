@@ -73,7 +73,7 @@ public class TestaInsercao {
 
 
 	public static void main(String[] args) throws SQLException {
-		Connection connection = Database.getConnection();
+		Connection connection = new ConnectionPool().getConnection();
 		
 		insereTupla(connection, "Seguradora", "101", "contato@vaique.com.br", "54781230257580", "Vai Que S/A", "Vai Que.. Seguradora", "21978445120" );
 

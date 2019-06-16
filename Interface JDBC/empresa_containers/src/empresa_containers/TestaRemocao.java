@@ -32,7 +32,7 @@ public class TestaRemocao {
 
 	public static void main(String[] args) throws SQLException {
 
-		Connection connection = Database.getConnection();
+		Connection connection = new ConnectionPool().getConnection();
 		removeTupla(connection, "Seguradora", "idSeguradora_PK = 101" );
 		connection.close();
 

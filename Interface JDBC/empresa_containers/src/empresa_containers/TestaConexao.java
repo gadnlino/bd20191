@@ -10,7 +10,7 @@ public class TestaConexao {
 
 	public static void main(String[] args) throws SQLException {
 
-		Connection connection = Database.getConnection();
+		Connection connection = new ConnectionPool().getConnection();
 		connection.close();
 		
 		System.out.println("Foi '-'");

@@ -42,7 +42,9 @@ public class TestaListagem {
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		Connection connection = Database.getConnection();
+		ConnectionPool database = new ConnectionPool();
+		
+		Connection connection = database.getConnection();
 		String str;
 		// listaTupla (Conexao, Nome da Tabela, Numero Da Linha);
 		str = listaTupla(connection, "Seguradora", 101);
