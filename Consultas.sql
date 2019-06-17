@@ -31,19 +31,19 @@ where idPedido_PK in (select idPedido_FK from Produto
 						where idProduto_PK in (select idProduto_FK from Contem
 												where idContainer_Fk = 5));
 
--- ID dos produtos pertencentes à uma pessoa física (ex: cpf = )
+-- ID dos produtos pertencentes à uma pessoa física (ex: cpf = 2665359904)
 select idProduto_PK from Produto
 where idPedido_FK in (select idPedido_PK from Pedido 
 						where idCliente_FK in (select idCliente_PK from Cliente
-												where idCliente_PK in (select idCliente_FK from PessoaFisica
-																		where cpf = 84684684156)));
+												where idCliente_PK in (select idCliente_SPK from PessoaFisica
+																		where cpf = '2665359904')));
 
--- ID dos produtos pertencentes à uma pessoa jurídica (ex: cnpj = )                                              
+-- ID dos produtos pertencentes à uma pessoa jurídica (ex: cnpj = 40535121733069)                                              
 select idProduto_PK from Produto
 where idPedido_FK in (select idPedido_PK from Pedido 
 						where idCliente_FK in (select idCliente_PK from Cliente
-												where idCliente_PK in (select idCliente_FK from PessoaJuridica
-																		where cnpj = 84684684156)));      
+												where idCliente_PK in (select idCliente_SPK from PessoaJuridica
+																		where cnpj = '40535121733069')));      
 			
 -- Nome do cliente e seus pedidos afetados por um determinado acidente
 select nome, idPedido_PK from Cliente c, Pedido p, Cobre co
