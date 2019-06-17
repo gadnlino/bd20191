@@ -9,21 +9,26 @@ public class Container {
 	private double largura;
 	private double capacidade;
 
-	public enum StatusContainer {
-		Em_Uso, Disponivel, Em_Manutenção, Desmobilizado
-	};
+	//public enum StatusContainer {
+	//	Em_Uso, Disponivel, Em_Manutenção, Desmobilizado
+	//};
 
-	private StatusContainer statusContainer;
+	private String statusContainer;
 	private int vidaUtil;
 	private int lotacaoAtual;
 	private int idLote_FK;
 	private boolean disponibilidade;
 
-	public StatusContainer getStatusContainer() {
+	public String getStatusContainer() {
 		return statusContainer;
 	}
 
-	public void setStatusContainer(StatusContainer statusContainer) {
+	public void setStatusContainer(String statusContainer) {
+		
+		if(statusContainer != "Em_Uso" || statusContainer != "Disponivel" ||
+				statusContainer != "Em_Manutenção" || statusContainer != "Desmobilizado" )
+			throw new NullPointerException("Esse valor não faz parte do ENUM");
+		
 		this.statusContainer = statusContainer;
 	}
 
@@ -107,11 +112,11 @@ public class Container {
 		this.altura = altura;
 	}
 
-	public Container(Integer idContainer_PK, String dataAquisicao, double comprimento, double altura, double largura,
-			double capacidade, StatusContainer statusContainer, int vidaUtil, int lotacaoAtual, int idLote_FK,
+	public Container(String dataAquisicao, double comprimento, double altura, double largura,
+			double capacidade, String statusContainer, int vidaUtil, int lotacaoAtual, int idLote_FK,
 			boolean disponibilidade) {
 		super();
-		this.idContainer_PK = idContainer_PK;
+
 		this.dataAquisicao = dataAquisicao;
 		this.comprimento = comprimento;
 		this.altura = altura;
@@ -123,6 +128,13 @@ public class Container {
 		this.idLote_FK = idLote_FK;
 		this.disponibilidade = disponibilidade;
 	}
+	
+	 @Override
+	    public String toString() {
+	        return String.format("[produto: %d, %s, %f, %f, %f, %f, %s, %d, %d, %d, %b ]", idContainer_PK, dataAquisicao,
+	        		comprimento, altura, largura, capacidade, statusContainer, vidaUtil, lotacaoAtual,
+	        		idLote_FK, disponibilidade);
+	    }
 
 
 
