@@ -20,33 +20,44 @@ public class ContainerDAO {
 	}
 
 	public void salva(Container novoContainer) throws SQLException {
+		
+		int idMaximo;
+		
+		String sqlMAX_ID = "SELECT MAX(idContainer_PK) FROM Container";
+		
+		try(Statement statement = conn.createStatement()){
+			
+			statement.execute(sqlMAX_ID);
+			
+			try(ResultSet result = statement.getResultSet()){
+				
+				result.next();
+				idMaximo = result.getInt(1);
+				
+				
+			}
+			
+		}
+		
+		String sql = "INSERT INTO Container VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-		String sql = "INSERT INTO Container (dataAquisicao, comprimento, altura, largura, capacidade, statusContainer, " +
-				"vidaUtil, lotacaoAtual, idLote_FK, disponibilidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-		try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-
-			stmt.setString(1, novoContainer.getDataAquisicao());
-			stmt.setDouble(2, novoContainer.getComprimento());
-			stmt.setDouble(3, novoContainer.getAltura());
-			stmt.setDouble(4, novoContainer.getLargura());
-			stmt.setDouble(5, novoContainer.getCapacidade());
-			stmt.setString(6, novoContainer.getStatusContainer());
-			stmt.setInt(7, novoContainer.getVidaUtil());
-			stmt.setInt(8, novoContainer.getLotacaoAtual());
-			stmt.setInt(9, novoContainer.getIdLote_FK());
-			stmt.setBoolean(10, novoContainer.isDisponibilidade());
+			stmt.setInt(1, idMaximo+1);
+			stmt.setString(2, novoContainer.getDataAquisicao());
+			stmt.setDouble(3, novoContainer.getComprimento());
+			stmt.setDouble(4, novoContainer.getAltura());
+			stmt.setDouble(5, novoContainer.getLargura());
+			stmt.setDouble(6, novoContainer.getCapacidade());
+			stmt.setString(7, novoContainer.getStatusContainer());
+			stmt.setInt(8, novoContainer.getVidaUtil());
+			stmt.setInt(9, novoContainer.getLotacaoAtual());
+			stmt.setInt(10, novoContainer.getIdLote_FK());
+			stmt.setBoolean(11, novoContainer.isDisponibilidade());
 
 			stmt.execute();
 			
-			try(ResultSet rs = stmt.getGeneratedKeys()){
-				
-				if(rs.next()) {
-					int id = rs.getInt("id");
-					novoContainer.setIdContainer_PK(id);
-				}
-				
-			}
+			System.out.println("Tupla adicionada com sucesso!");
 			
 		}
 		

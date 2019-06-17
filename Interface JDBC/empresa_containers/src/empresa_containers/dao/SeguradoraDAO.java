@@ -8,22 +8,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import empresa_containers.modelo.Cliente;
-import empresa_containers.modelo.Container;
+import empresa_containers.modelo.Seguradora;
 
-public class ClienteDAO {
+public class SeguradoraDAO {
 	
 	private Connection conn;
 
-	public ClienteDAO(Connection conn) {
+	public SeguradoraDAO(Connection conn) {
 		this.conn = conn;
 	}
 	
-	public void salva(Cliente novoCliente) throws SQLException {
+	public void salva(Seguradora novaSeguradora) throws SQLException {
 		
 		int idMaximo;
 		
-		String sqlMAX_ID = "SELECT MAX(idCliente_PK) FROM Cliente";
+		String sqlMAX_ID = "SELECT MAX(idSeguradora_PK) FROM Seguradora";
 		
 		try(Statement statement = conn.createStatement()){
 			
@@ -39,16 +38,16 @@ public class ClienteDAO {
 			
 		}
 		
-		String sql = "INSERT INTO Cliente VALUES (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO Seguradora VALUES (?, ?, ?, ?, ?, ?)";
 
-		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+		try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
 			stmt.setInt(1, idMaximo+1);
-			stmt.setString(2, novoCliente.getCep());
-			stmt.setString(3, novoCliente.getEmailCliente());
-			stmt.setString(4, novoCliente.getNome());
-			stmt.setString(5, novoCliente.getEndereco());
-			stmt.setString(6, novoCliente.getTelefone());
+			stmt.setString(2, novaSeguradora.getEmailSeguradora());
+			stmt.setString(3, novaSeguradora.getCnpj());
+			stmt.setString(4, novaSeguradora.getRazaoSocial());
+			stmt.setString(5, novaSeguradora.getNome());
+			stmt.setString(6, novaSeguradora.getTelefone());
 
 			stmt.execute();
 			
@@ -59,12 +58,12 @@ public class ClienteDAO {
 		
 	}
 	
-	public List<Cliente> lista() throws SQLException {
+	public List<Seguradora> lista() throws SQLException {
 		String sql = "SELECT * FROM Cliente";
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.execute();
 			ResultSet resultSet = stmt.getResultSet();
-			ArrayList<Cliente> clientes = new ArrayList<>();
+			ArrayList<Seguradora> seguradoras = new ArrayList<>();
 			while(resultSet.next()) {
 				String at2 = resultSet.getString(2);
 				String at3 = resultSet.getString(3);
@@ -75,13 +74,12 @@ public class ClienteDAO {
 				int id = resultSet.getInt(1);
 				
 
-				Cliente c = new Cliente(at2, at3, at4, at5, at6);
-				c.setIdCliente_PK(id);
-				clientes.add(c);
+				Seguradora s = new Seguradora(at2, at3, at4, at5, at6);
+				s.setIdSeguradora_PK(id);;
+				seguradoras.add(s);
 			}
-			return clientes;
+			return seguradoras;
 		}
 	}
-	
 
 }
