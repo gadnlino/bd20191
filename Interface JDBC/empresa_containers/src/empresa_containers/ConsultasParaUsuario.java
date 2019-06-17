@@ -123,5 +123,28 @@ public class ConsultasParaUsuario {
 
 		return ;
 	}
+	
+	public static void proc_Insere_Pedido(String str1, String str2, String str3, String str4) throws SQLException {
+		
+		try(Connection connection = new ConnectionPool().getConnection()){
+			
+			int idMaximo;
+			
+			String sql = "CALL PROC_inserePedido( '" + str1 +"', '" + str2 +"', '" + str3 +"', '" + str4 +"')";
+			
+			
+			try(Statement statement = connection.createStatement()){
+				
+				statement.execute(sql);
+				
+				System.out.println("Pedido Inserido com sucesso!");
+			}
+			
+			
+		}
+		
+		return ;
+		
+	}
 
 }
