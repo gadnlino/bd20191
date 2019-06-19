@@ -12,11 +12,15 @@ BEGIN
     
     IF cnpj = NULL THEN 
     	SELECT c.idCliente_PK INTO idCli FROM Cliente c,PessoaFisica pf WHERE pf.cpf = cpf AND pf.rg = rg AND c.idCliente_PK = pf.idCliente_SPK;  
+        INSERT INTO Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk)
+    	    VALUES(maxId+1, NULL, CURDATE(), NULL, 'Não entregue', destinatario, idCli);
     ELSE
     	SELECT c.idCliente_PK INTO idCli FROM Cliente c, PessoaJuridica pj WHERE pj.cnpj = cnpj AND pj.idCliente_SPK = c.idCliente_PK;
+        INSERT INTO Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk)
+    	    VALUES(maxId+1, NULL, CURDATE(), NULL, 'Não entregue', destinatario, idCli);
     END IF;
     
-    INSERT INTO Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk)
-    	VALUES(maxId+1, NULL, CURDATE(), NULL, 'Não entregue', destinatario, idCli); 
+    /*INSERT INTO Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk)
+    	VALUES(maxId+1, NULL, CURDATE(), NULL, 'Não entregue', destinatario, idCli); */
 END $$
 DELIMITER ;

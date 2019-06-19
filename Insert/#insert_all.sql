@@ -1,3308 +1,3367 @@
 USE remote_mysql;
 
+/*Remoção das tuplas*/
+
+/*SET FOREIGN_KEY_CHECKS = 0;*/
+
+/*
+TRUNCATE TABLE PessoaFisica;
+TRUNCATE TABLE PessoaJuridica;
+TRUNCATE TABLE TipoProduto;
+TRUNCATE TABLE Contem;
+TRUNCATE TABLE Despacha;
+TRUNCATE TABLE Leva;
+TRUNCATE TABLE Cobre;
+TRUNCATE TABLE Produto;
+TRUNCATE TABLE Acidente;
+TRUNCATE TABLE Seguradora;
+TRUNCATE TABLE Pedido;
+TRUNCATE TABLE Cliente;
+TRUNCATE TABLE Rota;
+TRUNCATE TABLE Estoca;
+TRUNCATE TABLE Estoquista;
+TRUNCATE TABLE Motorista;
+TRUNCATE TABLE Maquinista;
+TRUNCATE TABLE Capitao;
+TRUNCATE TABLE Caminhoneiro;
+TRUNCATE TABLE Funcionario;
+TRUNCATE TABLE TransportesDisponiveis;
+TRUNCATE TABLE ProdutosSuportados;
+TRUNCATE TABLE Container;
+TRUNCATE TABLE Lote;
+TRUNCATE TABLE Armazem;
+TRUNCATE TABLE Caminhao;
+TRUNCATE TABLE Navio;
+TRUNCATE TABLE Trem;
+TRUNCATE TABLE Conduz;
+TRUNCATE TABLE Transporta_Transporte;
+TRUNCATE TABLE Veiculo;
+TRUNCATE TABLE Unidade;
+*/
+
 /*_____________________________CLIENTE_____________________________________*/
 
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (1, 36590952, 'mphaup0@bigcartel.com', 'Mona Phaup', '9828 Crest Line Road', '4428315486');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (2, 61465350, 'dwiddison1@furl.net', 'Dimitri Widdison', '9 Westend Court', '4534232056');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (3, 16660081, 'sthyer2@techcrunch.com', 'Sigfrid Thyer', '998 Hansons Center', '1866259845');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (4, 93833845, 'gzecchii3@indiegogo.com', 'Grier Zecchii', '25830 Sunnyside Park', '4342044796');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (5, 40424620, 'kvolleth4@patch.com', 'Kath Volleth', '67521 Village Avenue', '1924177935');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (6, 53932866, 'jtatersale5@e-recht24.de', 'Justino Tatersale', '232 8th Lane', '4978905321');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (7, 11802176, 'tbritten6@earthlink.net', 'Tony Britten', '55102 Loomis Trail', '4439602726');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (8, 42855265, 'nheimann7@digg.com', 'Norman Heimann', '0 Everett Plaza', '3868907977');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (9, 79495054, 'apardie8@hp.com', 'Angeline Pardie', '339 Nova Avenue', '7824786166');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (10, 76497847, 'msherebrook9@imageshack.us', 'Marten Sherebrook', '3745 New Castle Hill', '8771968816');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (11, 14438715, 'cdumingosa@loc.gov', 'Cassondra Dumingos', '567 Cardinal Junction', '7344442670');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (12, 9181099, 'eleb@biglobe.ne.jp', 'Elwood Le Floch', '4 Clemons Drive', '3638300281');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (13, 89634656, 'khaysomc@dot.gov', 'Kathryn Haysom', '881 Heath Circle', '1032974520');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (14, 163207, 'osethd@ezinearticles.com', 'Omar Seth', '4147 Glendale Crossing', '2098769488');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (15, 89823680, 'dfrondte@earthlink.net', 'Dedie Frondt', '20 Fulton Road', '1782498267');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (16, 17205391, 'corneblowf@amazonaws.com', 'Corella Orneblow', '9 Dahle Pass', '3829907896');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (17, 75067833, 'rdeg@elpais.com', 'Ramonda De la Perrelle', '2590 Shoshone Terrace', '7022247530');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (18, 89815684, 'bpilbeamh@state.gov', 'Brenn Pilbeam', '269 Ludington Alley', '2343712088');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (19, 20351674, 'cpurcelli@desdev.cn', 'Cullie Purcell', '0920 Macpherson Plaza', '8851409103');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (20, 36093411, 'ccadanyj@hugedomains.com', 'Cicely Cadany', '18 Holmberg Lane', '1527954440');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (21, 25422657, 'nbrozk@comcast.net', 'Nell Broz', '5694 Vernon Road', '8176349799');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (22, 28467114, 'fhubbisl@jugem.jp', 'Fay Hubbis', '652 Scoville Road', '7403469249');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (23, 7532385, 'hharrollm@nature.com', 'Harold Harroll', '282 Golden Leaf Park', '3423912357');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (24, 98348680, 'dkeeln@163.com', 'Danyelle Keel', '75419 Washington Pass', '9052036479');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (25, 21635839, 'asnowdeno@earthlink.net', 'Anthia Snowden', '38352 Lawn Trail', '6627694783');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (26, 95766923, 'gfudgerp@skyrock.com', 'Glynn Fudger', '34622 Thompson Court', '5896569683');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (27, 59502253, 'lbrowettq@cyberchimps.com', 'Lou Browett', '96226 Linden Street', '5005904092');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (28, 68991669, 'ffolbiggr@redcross.org', 'Fabien Folbigg', '70 Fairview Point', '9658720546');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (29, 46574122, 'cbeethams@statcounter.com', 'Cirillo Beetham', '5418 Buhler Terrace', '5091046572');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (30, 65917275, 'gsygrovet@feedburner.com', 'Gale Sygrove', '942 Springview Hill', '2872796558');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (31, 64165671, 'lodyvoieu@hud.gov', 'Ludovico O''Dyvoie', '2625 Londonderry Street', '3704868008');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (32, 73914909, 'jvestyv@booking.com', 'Jocko Vesty', '59 Washington Court', '4135166123');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (33, 24727207, 'abecksonw@hud.gov', 'Ayn Beckson', '2360 Sunbrook Street', '3935516864');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (34, 32229884, 'emcgennisx@mapy.cz', 'Eddi McGennis', '067 Pawling Plaza', '2133843594');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (35, 99067388, 'rpaulischy@cafepress.com', 'Rosanne Paulisch', '5360 Redwing Road', '5823918310');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (36, 63956988, 'abuglerz@com.com', 'Abby Bugler', '08363 Westport Junction', '8938710665');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (37, 90619310, 'bskerman10@techcrunch.com', 'Brnaba Skerman', '80 Fair Oaks Terrace', '4251400897');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (38, 53163077, 'dtunnoch11@flavors.me', 'Dorene Tunnoch', '66249 Grover Trail', '3846781815');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (39, 27589451, 'rpatry12@artisteer.com', 'Rudyard Patry', '9226 Kennedy Center', '2213287334');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (40, 67664953, 'lscales13@tinypic.com', 'Lenci Scales', '1391 Warner Center', '9487584322');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (41, 35845480, 'mtruwert14@marketwatch.com', 'Melitta Truwert', '3679 Hintze Way', '2042091926');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (42, 23445008, 'njiran15@phpbb.com', 'Nalani Jiran', '49 Messerschmidt Way', '3245019306');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (43, 57598507, 'cvalentinuzzi16@pagesperso-orange.fr', 'Chrisse Valentinuzzi', '4 Goodland Road', '9507748533');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (44, 79543911, 'mweatherhogg17@cloudflare.com', 'Melonie Weatherhogg', '9 Hollow Ridge Street', '7522634070');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (45, 69931913, 'gsackur18@opensource.org', 'Ginni Sackur', '80 Russell Terrace', '8881970579');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (46, 90535015, 'dcanner19@netvibes.com', 'Domenico Canner', '60164 Green Lane', '8351921042');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (47, 82090521, 'nwhitter1a@paginegialle.it', 'Newton Whitter', '470 Cherokee Pass', '3615579778');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (48, 1735837, 'ddannett1b@ucla.edu', 'Diego Dannett', '80923 Columbus Drive', '4219939603');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (49, 42058815, 'ljacobsohn1c@dropbox.com', 'Lusa Jacobsohn', '599 Messerschmidt Trail', '9155947259');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (50, 63481720, 'klackner1d@tumblr.com', 'Kylila Lackner', '33063 Weeping Birch Terrace', '1833163600');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (51, 30019259, 'ajurgenson1e@elegantthemes.com', 'Alair Jurgenson', '5 Sloan Crossing', '4974134728');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (52, 49273780, 'pkenward1f@berkeley.edu', 'Pia Kenward', '5184 Delladonna Trail', '9034535378');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (53, 53598587, 'fclimer1g@wikimedia.org', 'Farica Climer', '3869 Lawn Hill', '6831336650');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (54, 86840283, 'lmcgaugan1h@mediafire.com', 'Lyda McGaugan', '32012 Autumn Leaf Drive', '3165821719');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (55, 37094254, 'elafoy1i@xing.com', 'Ernesto Lafoy', '7380 Anderson Terrace', '6644657294');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (56, 3093942, 'qgreeno1j@bandcamp.com', 'Quentin Greeno', '1166 Carpenter Point', '3201408120');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (57, 95059358, 'frubinovitsch1k@360.cn', 'Faina Rubinovitsch', '1580 Hollow Ridge Alley', '2549303063');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (58, 10126220, 'tdelf1l@tripod.com', 'Tiffi Delf', '325 Farwell Court', '4717146583');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (59, 25828742, 'lbools1m@economist.com', 'Lind Bools', '008 Eagan Park', '8363362726');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (60, 36159698, 'fmease1n@instagram.com', 'Farah Mease', '214 Emmet Street', '1682190489');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (61, 91230067, 'zyoxall1o@ucsd.edu', 'Zonda Yoxall', '88017 Emmet Drive', '3695513795');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (62, 48220490, 'lfryatt1p@msu.edu', 'Leighton Fryatt', '10 Eggendart Park', '6496905297');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (63, 93892035, 'gmccrisken1q@mapy.cz', 'Gus McCrisken', '62 La Follette Road', '9524432485');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (64, 79679992, 'mfrusher1r@odnoklassniki.ru', 'Maura Frusher', '6 Killdeer Terrace', '2818524024');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (65, 59224282, 'mgerriet1s@nytimes.com', 'Miran Gerriet', '8958 Eastlawn Parkway', '8193121766');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (66, 28281665, 'wflaonier1t@1688.com', 'Wye Flaonier', '83 Kropf Drive', '5139007583');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (67, 27731094, 'pjaggard1u@tmall.com', 'Patrizius Jaggard', '433 Main Way', '1053785278');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (68, 6236426, 'ftasseler1v@sakura.ne.jp', 'Friedrich Tasseler', '5 Springview Lane', '7579514384');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (69, 43796322, 'olorroway1w@businessinsider.com', 'Oliy Lorroway', '88212 Dorton Point', '8804844650');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (70, 46045352, 'wpeiser1x@freewebs.com', 'Wright Peiser', '880 Sunfield Parkway', '4843123001');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (71, 16259291, 'wabeles1y@blog.com', 'Wakefield Abeles', '3315 Rockefeller Road', '1266802207');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (72, 3341856, 'enewtown1z@businesswire.com', 'Erin Newtown', '721 Nevada Park', '2628738838');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (73, 53116014, 'rpermain20@omniture.com', 'Rosabel Permain', '550 Pankratz Park', '1897915345');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (74, 96215737, 'llugton21@i2i.jp', 'Leonanie Lugton', '753 Colorado Street', '6605299752');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (75, 71577430, 'lmanagh22@shareasale.com', 'Lance Managh', '036 Esker Crossing', '5324559863');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (76, 33368108, 'wvaar23@geocities.com', 'Wilone Vaar', '1 Muir Street', '2174899897');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (77, 10081981, 'cplewes24@nationalgeographic.com', 'Chelsae Plewes', '1 Buhler Street', '8185663856');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (78, 53509400, 'wpaulin25@imdb.com', 'Winthrop Paulin', '8723 Dryden Plaza', '2445836825');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (79, 8180798, 'rprime26@house.gov', 'Reba Prime', '064 Ludington Alley', '1603405581');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (80, 1521939, 'kfarress27@zdnet.com', 'Kori Farress', '422 Hollow Ridge Crossing', '4796366785');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (81, 18846587, 'mbalshen28@archive.org', 'Maryanne Balshen', '290 Anthes Trail', '2224206936');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (82, 75522326, 'egibbon29@technorati.com', 'Eleanor Gibbon', '964 Quincy Crossing', '8378227632');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (83, 95674678, 'ajoicey2a@alexa.com', 'Archaimbaud Joicey', '6 Autumn Leaf Center', '4479995201');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (84, 55585101, 'mwoodyatt2b@imageshack.us', 'Michaelina Woodyatt', '291 Washington Hill', '1548205244');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (85, 72620148, 'fbutterwick2c@jiathis.com', 'Frasier Butterwick', '2 Anderson Park', '1168963857');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (86, 61876373, 'dcammack2d@senate.gov', 'Doralynn Cammack', '49409 Sauthoff Crossing', '7466567530');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (87, 75897501, 'gmctiernan2e@ft.com', 'Gaspar McTiernan', '703 Calypso Park', '8269639123');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (88, 99306912, 'csankey2f@wiley.com', 'Cally Sankey', '8356 Ludington Plaza', '8657582254');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (89, 75532487, 'nludwig2g@4shared.com', 'Nonah Ludwig', '680 Stuart Trail', '5144899880');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (90, 18793133, 'hpatise2h@mediafire.com', 'Herrick Patise', '77 Dapin Terrace', '2352627003');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (91, 20534947, 'treagan2i@tumblr.com', 'Tore Reagan', '344 Doe Crossing Avenue', '7809088170');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (92, 98143725, 'rreedyhough2j@furl.net', 'Rosaleen Reedyhough', '61041 Cascade Trail', '8234609241');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (93, 8785173, 'btolmie2k@gizmodo.com', 'Benn Tolmie', '74 Ronald Regan Pass', '8034248105');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (94, 55283112, 'sasif2l@soup.io', 'Shaine Asif', '4 Dahle Lane', '7063722961');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (95, 56406796, 'dgonsalvez2m@theglobeandmail.com', 'Delphine Gonsalvez', '196 Beilfuss Street', '3611785728');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (96, 52164975, 'csalliere2n@facebook.com', 'Cash Salliere', '68 Golf Course Avenue', '2949233218');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (97, 99256094, 'hpreto2o@salon.com', 'Hamish Preto', '0 Harbort Avenue', '5953151014');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (98, 30973218, 'nemmatt2p@friendfeed.com', 'Nadeen Emmatt', '5458 Anniversary Terrace', '2421538941');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (99, 72945268, 'pattenbrough2q@nationalgeographic.com', 'Petronilla Attenbrough', '81528 Jackson Park', '3569401864');
-insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values (100, 57355446, 'gielden2r@sciencedirect.com', 'Godiva Ielden', '9 Victoria Trail', '5286434175');
+ insert into Cliente (idcliente_pk, cep, emailCliente, nome, endereco, telefone) values
+ (1, 36590952, 'mphaup0@bigcartel.com', 'Mona Phaup', '9828 Crest Line Road', '4428315486'),
+ (2, 61465350, 'dwiddison1@furl.net', 'Dimitri Widdison', '9 Westend Court', '4534232056'),
+ (3, 16660081, 'sthyer2@techcrunch.com', 'Sigfrid Thyer', '998 Hansons Center', '1866259845'),
+ (4, 93833845, 'gzecchii3@indiegogo.com', 'Grier Zecchii', '25830 Sunnyside Park', '4342044796'),
+ (5, 40424620, 'kvolleth4@patch.com', 'Kath Volleth', '67521 Village Avenue', '1924177935'),
+ (6, 53932866, 'jtatersale5@e-recht24.de', 'Justino Tatersale', '232 8th Lane', '4978905321'),
+ (7, 11802176, 'tbritten6@earthlink.net', 'Tony Britten', '55102 Loomis Trail', '4439602726'),
+ (8, 42855265, 'nheimann7@digg.com', 'Norman Heimann', '0 Everett Plaza', '3868907977'),
+ (9, 79495054, 'apardie8@hp.com', 'Angeline Pardie', '339 Nova Avenue', '7824786166'),
+ (10, 76497847, 'msherebrook9@imageshack.us', 'Marten Sherebrook', '3745 New Castle Hill', '8771968816'),
+ (11, 14438715, 'cdumingosa@loc.gov', 'Cassondra Dumingos', '567 Cardinal Junction', '7344442670'),
+ (12, 9181099, 'eleb@biglobe.ne.jp', 'Elwood Le Floch', '4 Clemons Drive', '3638300281'),
+ (13, 89634656, 'khaysomc@dot.gov', 'Kathryn Haysom', '881 Heath Circle', '1032974520'),
+ (14, 163207, 'osethd@ezinearticles.com', 'Omar Seth', '4147 Glendale Crossing', '2098769488'),
+ (15, 89823680, 'dfrondte@earthlink.net', 'Dedie Frondt', '20 Fulton Road', '1782498267'),
+ (16, 17205391, 'corneblowf@amazonaws.com', 'Corella Orneblow', '9 Dahle Pass', '3829907896'),
+ (17, 75067833, 'rdeg@elpais.com', 'Ramonda De la Perrelle', '2590 Shoshone Terrace', '7022247530'),
+ (18, 89815684, 'bpilbeamh@state.gov', 'Brenn Pilbeam', '269 Ludington Alley', '2343712088'),
+ (19, 20351674, 'cpurcelli@desdev.cn', 'Cullie Purcell', '0920 Macpherson Plaza', '8851409103'),
+ (20, 36093411, 'ccadanyj@hugedomains.com', 'Cicely Cadany', '18 Holmberg Lane', '1527954440'),
+ (21, 25422657, 'nbrozk@comcast.net', 'Nell Broz', '5694 Vernon Road', '8176349799'),
+ (22, 28467114, 'fhubbisl@jugem.jp', 'Fay Hubbis', '652 Scoville Road', '7403469249'),
+ (23, 7532385, 'hharrollm@nature.com', 'Harold Harroll', '282 Golden Leaf Park', '3423912357'),
+ (24, 98348680, 'dkeeln@163.com', 'Danyelle Keel', '75419 Washington Pass', '9052036479'),
+ (25, 21635839, 'asnowdeno@earthlink.net', 'Anthia Snowden', '38352 Lawn Trail', '6627694783'),
+ (26, 95766923, 'gfudgerp@skyrock.com', 'Glynn Fudger', '34622 Thompson Court', '5896569683'),
+ (27, 59502253, 'lbrowettq@cyberchimps.com', 'Lou Browett', '96226 Linden Street', '5005904092'),
+ (28, 68991669, 'ffolbiggr@redcross.org', 'Fabien Folbigg', '70 Fairview Point', '9658720546'),
+ (29, 46574122, 'cbeethams@statcounter.com', 'Cirillo Beetham', '5418 Buhler Terrace', '5091046572'),
+ (30, 65917275, 'gsygrovet@feedburner.com', 'Gale Sygrove', '942 Springview Hill', '2872796558'),
+ (31, 64165671, 'lodyvoieu@hud.gov', 'Ludovico O''Dyvoie', '2625 Londonderry Street', '3704868008'),
+ (32, 73914909, 'jvestyv@booking.com', 'Jocko Vesty', '59 Washington Court', '4135166123'),
+ (33, 24727207, 'abecksonw@hud.gov', 'Ayn Beckson', '2360 Sunbrook Street', '3935516864'),
+ (34, 32229884, 'emcgennisx@mapy.cz', 'Eddi McGennis', '067 Pawling Plaza', '2133843594'),
+ (35, 99067388, 'rpaulischy@cafepress.com', 'Rosanne Paulisch', '5360 Redwing Road', '5823918310'),
+ (36, 63956988, 'abuglerz@com.com', 'Abby Bugler', '08363 Westport Junction', '8938710665'),
+ (37, 90619310, 'bskerman10@techcrunch.com', 'Brnaba Skerman', '80 Fair Oaks Terrace', '4251400897'),
+ (38, 53163077, 'dtunnoch11@flavors.me', 'Dorene Tunnoch', '66249 Grover Trail', '3846781815'),
+ (39, 27589451, 'rpatry12@artisteer.com', 'Rudyard Patry', '9226 Kennedy Center', '2213287334'),
+ (40, 67664953, 'lscales13@tinypic.com', 'Lenci Scales', '1391 Warner Center', '9487584322'),
+ (41, 35845480, 'mtruwert14@marketwatch.com', 'Melitta Truwert', '3679 Hintze Way', '2042091926'),
+ (42, 23445008, 'njiran15@phpbb.com', 'Nalani Jiran', '49 Messerschmidt Way', '3245019306'),
+ (43, 57598507, 'cvalentinuzzi16@pagesperso-orange.fr', 'Chrisse Valentinuzzi', '4 Goodland Road', '9507748533'),
+ (44, 79543911, 'mweatherhogg17@cloudflare.com', 'Melonie Weatherhogg', '9 Hollow Ridge Street', '7522634070'),
+ (45, 69931913, 'gsackur18@opensource.org', 'Ginni Sackur', '80 Russell Terrace', '8881970579'),
+ (46, 90535015, 'dcanner19@netvibes.com', 'Domenico Canner', '60164 Green Lane', '8351921042'),
+ (47, 82090521, 'nwhitter1a@paginegialle.it', 'Newton Whitter', '470 Cherokee Pass', '3615579778'),
+ (48, 1735837, 'ddannett1b@ucla.edu', 'Diego Dannett', '80923 Columbus Drive', '4219939603'),
+ (49, 42058815, 'ljacobsohn1c@dropbox.com', 'Lusa Jacobsohn', '599 Messerschmidt Trail', '9155947259'),
+ (50, 63481720, 'klackner1d@tumblr.com', 'Kylila Lackner', '33063 Weeping Birch Terrace', '1833163600'),
+ (51, 30019259, 'ajurgenson1e@elegantthemes.com', 'Alair Jurgenson', '5 Sloan Crossing', '4974134728'),
+ (52, 49273780, 'pkenward1f@berkeley.edu', 'Pia Kenward', '5184 Delladonna Trail', '9034535378'),
+ (53, 53598587, 'fclimer1g@wikimedia.org', 'Farica Climer', '3869 Lawn Hill', '6831336650'),
+ (54, 86840283, 'lmcgaugan1h@mediafire.com', 'Lyda McGaugan', '32012 Autumn Leaf Drive', '3165821719'),
+ (55, 37094254, 'elafoy1i@xing.com', 'Ernesto Lafoy', '7380 Anderson Terrace', '6644657294'),
+ (56, 3093942, 'qgreeno1j@bandcamp.com', 'Quentin Greeno', '1166 Carpenter Point', '3201408120'),
+ (57, 95059358, 'frubinovitsch1k@360.cn', 'Faina Rubinovitsch', '1580 Hollow Ridge Alley', '2549303063'),
+ (58, 10126220, 'tdelf1l@tripod.com', 'Tiffi Delf', '325 Farwell Court', '4717146583'),
+ (59, 25828742, 'lbools1m@economist.com', 'Lind Bools', '008 Eagan Park', '8363362726'),
+ (60, 36159698, 'fmease1n@instagram.com', 'Farah Mease', '214 Emmet Street', '1682190489'),
+ (61, 91230067, 'zyoxall1o@ucsd.edu', 'Zonda Yoxall', '88017 Emmet Drive', '3695513795'),
+ (62, 48220490, 'lfryatt1p@msu.edu', 'Leighton Fryatt', '10 Eggendart Park', '6496905297'),
+ (63, 93892035, 'gmccrisken1q@mapy.cz', 'Gus McCrisken', '62 La Follette Road', '9524432485'),
+ (64, 79679992, 'mfrusher1r@odnoklassniki.ru', 'Maura Frusher', '6 Killdeer Terrace', '2818524024'),
+ (65, 59224282, 'mgerriet1s@nytimes.com', 'Miran Gerriet', '8958 Eastlawn Parkway', '8193121766'),
+ (66, 28281665, 'wflaonier1t@1688.com', 'Wye Flaonier', '83 Kropf Drive', '5139007583'),
+ (67, 27731094, 'pjaggard1u@tmall.com', 'Patrizius Jaggard', '433 Main Way', '1053785278'),
+ (68, 6236426, 'ftasseler1v@sakura.ne.jp', 'Friedrich Tasseler', '5 Springview Lane', '7579514384'),
+ (69, 43796322, 'olorroway1w@businessinsider.com', 'Oliy Lorroway', '88212 Dorton Point', '8804844650'),
+ (70, 46045352, 'wpeiser1x@freewebs.com', 'Wright Peiser', '880 Sunfield Parkway', '4843123001'),
+ (71, 16259291, 'wabeles1y@blog.com', 'Wakefield Abeles', '3315 Rockefeller Road', '1266802207'),
+ (72, 3341856, 'enewtown1z@businesswire.com', 'Erin Newtown', '721 Nevada Park', '2628738838'),
+ (73, 53116014, 'rpermain20@omniture.com', 'Rosabel Permain', '550 Pankratz Park', '1897915345'),
+ (74, 96215737, 'llugton21@i2i.jp', 'Leonanie Lugton', '753 Colorado Street', '6605299752'),
+ (75, 71577430, 'lmanagh22@shareasale.com', 'Lance Managh', '036 Esker Crossing', '5324559863'),
+ (76, 33368108, 'wvaar23@geocities.com', 'Wilone Vaar', '1 Muir Street', '2174899897'),
+ (77, 10081981, 'cplewes24@nationalgeographic.com', 'Chelsae Plewes', '1 Buhler Street', '8185663856'),
+ (78, 53509400, 'wpaulin25@imdb.com', 'Winthrop Paulin', '8723 Dryden Plaza', '2445836825'),
+ (79, 8180798, 'rprime26@house.gov', 'Reba Prime', '064 Ludington Alley', '1603405581'),
+ (80, 1521939, 'kfarress27@zdnet.com', 'Kori Farress', '422 Hollow Ridge Crossing', '4796366785'),
+ (81, 18846587, 'mbalshen28@archive.org', 'Maryanne Balshen', '290 Anthes Trail', '2224206936'),
+ (82, 75522326, 'egibbon29@technorati.com', 'Eleanor Gibbon', '964 Quincy Crossing', '8378227632'),
+ (83, 95674678, 'ajoicey2a@alexa.com', 'Archaimbaud Joicey', '6 Autumn Leaf Center', '4479995201'),
+ (84, 55585101, 'mwoodyatt2b@imageshack.us', 'Michaelina Woodyatt', '291 Washington Hill', '1548205244'),
+ (85, 72620148, 'fbutterwick2c@jiathis.com', 'Frasier Butterwick', '2 Anderson Park', '1168963857'),
+ (86, 61876373, 'dcammack2d@senate.gov', 'Doralynn Cammack', '49409 Sauthoff Crossing', '7466567530'),
+ (87, 75897501, 'gmctiernan2e@ft.com', 'Gaspar McTiernan', '703 Calypso Park', '8269639123'),
+ (88, 99306912, 'csankey2f@wiley.com', 'Cally Sankey', '8356 Ludington Plaza', '8657582254'),
+ (89, 75532487, 'nludwig2g@4shared.com', 'Nonah Ludwig', '680 Stuart Trail', '5144899880'),
+ (90, 18793133, 'hpatise2h@mediafire.com', 'Herrick Patise', '77 Dapin Terrace', '2352627003'),
+ (91, 20534947, 'treagan2i@tumblr.com', 'Tore Reagan', '344 Doe Crossing Avenue', '7809088170'),
+ (92, 98143725, 'rreedyhough2j@furl.net', 'Rosaleen Reedyhough', '61041 Cascade Trail', '8234609241'),
+ (93, 8785173, 'btolmie2k@gizmodo.com', 'Benn Tolmie', '74 Ronald Regan Pass', '8034248105'),
+ (94, 55283112, 'sasif2l@soup.io', 'Shaine Asif', '4 Dahle Lane', '7063722961'),
+ (95, 56406796, 'dgonsalvez2m@theglobeandmail.com', 'Delphine Gonsalvez', '196 Beilfuss Street', '3611785728'),
+ (96, 52164975, 'csalliere2n@facebook.com', 'Cash Salliere', '68 Golf Course Avenue', '2949233218'),
+ (97, 99256094, 'hpreto2o@salon.com', 'Hamish Preto', '0 Harbort Avenue', '5953151014'),
+ (98, 30973218, 'nemmatt2p@friendfeed.com', 'Nadeen Emmatt', '5458 Anniversary Terrace', '2421538941'),
+ (99, 72945268, 'pattenbrough2q@nationalgeographic.com', 'Petronilla Attenbrough', '81528 Jackson Park', '3569401864'),
+ (100, 57355446, 'gielden2r@sciencedirect.com', 'Godiva Ielden', '9 Victoria Trail', '5286434175');
 
 /*_____________________________UNIDADE_____________________________________*/
 
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hgovey0@chronoengine.com', '74553 Heath Parkway', 1, 82252717, '7021162386', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hbrowett1@mayoclinic.com', '7456 Orin Alley', 2, 79674899, '8462851348', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ecopeland2@shareasale.com', '628 Kedzie Hill', 3, 93773657, '8182297413', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rbrum3@sakura.ne.jp', '3054 Columbus Junction', 4, 82688119, '6302143502', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gmedway4@list-manage.com', '54635 Basil Way', 5, 49565223, '7805162677', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rbudden5@issuu.com', '13 Fair Oaks Park', 6, 71116853, '2877014474', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('kstooders6@un.org', '22273 Nova Terrace', 7, 82371506, '6089060548', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('melcomb7@shinystat.com', '970 Grayhawk Street', 8, 24161232, '6975561500', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jacome8@squarespace.com', '209 Golden Leaf Park', 9, 54635136, '1553948351', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('sfranciottoi9@alexa.com', '8275 Scofield Hill', 10, 34642976, '6462126138', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('akeepa@freewebs.com', '10247 Elka Trail', 11, 30682755, '1619128581', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('bmilvarnieb@mapquest.com', '9902 Sachs Avenue', 12, 59268807, '3833489858', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('wdebenedictisc@usatoday.com', '4071 Victoria Crossing', 13, 54110687, '2655340979', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jshillaberd@latimes.com', '7501 Vera Plaza', 14, 38957890, '5045330972', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('adowe@so-net.ne.jp', '558 Messerschmidt Center', 15, 26270333, '2635246914', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('berrichif@globo.com', '74 Logan Trail', 16, 58329094, '1349799792', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lcaugheyg@loc.gov', '2621 Johnson Lane', 17, 16597959, '7184955794', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hspawforthh@amazon.com', '90014 Marquette Junction', 18, 879445, '2366552344', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('bpaladinii@gravatar.com', '488 Gateway Way', 19, 28429183, '7609332669', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('tsharplyj@ucoz.com', '65 Golden Leaf Street', 20, 85905937, '5213981296', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('mscampionk@meetup.com', '4891 Hintze Way', 21, 21440991, '5841601375', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rholliganl@yahoo.co.jp', '5 Florence Plaza', 22, 57519116, '2704063810', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('raddlestonem@geocities.jp', '39774 Packers Pass', 23, 29694154, '8724167982', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lhonschn@constantcontact.com', '48 Stuart Street', 24, 82696917, '8877012573', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('pchampnesso@flickr.com', '138 Kim Point', 25, 74796478, '3939778059', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('brysomp@linkedin.com', '9 Carioca Road', 26, 91365620, '5844776474', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('sduberryq@symantec.com', '28758 Southridge Road', 27, 25362001, '6564000501', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('dcrehanr@nydailynews.com', '15678 Graedel Avenue', 28, 63255057, '4954584233', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('wnortons@reference.com', '45 Logan Drive', 29, 23090872, '5392754194', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lriglart@tinyurl.com', '790 Hollow Ridge Lane', 30, 36060752, '1574988699', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gkesonu@de.vu', '847 Carioca Terrace', 31, 89348048, '3382375425', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('mcardev@imgur.com', '90 Kropf Pass', 32, 20085812, '7029337638', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('cbassilashviliw@accuweather.com', '9103 Tennyson Park', 33, 79171911, '3144386426', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('abarradellx@hc360.com', '126 Pawling Avenue', 34, 90906373, '2144873098', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lshottiny@alibaba.com', '5 Glendale Circle', 35, 92351925, '3198391794', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('smansfieldz@guardian.co.uk', '8556 Manufacturers Circle', 36, 15027431, '6103936607', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ldench10@fotki.com', '3057 Bartillon Pass', 37, 89402612, '9323670277', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ghamilton11@dedecms.com', '99686 Summerview Center', 38, 9959428, '7251021092', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('tnutbrown12@china.com.cn', '3543 Manitowish Crossing', 39, 29559405, '7174080489', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('pmenat13@dagondesign.com', '9545 Cambridge Parkway', 40, 91132893, '4475756979', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('kcabrales14@printfriendly.com', '17130 Larry Lane', 41, 91414633, '3171557425', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('bdeambrosi15@instagram.com', '6135 Veith Street', 42, 69130800, '9971300369', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ecathcart16@twitter.com', '5 Nelson Street', 43, 79015218, '8877408156', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gbenaharon17@dropbox.com', '66 Moland Alley', 44, 66703613, '2843131261', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('pygoe18@bloomberg.com', '2219 Bowman Crossing', 45, 91165600, '2313865172', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('aguinness19@icq.com', '130 Buena Vista Junction', 46, 66142316, '9562575991', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('vgallo1a@umn.edu', '33527 Mosinee Lane', 47, 47340509, '8413137141', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jongin1b@ucoz.com', '6 Roth Park', 48, 48307398, '7523727612', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jpobjoy1c@ocn.ne.jp', '59015 Meadow Vale Parkway', 49, 97682427, '8101130357', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('slambol1d@blogspot.com', '50 Rowland Place', 50, 67219564, '4537835092', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('cclynman1e@diigo.com', '53036 Caliangt Center', 51, 59094642, '6544393249', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('abourhill1f@nytimes.com', '1958 Erie Circle', 52, 99554978, '5007524257', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ebeaton1g@so-net.ne.jp', '41 Havey Junction', 53, 43150002, '5881621031', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ahardwich1h@amazon.co.jp', '687 Petterle Junction', 54, 49839538, '7836684052', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('baxleby1i@soundcloud.com', '19272 Reinke Place', 55, 76498847, '1687481936', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('csolomon1j@tumblr.com', '47 Delaware Pass', 56, 73062274, '8775871694', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('atrussler1k@forbes.com', '0803 Harbort Junction', 57, 16032284, '9021855809', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ealishoner1l@theatlantic.com', '49 Marcy Lane', 58, 81821076, '2394295836', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('aenrdigo1m@istockphoto.com', '0445 Thierer Road', 59, 11555543, '3724311560', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('askoggins1n@cisco.com', '41 Calypso Alley', 60, 6400077, '1039423207', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('brounsefull1o@state.tx.us', '49029 Ridgeway Court', 61, 31093244, '7341971680', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jgingles1p@youtube.com', '7934 Grover Road', 62, 25123172, '8841932976', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rderrico1q@boston.com', '00 Del Sol Avenue', 63, 94999288, '6819853971', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('nkeddie1r@cmu.edu', '1 Mccormick Center', 64, 35794325, '2876054900', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('datkyns1s@list-manage.com', '1441 Myrtle Terrace', 65, 82971307, '8077819380', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('jabrahams1t@mapy.cz', '772 Kenwood Point', 66, 56138789, '1676437506', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ngonsalvez1u@naver.com', '5405 Toban Lane', 67, 29995958, '6896417990', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('kmorey1v@stanford.edu', '55 School Plaza', 68, 53127515, '5096531632', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('dbody1w@washington.edu', '95659 Hintze Lane', 69, 37183791, '6744826159', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('bnovotne1x@trellian.com', '888 Norway Maple Way', 70, 15043730, '3266345043', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('bdonise1y@chron.com', '1 Texas Lane', 71, 2172141, '2585883372', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('xruppeli1z@live.com', '7652 Surrey Street', 72, 75117035, '2358827005', true, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('sannell20@amazon.co.uk', '7 Dakota Trail', 73, 6422995, '8336668126', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('kmcgready21@cnet.com', '782 Nevada Road', 74, 20211891, '1404526054', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('homan22@sun.com', '066 Kim Court', 75, 95273820, '7813082001', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('idosdell23@symantec.com', '113 Stuart Point', 76, 3103206, '9944206513', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('cvossgen24@blogs.com', '2 Harper Way', 77, 309125, '8654227431', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('joene25@miibeian.gov.cn', '85 Algoma Pass', 78, 17910157, '7248160696', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('acoot26@phpbb.com', '7976 Lawn Hill', 79, 68066315, '1829770178', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('trisom27@tuttocitta.it', '706 Oriole Road', 80, 63718025, '6123246935', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lbraniff28@yahoo.com', '3 Rockefeller Crossing', 81, 62765350, '4918119075', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('mbagnal29@bbb.org', '45505 Granby Park', 82, 54378583, '4525906136', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('msahlstrom2a@nature.com', '9 Buhler Avenue', 83, 93024124, '4889404927', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('kdoumenc2b@columbia.edu', '17957 East Plaza', 84, 63116181, '2357597509', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('lruger2c@ow.ly', '13990 Toban Terrace', 85, 78887480, '1971686796', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('sbickell2d@vistaprint.com', '1770 Redwing Alley', 86, 64248825, '9341193167', false, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hfewkes2e@ovh.net', '2907 Lotheville Junction', 87, 13801001, '8304702647', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gfloat2f@nymag.com', '88088 Jana Circle', 88, 39242094, '3402641451', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('fgrushin2g@edublogs.org', '502 Express Plaza', 89, 81119717, '9179231854', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gmalarkey2h@mashable.com', '964 Hazelcrest Park', 90, 37408720, '4918578853', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('blacotte2i@canalblog.com', '8749 Jenifer Lane', 91, 93453010, '2533270869', false, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('ebendan2j@quantcast.com', '3 Gina Park', 92, 51806923, '8387221635', false, false, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('atwell2k@clickbank.net', '8 Sutteridge Plaza', 93, 31226192, '9885729518', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('twrefford2l@unc.edu', '19576 Ridgeview Parkway', 94, 50724954, '2473366533', true, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rkain2m@xing.com', '42 Shelley Hill', 95, 48280985, '6181774945', false, false, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('rmeryett2n@webs.com', '96093 Waywood Terrace', 96, 91928757, '4273854870', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('hknollesgreen2o@naver.com', '3773 Trailsway Court', 97, 12092326, '9893582195', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gleger2p@state.gov', '24 Lillian Point', 98, 12298204, '6237018671', true, true, true);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('aflatman2q@webeden.co.uk', '3744 Montana Avenue', 99, 64555633, '8571570070', true, true, false);
-insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values ('gpomeroy2r@example.com', '58 Susan Road', 100, 59556476, '5962862386', true, true, true);
+ insert into Unidade (emailUnidade, endereco, idunidade_pk, cep, telefone, caminhaodisponivel, naviodisponivel, tremdisponivel) values
+ ('hgovey0@chronoengine.com', '74553 Heath Parkway', 1, 82252717, '7021162386', true, true, false),
+ ('hbrowett1@mayoclinic.com', '7456 Orin Alley', 2, 79674899, '8462851348', false, false, true),
+ ('ecopeland2@shareasale.com', '628 Kedzie Hill', 3, 93773657, '8182297413', false, false, true),
+ ('rbrum3@sakura.ne.jp', '3054 Columbus Junction', 4, 82688119, '6302143502', true, true, false),
+ ('gmedway4@list-manage.com', '54635 Basil Way', 5, 49565223, '7805162677', true, false, false),
+ ('rbudden5@issuu.com', '13 Fair Oaks Park', 6, 71116853, '2877014474', false, true, false),
+ ('kstooders6@un.org', '22273 Nova Terrace', 7, 82371506, '6089060548', false, true, true),
+ ('melcomb7@shinystat.com', '970 Grayhawk Street', 8, 24161232, '6975561500', true, true, true),
+ ('jacome8@squarespace.com', '209 Golden Leaf Park', 9, 54635136, '1553948351', false, true, true),
+ ('sfranciottoi9@alexa.com', '8275 Scofield Hill', 10, 34642976, '6462126138', true, true, true),
+ ('akeepa@freewebs.com', '10247 Elka Trail', 11, 30682755, '1619128581', true, false, false),
+ ('bmilvarnieb@mapquest.com', '9902 Sachs Avenue', 12, 59268807, '3833489858', false, true, false),
+ ('wdebenedictisc@usatoday.com', '4071 Victoria Crossing', 13, 54110687, '2655340979', true, false, true),
+ ('jshillaberd@latimes.com', '7501 Vera Plaza', 14, 38957890, '5045330972', true, true, true),
+ ('adowe@so-net.ne.jp', '558 Messerschmidt Center', 15, 26270333, '2635246914', true, true, true),
+ ('berrichif@globo.com', '74 Logan Trail', 16, 58329094, '1349799792', true, true, true),
+ ('lcaugheyg@loc.gov', '2621 Johnson Lane', 17, 16597959, '7184955794', false, false, true),
+ ('hspawforthh@amazon.com', '90014 Marquette Junction', 18, 879445, '2366552344', false, true, true),
+ ('bpaladinii@gravatar.com', '488 Gateway Way', 19, 28429183, '7609332669', false, true, true),
+ ('tsharplyj@ucoz.com', '65 Golden Leaf Street', 20, 85905937, '5213981296', false, true, true),
+ ('mscampionk@meetup.com', '4891 Hintze Way', 21, 21440991, '5841601375', false, false, false),
+ ('rholliganl@yahoo.co.jp', '5 Florence Plaza', 22, 57519116, '2704063810', true, true, false),
+ ('raddlestonem@geocities.jp', '39774 Packers Pass', 23, 29694154, '8724167982', true, false, false),
+ ('lhonschn@constantcontact.com', '48 Stuart Street', 24, 82696917, '8877012573', false, true, true),
+ ('pchampnesso@flickr.com', '138 Kim Point', 25, 74796478, '3939778059', false, false, false),
+ ('brysomp@linkedin.com', '9 Carioca Road', 26, 91365620, '5844776474', false, false, false),
+ ('sduberryq@symantec.com', '28758 Southridge Road', 27, 25362001, '6564000501', false, true, true),
+ ('dcrehanr@nydailynews.com', '15678 Graedel Avenue', 28, 63255057, '4954584233', false, true, true),
+ ('wnortons@reference.com', '45 Logan Drive', 29, 23090872, '5392754194', true, false, false),
+ ('lriglart@tinyurl.com', '790 Hollow Ridge Lane', 30, 36060752, '1574988699', true, true, true),
+ ('gkesonu@de.vu', '847 Carioca Terrace', 31, 89348048, '3382375425', true, true, false),
+ ('mcardev@imgur.com', '90 Kropf Pass', 32, 20085812, '7029337638', false, true, true),
+ ('cbassilashviliw@accuweather.com', '9103 Tennyson Park', 33, 79171911, '3144386426', false, false, true),
+ ('abarradellx@hc360.com', '126 Pawling Avenue', 34, 90906373, '2144873098', true, true, false),
+ ('lshottiny@alibaba.com', '5 Glendale Circle', 35, 92351925, '3198391794', false, false, true),
+ ('smansfieldz@guardian.co.uk', '8556 Manufacturers Circle', 36, 15027431, '6103936607', true, true, true),
+ ('ldench10@fotki.com', '3057 Bartillon Pass', 37, 89402612, '9323670277', false, true, true),
+ ('ghamilton11@dedecms.com', '99686 Summerview Center', 38, 9959428, '7251021092', true, true, true),
+ ('tnutbrown12@china.com.cn', '3543 Manitowish Crossing', 39, 29559405, '7174080489', false, true, true),
+ ('pmenat13@dagondesign.com', '9545 Cambridge Parkway', 40, 91132893, '4475756979', true, true, true),
+ ('kcabrales14@printfriendly.com', '17130 Larry Lane', 41, 91414633, '3171557425', false, true, true),
+ ('bdeambrosi15@instagram.com', '6135 Veith Street', 42, 69130800, '9971300369', true, true, true),
+ ('ecathcart16@twitter.com', '5 Nelson Street', 43, 79015218, '8877408156', false, false, false),
+ ('gbenaharon17@dropbox.com', '66 Moland Alley', 44, 66703613, '2843131261', false, true, true),
+ ('pygoe18@bloomberg.com', '2219 Bowman Crossing', 45, 91165600, '2313865172', true, false, false),
+ ('aguinness19@icq.com', '130 Buena Vista Junction', 46, 66142316, '9562575991', true, false, false),
+ ('vgallo1a@umn.edu', '33527 Mosinee Lane', 47, 47340509, '8413137141', false, true, false),
+ ('jongin1b@ucoz.com', '6 Roth Park', 48, 48307398, '7523727612', true, false, true),
+ ('jpobjoy1c@ocn.ne.jp', '59015 Meadow Vale Parkway', 49, 97682427, '8101130357', true, false, false),
+ ('slambol1d@blogspot.com', '50 Rowland Place', 50, 67219564, '4537835092', true, true, false),
+ ('cclynman1e@diigo.com', '53036 Caliangt Center', 51, 59094642, '6544393249', true, true, true),
+ ('abourhill1f@nytimes.com', '1958 Erie Circle', 52, 99554978, '5007524257', true, false, false),
+ ('ebeaton1g@so-net.ne.jp', '41 Havey Junction', 53, 43150002, '5881621031', true, true, true),
+ ('ahardwich1h@amazon.co.jp', '687 Petterle Junction', 54, 49839538, '7836684052', false, true, false),
+ ('baxleby1i@soundcloud.com', '19272 Reinke Place', 55, 76498847, '1687481936', false, false, false),
+ ('csolomon1j@tumblr.com', '47 Delaware Pass', 56, 73062274, '8775871694', false, true, false),
+ ('atrussler1k@forbes.com', '0803 Harbort Junction', 57, 16032284, '9021855809', true, false, false),
+ ('ealishoner1l@theatlantic.com', '49 Marcy Lane', 58, 81821076, '2394295836', false, true, true),
+ ('aenrdigo1m@istockphoto.com', '0445 Thierer Road', 59, 11555543, '3724311560', true, true, true),
+ ('askoggins1n@cisco.com', '41 Calypso Alley', 60, 6400077, '1039423207', true, false, true),
+ ('brounsefull1o@state.tx.us', '49029 Ridgeway Court', 61, 31093244, '7341971680', true, false, false),
+ ('jgingles1p@youtube.com', '7934 Grover Road', 62, 25123172, '8841932976', true, true, true),
+ ('rderrico1q@boston.com', '00 Del Sol Avenue', 63, 94999288, '6819853971', false, true, false),
+ ('nkeddie1r@cmu.edu', '1 Mccormick Center', 64, 35794325, '2876054900', true, false, false),
+ ('datkyns1s@list-manage.com', '1441 Myrtle Terrace', 65, 82971307, '8077819380', false, true, true),
+ ('jabrahams1t@mapy.cz', '772 Kenwood Point', 66, 56138789, '1676437506', true, false, true),
+ ('ngonsalvez1u@naver.com', '5405 Toban Lane', 67, 29995958, '6896417990', true, false, true),
+ ('kmorey1v@stanford.edu', '55 School Plaza', 68, 53127515, '5096531632', false, false, true),
+ ('dbody1w@washington.edu', '95659 Hintze Lane', 69, 37183791, '6744826159', false, true, false),
+ ('bnovotne1x@trellian.com', '888 Norway Maple Way', 70, 15043730, '3266345043', false, false, true),
+ ('bdonise1y@chron.com', '1 Texas Lane', 71, 2172141, '2585883372', false, true, true),
+ ('xruppeli1z@live.com', '7652 Surrey Street', 72, 75117035, '2358827005', true, false, false),
+ ('sannell20@amazon.co.uk', '7 Dakota Trail', 73, 6422995, '8336668126', false, false, false),
+ ('kmcgready21@cnet.com', '782 Nevada Road', 74, 20211891, '1404526054', false, true, true),
+ ('homan22@sun.com', '066 Kim Court', 75, 95273820, '7813082001', true, true, false),
+ ('idosdell23@symantec.com', '113 Stuart Point', 76, 3103206, '9944206513', true, true, true),
+ ('cvossgen24@blogs.com', '2 Harper Way', 77, 309125, '8654227431', false, true, false),
+ ('joene25@miibeian.gov.cn', '85 Algoma Pass', 78, 17910157, '7248160696', false, true, true),
+ ('acoot26@phpbb.com', '7976 Lawn Hill', 79, 68066315, '1829770178', false, false, true),
+ ('trisom27@tuttocitta.it', '706 Oriole Road', 80, 63718025, '6123246935', true, true, true),
+ ('lbraniff28@yahoo.com', '3 Rockefeller Crossing', 81, 62765350, '4918119075', false, true, true),
+ ('mbagnal29@bbb.org', '45505 Granby Park', 82, 54378583, '4525906136', false, true, true),
+ ('msahlstrom2a@nature.com', '9 Buhler Avenue', 83, 93024124, '4889404927', false, false, false),
+ ('kdoumenc2b@columbia.edu', '17957 East Plaza', 84, 63116181, '2357597509', false, true, false),
+ ('lruger2c@ow.ly', '13990 Toban Terrace', 85, 78887480, '1971686796', false, true, false),
+ ('sbickell2d@vistaprint.com', '1770 Redwing Alley', 86, 64248825, '9341193167', false, true, false),
+ ('hfewkes2e@ovh.net', '2907 Lotheville Junction', 87, 13801001, '8304702647', false, false, true),
+ ('gfloat2f@nymag.com', '88088 Jana Circle', 88, 39242094, '3402641451', false, false, true),
+ ('fgrushin2g@edublogs.org', '502 Express Plaza', 89, 81119717, '9179231854', false, true, true),
+ ('gmalarkey2h@mashable.com', '964 Hazelcrest Park', 90, 37408720, '4918578853', true, false, true),
+ ('blacotte2i@canalblog.com', '8749 Jenifer Lane', 91, 93453010, '2533270869', false, true, true),
+ ('ebendan2j@quantcast.com', '3 Gina Park', 92, 51806923, '8387221635', false, false, false),
+ ('atwell2k@clickbank.net', '8 Sutteridge Plaza', 93, 31226192, '9885729518', true, true, false),
+ ('twrefford2l@unc.edu', '19576 Ridgeview Parkway', 94, 50724954, '2473366533', true, false, true),
+ ('rkain2m@xing.com', '42 Shelley Hill', 95, 48280985, '6181774945', false, false, true),
+ ('rmeryett2n@webs.com', '96093 Waywood Terrace', 96, 91928757, '4273854870', true, true, false),
+ ('hknollesgreen2o@naver.com', '3773 Trailsway Court', 97, 12092326, '9893582195', true, true, true),
+ ('gleger2p@state.gov', '24 Lillian Point', 98, 12298204, '6237018671', true, true, true),
+ ('aflatman2q@webeden.co.uk', '3744 Montana Avenue', 99, 64555633, '8571570070', true, true, false),
+ ('gpomeroy2r@example.com', '58 Susan Road', 100, 59556476, '5962862386', true, true, true);
 
 /*_____________________________SEGURADORA_____________________________________*/
 
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (1, 'ymartinets0@angelfire.com', 96813001298626, 'HNI Corporation', 'Sanford, Kuvalis and Corwin', '5485836218');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (2, 'tstaterfield1@cornell.edu', 59463364739717, 'Lithia Motors, Inc.', 'Wyman, Heller and Heller', '8573530607');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (3, 'tsellers2@blogger.com', 49712245731953, 'Antero Midstream Partners LP', 'Reinger, Lakin and Berge', '4112737280');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (4, 'atuite3@blogspot.com', 83392954618532, 'PTC Inc.', 'Rogahn and Sons', '4597253961');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (5, 'agibbens4@seesaa.net', 64136252700789, 'Instructure, Inc.', 'Weimann-Price', '5445898595');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (6, 'ebarwack5@yelp.com', 75960154250298, 'Accuray Incorporated', 'Zemlak, Medhurst and Brown', '5445371317');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (7, 'dmulheron6@issuu.com', 7171981060196, 'Orange', 'Maggio, Price and Okuneva', '9458413506');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (8, 'adicky7@simplemachines.org', 66506977728230, 'ARC Document Solutions, Inc.', 'Konopelski LLC', '6149158375');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (9, 'epetken8@ameblo.jp', 87814624415019, 'SB Financial Group, Inc.', 'Schowalter-Hagenes', '5995559426');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (10, 'lfransseni9@ftc.gov', 29975604182588, 'Rocket Fuel Inc.', 'Upton-Thompson', '8023935895');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (11, 'gcourtonnea@usatoday.com', 34981277238757, 'Allegiance Bancshares, Inc.', 'Lockman-Macejkovic', '6586470208');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (12, 'alhommeb@marketwatch.com', 10001074666871, 'Vident Core US Equity ETF', 'Paucek LLC', '7275566710');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (13, 'gdowdc@webnode.com', 79619847535738, 'OM Asset Management plc', 'Jaskolski-Stiedemann', '4305873885');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (14, 'cbrumbyd@stumbleupon.com', 78913981019709, 'Wabco Holdings Inc.', 'Ondricka and Sons', '4229612384');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (15, 'bhabberghame@sina.com.cn', 38596070133296, 'AMC Networks Inc.', 'Zieme, Leffler and Moore', '9311135264');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (16, 'abishellf@github.com', 96545409591439, 'Yield10 Bioscience, Inc.', 'Breitenberg Group', '6336043313');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (17, 'obiertong@barnesandnoble.com', 28463901706163, 'Wheeler Real Estate Investment Trust, Inc.', 'Torphy, Dietrich and Stanton', '3666880036');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (18, 'pburkinshawh@ca.gov', 23493288737319, 'LifePoint Health, Inc.', 'Funk-Champlin', '7433102154');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (19, 'sstoti@indiatimes.com', 95419024733794, 'General Motors Company', 'Koepp-VonRueden', '4486009604');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (20, 'crainsj@boston.com', 44060616638975, 'Capital Product Partners L.P.', 'Senger-Macejkovic', '2013150326');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (21, 'bleek@tamu.edu', 27089458640904, 'voxeljet AG', 'Lueilwitz-Watsica', '7223220701');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (22, 'nchartel@w3.org', 32784595425484, 'FuelCell Energy, Inc.', 'Grant Group', '9173413494');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (23, 'dbilbrookem@irs.gov', 80890288865203, 'Envision Healthcare Corporation', 'Sanford, McCullough and Mueller', '6957654719');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (24, 'lsladen@chronoengine.com', 96449297790886, 'Omega Flex, Inc.', 'Daniel, Russel and O''Hara', '6054630173');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (25, 'ddomonkoso@g.co', 44578354354005, 'Amphastar Pharmaceuticals, Inc.', 'Orn, Harris and Waelchi', '4372503699');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (26, 'bduffiep@topsy.com', 1394486686639, 'Perion Network Ltd', 'Larkin and Sons', '5781869992');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (27, 'dmacgounq@ca.gov', 15165255258684, 'First Trust Cloud Computing ETF', 'Bergstrom LLC', '3493389851');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (28, 'gsambedger@goo.gl', 37985670972686, 'Bunge Limited', 'Haley and Sons', '8269868047');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (29, 'hrattries@istockphoto.com', 81531862621738, 'Paylocity Holding Corporation', 'Block and Sons', '3031629983');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (30, 'acoventryt@cisco.com', 90177665007974, 'Global X Longevity Thematic ETF', 'Stanton, Hagenes and Macejkovic', '1027086290');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (31, 'kthurstanceu@cpanel.net', 2717413508048, 'American Homes 4 Rent', 'Schneider Inc', '3342086707');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (32, 'dsimonsonv@eventbrite.com', 65954695393657, 'WellCare Health Plans, Inc.', 'Abernathy, Stehr and Green', '9245209095');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (33, 'agoldsonw@wired.com', 19393152526168, 'First Trust Dorsey Wright International Focus 5 ETF', 'Casper Group', '4865695409');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (34, 'gtakisx@irs.gov', 11565532274928, 'Evolent Health, Inc', 'Erdman, Gislason and Hudson', '2513174926');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (35, 'dboyesy@go.com', 49009736512186, 'Check-Cap Ltd.', 'Farrell-Heathcote', '5679280528');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (36, 'tdilstonz@about.me', 5476571252243, 'HP Inc.', 'Kshlerin LLC', '3627797862');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (37, 'dmillier10@marriott.com', 89801251962841, 'Quaker Chemical Corporation', 'Marquardt, Jacobson and Ernser', '7852343046');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (38, 'ogilhooly11@smugmug.com', 75733183116989, 'CA Inc.', 'Smitham and Sons', '3995222573');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (39, 'kmaccracken12@people.com.cn', 6291636998318, 'Boston Omaha Corporation', 'Dare, Zboncak and McClure', '3903572755');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (40, 'dcastillo13@symantec.com', 55342733430185, 'Catabasis Pharmaceuticals, Inc.', 'Berge-Marks', '8991772854');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (41, 'hmacken14@rambler.ru', 22019752817714, 'SORL Auto Parts, Inc.', 'Stanton LLC', '3483038428');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (42, 'vswaffield15@fotki.com', 70583543045405, 'Navios Maritime Holdings Inc.', 'Sawayn, Halvorson and Weissnat', '8776294739');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (43, 'msproule16@cmu.edu', 74466758224880, 'Semtech Corporation', 'Miller, Mayert and Kirlin', '6405666489');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (44, 'fmiell17@reference.com', 12445334060481, 'Neonode Inc.', 'Mills, Kozey and Ankunding', '5506052412');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (45, 'egateland18@ted.com', 76259848854675, 'BeiGene, Ltd.', 'Schumm and Sons', '9872161188');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (46, 'islowgrave19@sphinn.com', 11626576492639, 'Pzena Investment Management Inc', 'Yost-Jaskolski', '2744864517');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (47, 'mmitskevich1a@vimeo.com', 94229639149325, 'Itron, Inc.', 'Lakin-Bashirian', '5557174918');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (48, 'jchopin1b@gizmodo.com', 78302474676922, 'Horizon Technology Finance Corporation', 'Goldner-Strosin', '5698937525');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (49, 'shagger1c@yandex.ru', 84192640055370, 'Callidus Software, Inc.', 'Goldner, Upton and Kreiger', '5747234382');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (50, 'vceliz1d@blinklist.com', 57162110411576, '2U, Inc.', 'Abernathy-Crooks', '2139073149');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (51, 'sdefew1e@printfriendly.com', 76888344611122, 'Colfax Corporation', 'Dare-Davis', '9915001069');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (52, 'jspacie1f@senate.gov', 70841448240499, 'Cogentix Medical, Inc.', 'Flatley, Metz and Hackett', '1367552164');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (53, 'credmire1g@nymag.com', 44422743866324, 'Beneficial Bancorp, Inc.', 'Beer-Macejkovic', '7206842660');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (54, 'pjewis1h@nature.com', 27437778953692, 'Tutor Perini Corporation', 'Wiza Group', '2576891467');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (55, 'tgoodby1i@github.com', 41192706995556, 'Wells Fargo & Company', 'Gutkowski, Sawayn and Wintheiser', '6074667822');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (56, 'zcrooke1j@tmall.com', 44607059551040, 'Orbital ATK, Inc.', 'Koss Group', '4609258044');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (57, 'dsmithe1k@nsw.gov.au', 59536401598905, 'DURECT Corporation', 'Mayert, Gutmann and Zulauf', '5102130733');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (58, 'aborit1l@ovh.net', 13309150454415, 'Ross Stores, Inc.', 'Jakubowski-Considine', '6931019958');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (59, 'lmonan1m@surveymonkey.com', 89062218216424, 'YRC Worldwide, Inc.', 'Wilkinson-Goodwin', '7178190537');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (60, 'vdayment1n@free.fr', 92922291849493, 'Morgan Stanley Emerging Markets Fund, Inc.', 'Heaney, Ruecker and Deckow', '1078801652');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (61, 'lcoggan1o@symantec.com', 37933660594350, 'Colonial Intermediate High Income Fund', 'Lakin, Ziemann and Brekke', '1211458354');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (62, 'lgouthier1p@berkeley.edu', 50937925092955, 'Nuveen Texas Quality Municipal Income Fund', 'Torp-Wiegand', '2137422113');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (63, 'tmickleburgh1q@pinterest.com', 11550147138377, 'Hewlett Packard Enterprise Company', 'Thiel-Wisozk', '7351410030');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (64, 'kpellatt1r@google.pl', 90866988979547, 'Cementos Pacasmayo S.A.A.', 'Jast-Daniel', '5307112270');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (65, 'tmaccart1s@usa.gov', 24793942034158, 'National Retail Properties', 'Skiles, Trantow and O''Kon', '5527424026');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (66, 'cminguet1t@slate.com', 74660228960831, 'Flexion Therapeutics, Inc.', 'Aufderhar, Quigley and Ruecker', '3815589115');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (67, 'hvanoort1u@mail.ru', 66736915654735, 'AutoNation, Inc.', 'Harvey-Lesch', '8609428374');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (68, 'vitskovitz1v@thetimes.co.uk', 61336189749441, 'Terreno Realty Corporation', 'Gislason-Hand', '6625200675');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (69, 'qtinner1w@harvard.edu', 30108725117861, 'First Data Corporation', 'Borer and Sons', '6552212875');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (70, 'sbadsey1x@wisc.edu', 4573058676133, 'National Energy Services Reunited Corp.', 'Harvey Inc', '3891359016');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (71, 'jwhiston1y@wikispaces.com', 1314349940937, 'ASB Bancorp, Inc.', 'Kuvalis LLC', '5437789950');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (72, 'vmckelvey1z@i2i.jp', 90819581735910, 'Flaherty & Crumrine Preferred Income Fund Incorporated', 'Welch Group', '4532221494');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (73, 'wdeekes20@flickr.com', 2751839347579, 'Capital City Bank Group', 'Kozey Inc', '5646233404');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (74, 'rarundel21@yale.edu', 28079706575535, 'Woori Bank', 'Mayer, Fay and Cummings', '7248305897');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (75, 'fwilkins22@printfriendly.com', 77353029123783, 'CSW Industrials, Inc.', 'Dicki Inc', '9714091009');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (76, 'minkles23@e-recht24.de', 25935071360734, 'Oi S.A.', 'Mueller-Schulist', '1112025881');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (77, 'npearmine24@senate.gov', 18148186238591, 'ClearBridge Energy MLP Opportunity Fund Inc.', 'Feest, Watsica and Hackett', '7503850880');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (78, 'sthornber25@friendfeed.com', 55312241586590, 'National CineMedia, Inc.', 'Stehr Inc', '6304572502');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (79, 'mkovacs26@zdnet.com', 86669885533852, 'Baldwin & Lyons, Inc.', 'Parker Inc', '7951163683');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (80, 'rtydd27@china.com.cn', 87790062767385, 'Royal Bank Of Canada', 'Becker Group', '3421242234');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (81, 'rkeppe28@alexa.com', 58526841037450, 'Invesco Value Municipal Income Trust', 'Hahn, Dooley and Wolff', '9165143857');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (82, 'srushby29@princeton.edu', 93657526481911, 'Israel Chemicals Shs', 'Flatley, Frami and Durgan', '1572167615');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (83, 'bcollcutt2a@hubpages.com', 30845742451989, 'Strayer Education, Inc.', 'Lind, Miller and Hoppe', '6515795049');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (84, 'wpfaffe2b@wikia.com', 65312921600244, 'Cullen/Frost Bankers, Inc.', 'Gulgowski-Bartoletti', '2225249321');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (85, 'karchibold2c@hp.com', 13024546663057, 'City Office REIT, Inc.', 'Borer LLC', '8561473997');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (86, 'svalerius2d@yelp.com', 85560405565786, 'BancFirst Corporation', 'Greenfelder-Larkin', '2499798560');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (87, 'mrowlatt2e@youtu.be', 85781465475921, 'China Eastern Airlines Corporation Ltd.', 'Murazik-Torp', '8776467490');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (88, 'browaszkiewicz2f@oracle.com', 3483603435845, 'Compugen Ltd.', 'Wehner, Bednar and Nolan', '2716521026');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (89, 'wdanet2g@microsoft.com', 31763247810971, 'KVH Industries, Inc.', 'Flatley, Quitzon and VonRueden', '4983330894');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (90, 'dbraycotton2h@nsw.gov.au', 92569563699296, 'First Foundation Inc.', 'Swaniawski-Ondricka', '5335832028');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (91, 'eclavey2i@smh.com.au', 49198252042562, 'Thai Fund, Inc. (The)', 'Hills, Dietrich and Gaylord', '8978297552');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (92, 'etattersfield2j@naver.com', 32544447646894, 'Erie Indemnity Company', 'Gutkowski-Haag', '8092244002');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (93, 'lemmot2k@drupal.org', 65906176572511, 'Laboratory Corporation of America Holdings', 'Borer, Lynch and Wiegand', '8304735669');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (94, 'ktruggian2l@narod.ru', 12848180290933, 'Easterly Government Properties, Inc.', 'Zieme, Kuhic and Schneider', '8193578255');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (95, 'bmears2m@hao123.com', 43681184336860, 'Invesco High Income 2023 Target Term Fund', 'Veum, Effertz and Ryan', '7203540071');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (96, 'charold2n@discovery.com', 88758477797474, 'FTI Consulting, Inc.', 'Murazik-Brekke', '5502386824');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (97, 'rlongfellow2o@google.pl', 86410929458387, 'The KEYW Holding Corporation', 'Hauck Inc', '9812230505');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (98, 'seary2p@studiopress.com', 53244985318537, 'PowerShares DWA Emerging Markets Momentum Portfolio', 'Boyer Inc', '6717523679');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (99, 'mgossage2q@tumblr.com', 6965241261060, 'Infinity Property and Casualty Corporation', 'Crist-Koch', '2318212528');
-insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values (100, 'mmcquilliam2r@nytimes.com', 72767980740848, 'Capital One Financial Corporation', 'Hilll-Ullrich', '3277964197');
+ insert into Seguradora (idseguradora_pk, emailseguradora, cnpj, razaosocial, nome, telefone) values
+ (1, 'ymartinets0@angelfire.com', 96813001298626, 'HNI Corporation', 'Sanford, Kuvalis and Corwin', '5485836218'),
+ (2, 'tstaterfield1@cornell.edu', 59463364739717, 'Lithia Motors, Inc.', 'Wyman, Heller and Heller', '8573530607'),
+ (3, 'tsellers2@blogger.com', 49712245731953, 'Antero Midstream Partners LP', 'Reinger, Lakin and Berge', '4112737280'),
+ (4, 'atuite3@blogspot.com', 83392954618532, 'PTC Inc.', 'Rogahn and Sons', '4597253961'),
+ (5, 'agibbens4@seesaa.net', 64136252700789, 'Instructure, Inc.', 'Weimann-Price', '5445898595'),
+ (6, 'ebarwack5@yelp.com', 75960154250298, 'Accuray Incorporated', 'Zemlak, Medhurst and Brown', '5445371317'),
+ (7, 'dmulheron6@issuu.com', 7171981060196, 'Orange', 'Maggio, Price and Okuneva', '9458413506'),
+ (8, 'adicky7@simplemachines.org', 66506977728230, 'ARC Document Solutions, Inc.', 'Konopelski LLC', '6149158375'),
+ (9, 'epetken8@ameblo.jp', 87814624415019, 'SB Financial Group, Inc.', 'Schowalter-Hagenes', '5995559426'),
+ (10, 'lfransseni9@ftc.gov', 29975604182588, 'Rocket Fuel Inc.', 'Upton-Thompson', '8023935895'),
+ (11, 'gcourtonnea@usatoday.com', 34981277238757, 'Allegiance Bancshares, Inc.', 'Lockman-Macejkovic', '6586470208'),
+ (12, 'alhommeb@marketwatch.com', 10001074666871, 'Vident Core US Equity ETF', 'Paucek LLC', '7275566710'),
+ (13, 'gdowdc@webnode.com', 79619847535738, 'OM Asset Management plc', 'Jaskolski-Stiedemann', '4305873885'),
+ (14, 'cbrumbyd@stumbleupon.com', 78913981019709, 'Wabco Holdings Inc.', 'Ondricka and Sons', '4229612384'),
+ (15, 'bhabberghame@sina.com.cn', 38596070133296, 'AMC Networks Inc.', 'Zieme, Leffler and Moore', '9311135264'),
+ (16, 'abishellf@github.com', 96545409591439, 'Yield10 Bioscience, Inc.', 'Breitenberg Group', '6336043313'),
+ (17, 'obiertong@barnesandnoble.com', 28463901706163, 'Wheeler Real Estate Investment Trust, Inc.', 'Torphy, Dietrich and Stanton', '3666880036'),
+ (18, 'pburkinshawh@ca.gov', 23493288737319, 'LifePoint Health, Inc.', 'Funk-Champlin', '7433102154'),
+ (19, 'sstoti@indiatimes.com', 95419024733794, 'General Motors Company', 'Koepp-VonRueden', '4486009604'),
+ (20, 'crainsj@boston.com', 44060616638975, 'Capital Product Partners L.P.', 'Senger-Macejkovic', '2013150326'),
+ (21, 'bleek@tamu.edu', 27089458640904, 'voxeljet AG', 'Lueilwitz-Watsica', '7223220701'),
+ (22, 'nchartel@w3.org', 32784595425484, 'FuelCell Energy, Inc.', 'Grant Group', '9173413494'),
+ (23, 'dbilbrookem@irs.gov', 80890288865203, 'Envision Healthcare Corporation', 'Sanford, McCullough and Mueller', '6957654719'),
+ (24, 'lsladen@chronoengine.com', 96449297790886, 'Omega Flex, Inc.', 'Daniel, Russel and O''Hara', '6054630173'),
+ (25, 'ddomonkoso@g.co', 44578354354005, 'Amphastar Pharmaceuticals, Inc.', 'Orn, Harris and Waelchi', '4372503699'),
+ (26, 'bduffiep@topsy.com', 1394486686639, 'Perion Network Ltd', 'Larkin and Sons', '5781869992'),
+ (27, 'dmacgounq@ca.gov', 15165255258684, 'First Trust Cloud Computing ETF', 'Bergstrom LLC', '3493389851'),
+ (28, 'gsambedger@goo.gl', 37985670972686, 'Bunge Limited', 'Haley and Sons', '8269868047'),
+ (29, 'hrattries@istockphoto.com', 81531862621738, 'Paylocity Holding Corporation', 'Block and Sons', '3031629983'),
+ (30, 'acoventryt@cisco.com', 90177665007974, 'Global X Longevity Thematic ETF', 'Stanton, Hagenes and Macejkovic', '1027086290'),
+ (31, 'kthurstanceu@cpanel.net', 2717413508048, 'American Homes 4 Rent', 'Schneider Inc', '3342086707'),
+ (32, 'dsimonsonv@eventbrite.com', 65954695393657, 'WellCare Health Plans, Inc.', 'Abernathy, Stehr and Green', '9245209095'),
+ (33, 'agoldsonw@wired.com', 19393152526168, 'First Trust Dorsey Wright International Focus 5 ETF', 'Casper Group', '4865695409'),
+ (34, 'gtakisx@irs.gov', 11565532274928, 'Evolent Health, Inc', 'Erdman, Gislason and Hudson', '2513174926'),
+ (35, 'dboyesy@go.com', 49009736512186, 'Check-Cap Ltd.', 'Farrell-Heathcote', '5679280528'),
+ (36, 'tdilstonz@about.me', 5476571252243, 'HP Inc.', 'Kshlerin LLC', '3627797862'),
+ (37, 'dmillier10@marriott.com', 89801251962841, 'Quaker Chemical Corporation', 'Marquardt, Jacobson and Ernser', '7852343046'),
+ (38, 'ogilhooly11@smugmug.com', 75733183116989, 'CA Inc.', 'Smitham and Sons', '3995222573'),
+ (39, 'kmaccracken12@people.com.cn', 6291636998318, 'Boston Omaha Corporation', 'Dare, Zboncak and McClure', '3903572755'),
+ (40, 'dcastillo13@symantec.com', 55342733430185, 'Catabasis Pharmaceuticals, Inc.', 'Berge-Marks', '8991772854'),
+ (41, 'hmacken14@rambler.ru', 22019752817714, 'SORL Auto Parts, Inc.', 'Stanton LLC', '3483038428'),
+ (42, 'vswaffield15@fotki.com', 70583543045405, 'Navios Maritime Holdings Inc.', 'Sawayn, Halvorson and Weissnat', '8776294739'),
+ (43, 'msproule16@cmu.edu', 74466758224880, 'Semtech Corporation', 'Miller, Mayert and Kirlin', '6405666489'),
+ (44, 'fmiell17@reference.com', 12445334060481, 'Neonode Inc.', 'Mills, Kozey and Ankunding', '5506052412'),
+ (45, 'egateland18@ted.com', 76259848854675, 'BeiGene, Ltd.', 'Schumm and Sons', '9872161188'),
+ (46, 'islowgrave19@sphinn.com', 11626576492639, 'Pzena Investment Management Inc', 'Yost-Jaskolski', '2744864517'),
+ (47, 'mmitskevich1a@vimeo.com', 94229639149325, 'Itron, Inc.', 'Lakin-Bashirian', '5557174918'),
+ (48, 'jchopin1b@gizmodo.com', 78302474676922, 'Horizon Technology Finance Corporation', 'Goldner-Strosin', '5698937525'),
+ (49, 'shagger1c@yandex.ru', 84192640055370, 'Callidus Software, Inc.', 'Goldner, Upton and Kreiger', '5747234382'),
+ (50, 'vceliz1d@blinklist.com', 57162110411576, '2U, Inc.', 'Abernathy-Crooks', '2139073149'),
+ (51, 'sdefew1e@printfriendly.com', 76888344611122, 'Colfax Corporation', 'Dare-Davis', '9915001069'),
+ (52, 'jspacie1f@senate.gov', 70841448240499, 'Cogentix Medical, Inc.', 'Flatley, Metz and Hackett', '1367552164'),
+ (53, 'credmire1g@nymag.com', 44422743866324, 'Beneficial Bancorp, Inc.', 'Beer-Macejkovic', '7206842660'),
+ (54, 'pjewis1h@nature.com', 27437778953692, 'Tutor Perini Corporation', 'Wiza Group', '2576891467'),
+ (55, 'tgoodby1i@github.com', 41192706995556, 'Wells Fargo & Company', 'Gutkowski, Sawayn and Wintheiser', '6074667822'),
+ (56, 'zcrooke1j@tmall.com', 44607059551040, 'Orbital ATK, Inc.', 'Koss Group', '4609258044'),
+ (57, 'dsmithe1k@nsw.gov.au', 59536401598905, 'DURECT Corporation', 'Mayert, Gutmann and Zulauf', '5102130733'),
+ (58, 'aborit1l@ovh.net', 13309150454415, 'Ross Stores, Inc.', 'Jakubowski-Considine', '6931019958'),
+ (59, 'lmonan1m@surveymonkey.com', 89062218216424, 'YRC Worldwide, Inc.', 'Wilkinson-Goodwin', '7178190537'),
+ (60, 'vdayment1n@free.fr', 92922291849493, 'Morgan Stanley Emerging Markets Fund, Inc.', 'Heaney, Ruecker and Deckow', '1078801652'),
+ (61, 'lcoggan1o@symantec.com', 37933660594350, 'Colonial Intermediate High Income Fund', 'Lakin, Ziemann and Brekke', '1211458354'),
+ (62, 'lgouthier1p@berkeley.edu', 50937925092955, 'Nuveen Texas Quality Municipal Income Fund', 'Torp-Wiegand', '2137422113'),
+ (63, 'tmickleburgh1q@pinterest.com', 11550147138377, 'Hewlett Packard Enterprise Company', 'Thiel-Wisozk', '7351410030'),
+ (64, 'kpellatt1r@google.pl', 90866988979547, 'Cementos Pacasmayo S.A.A.', 'Jast-Daniel', '5307112270'),
+ (65, 'tmaccart1s@usa.gov', 24793942034158, 'National Retail Properties', 'Skiles, Trantow and O''Kon', '5527424026'),
+ (66, 'cminguet1t@slate.com', 74660228960831, 'Flexion Therapeutics, Inc.', 'Aufderhar, Quigley and Ruecker', '3815589115'),
+ (67, 'hvanoort1u@mail.ru', 66736915654735, 'AutoNation, Inc.', 'Harvey-Lesch', '8609428374'),
+ (68, 'vitskovitz1v@thetimes.co.uk', 61336189749441, 'Terreno Realty Corporation', 'Gislason-Hand', '6625200675'),
+ (69, 'qtinner1w@harvard.edu', 30108725117861, 'First Data Corporation', 'Borer and Sons', '6552212875'),
+ (70, 'sbadsey1x@wisc.edu', 4573058676133, 'National Energy Services Reunited Corp.', 'Harvey Inc', '3891359016'),
+ (71, 'jwhiston1y@wikispaces.com', 1314349940937, 'ASB Bancorp, Inc.', 'Kuvalis LLC', '5437789950'),
+ (72, 'vmckelvey1z@i2i.jp', 90819581735910, 'Flaherty & Crumrine Preferred Income Fund Incorporated', 'Welch Group', '4532221494'),
+ (73, 'wdeekes20@flickr.com', 2751839347579, 'Capital City Bank Group', 'Kozey Inc', '5646233404'),
+ (74, 'rarundel21@yale.edu', 28079706575535, 'Woori Bank', 'Mayer, Fay and Cummings', '7248305897'),
+ (75, 'fwilkins22@printfriendly.com', 77353029123783, 'CSW Industrials, Inc.', 'Dicki Inc', '9714091009'),
+ (76, 'minkles23@e-recht24.de', 25935071360734, 'Oi S.A.', 'Mueller-Schulist', '1112025881'),
+ (77, 'npearmine24@senate.gov', 18148186238591, 'ClearBridge Energy MLP Opportunity Fund Inc.', 'Feest, Watsica and Hackett', '7503850880'),
+ (78, 'sthornber25@friendfeed.com', 55312241586590, 'National CineMedia, Inc.', 'Stehr Inc', '6304572502'),
+ (79, 'mkovacs26@zdnet.com', 86669885533852, 'Baldwin & Lyons, Inc.', 'Parker Inc', '7951163683'),
+ (80, 'rtydd27@china.com.cn', 87790062767385, 'Royal Bank Of Canada', 'Becker Group', '3421242234'),
+ (81, 'rkeppe28@alexa.com', 58526841037450, 'Invesco Value Municipal Income Trust', 'Hahn, Dooley and Wolff', '9165143857'),
+ (82, 'srushby29@princeton.edu', 93657526481911, 'Israel Chemicals Shs', 'Flatley, Frami and Durgan', '1572167615'),
+ (83, 'bcollcutt2a@hubpages.com', 30845742451989, 'Strayer Education, Inc.', 'Lind, Miller and Hoppe', '6515795049'),
+ (84, 'wpfaffe2b@wikia.com', 65312921600244, 'Cullen/Frost Bankers, Inc.', 'Gulgowski-Bartoletti', '2225249321'),
+ (85, 'karchibold2c@hp.com', 13024546663057, 'City Office REIT, Inc.', 'Borer LLC', '8561473997'),
+ (86, 'svalerius2d@yelp.com', 85560405565786, 'BancFirst Corporation', 'Greenfelder-Larkin', '2499798560'),
+ (87, 'mrowlatt2e@youtu.be', 85781465475921, 'China Eastern Airlines Corporation Ltd.', 'Murazik-Torp', '8776467490'),
+ (88, 'browaszkiewicz2f@oracle.com', 3483603435845, 'Compugen Ltd.', 'Wehner, Bednar and Nolan', '2716521026'),
+ (89, 'wdanet2g@microsoft.com', 31763247810971, 'KVH Industries, Inc.', 'Flatley, Quitzon and VonRueden', '4983330894'),
+ (90, 'dbraycotton2h@nsw.gov.au', 92569563699296, 'First Foundation Inc.', 'Swaniawski-Ondricka', '5335832028'),
+ (91, 'eclavey2i@smh.com.au', 49198252042562, 'Thai Fund, Inc. (The)', 'Hills, Dietrich and Gaylord', '8978297552'),
+ (92, 'etattersfield2j@naver.com', 32544447646894, 'Erie Indemnity Company', 'Gutkowski-Haag', '8092244002'),
+ (93, 'lemmot2k@drupal.org', 65906176572511, 'Laboratory Corporation of America Holdings', 'Borer, Lynch and Wiegand', '8304735669'),
+ (94, 'ktruggian2l@narod.ru', 12848180290933, 'Easterly Government Properties, Inc.', 'Zieme, Kuhic and Schneider', '8193578255'),
+ (95, 'bmears2m@hao123.com', 43681184336860, 'Invesco High Income 2023 Target Term Fund', 'Veum, Effertz and Ryan', '7203540071'),
+ (96, 'charold2n@discovery.com', 88758477797474, 'FTI Consulting, Inc.', 'Murazik-Brekke', '5502386824'),
+ (97, 'rlongfellow2o@google.pl', 86410929458387, 'The KEYW Holding Corporation', 'Hauck Inc', '9812230505'),
+ (98, 'seary2p@studiopress.com', 53244985318537, 'PowerShares DWA Emerging Markets Momentum Portfolio', 'Boyer Inc', '6717523679'),
+ (99, 'mgossage2q@tumblr.com', 6965241261060, 'Infinity Property and Casualty Corporation', 'Crist-Koch', '2318212528'),
+ (100, 'mmcquilliam2r@nytimes.com', 72767980740848, 'Capital One Financial Corporation', 'Hilll-Ullrich', '3277964197');
 
 /*_____________________________ARMAZEM_____________________________________*/
 
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (66.15, 88.17, 1, 200, 87.34, 1, 12);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (48.71, 83.41, 2, 147, 36.92, 2, 84);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (7.83, 59.51, 3, 173, 25.77, 3, 79);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (99.55, 97.2, 4, 115, 69.31, 4, 35);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (85.53, 97.64, 5, 183, 83.15, 5, 46);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (90.77, 60.29, 6, 192, 24.43, 6, 46);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (32.05, 90.84, 7, 71, 42.46, 7, 85);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (19.83, 83.59, 8, 148, 39.9, 8, 1);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (62.33, 73.59, 9, 77, 31.51, 9, 67);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (28.01, 49.09, 10, 62, 32.9, 10, 27);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (39.98, 42.04, 11, 155, 77.21, 11, 21);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (29.14, 98.57, 12, 62, 83.98, 12, 73);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (60.89, 18.82, 13, 148, 49.01, 13, 6);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (10.01, 82.26, 14, 144, 57.25, 14, 82);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (78.52, 70.49, 15, 71, 67.99, 15, 67);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (34.7, 21.72, 16, 90, 87.46, 16, 85);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (54.9, 10.7, 17, 167, 8.56, 17, 90);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (45.03, 27.17, 18, 150, 32.95, 18, 40);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (58.98, 76.83, 19, 191, 62.05, 19, 75);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (11.16, 24.27, 20, 153, 41.64, 20, 27);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (1.88, 52.15, 21, 134, 6.31, 21, 19);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (66.07, 42.76, 22, 91, 27.81, 22, 15);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (76.69, 62.31, 23, 196, 19.46, 23, 60);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (17.92, 25.57, 24, 111, 91.46, 24, 49);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (85.54, 64.64, 25, 167, 35.31, 25, 42);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (24.23, 95.78, 26, 120, 11.91, 26, 10);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (34.64, 64.8, 27, 143, 16.72, 27, 50);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (4.22, 24.76, 28, 112, 38.6, 28, 89);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (84.01, 28.41, 29, 115, 1.12, 29, 4);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (44.44, 14.9, 30, 54, 38.06, 30, 86);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (37.4, 33.72, 31, 67, 87.35, 31, 95);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (56.77, 68.79, 32, 113, 70.26, 32, 11);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (54.98, 22.9, 33, 120, 55.45, 33, 71);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (16.68, 81.43, 34, 156, 58.55, 34, 64);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (28.05, 97.42, 35, 177, 23.88, 35, 43);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (46.29, 34.82, 36, 140, 18.73, 36, 50);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (27.2, 98.65, 37, 58, 76.62, 37, 4);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (42.56, 86.97, 38, 87, 75.9, 38, 98);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (30.18, 68.02, 39, 154, 69.61, 39, 4);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (54.98, 12.29, 40, 98, 58.89, 40, 48);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (57.39, 75.92, 41, 75, 13.8, 41, 68);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (38.55, 93.41, 42, 171, 13.94, 42, 97);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (37.15, 88.2, 43, 132, 39.59, 43, 39);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (49.13, 80.21, 44, 184, 61.77, 44, 71);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (8.19, 34.91, 45, 137, 32.81, 45, 28);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (32.37, 79.13, 46, 156, 4.17, 46, 91);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (77.97, 43.48, 47, 162, 99.94, 47, 31);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (92.04, 87.54, 48, 139, 83.33, 48, 92);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (98.24, 26.82, 49, 194, 76.95, 49, 71);
-insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values (91.6, 94.42, 50, 79, 44.76, 50, 51);
+insert into Armazem (largura, altura, idarmazem_pk, nummaxcontainers, comprimento, lotacaoatual, idunidade_fk) values
+ (66.15, 88.17, 1, 200, 87.34, 1, 12),
+ (48.71, 83.41, 2, 147, 36.92, 2, 84),
+ (7.83, 59.51, 3, 173, 25.77, 3, 79),
+ (99.55, 97.2, 4, 115, 69.31, 4, 35),
+ (85.53, 97.64, 5, 183, 83.15, 5, 46),
+ (90.77, 60.29, 6, 192, 24.43, 6, 46),
+ (32.05, 90.84, 7, 71, 42.46, 7, 85),
+ (19.83, 83.59, 8, 148, 39.9, 8, 1),
+ (62.33, 73.59, 9, 77, 31.51, 9, 67),
+ (28.01, 49.09, 10, 62, 32.9, 10, 27),
+ (39.98, 42.04, 11, 155, 77.21, 11, 21),
+ (29.14, 98.57, 12, 62, 83.98, 12, 73),
+ (60.89, 18.82, 13, 148, 49.01, 13, 6),
+ (10.01, 82.26, 14, 144, 57.25, 14, 82),
+ (78.52, 70.49, 15, 71, 67.99, 15, 67),
+ (34.7, 21.72, 16, 90, 87.46, 16, 85),
+ (54.9, 10.7, 17, 167, 8.56, 17, 90),
+ (45.03, 27.17, 18, 150, 32.95, 18, 40),
+ (58.98, 76.83, 19, 191, 62.05, 19, 75),
+ (11.16, 24.27, 20, 153, 41.64, 20, 27),
+ (1.88, 52.15, 21, 134, 6.31, 21, 19),
+ (66.07, 42.76, 22, 91, 27.81, 22, 15),
+ (76.69, 62.31, 23, 196, 19.46, 23, 60),
+ (17.92, 25.57, 24, 111, 91.46, 24, 49),
+ (85.54, 64.64, 25, 167, 35.31, 25, 42),
+ (24.23, 95.78, 26, 120, 11.91, 26, 10),
+ (34.64, 64.8, 27, 143, 16.72, 27, 50),
+ (4.22, 24.76, 28, 112, 38.6, 28, 89),
+ (84.01, 28.41, 29, 115, 1.12, 29, 4),
+ (44.44, 14.9, 30, 54, 38.06, 30, 86),
+ (37.4, 33.72, 31, 67, 87.35, 31, 95),
+ (56.77, 68.79, 32, 113, 70.26, 32, 11),
+ (54.98, 22.9, 33, 120, 55.45, 33, 71),
+ (16.68, 81.43, 34, 156, 58.55, 34, 64),
+ (28.05, 97.42, 35, 177, 23.88, 35, 43),
+ (46.29, 34.82, 36, 140, 18.73, 36, 50),
+ (27.2, 98.65, 37, 58, 76.62, 37, 4),
+ (42.56, 86.97, 38, 87, 75.9, 38, 98),
+ (30.18, 68.02, 39, 154, 69.61, 39, 4),
+ (54.98, 12.29, 40, 98, 58.89, 40, 48),
+ (57.39, 75.92, 41, 75, 13.8, 41, 68),
+ (38.55, 93.41, 42, 171, 13.94, 42, 97),
+ (37.15, 88.2, 43, 132, 39.59, 43, 39),
+ (49.13, 80.21, 44, 184, 61.77, 44, 71),
+ (8.19, 34.91, 45, 137, 32.81, 45, 28),
+ (32.37, 79.13, 46, 156, 4.17, 46, 91),
+ (77.97, 43.48, 47, 162, 99.94, 47, 31),
+ (92.04, 87.54, 48, 139, 83.33, 48, 92),
+ (98.24, 26.82, 49, 194, 76.95, 49, 71),
+ (91.6, 94.42, 50, 79, 44.76, 50, 51);
 
 /*_____________________________PEDIDO_____________________________________*/
 
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (1, '2019-05-28', '2018-12-27', '36 Vernon Hill', 'Não entregue', 'Marcus Busch', 63);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (2, '2019-03-22', '2018-12-01', '4643 Grasskamp Avenue', 'Entregue', 'Julee Hatcher', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (3, '2019-05-29', '2018-08-27', '2669 2nd Junction', 'Entregue', 'Caril Draycott', 42);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (4, '2019-02-26', '2018-08-31', '78 Ohio Drive', 'Não entregue', 'Branden Sherington', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (5, '2019-03-30', '2018-06-27', '8 6th Center', 'Não entregue', 'Liana De Mitris', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (6, '2019-01-09', '2018-10-16', '624 Hudson Drive', 'Entregue', 'Johnnie Kydde', 29);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (7, '2019-03-30', '2018-06-28', '53 Hovde Hill', 'Entregue', 'Sherm Kelleher', 71);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (8, '2019-01-24', '2018-08-29', '35290 Atwood Circle', 'Não entregue', 'Hobey Rozzell', 48);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (9, '2019-01-24', '2018-12-16', '3875 Chive Plaza', 'Entregue', 'Nappie Hans', 100);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (10, '2019-01-03', '2018-09-11', '70547 Manufacturers Junction', 'Entregue', 'Myrta Coite', 25);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (11, '2019-01-21', '2018-07-03', '20584 Hallows Pass', 'Não entregue', 'Melva Mateuszczyk', 64);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (12, '2019-04-09', '2018-11-07', '64408 Becker Parkway', 'Entregue', 'Mohandis Simants', 73);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (13, '2019-04-29', '2018-12-08', '40 Fair Oaks Crossing', 'Em rota', 'Barney Giamitti', 91);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (14, '2019-04-28', '2018-10-05', '7160 Riverside Circle', 'Não entregue', 'Tom Jacobsson', 93);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (15, '2019-02-17', '2018-11-06', '847 Basil Lane', 'Não entregue', 'Hayward Scrace', 79);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (16, '2019-03-03', '2018-09-09', '2989 Sullivan Plaza', 'Não entregue', 'Noble Hincks', 56);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (17, '2019-01-01', '2018-07-17', '2185 Old Gate Place', 'Não entregue', 'Shandie Vittel', 17);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (18, '2019-01-29', '2018-10-28', '4137 Montana Drive', 'Em rota', 'Allister Smythe', 12);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (19, '2019-04-02', '2018-07-22', '7646 Towne Trail', 'Em rota', 'Hakeem Cribbins', 98);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (20, '2019-06-07', '2018-10-19', '7167 East Place', 'Em rota', 'Diann Bento', 97);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (21, '2019-03-06', '2018-07-21', '78 Clove Circle', 'Não entregue', 'Noella Linnitt', 96);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (22, '2019-06-09', '2018-10-05', '9297 Maryland Point', 'Em rota', 'Merwin Paskin', 11);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (23, '2019-01-22', '2018-08-30', '2146 Grover Center', 'Entregue', 'Adora Singers', 9);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (24, '2019-06-04', '2018-12-18', '1 Shoshone Road', 'Não entregue', 'Grace Palphreyman', 58);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (25, '2019-01-29', '2018-09-04', '6544 School Hill', 'Não entregue', 'Bertrando Adanet', 52);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (26, '2019-06-07', '2018-07-24', '79685 Summer Ridge Avenue', 'Em rota', 'Audi Sparshatt', 86);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (27, '2019-02-15', '2018-09-25', '3 Eliot Plaza', 'Em rota', 'Lexie Ebanks', 66);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (28, '2019-02-20', '2018-08-29', '9597 Monument Terrace', 'Não entregue', 'Hal Jarlmann', 31);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (29, '2019-04-15', '2018-08-15', '90 Bashford Plaza', 'Em rota', 'Silas Ruckman', 93);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (30, '2019-04-17', '2018-11-29', '504 Eagan Place', 'Não entregue', 'Muire Duncan', 93);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (31, '2019-04-03', '2018-06-21', '5 Erie Center', 'Entregue', 'Royall Harms', 15);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (32, '2019-05-04', '2018-11-05', '097 Mitchell Trail', 'Em rota', 'Yoshiko Amsden', 70);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (33, '2019-05-05', '2018-06-24', '10419 Mayfield Street', 'Em rota', 'Larina Loxdale', 67);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (34, '2019-05-24', '2018-07-28', '25461 Burning Wood Lane', 'Em rota', 'Peggie Sweedland', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (35, '2019-02-13', '2018-12-10', '68 Riverside Pass', 'Em rota', 'Lorianna Yardy', 27);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (36, '2019-05-10', '2018-08-02', '03 Hanover Trail', 'Em rota', 'Kikelia Skaife d''Ingerthorpe', 94);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (37, '2019-05-05', '2018-11-07', '086 Autumn Leaf Avenue', 'Não entregue', 'Clara Barizeret', 53);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (38, '2019-04-06', '2018-06-24', '386 Southridge Court', 'Em rota', 'Dolli Chantree', 52);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (39, '2019-02-02', '2018-09-29', '5241 Grasskamp Parkway', 'Em rota', 'Windy Nanson', 84);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (40, '2019-02-25', '2018-08-01', '7545 Mayer Parkway', 'Não entregue', 'Almire Rudgerd', 38);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (41, '2019-03-16', '2018-12-26', '18829 Bluestem Park', 'Entregue', 'Mignon Dallas', 56);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (42, '2019-04-25', '2018-11-18', '0 Harbort Park', 'Em rota', 'Shandie Fairebrother', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (43, '2019-06-05', '2018-06-21', '91 New Castle Place', 'Em rota', 'Dale Barradell', 43);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (44, '2019-03-09', '2018-09-21', '30196 Starling Crossing', 'Não entregue', 'Parrnell McRitchie', 97);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (45, '2019-03-13', '2018-06-24', '9 Rutledge Junction', 'Entregue', 'Jobie Fairlaw', 63);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (46, '2019-01-10', '2018-08-07', '80922 Susan Center', 'Em rota', 'Elfreda Yearby', 73);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (47, '2019-04-18', '2018-09-26', '8412 Main Alley', 'Não entregue', 'Hillery Aindriu', 21);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (48, '2019-04-15', '2018-11-28', '71 Shelley Trail', 'Não entregue', 'Alisun Rubberts', 47);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (49, '2019-03-02', '2018-08-02', '040 Oneill Way', 'Não entregue', 'Bridget Kingscote', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (50, '2019-03-30', '2018-10-14', '99 Pierstorff Avenue', 'Em rota', 'Gaylor Eckersley', 81);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (51, '2019-05-20', '2018-08-07', '27 La Follette Place', 'Em rota', 'Ernestus Reasun', 47);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (52, '2019-03-23', '2018-06-24', '089 Vahlen Crossing', 'Entregue', 'Cherice Stoggell', 92);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (53, '2019-05-12', '2018-07-09', '0 Bunting Pass', 'Entregue', 'Damiano Clemson', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (54, '2019-04-09', '2018-08-16', '0185 Evergreen Lane', 'Entregue', 'Delmar Probyn', 29);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (55, '2019-02-19', '2018-07-23', '44526 Johnson Point', 'Não entregue', 'Torrey Landal', 60);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (56, '2019-01-14', '2018-10-10', '83 Waxwing Crossing', 'Em rota', 'Beatrisa Illidge', 13);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (57, '2019-05-11', '2018-06-13', '264 Myrtle Avenue', 'Em rota', 'Alexander Foxten', 56);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (58, '2019-06-02', '2018-06-25', '8533 Dwight Drive', 'Em rota', 'Northrop Cristofol', 90);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (59, '2019-03-13', '2018-11-18', '2 Maywood Park', 'Não entregue', 'Vale Boich', 66);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (60, '2019-03-14', '2018-08-20', '967 Namekagon Crossing', 'Não entregue', 'Edgar Iacovaccio', 7);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (61, '2019-03-23', '2018-10-04', '6902 Erie Street', 'Entregue', 'Tamma Tomaszewicz', 85);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (62, '2019-03-02', '2018-11-11', '35 Messerschmidt Place', 'Entregue', 'Hartwell Cohen', 81);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (63, '2019-04-23', '2018-12-19', '00 6th Point', 'Em rota', 'Cecil Bengoechea', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (64, '2019-05-13', '2018-07-02', '3 Leroy Court', 'Entregue', 'Mohandis Ciciura', 41);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (65, '2019-04-27', '2018-09-13', '445 Larry Crossing', 'Em rota', 'Christopher Taaffe', 60);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (66, '2019-06-01', '2018-09-04', '374 Washington Crossing', 'Em rota', 'Silas Smithson', 10);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (67, '2019-05-18', '2018-08-23', '59733 Pawling Park', 'Em rota', 'Sadie Jekel', 96);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (68, '2019-02-14', '2018-12-22', '04344 Continental Terrace', 'Entregue', 'Adelle Blagburn', 64);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (69, '2019-06-04', '2018-08-05', '4232 Dovetail Point', 'Em rota', 'Jacenta Joynes', 86);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (70, '2019-02-03', '2018-07-22', '673 Brentwood Circle', 'Entregue', 'Marabel Lygoe', 29);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (71, '2019-05-11', '2018-09-09', '87210 Jenifer Hill', 'Em rota', 'Burke Petegre', 95);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (72, '2019-03-20', '2018-10-27', '96 Pawling Lane', 'Não entregue', 'Giraldo Decayette', 51);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (73, '2019-05-05', '2018-08-05', '96 Kings Way', 'Entregue', 'Wolfgang Knagges', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (74, '2019-02-03', '2018-06-19', '7 Amoth Circle', 'Em rota', 'Harmony Gummie', 85);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (75, '2019-02-15', '2018-10-16', '55166 5th Alley', 'Não entregue', 'Emelen Narramore', 26);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (76, '2019-05-21', '2018-12-16', '860 Artisan Alley', 'Entregue', 'Seana Saint', 86);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (77, '2019-03-21', '2018-11-08', '25 Service Pass', 'Em rota', 'Chickie Yegorov', 30);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (78, '2019-01-17', '2018-11-16', '8 Hooker Way', 'Entregue', 'Berrie Arthur', 36);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (79, '2019-01-20', '2018-07-31', '3930 Cherokee Drive', 'Entregue', 'Gnni Cardon', 39);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (80, '2019-02-04', '2018-09-02', '100 Amoth Road', 'Em rota', 'Alysia Critchard', 56);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (81, '2019-01-14', '2018-07-01', '0 Novick Terrace', 'Entregue', 'Gray Beviss', 26);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (82, '2019-01-20', '2018-12-17', '8915 Columbus Alley', 'Em rota', 'Neel Ashworth', 4);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (83, '2019-01-21', '2018-06-25', '10359 Maple Lane', 'Entregue', 'Cris Hegdonne', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (84, '2019-01-19', '2018-07-06', '78 Northland Way', 'Não entregue', 'Austin Desport', 38);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (85, '2019-04-18', '2018-06-26', '175 Veith Street', 'Entregue', 'Sharai Glowacz', 5);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (86, '2019-03-05', '2018-09-27', '6 Claremont Parkway', 'Entregue', 'Nanette Brackpool', 83);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (87, '2019-04-01', '2018-12-11', '4503 Glendale Court', 'Em rota', 'Valentin Shevelin', 43);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (88, '2019-05-20', '2018-11-30', '541 Dexter Center', 'Entregue', 'Cobb Swalough', 22);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (89, '2019-01-04', '2018-09-26', '185 Quincy Trail', 'Não entregue', 'Lynnette Kimbell', 15);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (90, '2019-01-20', '2018-09-07', '998 Crowley Avenue', 'Entregue', 'Cobby Seakings', 15);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (91, '2019-03-06', '2018-08-06', '1 David Crossing', 'Em rota', 'Hertha Lecount', 89);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (92, '2019-04-27', '2018-12-25', '43 Forest Road', 'Não entregue', 'Fleming Bounds', 32);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (93, '2019-03-04', '2018-09-08', '10 Troy Road', 'Em rota', 'Margo Courtes', 13);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (94, '2019-05-16', '2018-10-22', '10 Schurz Park', 'Não entregue', 'Osmund Heimes', 4);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (95, '2019-02-25', '2018-07-26', '8080 Truax Pass', 'Em rota', 'Petronilla Hogbin', 60);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (96, '2019-04-22', '2018-10-31', '180 Susan Court', 'Em rota', 'Derward Brick', 7);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (97, '2019-03-06', '2018-12-30', '564 Old Shore Street', 'Não entregue', 'Charlton Tuma', 56);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (98, '2019-01-02', '2018-12-04', '0 Kinsman Pass', 'Em rota', 'Kiel Pena', 93);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (99, '2019-05-28', '2018-12-15', '0568 Mcbride Way', 'Não entregue', 'Brnaby Riditch', 58);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (100, '2019-02-06', '2018-08-03', '782 Fuller Road', 'Em rota', 'Alexi Labba', 70);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (101, '2019-05-28', '2018-07-14', '186 Raven Alley', 'Não entregue', 'Gabrielle Jeannot', 23);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (102, '2019-01-08', '2018-06-28', '4 Parkside Parkway', 'Não entregue', 'Phillip Wackly', 6);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (103, '2019-03-27', '2018-10-11', '12892 Dottie Pass', 'Em rota', 'Silva Miliffe', 69);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (104, '2019-05-27', '2018-12-09', '72570 Graceland Center', 'Em rota', 'Jasmina Tuckie', 82);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (105, '2019-01-15', '2018-07-25', '7 Myrtle Plaza', 'Em rota', 'Dulci Stroud', 91);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (106, '2019-04-02', '2018-12-28', '7 Bobwhite Circle', 'Entregue', 'Leanor Margrem', 92);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (107, '2019-05-09', '2018-08-13', '85 Larry Road', 'Não entregue', 'Chere Ponder', 84);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (108, '2019-03-24', '2018-10-03', '82 Buhler Lane', 'Não entregue', 'Rubin Durrand', 63);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (109, '2019-01-05', '2018-09-29', '93 Northport Park', 'Entregue', 'Holli Gallagher', 51);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (110, '2019-03-01', '2018-12-09', '0083 Crowley Point', 'Em rota', 'Nichol Penvarden', 4);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (111, '2019-01-04', '2018-07-05', '17 Corry Trail', 'Não entregue', 'Devi Backler', 87);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (112, '2019-04-29', '2018-10-19', '6 Lakewood Gardens Alley', 'Não entregue', 'Sukey Bouchard', 46);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (113, '2019-01-24', '2018-06-14', '44110 Killdeer Junction', 'Entregue', 'Sissy McKennan', 80);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (114, '2019-03-09', '2018-10-02', '430 Surrey Terrace', 'Entregue', 'Sammy Sneesbie', 95);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (115, '2019-01-29', '2018-12-19', '716 Pierstorff Way', 'Em rota', 'Bobbie Ferrick', 22);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (116, '2019-05-24', '2018-11-24', '4525 Shoshone Drive', 'Entregue', 'Thorpe Reichhardt', 12);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (117, '2019-01-08', '2018-09-13', '7246 Iowa Pass', 'Em rota', 'Jacky Grundle', 93);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (118, '2019-03-27', '2018-08-26', '29 East Terrace', 'Em rota', 'Emanuel Menel', 80);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (119, '2019-05-24', '2018-12-27', '7 Debra Plaza', 'Entregue', 'Guthrey Jobke', 10);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (120, '2019-01-01', '2018-10-31', '56 Stuart Pass', 'Entregue', 'Archibaldo Heyns', 14);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (121, '2019-03-08', '2018-07-20', '19 Clarendon Court', 'Não entregue', 'Purcell Rubanenko', 11);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (122, '2019-02-23', '2018-08-18', '1246 Eagle Crest Circle', 'Entregue', 'Hermione Billes', 53);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (123, '2019-03-04', '2018-12-01', '58165 American Street', 'Entregue', 'Fredra St. Ledger', 38);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (124, '2019-02-09', '2018-11-22', '0 Arapahoe Terrace', 'Em rota', 'Eddie Wenzel', 84);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (125, '2019-01-29', '2018-11-12', '96127 Summerview Avenue', 'Entregue', 'Marquita Magnus', 64);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (126, '2019-01-27', '2018-07-04', '5 Summerview Court', 'Não entregue', 'Marita Grainger', 21);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (127, '2019-03-22', '2018-09-07', '3743 Elgar Trail', 'Entregue', 'Freddie Taggert', 65);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (128, '2019-01-12', '2018-09-18', '593 Montana Center', 'Entregue', 'Rafael Drysdall', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (129, '2019-05-13', '2018-06-18', '2 Brickson Park Crossing', 'Em rota', 'Delly Keeffe', 85);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (130, '2019-04-12', '2018-09-22', '91675 Barby Alley', 'Não entregue', 'Olivia Simison', 42);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (131, '2019-03-13', '2018-08-13', '42047 Maryland Avenue', 'Não entregue', 'Lida Brychan', 24);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (132, '2019-04-11', '2018-10-11', '72 Fieldstone Junction', 'Em rota', 'Barr Roblou', 51);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (133, '2019-01-28', '2018-06-20', '034 Tony Park', 'Entregue', 'Henryetta Penrice', 55);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (134, '2019-02-25', '2018-12-07', '697 Badeau Junction', 'Em rota', 'Frank Noteyoung', 16);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (135, '2019-05-12', '2018-08-19', '7493 Dovetail Way', 'Em rota', 'Arthur Zanetti', 76);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (136, '2019-02-19', '2018-07-16', '7 Rigney Drive', 'Em rota', 'Scarface Twomey', 94);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (137, '2019-03-02', '2018-11-15', '46 Tennessee Avenue', 'Não entregue', 'Chere Tedder', 50);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (138, '2019-02-21', '2018-12-19', '7560 Hoepker Center', 'Em rota', 'Karna Martinelli', 88);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (139, '2019-01-25', '2018-09-06', '733 Thackeray Hill', 'Entregue', 'Bud Grimsditch', 49);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (140, '2019-03-26', '2018-08-10', '9 Hudson Circle', 'Em rota', 'Elyse Maffin', 37);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (141, '2019-03-06', '2018-07-10', '441 Tony Parkway', 'Entregue', 'Jazmin Subhan', 1);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (142, '2019-02-10', '2018-11-26', '79 Texas Hill', 'Não entregue', 'Lenee Stanborough', 38);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (143, '2019-05-19', '2018-07-16', '5 Westport Center', 'Em rota', 'Blair Newcom', 6);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (144, '2019-05-30', '2018-07-06', '3 Brentwood Plaza', 'Não entregue', 'Madeleine Banes', 41);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (145, '2019-04-18', '2018-08-13', '20702 Surrey Plaza', 'Entregue', 'Hall Gutowska', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (146, '2019-02-05', '2018-12-13', '1 Tony Road', 'Em rota', 'Cecile Burnup', 27);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (147, '2019-02-12', '2018-10-20', '38257 Acker Trail', 'Entregue', 'Jozef Dummett', 20);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (148, '2019-03-17', '2018-07-15', '86 Crest Line Court', 'Entregue', 'Elbertina Roll', 97);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (149, '2019-01-04', '2018-08-08', '0189 Granby Point', 'Não entregue', 'Olivier Pirolini', 82);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (150, '2019-03-12', '2018-10-23', '79 Meadow Vale Alley', 'Em rota', 'Elwood Aucourte', 97);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (151, '2019-01-19', '2018-10-04', '678 Hollow Ridge Place', 'Em rota', 'Therese Kuhl', 85);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (152, '2019-04-11', '2018-10-07', '7731 Northridge Point', 'Em rota', 'Halsy Crilley', 47);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (153, '2019-05-17', '2018-08-27', '8330 Dawn Circle', 'Em rota', 'Mada La Batie', 45);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (154, '2019-03-07', '2018-08-14', '134 Sachtjen Center', 'Em rota', 'Patricio Iwanicki', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (155, '2019-04-30', '2018-09-30', '5 Packers Crossing', 'Em rota', 'Dolf Dannel', 34);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (156, '2019-01-27', '2018-12-14', '94681 Melody Pass', 'Em rota', 'Sergeant Wigfall', 97);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (157, '2019-05-03', '2018-11-24', '9590 Becker Hill', 'Não entregue', 'Gian Palphramand', 51);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (158, '2019-05-06', '2018-09-08', '232 Glendale Plaza', 'Não entregue', 'Phillipe Ascroft', 9);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (159, '2019-01-01', '2018-06-25', '39 Memorial Street', 'Não entregue', 'Mahalia Ferre', 32);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (160, '2019-05-11', '2018-11-01', '98 Stone Corner Terrace', 'Não entregue', 'Gabi Yearns', 60);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (161, '2019-03-26', '2018-09-05', '22890 Sutteridge Road', 'Em rota', 'Rick Dunkerk', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (162, '2019-03-14', '2018-07-23', '7379 Packers Junction', 'Entregue', 'Ilise Poolton', 39);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (163, '2019-02-07', '2018-08-20', '1590 Delladonna Street', 'Em rota', 'Dannie Gandley', 49);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (164, '2019-03-09', '2018-08-03', '9 Talisman Park', 'Em rota', 'Berke Stride', 11);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (165, '2019-02-09', '2018-08-13', '21 Claremont Avenue', 'Entregue', 'Tiffany Beardall', 73);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (166, '2019-05-28', '2018-11-19', '6402 Dottie Center', 'Em rota', 'Laney Freeland', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (167, '2019-02-16', '2018-09-10', '73 Mccormick Point', 'Não entregue', 'Asa Smurthwaite', 34);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (168, '2019-03-17', '2018-07-07', '1233 Sutherland Center', 'Em rota', 'Fiona Salamon', 99);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (169, '2019-01-28', '2018-09-16', '6 Forest Dale Lane', 'Não entregue', 'Dacia Peckitt', 78);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (170, '2019-03-19', '2018-11-10', '6904 Crowley Circle', 'Entregue', 'Shayne Mathias', 7);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (171, '2019-01-12', '2018-06-11', '28727 Chinook Hill', 'Entregue', 'Sim Tommen', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (172, '2019-06-08', '2018-11-08', '9 Grayhawk Alley', 'Não entregue', 'Pascal Darbyshire', 90);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (173, '2019-05-31', '2018-11-15', '4267 Tony Plaza', 'Não entregue', 'Marijn Laughrey', 72);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (174, '2019-04-16', '2018-09-06', '1064 Cardinal Road', 'Em rota', 'Katrine Pennrington', 73);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (175, '2019-01-26', '2018-12-05', '9 Doe Crossing Point', 'Em rota', 'Koo Poznan', 88);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (176, '2019-01-12', '2018-12-18', '4642 Nevada Circle', 'Entregue', 'Flynn Golson', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (177, '2019-02-10', '2018-07-20', '0280 Miller Road', 'Entregue', 'Leontine Widdison', 66);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (178, '2019-04-14', '2018-10-01', '9 Sherman Hill', 'Em rota', 'Seana Grog', 82);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (179, '2019-05-19', '2018-12-12', '571 Sauthoff Point', 'Não entregue', 'Mickie Clayfield', 7);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (180, '2019-06-03', '2018-10-13', '9846 Homewood Crossing', 'Não entregue', 'Ulrikaumeko Liccardi', 18);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (181, '2019-04-02', '2018-08-06', '2420 Westport Alley', 'Em rota', 'Daveta Joice', 53);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (182, '2019-04-29', '2018-09-02', '82222 John Wall Junction', 'Em rota', 'Jennette Shurey', 77);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (183, '2019-06-06', '2018-11-08', '730 Nevada Place', 'Entregue', 'Orrin Dowse', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (184, '2019-03-19', '2018-08-29', '8 Pawling Court', 'Entregue', 'Daisi Stalman', 69);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (185, '2019-04-22', '2018-12-13', '2 Brentwood Circle', 'Não entregue', 'Benjie O''Doherty', 30);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (186, '2019-03-19', '2018-07-15', '27 Ridgeview Alley', 'Entregue', 'Weston Mould', 74);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (187, '2019-02-11', '2018-06-25', '11 Dorton Junction', 'Entregue', 'Mahala Farlham', 10);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (188, '2019-06-10', '2018-11-07', '5 Arizona Street', 'Não entregue', 'Nicholle Hugill', 46);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (189, '2019-04-05', '2018-07-24', '64 Algoma Trail', 'Não entregue', 'Oona Vedekhin', 85);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (190, '2019-01-24', '2018-08-27', '5825 Lerdahl Parkway', 'Em rota', 'Rhys Rickson', 20);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (191, '2019-02-07', '2018-06-15', '18 Meadow Vale Drive', 'Em rota', 'Curt Purves', 68);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (192, '2019-05-19', '2018-08-11', '82 Memorial Junction', 'Em rota', 'Flossi Rupert', 25);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (193, '2019-06-07', '2018-10-25', '9308 Carey Trail', 'Em rota', 'Lura Chaves', 90);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (194, '2019-04-07', '2018-07-19', '09 Old Gate Way', 'Entregue', 'Franny Elliot', 67);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (195, '2019-05-02', '2018-11-27', '49 Truax Point', 'Entregue', 'Heath Chieco', 11);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (196, '2019-01-08', '2018-09-11', '9166 Roxbury Hill', 'Entregue', 'Elfrida Harradence', 19);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (197, '2019-03-19', '2018-06-17', '783 Pawling Center', 'Em rota', 'Corey Sweating', 24);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (198, '2019-05-11', '2018-09-21', '32 Esker Park', 'Não entregue', 'Tyrus Itshak', 95);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (199, '2019-03-26', '2018-12-26', '9401 Badeau Drive', 'Não entregue', 'Amargo Dumingos', 1);
-insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values (200, '2019-01-17', '2018-11-24', '9 Anzinger Road', 'Em rota', 'Samaria Floyd', 47);
+ insert into Pedido (idpedido_pk, dataentrega, datasolicitacao, destino, statuspedido, destinatario, idcliente_fk) values
+ (1, '2019-05-28', '2018-12-27', '36 Vernon Hill', 'Não entregue', 'Marcus Busch', 63),
+ (2, '2019-03-22', '2018-12-01', '4643 Grasskamp Avenue', 'Entregue', 'Julee Hatcher', 78),
+ (3, '2019-05-29', '2018-08-27', '2669 2nd Junction', 'Entregue', 'Caril Draycott', 42),
+ (4, '2019-02-26', '2018-08-31', '78 Ohio Drive', 'Não entregue', 'Branden Sherington', 78),
+ (5, '2019-03-30', '2018-06-27', '8 6th Center', 'Não entregue', 'Liana De Mitris', 68),
+ (6, '2019-01-09', '2018-10-16', '624 Hudson Drive', 'Entregue', 'Johnnie Kydde', 29),
+ (7, '2019-03-30', '2018-06-28', '53 Hovde Hill', 'Entregue', 'Sherm Kelleher', 71),
+ (8, '2019-01-24', '2018-08-29', '35290 Atwood Circle', 'Não entregue', 'Hobey Rozzell', 48),
+ (9, '2019-01-24', '2018-12-16', '3875 Chive Plaza', 'Entregue', 'Nappie Hans', 100),
+ (10, '2019-01-03', '2018-09-11', '70547 Manufacturers Junction', 'Entregue', 'Myrta Coite', 25),
+ (11, '2019-01-21', '2018-07-03', '20584 Hallows Pass', 'Não entregue', 'Melva Mateuszczyk', 64),
+ (12, '2019-04-09', '2018-11-07', '64408 Becker Parkway', 'Entregue', 'Mohandis Simants', 73),
+ (13, '2019-04-29', '2018-12-08', '40 Fair Oaks Crossing', 'Em rota', 'Barney Giamitti', 91),
+ (14, '2019-04-28', '2018-10-05', '7160 Riverside Circle', 'Não entregue', 'Tom Jacobsson', 93),
+ (15, '2019-02-17', '2018-11-06', '847 Basil Lane', 'Não entregue', 'Hayward Scrace', 79),
+ (16, '2019-03-03', '2018-09-09', '2989 Sullivan Plaza', 'Não entregue', 'Noble Hincks', 56),
+ (17, '2019-01-01', '2018-07-17', '2185 Old Gate Place', 'Não entregue', 'Shandie Vittel', 17),
+ (18, '2019-01-29', '2018-10-28', '4137 Montana Drive', 'Em rota', 'Allister Smythe', 12),
+ (19, '2019-04-02', '2018-07-22', '7646 Towne Trail', 'Em rota', 'Hakeem Cribbins', 98),
+ (20, '2019-06-07', '2018-10-19', '7167 East Place', 'Em rota', 'Diann Bento', 97),
+ (21, '2019-03-06', '2018-07-21', '78 Clove Circle', 'Não entregue', 'Noella Linnitt', 96),
+ (22, '2019-06-09', '2018-10-05', '9297 Maryland Point', 'Em rota', 'Merwin Paskin', 11),
+ (23, '2019-01-22', '2018-08-30', '2146 Grover Center', 'Entregue', 'Adora Singers', 9),
+ (24, '2019-06-04', '2018-12-18', '1 Shoshone Road', 'Não entregue', 'Grace Palphreyman', 58),
+ (25, '2019-01-29', '2018-09-04', '6544 School Hill', 'Não entregue', 'Bertrando Adanet', 52),
+ (26, '2019-06-07', '2018-07-24', '79685 Summer Ridge Avenue', 'Em rota', 'Audi Sparshatt', 86),
+ (27, '2019-02-15', '2018-09-25', '3 Eliot Plaza', 'Em rota', 'Lexie Ebanks', 66),
+ (28, '2019-02-20', '2018-08-29', '9597 Monument Terrace', 'Não entregue', 'Hal Jarlmann', 31),
+ (29, '2019-04-15', '2018-08-15', '90 Bashford Plaza', 'Em rota', 'Silas Ruckman', 93),
+ (30, '2019-04-17', '2018-11-29', '504 Eagan Place', 'Não entregue', 'Muire Duncan', 93),
+ (31, '2019-04-03', '2018-06-21', '5 Erie Center', 'Entregue', 'Royall Harms', 15),
+ (32, '2019-05-04', '2018-11-05', '097 Mitchell Trail', 'Em rota', 'Yoshiko Amsden', 70),
+ (33, '2019-05-05', '2018-06-24', '10419 Mayfield Street', 'Em rota', 'Larina Loxdale', 67),
+ (34, '2019-05-24', '2018-07-28', '25461 Burning Wood Lane', 'Em rota', 'Peggie Sweedland', 78),
+ (35, '2019-02-13', '2018-12-10', '68 Riverside Pass', 'Em rota', 'Lorianna Yardy', 27),
+ (36, '2019-05-10', '2018-08-02', '03 Hanover Trail', 'Em rota', 'Kikelia Skaife d''Ingerthorpe', 94),
+ (37, '2019-05-05', '2018-11-07', '086 Autumn Leaf Avenue', 'Não entregue', 'Clara Barizeret', 53),
+ (38, '2019-04-06', '2018-06-24', '386 Southridge Court', 'Em rota', 'Dolli Chantree', 52),
+ (39, '2019-02-02', '2018-09-29', '5241 Grasskamp Parkway', 'Em rota', 'Windy Nanson', 84),
+ (40, '2019-02-25', '2018-08-01', '7545 Mayer Parkway', 'Não entregue', 'Almire Rudgerd', 38),
+ (41, '2019-03-16', '2018-12-26', '18829 Bluestem Park', 'Entregue', 'Mignon Dallas', 56),
+ (42, '2019-04-25', '2018-11-18', '0 Harbort Park', 'Em rota', 'Shandie Fairebrother', 78),
+ (43, '2019-06-05', '2018-06-21', '91 New Castle Place', 'Em rota', 'Dale Barradell', 43),
+ (44, '2019-03-09', '2018-09-21', '30196 Starling Crossing', 'Não entregue', 'Parrnell McRitchie', 97),
+ (45, '2019-03-13', '2018-06-24', '9 Rutledge Junction', 'Entregue', 'Jobie Fairlaw', 63),
+ (46, '2019-01-10', '2018-08-07', '80922 Susan Center', 'Em rota', 'Elfreda Yearby', 73),
+ (47, '2019-04-18', '2018-09-26', '8412 Main Alley', 'Não entregue', 'Hillery Aindriu', 21),
+ (48, '2019-04-15', '2018-11-28', '71 Shelley Trail', 'Não entregue', 'Alisun Rubberts', 47),
+ (49, '2019-03-02', '2018-08-02', '040 Oneill Way', 'Não entregue', 'Bridget Kingscote', 68),
+ (50, '2019-03-30', '2018-10-14', '99 Pierstorff Avenue', 'Em rota', 'Gaylor Eckersley', 81),
+ (51, '2019-05-20', '2018-08-07', '27 La Follette Place', 'Em rota', 'Ernestus Reasun', 47),
+ (52, '2019-03-23', '2018-06-24', '089 Vahlen Crossing', 'Entregue', 'Cherice Stoggell', 92),
+ (53, '2019-05-12', '2018-07-09', '0 Bunting Pass', 'Entregue', 'Damiano Clemson', 18),
+ (54, '2019-04-09', '2018-08-16', '0185 Evergreen Lane', 'Entregue', 'Delmar Probyn', 29),
+ (55, '2019-02-19', '2018-07-23', '44526 Johnson Point', 'Não entregue', 'Torrey Landal', 60),
+ (56, '2019-01-14', '2018-10-10', '83 Waxwing Crossing', 'Em rota', 'Beatrisa Illidge', 13),
+ (57, '2019-05-11', '2018-06-13', '264 Myrtle Avenue', 'Em rota', 'Alexander Foxten', 56),
+ (58, '2019-06-02', '2018-06-25', '8533 Dwight Drive', 'Em rota', 'Northrop Cristofol', 90),
+ (59, '2019-03-13', '2018-11-18', '2 Maywood Park', 'Não entregue', 'Vale Boich', 66),
+ (60, '2019-03-14', '2018-08-20', '967 Namekagon Crossing', 'Não entregue', 'Edgar Iacovaccio', 7),
+ (61, '2019-03-23', '2018-10-04', '6902 Erie Street', 'Entregue', 'Tamma Tomaszewicz', 85),
+ (62, '2019-03-02', '2018-11-11', '35 Messerschmidt Place', 'Entregue', 'Hartwell Cohen', 81),
+ (63, '2019-04-23', '2018-12-19', '00 6th Point', 'Em rota', 'Cecil Bengoechea', 68),
+ (64, '2019-05-13', '2018-07-02', '3 Leroy Court', 'Entregue', 'Mohandis Ciciura', 41),
+ (65, '2019-04-27', '2018-09-13', '445 Larry Crossing', 'Em rota', 'Christopher Taaffe', 60),
+ (66, '2019-06-01', '2018-09-04', '374 Washington Crossing', 'Em rota', 'Silas Smithson', 10),
+ (67, '2019-05-18', '2018-08-23', '59733 Pawling Park', 'Em rota', 'Sadie Jekel', 96),
+ (68, '2019-02-14', '2018-12-22', '04344 Continental Terrace', 'Entregue', 'Adelle Blagburn', 64),
+ (69, '2019-06-04', '2018-08-05', '4232 Dovetail Point', 'Em rota', 'Jacenta Joynes', 86),
+ (70, '2019-02-03', '2018-07-22', '673 Brentwood Circle', 'Entregue', 'Marabel Lygoe', 29),
+ (71, '2019-05-11', '2018-09-09', '87210 Jenifer Hill', 'Em rota', 'Burke Petegre', 95),
+ (72, '2019-03-20', '2018-10-27', '96 Pawling Lane', 'Não entregue', 'Giraldo Decayette', 51),
+ (73, '2019-05-05', '2018-08-05', '96 Kings Way', 'Entregue', 'Wolfgang Knagges', 18),
+ (74, '2019-02-03', '2018-06-19', '7 Amoth Circle', 'Em rota', 'Harmony Gummie', 85),
+ (75, '2019-02-15', '2018-10-16', '55166 5th Alley', 'Não entregue', 'Emelen Narramore', 26),
+ (76, '2019-05-21', '2018-12-16', '860 Artisan Alley', 'Entregue', 'Seana Saint', 86),
+ (77, '2019-03-21', '2018-11-08', '25 Service Pass', 'Em rota', 'Chickie Yegorov', 30),
+ (78, '2019-01-17', '2018-11-16', '8 Hooker Way', 'Entregue', 'Berrie Arthur', 36),
+ (79, '2019-01-20', '2018-07-31', '3930 Cherokee Drive', 'Entregue', 'Gnni Cardon', 39),
+ (80, '2019-02-04', '2018-09-02', '100 Amoth Road', 'Em rota', 'Alysia Critchard', 56),
+ (81, '2019-01-14', '2018-07-01', '0 Novick Terrace', 'Entregue', 'Gray Beviss', 26),
+ (82, '2019-01-20', '2018-12-17', '8915 Columbus Alley', 'Em rota', 'Neel Ashworth', 4),
+ (83, '2019-01-21', '2018-06-25', '10359 Maple Lane', 'Entregue', 'Cris Hegdonne', 68),
+ (84, '2019-01-19', '2018-07-06', '78 Northland Way', 'Não entregue', 'Austin Desport', 38),
+ (85, '2019-04-18', '2018-06-26', '175 Veith Street', 'Entregue', 'Sharai Glowacz', 5),
+ (86, '2019-03-05', '2018-09-27', '6 Claremont Parkway', 'Entregue', 'Nanette Brackpool', 83),
+ (87, '2019-04-01', '2018-12-11', '4503 Glendale Court', 'Em rota', 'Valentin Shevelin', 43),
+ (88, '2019-05-20', '2018-11-30', '541 Dexter Center', 'Entregue', 'Cobb Swalough', 22),
+ (89, '2019-01-04', '2018-09-26', '185 Quincy Trail', 'Não entregue', 'Lynnette Kimbell', 15),
+ (90, '2019-01-20', '2018-09-07', '998 Crowley Avenue', 'Entregue', 'Cobby Seakings', 15),
+ (91, '2019-03-06', '2018-08-06', '1 David Crossing', 'Em rota', 'Hertha Lecount', 89),
+ (92, '2019-04-27', '2018-12-25', '43 Forest Road', 'Não entregue', 'Fleming Bounds', 32),
+ (93, '2019-03-04', '2018-09-08', '10 Troy Road', 'Em rota', 'Margo Courtes', 13),
+ (94, '2019-05-16', '2018-10-22', '10 Schurz Park', 'Não entregue', 'Osmund Heimes', 4),
+ (95, '2019-02-25', '2018-07-26', '8080 Truax Pass', 'Em rota', 'Petronilla Hogbin', 60),
+ (96, '2019-04-22', '2018-10-31', '180 Susan Court', 'Em rota', 'Derward Brick', 7),
+ (97, '2019-03-06', '2018-12-30', '564 Old Shore Street', 'Não entregue', 'Charlton Tuma', 56),
+ (98, '2019-01-02', '2018-12-04', '0 Kinsman Pass', 'Em rota', 'Kiel Pena', 93),
+ (99, '2019-05-28', '2018-12-15', '0568 Mcbride Way', 'Não entregue', 'Brnaby Riditch', 58),
+ (100, '2019-02-06', '2018-08-03', '782 Fuller Road', 'Em rota', 'Alexi Labba', 70),
+ (101, '2019-05-28', '2018-07-14', '186 Raven Alley', 'Não entregue', 'Gabrielle Jeannot', 23),
+ (102, '2019-01-08', '2018-06-28', '4 Parkside Parkway', 'Não entregue', 'Phillip Wackly', 6),
+ (103, '2019-03-27', '2018-10-11', '12892 Dottie Pass', 'Em rota', 'Silva Miliffe', 69),
+ (104, '2019-05-27', '2018-12-09', '72570 Graceland Center', 'Em rota', 'Jasmina Tuckie', 82),
+ (105, '2019-01-15', '2018-07-25', '7 Myrtle Plaza', 'Em rota', 'Dulci Stroud', 91),
+ (106, '2019-04-02', '2018-12-28', '7 Bobwhite Circle', 'Entregue', 'Leanor Margrem', 92),
+ (107, '2019-05-09', '2018-08-13', '85 Larry Road', 'Não entregue', 'Chere Ponder', 84),
+ (108, '2019-03-24', '2018-10-03', '82 Buhler Lane', 'Não entregue', 'Rubin Durrand', 63),
+ (109, '2019-01-05', '2018-09-29', '93 Northport Park', 'Entregue', 'Holli Gallagher', 51),
+ (110, '2019-03-01', '2018-12-09', '0083 Crowley Point', 'Em rota', 'Nichol Penvarden', 4),
+ (111, '2019-01-04', '2018-07-05', '17 Corry Trail', 'Não entregue', 'Devi Backler', 87),
+ (112, '2019-04-29', '2018-10-19', '6 Lakewood Gardens Alley', 'Não entregue', 'Sukey Bouchard', 46),
+ (113, '2019-01-24', '2018-06-14', '44110 Killdeer Junction', 'Entregue', 'Sissy McKennan', 80),
+ (114, '2019-03-09', '2018-10-02', '430 Surrey Terrace', 'Entregue', 'Sammy Sneesbie', 95),
+ (115, '2019-01-29', '2018-12-19', '716 Pierstorff Way', 'Em rota', 'Bobbie Ferrick', 22),
+ (116, '2019-05-24', '2018-11-24', '4525 Shoshone Drive', 'Entregue', 'Thorpe Reichhardt', 12),
+ (117, '2019-01-08', '2018-09-13', '7246 Iowa Pass', 'Em rota', 'Jacky Grundle', 93),
+ (118, '2019-03-27', '2018-08-26', '29 East Terrace', 'Em rota', 'Emanuel Menel', 80),
+ (119, '2019-05-24', '2018-12-27', '7 Debra Plaza', 'Entregue', 'Guthrey Jobke', 10),
+ (120, '2019-01-01', '2018-10-31', '56 Stuart Pass', 'Entregue', 'Archibaldo Heyns', 14),
+ (121, '2019-03-08', '2018-07-20', '19 Clarendon Court', 'Não entregue', 'Purcell Rubanenko', 11),
+ (122, '2019-02-23', '2018-08-18', '1246 Eagle Crest Circle', 'Entregue', 'Hermione Billes', 53),
+ (123, '2019-03-04', '2018-12-01', '58165 American Street', 'Entregue', 'Fredra St. Ledger', 38),
+ (124, '2019-02-09', '2018-11-22', '0 Arapahoe Terrace', 'Em rota', 'Eddie Wenzel', 84),
+ (125, '2019-01-29', '2018-11-12', '96127 Summerview Avenue', 'Entregue', 'Marquita Magnus', 64),
+ (126, '2019-01-27', '2018-07-04', '5 Summerview Court', 'Não entregue', 'Marita Grainger', 21),
+ (127, '2019-03-22', '2018-09-07', '3743 Elgar Trail', 'Entregue', 'Freddie Taggert', 65),
+ (128, '2019-01-12', '2018-09-18', '593 Montana Center', 'Entregue', 'Rafael Drysdall', 78),
+ (129, '2019-05-13', '2018-06-18', '2 Brickson Park Crossing', 'Em rota', 'Delly Keeffe', 85),
+ (130, '2019-04-12', '2018-09-22', '91675 Barby Alley', 'Não entregue', 'Olivia Simison', 42),
+ (131, '2019-03-13', '2018-08-13', '42047 Maryland Avenue', 'Não entregue', 'Lida Brychan', 24),
+ (132, '2019-04-11', '2018-10-11', '72 Fieldstone Junction', 'Em rota', 'Barr Roblou', 51),
+ (133, '2019-01-28', '2018-06-20', '034 Tony Park', 'Entregue', 'Henryetta Penrice', 55),
+ (134, '2019-02-25', '2018-12-07', '697 Badeau Junction', 'Em rota', 'Frank Noteyoung', 16),
+ (135, '2019-05-12', '2018-08-19', '7493 Dovetail Way', 'Em rota', 'Arthur Zanetti', 76),
+ (136, '2019-02-19', '2018-07-16', '7 Rigney Drive', 'Em rota', 'Scarface Twomey', 94),
+ (137, '2019-03-02', '2018-11-15', '46 Tennessee Avenue', 'Não entregue', 'Chere Tedder', 50),
+ (138, '2019-02-21', '2018-12-19', '7560 Hoepker Center', 'Em rota', 'Karna Martinelli', 88),
+ (139, '2019-01-25', '2018-09-06', '733 Thackeray Hill', 'Entregue', 'Bud Grimsditch', 49),
+ (140, '2019-03-26', '2018-08-10', '9 Hudson Circle', 'Em rota', 'Elyse Maffin', 37),
+ (141, '2019-03-06', '2018-07-10', '441 Tony Parkway', 'Entregue', 'Jazmin Subhan', 1),
+ (142, '2019-02-10', '2018-11-26', '79 Texas Hill', 'Não entregue', 'Lenee Stanborough', 38),
+ (143, '2019-05-19', '2018-07-16', '5 Westport Center', 'Em rota', 'Blair Newcom', 6),
+ (144, '2019-05-30', '2018-07-06', '3 Brentwood Plaza', 'Não entregue', 'Madeleine Banes', 41),
+ (145, '2019-04-18', '2018-08-13', '20702 Surrey Plaza', 'Entregue', 'Hall Gutowska', 78),
+ (146, '2019-02-05', '2018-12-13', '1 Tony Road', 'Em rota', 'Cecile Burnup', 27),
+ (147, '2019-02-12', '2018-10-20', '38257 Acker Trail', 'Entregue', 'Jozef Dummett', 20),
+ (148, '2019-03-17', '2018-07-15', '86 Crest Line Court', 'Entregue', 'Elbertina Roll', 97),
+ (149, '2019-01-04', '2018-08-08', '0189 Granby Point', 'Não entregue', 'Olivier Pirolini', 82),
+ (150, '2019-03-12', '2018-10-23', '79 Meadow Vale Alley', 'Em rota', 'Elwood Aucourte', 97),
+ (151, '2019-01-19', '2018-10-04', '678 Hollow Ridge Place', 'Em rota', 'Therese Kuhl', 85),
+ (152, '2019-04-11', '2018-10-07', '7731 Northridge Point', 'Em rota', 'Halsy Crilley', 47),
+ (153, '2019-05-17', '2018-08-27', '8330 Dawn Circle', 'Em rota', 'Mada La Batie', 45),
+ (154, '2019-03-07', '2018-08-14', '134 Sachtjen Center', 'Em rota', 'Patricio Iwanicki', 18),
+ (155, '2019-04-30', '2018-09-30', '5 Packers Crossing', 'Em rota', 'Dolf Dannel', 34),
+ (156, '2019-01-27', '2018-12-14', '94681 Melody Pass', 'Em rota', 'Sergeant Wigfall', 97),
+ (157, '2019-05-03', '2018-11-24', '9590 Becker Hill', 'Não entregue', 'Gian Palphramand', 51),
+ (158, '2019-05-06', '2018-09-08', '232 Glendale Plaza', 'Não entregue', 'Phillipe Ascroft', 9),
+ (159, '2019-01-01', '2018-06-25', '39 Memorial Street', 'Não entregue', 'Mahalia Ferre', 32),
+ (160, '2019-05-11', '2018-11-01', '98 Stone Corner Terrace', 'Não entregue', 'Gabi Yearns', 60),
+ (161, '2019-03-26', '2018-09-05', '22890 Sutteridge Road', 'Em rota', 'Rick Dunkerk', 68),
+ (162, '2019-03-14', '2018-07-23', '7379 Packers Junction', 'Entregue', 'Ilise Poolton', 39),
+ (163, '2019-02-07', '2018-08-20', '1590 Delladonna Street', 'Em rota', 'Dannie Gandley', 49),
+ (164, '2019-03-09', '2018-08-03', '9 Talisman Park', 'Em rota', 'Berke Stride', 11),
+ (165, '2019-02-09', '2018-08-13', '21 Claremont Avenue', 'Entregue', 'Tiffany Beardall', 73),
+ (166, '2019-05-28', '2018-11-19', '6402 Dottie Center', 'Em rota', 'Laney Freeland', 18),
+ (167, '2019-02-16', '2018-09-10', '73 Mccormick Point', 'Não entregue', 'Asa Smurthwaite', 34),
+ (168, '2019-03-17', '2018-07-07', '1233 Sutherland Center', 'Em rota', 'Fiona Salamon', 99),
+ (169, '2019-01-28', '2018-09-16', '6 Forest Dale Lane', 'Não entregue', 'Dacia Peckitt', 78),
+ (170, '2019-03-19', '2018-11-10', '6904 Crowley Circle', 'Entregue', 'Shayne Mathias', 7),
+ (171, '2019-01-12', '2018-06-11', '28727 Chinook Hill', 'Entregue', 'Sim Tommen', 18),
+ (172, '2019-06-08', '2018-11-08', '9 Grayhawk Alley', 'Não entregue', 'Pascal Darbyshire', 90),
+ (173, '2019-05-31', '2018-11-15', '4267 Tony Plaza', 'Não entregue', 'Marijn Laughrey', 72),
+ (174, '2019-04-16', '2018-09-06', '1064 Cardinal Road', 'Em rota', 'Katrine Pennrington', 73),
+ (175, '2019-01-26', '2018-12-05', '9 Doe Crossing Point', 'Em rota', 'Koo Poznan', 88),
+ (176, '2019-01-12', '2018-12-18', '4642 Nevada Circle', 'Entregue', 'Flynn Golson', 68),
+ (177, '2019-02-10', '2018-07-20', '0280 Miller Road', 'Entregue', 'Leontine Widdison', 66),
+ (178, '2019-04-14', '2018-10-01', '9 Sherman Hill', 'Em rota', 'Seana Grog', 82),
+ (179, '2019-05-19', '2018-12-12', '571 Sauthoff Point', 'Não entregue', 'Mickie Clayfield', 7),
+ (180, '2019-06-03', '2018-10-13', '9846 Homewood Crossing', 'Não entregue', 'Ulrikaumeko Liccardi', 18),
+ (181, '2019-04-02', '2018-08-06', '2420 Westport Alley', 'Em rota', 'Daveta Joice', 53),
+ (182, '2019-04-29', '2018-09-02', '82222 John Wall Junction', 'Em rota', 'Jennette Shurey', 77),
+ (183, '2019-06-06', '2018-11-08', '730 Nevada Place', 'Entregue', 'Orrin Dowse', 68),
+ (184, '2019-03-19', '2018-08-29', '8 Pawling Court', 'Entregue', 'Daisi Stalman', 69),
+ (185, '2019-04-22', '2018-12-13', '2 Brentwood Circle', 'Não entregue', 'Benjie O''Doherty', 30),
+ (186, '2019-03-19', '2018-07-15', '27 Ridgeview Alley', 'Entregue', 'Weston Mould', 74),
+ (187, '2019-02-11', '2018-06-25', '11 Dorton Junction', 'Entregue', 'Mahala Farlham', 10),
+ (188, '2019-06-10', '2018-11-07', '5 Arizona Street', 'Não entregue', 'Nicholle Hugill', 46),
+ (189, '2019-04-05', '2018-07-24', '64 Algoma Trail', 'Não entregue', 'Oona Vedekhin', 85),
+ (190, '2019-01-24', '2018-08-27', '5825 Lerdahl Parkway', 'Em rota', 'Rhys Rickson', 20),
+ (191, '2019-02-07', '2018-06-15', '18 Meadow Vale Drive', 'Em rota', 'Curt Purves', 68),
+ (192, '2019-05-19', '2018-08-11', '82 Memorial Junction', 'Em rota', 'Flossi Rupert', 25),
+ (193, '2019-06-07', '2018-10-25', '9308 Carey Trail', 'Em rota', 'Lura Chaves', 90),
+ (194, '2019-04-07', '2018-07-19', '09 Old Gate Way', 'Entregue', 'Franny Elliot', 67),
+ (195, '2019-05-02', '2018-11-27', '49 Truax Point', 'Entregue', 'Heath Chieco', 11),
+ (196, '2019-01-08', '2018-09-11', '9166 Roxbury Hill', 'Entregue', 'Elfrida Harradence', 19),
+ (197, '2019-03-19', '2018-06-17', '783 Pawling Center', 'Em rota', 'Corey Sweating', 24),
+ (198, '2019-05-11', '2018-09-21', '32 Esker Park', 'Não entregue', 'Tyrus Itshak', 95),
+ (199, '2019-03-26', '2018-12-26', '9401 Badeau Drive', 'Não entregue', 'Amargo Dumingos', 1),
+ (200, '2019-01-17', '2018-11-24', '9 Anzinger Road', 'Em rota', 'Samaria Floyd', 47);
 
 /*_____________________________PRODUTO_____________________________________*/
 
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (1, 6, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 964, 4, 2, 98);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (2, 9, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 304, 7, 8, 122);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (3, 6, 'Pellentesque at nulla.', 674, 8, 2, 150);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (4, 5, 'Curabitur gravida nisi at nibh.', 859, 4, 5, 171);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (5, 4, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 396, 10, 8, 22);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (6, 4, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 107, 9, 7, 89);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (7, 1, 'Maecenas pulvinar lobortis est.', 114, 6, 9, 160);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (8, 7, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 136, 8, 7, 122);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (9, 8, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 805, 10, 6, 8);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (10, 8, 'Ut at dolor quis odio consequat varius.', 687, 2, 1, 42);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (11, 1, 'Integer ac neque.', 892, 6, 10, 60);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (12, 2, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 695, 7, 9, 4);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (13, 1, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 985, 3, 9, 115);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (14, 7, 'Fusce consequat. Nulla nisl.', 16, 6, 5, 153);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (15, 8, 'In congue.', 665, 8, 4, 200);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (16, 7, 'In quis justo. Maecenas rhoncus aliquam lacus.', 180, 10, 9, 57);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (17, 2, 'Suspendisse accumsan tortor quis turpis.', 369, 6, 2, 63);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (18, 5, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 236, 10, 5, 182);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (19, 1, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 722, 2, 2, 199);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (20, 8, 'Maecenas ut massa quis augue luctus tincidunt.', 333, 4, 4, 173);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (21, 6, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 587, 5, 5, 114);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (22, 7, 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 922, 9, 1, 95);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (23, 1, 'Proin risus.', 969, 1, 5, 173);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (24, 1, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 175, 6, 6, 190);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (25, 2, 'Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.', 528, 2, 2, 151);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (26, 9, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 460, 3, 6, 131);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (27, 7, 'Vivamus vel nulla eget eros elementum pellentesque.', 755, 9, 6, 22);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (28, 6, 'Integer tincidunt ante vel ipsum.', 900, 6, 9, 155);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (29, 2, 'Donec semper sapien a libero. Nam dui.', 39, 10, 5, 97);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (30, 5, 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 828, 1, 1, 161);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (31, 4, 'Etiam justo. Etiam pretium iaculis justo.', 227, 6, 8, 110);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (32, 9, 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 694, 1, 5, 180);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (33, 7, 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', 747, 7, 6, 164);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (34, 4, 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 773, 1, 6, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (35, 8, 'Nulla nisl.', 370, 10, 6, 164);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (36, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 326, 5, 3, 149);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (37, 2, 'Duis bibendum. Morbi non quam nec dui luctus rutrum.', 45, 6, 1, 191);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (38, 2, 'Phasellus sit amet erat.', 594, 4, 4, 67);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (39, 2, 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', 457, 1, 5, 172);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (40, 9, 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', 795, 7, 6, 75);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (41, 9, 'Nulla ut erat id mauris vulputate elementum.', 863, 9, 6, 61);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (42, 7, 'Aenean lectus. Pellentesque eget nunc.', 507, 6, 7, 132);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (43, 3, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 747, 9, 6, 146);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (44, 2, 'Nullam sit amet turpis elementum ligula vehicula consequat.', 659, 1, 8, 173);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (45, 6, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 412, 3, 4, 115);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (46, 8, 'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 933, 6, 10, 160);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (47, 10, 'Aenean sit amet justo. Morbi ut odio.', 201, 1, 4, 57);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (48, 5, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 380, 6, 10, 139);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (49, 9, 'Duis mattis egestas metus.', 243, 10, 6, 69);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (50, 1, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.', 800, 8, 8, 71);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (51, 7, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 79, 8, 7, 194);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (52, 1, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', 420, 3, 2, 125);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (53, 4, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.', 103, 3, 5, 91);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (54, 1, 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 512, 2, 2, 13);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (55, 7, 'Duis ac nibh.', 481, 6, 2, 29);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (56, 10, 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.', 374, 10, 5, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (57, 8, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 892, 9, 1, 121);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (58, 9, 'Praesent blandit. Nam nulla.', 759, 4, 3, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (59, 4, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 654, 9, 2, 63);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (60, 3, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', 973, 4, 8, 107);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (61, 2, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 458, 2, 1, 73);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (62, 4, 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', 603, 7, 9, 193);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (63, 5, 'Nulla nisl.', 7, 4, 2, 19);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (64, 6, 'In hac habitasse platea dictumst.', 795, 10, 10, 94);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (65, 5, 'Suspendisse potenti.', 9, 2, 6, 90);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (66, 8, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 378, 2, 6, 3);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (67, 2, 'In congue. Etiam justo.', 980, 7, 10, 200);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (68, 7, 'Pellentesque eget nunc.', 95, 5, 8, 3);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (69, 5, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 851, 10, 7, 103);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (70, 2, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 620, 8, 6, 150);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (71, 6, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 222, 10, 1, 194);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (72, 2, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', 307, 9, 1, 140);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (73, 5, 'Nulla ut erat id mauris vulputate elementum.', 345, 1, 1, 25);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (74, 4, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 791, 5, 9, 33);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (75, 3, 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 395, 8, 3, 141);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (76, 7, 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', 702, 10, 3, 67);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (77, 9, 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 252, 7, 3, 172);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (78, 6, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 328, 10, 3, 182);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (79, 6, 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 241, 4, 5, 86);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (80, 3, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 46, 8, 7, 195);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (81, 6, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 704, 4, 7, 179);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (82, 10, 'Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.', 447, 10, 6, 2);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (83, 10, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 409, 6, 4, 72);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (84, 3, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 699, 3, 6, 197);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (85, 8, 'Morbi vel lectus in quam fringilla rhoncus.', 846, 10, 6, 73);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (86, 5, 'Etiam pretium iaculis justo.', 491, 1, 5, 134);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (87, 1, 'In hac habitasse platea dictumst.', 381, 1, 2, 143);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (88, 7, 'Donec ut mauris eget massa tempor convallis.', 233, 1, 10, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (89, 2, 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 355, 8, 3, 137);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (90, 5, 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 412, 7, 6, 152);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (91, 5, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', 279, 7, 1, 5);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (92, 1, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 190, 3, 5, 26);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (93, 5, 'Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.', 158, 6, 5, 114);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (94, 5, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 195, 6, 3, 7);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (95, 8, 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 50, 7, 7, 144);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (96, 7, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 917, 7, 4, 198);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (97, 6, 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.', 143, 2, 3, 164);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (98, 5, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', 199, 5, 2, 145);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (99, 8, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', 338, 3, 7, 135);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (100, 2, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 745, 5, 6, 71);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (101, 7, 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', 789, 3, 2, 37);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (102, 7, 'Etiam faucibus cursus urna.', 640, 4, 2, 19);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (103, 4, 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', 800, 5, 8, 114);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (104, 10, 'Donec posuere metus vitae ipsum.', 540, 2, 7, 156);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (105, 4, 'Cras in purus eu magna vulputate luctus.', 662, 7, 5, 29);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (106, 7, 'Proin interdum mauris non ligula pellentesque ultrices.', 222, 7, 8, 189);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (107, 5, 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.', 987, 3, 10, 64);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (108, 1, 'Nunc purus. Phasellus in felis. Donec semper sapien a libero.', 17, 4, 3, 83);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (109, 7, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 583, 9, 7, 168);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (110, 9, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 908, 4, 3, 163);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (111, 10, 'Sed ante. Vivamus tortor.', 655, 2, 8, 41);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (112, 1, 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 905, 3, 1, 179);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (113, 2, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 770, 8, 7, 95);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (114, 8, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 200, 2, 8, 190);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (115, 6, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 630, 5, 3, 177);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (116, 5, 'Nullam porttitor lacus at turpis.', 8, 9, 4, 105);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (117, 3, 'Cras in purus eu magna vulputate luctus.', 366, 8, 8, 151);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (118, 4, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 568, 6, 8, 72);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (119, 4, 'Aliquam non mauris.', 825, 7, 6, 90);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (120, 1, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.', 130, 5, 4, 141);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (121, 7, 'Duis ac nibh.', 937, 2, 6, 179);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (122, 4, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 286, 9, 10, 156);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (123, 5, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 810, 5, 10, 7);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (124, 1, 'Nullam molestie nibh in lectus.', 991, 2, 5, 48);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (125, 2, 'Donec posuere metus vitae ipsum. Aliquam non mauris.', 645, 6, 1, 70);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (126, 8, 'Nam nulla.', 175, 5, 9, 191);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (127, 3, 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 156, 4, 10, 190);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (128, 2, 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 342, 10, 1, 69);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (129, 5, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 835, 8, 6, 71);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (130, 1, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.', 265, 7, 7, 61);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (131, 5, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 290, 10, 3, 65);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (132, 1, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 645, 3, 2, 137);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (133, 4, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', 705, 5, 4, 71);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (134, 9, 'Cras in purus eu magna vulputate luctus.', 439, 8, 2, 6);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (135, 7, 'Praesent id massa id nisl venenatis lacinia.', 942, 6, 3, 18);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (136, 7, 'Aliquam non mauris. Morbi non lectus.', 105, 8, 3, 68);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (137, 2, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 413, 3, 8, 52);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (138, 6, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 538, 4, 7, 184);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (139, 6, 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 765, 5, 10, 158);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (140, 2, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 964, 5, 1, 175);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (141, 8, 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 519, 5, 8, 173);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (142, 7, 'Suspendisse potenti.', 120, 6, 5, 184);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (143, 2, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 638, 9, 4, 18);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (144, 6, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 24, 5, 1, 94);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (145, 9, 'Integer ac neque. Duis bibendum.', 141, 1, 4, 194);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (146, 1, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 690, 7, 1, 51);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (147, 1, 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 551, 8, 5, 105);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (148, 5, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 636, 7, 6, 49);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (149, 4, 'Nullam molestie nibh in lectus.', 814, 4, 6, 28);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (150, 8, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', 293, 5, 8, 51);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (151, 9, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', 398, 1, 3, 145);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (152, 7, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 304, 3, 8, 137);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (153, 7, 'Nulla justo.', 964, 3, 10, 88);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (154, 7, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.', 772, 7, 7, 194);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (155, 7, 'Pellentesque ultrices mattis odio. Donec vitae nisi.', 73, 7, 8, 88);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (156, 10, 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 494, 9, 8, 17);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (157, 3, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', 761, 1, 8, 174);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (158, 4, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', 379, 6, 3, 62);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (159, 10, 'Nulla ut erat id mauris vulputate elementum.', 872, 4, 7, 192);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (160, 7, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 575, 6, 3, 27);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (161, 6, 'Quisque id justo sit amet sapien dignissim vestibulum.', 515, 1, 2, 29);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (162, 10, 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 486, 2, 6, 13);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (163, 5, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 792, 8, 8, 6);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (164, 8, 'Proin at turpis a pede posuere nonummy. Integer non velit.', 488, 5, 4, 157);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (165, 1, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 699, 9, 8, 33);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (166, 1, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 481, 1, 5, 70);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (167, 8, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 771, 2, 6, 174);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (168, 1, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 623, 6, 6, 47);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (169, 1, 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 271, 10, 6, 115);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (170, 6, 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 645, 9, 3, 1);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (171, 6, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 749, 1, 7, 126);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (172, 10, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 305, 2, 7, 105);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (173, 6, 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', 908, 1, 3, 185);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (174, 1, 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', 326, 1, 8, 90);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (175, 6, 'Morbi ut odio.', 582, 8, 8, 16);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (176, 9, 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', 862, 8, 8, 123);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (177, 5, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 2, 7, 8, 174);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (178, 9, 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 143, 3, 7, 111);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (179, 4, 'Donec ut dolor.', 358, 7, 4, 20);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (180, 3, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', 183, 4, 10, 184);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (181, 9, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 962, 2, 7, 166);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (182, 6, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 335, 9, 5, 89);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (183, 5, 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 357, 1, 6, 157);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (184, 1, 'Aliquam erat volutpat. In congue. Etiam justo.', 729, 7, 3, 47);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (185, 5, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', 326, 2, 1, 81);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (186, 1, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', 770, 1, 8, 182);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (187, 7, 'Nulla justo.', 161, 6, 2, 68);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (188, 9, 'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 366, 3, 1, 151);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (189, 10, 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', 675, 4, 10, 102);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (190, 7, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', 872, 7, 2, 139);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (191, 4, 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 644, 8, 5, 144);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (192, 5, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 738, 8, 4, 78);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (193, 8, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 461, 1, 4, 91);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (194, 3, 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 881, 7, 8, 162);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (195, 10, 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 276, 2, 4, 191);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (196, 3, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 595, 5, 5, 151);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (197, 3, 'Etiam pretium iaculis justo.', 548, 5, 3, 127);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (198, 1, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 574, 5, 6, 199);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (199, 3, 'Aliquam erat volutpat. In congue.', 502, 6, 3, 22);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (200, 6, 'Proin interdum mauris non ligula pellentesque ultrices.', 665, 7, 4, 69);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (201, 8, 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 466, 4, 7, 109);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (202, 7, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 816, 1, 6, 80);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (203, 10, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 510, 9, 6, 196);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (204, 1, 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 145, 1, 7, 29);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (205, 5, 'Donec dapibus. Duis at velit eu est congue elementum.', 283, 8, 4, 186);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (206, 7, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 540, 1, 4, 94);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (207, 1, 'Vestibulum sed magna at nunc commodo placerat.', 244, 4, 8, 143);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (208, 10, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 446, 3, 5, 24);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (209, 9, 'Nam dui.', 230, 5, 3, 65);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (210, 9, 'Nulla suscipit ligula in lacus.', 877, 8, 6, 27);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (211, 2, 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', 275, 5, 4, 58);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (212, 10, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 95, 5, 7, 56);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (213, 1, 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', 45, 7, 10, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (214, 6, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 581, 9, 3, 172);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (215, 10, 'Vivamus vestibulum sagittis sapien.', 190, 1, 1, 36);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (216, 7, 'Nulla mollis molestie lorem. Quisque ut erat.', 998, 2, 4, 157);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (217, 1, 'Integer non velit.', 51, 6, 6, 163);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (218, 9, 'Proin interdum mauris non ligula pellentesque ultrices.', 916, 7, 2, 65);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (219, 3, 'Aenean fermentum. Donec ut mauris eget massa tempor convallis.', 248, 9, 7, 113);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (220, 6, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 312, 7, 4, 85);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (221, 10, 'Integer a nibh.', 566, 4, 7, 65);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (222, 9, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 412, 10, 7, 14);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (223, 4, 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', 941, 2, 2, 129);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (224, 2, 'In sagittis dui vel nisl. Duis ac nibh.', 685, 6, 5, 193);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (225, 4, 'Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 347, 7, 4, 119);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (226, 1, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 624, 4, 10, 134);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (227, 6, 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.', 968, 7, 4, 182);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (228, 8, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 881, 3, 8, 118);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (229, 6, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 581, 2, 9, 122);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (230, 1, 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 331, 9, 1, 191);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (231, 5, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', 772, 8, 5, 113);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (232, 4, 'Nullam varius.', 571, 9, 10, 134);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (233, 6, 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 192, 3, 6, 21);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (234, 2, 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 172, 8, 10, 48);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (235, 7, 'Aenean fermentum.', 935, 1, 6, 93);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (236, 3, 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 15, 5, 2, 135);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (237, 3, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 10, 10, 1, 92);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (238, 1, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', 227, 5, 8, 101);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (239, 4, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 610, 6, 10, 102);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (240, 10, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 149, 3, 6, 52);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (241, 9, 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', 616, 1, 2, 114);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (242, 3, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 721, 1, 7, 115);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (243, 8, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 318, 9, 5, 30);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (244, 5, 'Quisque ut erat. Curabitur gravida nisi at nibh.', 372, 7, 10, 131);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (245, 7, 'Integer tincidunt ante vel ipsum.', 289, 4, 7, 103);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (246, 7, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 197, 7, 4, 97);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (247, 9, 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', 264, 1, 4, 129);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (248, 10, 'Etiam justo.', 181, 6, 1, 121);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (249, 4, 'Nulla nisl.', 670, 2, 8, 149);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (250, 9, 'Nullam porttitor lacus at turpis.', 668, 7, 8, 72);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (251, 7, 'Nunc rhoncus dui vel sem. Sed sagittis.', 144, 3, 7, 120);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (252, 10, 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 116, 5, 7, 164);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (253, 2, 'Donec dapibus.', 896, 5, 6, 4);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (254, 3, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 362, 2, 5, 17);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (255, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 138, 9, 4, 179);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (256, 1, 'Aenean auctor gravida sem.', 977, 2, 2, 150);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (257, 6, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 16, 3, 10, 44);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (258, 10, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 681, 5, 10, 77);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (259, 1, 'In eleifend quam a odio. In hac habitasse platea dictumst.', 805, 10, 7, 35);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (260, 2, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 403, 7, 2, 37);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (261, 5, 'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', 890, 9, 6, 147);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (262, 10, 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', 629, 5, 10, 183);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (263, 10, 'Integer non velit.', 859, 9, 5, 22);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (264, 1, 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.', 661, 3, 10, 200);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (265, 10, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 124, 8, 2, 161);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (266, 9, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 900, 4, 8, 174);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (267, 4, 'Sed ante. Vivamus tortor.', 957, 6, 9, 28);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (268, 5, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 691, 3, 5, 142);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (269, 3, 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.', 897, 1, 1, 178);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (270, 2, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 607, 6, 3, 160);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (271, 7, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 173, 1, 3, 37);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (272, 9, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 364, 3, 3, 69);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (273, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 89, 6, 7, 153);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (274, 8, 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 323, 6, 9, 198);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (275, 5, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 334, 6, 10, 103);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (276, 7, 'Donec semper sapien a libero.', 625, 10, 2, 119);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (277, 10, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.', 54, 2, 2, 197);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (278, 2, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 924, 6, 4, 46);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (279, 8, 'Praesent blandit. Nam nulla.', 150, 7, 3, 170);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (280, 10, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 979, 4, 8, 115);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (281, 2, 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 996, 5, 1, 123);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (282, 9, 'Donec ut mauris eget massa tempor convallis.', 615, 9, 1, 164);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (283, 7, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 122, 1, 1, 184);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (284, 5, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 972, 2, 3, 177);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (285, 5, 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 335, 3, 7, 123);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (286, 10, 'Morbi a ipsum. Integer a nibh. In quis justo.', 784, 8, 5, 98);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (287, 2, 'Sed vel enim sit amet nunc viverra dapibus.', 337, 6, 2, 108);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (288, 8, 'Sed ante.', 950, 2, 7, 140);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (289, 3, 'Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 682, 3, 7, 96);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (290, 7, 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 455, 6, 9, 127);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (291, 10, 'Nulla nisl.', 552, 10, 2, 52);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (292, 3, 'Proin interdum mauris non ligula pellentesque ultrices.', 939, 5, 7, 33);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (293, 3, 'Suspendisse potenti. Nullam porttitor lacus at turpis.', 907, 7, 1, 117);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (294, 4, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 791, 4, 5, 186);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (295, 1, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', 190, 1, 10, 80);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (296, 10, 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', 558, 9, 4, 162);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (297, 10, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 190, 10, 3, 80);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (298, 10, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 798, 2, 4, 122);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (299, 3, 'Pellentesque at nulla.', 647, 6, 1, 116);
-insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values (300, 4, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 82, 5, 1, 147);
+ insert into Produto (idproduto_pk, comprimento, descricao, peso, largura, altura, idpedido_fk) values
+ (1, 6, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 964, 4, 2, 98),
+ (2, 9, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 304, 7, 8, 122),
+ (3, 6, 'Pellentesque at nulla.', 674, 8, 2, 150),
+ (4, 5, 'Curabitur gravida nisi at nibh.', 859, 4, 5, 171),
+ (5, 4, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 396, 10, 8, 22),
+ (6, 4, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 107, 9, 7, 89),
+ (7, 1, 'Maecenas pulvinar lobortis est.', 114, 6, 9, 160),
+ (8, 7, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 136, 8, 7, 122),
+ (9, 8, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 805, 10, 6, 8),
+ (10, 8, 'Ut at dolor quis odio consequat varius.', 687, 2, 1, 42),
+ (11, 1, 'Integer ac neque.', 892, 6, 10, 60),
+ (12, 2, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 695, 7, 9, 4),
+ (13, 1, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 985, 3, 9, 115),
+ (14, 7, 'Fusce consequat. Nulla nisl.', 16, 6, 5, 153),
+ (15, 8, 'In congue.', 665, 8, 4, 200),
+ (16, 7, 'In quis justo. Maecenas rhoncus aliquam lacus.', 180, 10, 9, 57),
+ (17, 2, 'Suspendisse accumsan tortor quis turpis.', 369, 6, 2, 63),
+ (18, 5, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 236, 10, 5, 182),
+ (19, 1, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 722, 2, 2, 199),
+ (20, 8, 'Maecenas ut massa quis augue luctus tincidunt.', 333, 4, 4, 173),
+ (21, 6, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 587, 5, 5, 114),
+ (22, 7, 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 922, 9, 1, 95),
+ (23, 1, 'Proin risus.', 969, 1, 5, 173),
+ (24, 1, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 175, 6, 6, 190),
+ (25, 2, 'Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.', 528, 2, 2, 151),
+ (26, 9, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 460, 3, 6, 131),
+ (27, 7, 'Vivamus vel nulla eget eros elementum pellentesque.', 755, 9, 6, 22),
+ (28, 6, 'Integer tincidunt ante vel ipsum.', 900, 6, 9, 155),
+ (29, 2, 'Donec semper sapien a libero. Nam dui.', 39, 10, 5, 97),
+ (30, 5, 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 828, 1, 1, 161),
+ (31, 4, 'Etiam justo. Etiam pretium iaculis justo.', 227, 6, 8, 110),
+ (32, 9, 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 694, 1, 5, 180),
+ (33, 7, 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', 747, 7, 6, 164),
+ (34, 4, 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', 773, 1, 6, 178),
+ (35, 8, 'Nulla nisl.', 370, 10, 6, 164),
+ (36, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 326, 5, 3, 149),
+ (37, 2, 'Duis bibendum. Morbi non quam nec dui luctus rutrum.', 45, 6, 1, 191),
+ (38, 2, 'Phasellus sit amet erat.', 594, 4, 4, 67),
+ (39, 2, 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', 457, 1, 5, 172),
+ (40, 9, 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', 795, 7, 6, 75),
+ (41, 9, 'Nulla ut erat id mauris vulputate elementum.', 863, 9, 6, 61),
+ (42, 7, 'Aenean lectus. Pellentesque eget nunc.', 507, 6, 7, 132),
+ (43, 3, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 747, 9, 6, 146),
+ (44, 2, 'Nullam sit amet turpis elementum ligula vehicula consequat.', 659, 1, 8, 173),
+ (45, 6, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 412, 3, 4, 115),
+ (46, 8, 'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 933, 6, 10, 160),
+ (47, 10, 'Aenean sit amet justo. Morbi ut odio.', 201, 1, 4, 57),
+ (48, 5, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 380, 6, 10, 139),
+ (49, 9, 'Duis mattis egestas metus.', 243, 10, 6, 69),
+ (50, 1, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.', 800, 8, 8, 71),
+ (51, 7, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 79, 8, 7, 194),
+ (52, 1, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', 420, 3, 2, 125),
+ (53, 4, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.', 103, 3, 5, 91),
+ (54, 1, 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 512, 2, 2, 13),
+ (55, 7, 'Duis ac nibh.', 481, 6, 2, 29),
+ (56, 10, 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.', 374, 10, 5, 178),
+ (57, 8, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 892, 9, 1, 121),
+ (58, 9, 'Praesent blandit. Nam nulla.', 759, 4, 3, 178),
+ (59, 4, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 654, 9, 2, 63),
+ (60, 3, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', 973, 4, 8, 107),
+ (61, 2, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 458, 2, 1, 73),
+ (62, 4, 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', 603, 7, 9, 193),
+ (63, 5, 'Nulla nisl.', 7, 4, 2, 19),
+ (64, 6, 'In hac habitasse platea dictumst.', 795, 10, 10, 94),
+ (65, 5, 'Suspendisse potenti.', 9, 2, 6, 90),
+ (66, 8, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 378, 2, 6, 3),
+ (67, 2, 'In congue. Etiam justo.', 980, 7, 10, 200),
+ (68, 7, 'Pellentesque eget nunc.', 95, 5, 8, 3),
+ (69, 5, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 851, 10, 7, 103),
+ (70, 2, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 620, 8, 6, 150),
+ (71, 6, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 222, 10, 1, 194),
+ (72, 2, 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', 307, 9, 1, 140),
+ (73, 5, 'Nulla ut erat id mauris vulputate elementum.', 345, 1, 1, 25),
+ (74, 4, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 791, 5, 9, 33),
+ (75, 3, 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 395, 8, 3, 141),
+ (76, 7, 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', 702, 10, 3, 67),
+ (77, 9, 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 252, 7, 3, 172),
+ (78, 6, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 328, 10, 3, 182),
+ (79, 6, 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 241, 4, 5, 86),
+ (80, 3, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 46, 8, 7, 195),
+ (81, 6, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', 704, 4, 7, 179),
+ (82, 10, 'Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.', 447, 10, 6, 2),
+ (83, 10, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 409, 6, 4, 72),
+ (84, 3, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 699, 3, 6, 197),
+ (85, 8, 'Morbi vel lectus in quam fringilla rhoncus.', 846, 10, 6, 73),
+ (86, 5, 'Etiam pretium iaculis justo.', 491, 1, 5, 134),
+ (87, 1, 'In hac habitasse platea dictumst.', 381, 1, 2, 143),
+ (88, 7, 'Donec ut mauris eget massa tempor convallis.', 233, 1, 10, 178),
+ (89, 2, 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 355, 8, 3, 137),
+ (90, 5, 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 412, 7, 6, 152),
+ (91, 5, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', 279, 7, 1, 5),
+ (92, 1, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 190, 3, 5, 26),
+ (93, 5, 'Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.', 158, 6, 5, 114),
+ (94, 5, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 195, 6, 3, 7),
+ (95, 8, 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 50, 7, 7, 144),
+ (96, 7, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 917, 7, 4, 198),
+ (97, 6, 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.', 143, 2, 3, 164),
+ (98, 5, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', 199, 5, 2, 145),
+ (99, 8, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', 338, 3, 7, 135),
+ (100, 2, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 745, 5, 6, 71),
+ (101, 7, 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', 789, 3, 2, 37),
+ (102, 7, 'Etiam faucibus cursus urna.', 640, 4, 2, 19),
+ (103, 4, 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', 800, 5, 8, 114),
+ (104, 10, 'Donec posuere metus vitae ipsum.', 540, 2, 7, 156),
+ (105, 4, 'Cras in purus eu magna vulputate luctus.', 662, 7, 5, 29),
+ (106, 7, 'Proin interdum mauris non ligula pellentesque ultrices.', 222, 7, 8, 189),
+ (107, 5, 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.', 987, 3, 10, 64),
+ (108, 1, 'Nunc purus. Phasellus in felis. Donec semper sapien a libero.', 17, 4, 3, 83),
+ (109, 7, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 583, 9, 7, 168),
+ (110, 9, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 908, 4, 3, 163),
+ (111, 10, 'Sed ante. Vivamus tortor.', 655, 2, 8, 41),
+ (112, 1, 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 905, 3, 1, 179),
+ (113, 2, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 770, 8, 7, 95),
+ (114, 8, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 200, 2, 8, 190),
+ (115, 6, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 630, 5, 3, 177),
+ (116, 5, 'Nullam porttitor lacus at turpis.', 8, 9, 4, 105),
+ (117, 3, 'Cras in purus eu magna vulputate luctus.', 366, 8, 8, 151),
+ (118, 4, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 568, 6, 8, 72),
+ (119, 4, 'Aliquam non mauris.', 825, 7, 6, 90),
+ (120, 1, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.', 130, 5, 4, 141),
+ (121, 7, 'Duis ac nibh.', 937, 2, 6, 179),
+ (122, 4, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 286, 9, 10, 156),
+ (123, 5, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 810, 5, 10, 7),
+ (124, 1, 'Nullam molestie nibh in lectus.', 991, 2, 5, 48),
+ (125, 2, 'Donec posuere metus vitae ipsum. Aliquam non mauris.', 645, 6, 1, 70),
+ (126, 8, 'Nam nulla.', 175, 5, 9, 191),
+ (127, 3, 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 156, 4, 10, 190),
+ (128, 2, 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 342, 10, 1, 69),
+ (129, 5, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 835, 8, 6, 71),
+ (130, 1, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.', 265, 7, 7, 61),
+ (131, 5, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 290, 10, 3, 65),
+ (132, 1, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 645, 3, 2, 137),
+ (133, 4, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', 705, 5, 4, 71),
+ (134, 9, 'Cras in purus eu magna vulputate luctus.', 439, 8, 2, 6),
+ (135, 7, 'Praesent id massa id nisl venenatis lacinia.', 942, 6, 3, 18),
+ (136, 7, 'Aliquam non mauris. Morbi non lectus.', 105, 8, 3, 68),
+ (137, 2, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 413, 3, 8, 52),
+ (138, 6, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 538, 4, 7, 184),
+ (139, 6, 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 765, 5, 10, 158),
+ (140, 2, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 964, 5, 1, 175),
+ (141, 8, 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 519, 5, 8, 173),
+ (142, 7, 'Suspendisse potenti.', 120, 6, 5, 184),
+ (143, 2, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 638, 9, 4, 18),
+ (144, 6, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 24, 5, 1, 94),
+ (145, 9, 'Integer ac neque. Duis bibendum.', 141, 1, 4, 194),
+ (146, 1, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 690, 7, 1, 51),
+ (147, 1, 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 551, 8, 5, 105),
+ (148, 5, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 636, 7, 6, 49),
+ (149, 4, 'Nullam molestie nibh in lectus.', 814, 4, 6, 28),
+ (150, 8, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', 293, 5, 8, 51),
+ (151, 9, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', 398, 1, 3, 145),
+ (152, 7, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 304, 3, 8, 137),
+ (153, 7, 'Nulla justo.', 964, 3, 10, 88),
+ (154, 7, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.', 772, 7, 7, 194),
+ (155, 7, 'Pellentesque ultrices mattis odio. Donec vitae nisi.', 73, 7, 8, 88),
+ (156, 10, 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 494, 9, 8, 17),
+ (157, 3, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', 761, 1, 8, 174),
+ (158, 4, 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', 379, 6, 3, 62),
+ (159, 10, 'Nulla ut erat id mauris vulputate elementum.', 872, 4, 7, 192),
+ (160, 7, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 575, 6, 3, 27),
+ (161, 6, 'Quisque id justo sit amet sapien dignissim vestibulum.', 515, 1, 2, 29),
+ (162, 10, 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 486, 2, 6, 13),
+ (163, 5, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 792, 8, 8, 6),
+ (164, 8, 'Proin at turpis a pede posuere nonummy. Integer non velit.', 488, 5, 4, 157),
+ (165, 1, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 699, 9, 8, 33),
+ (166, 1, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 481, 1, 5, 70),
+ (167, 8, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 771, 2, 6, 174),
+ (168, 1, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 623, 6, 6, 47),
+ (169, 1, 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 271, 10, 6, 115),
+ (170, 6, 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 645, 9, 3, 1),
+ (171, 6, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 749, 1, 7, 126),
+ (172, 10, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 305, 2, 7, 105),
+ (173, 6, 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', 908, 1, 3, 185),
+ (174, 1, 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', 326, 1, 8, 90),
+ (175, 6, 'Morbi ut odio.', 582, 8, 8, 16),
+ (176, 9, 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', 862, 8, 8, 123),
+ (177, 5, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 2, 7, 8, 174),
+ (178, 9, 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 143, 3, 7, 111),
+ (179, 4, 'Donec ut dolor.', 358, 7, 4, 20),
+ (180, 3, 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', 183, 4, 10, 184),
+ (181, 9, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 962, 2, 7, 166),
+ (182, 6, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 335, 9, 5, 89),
+ (183, 5, 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 357, 1, 6, 157),
+ (184, 1, 'Aliquam erat volutpat. In congue. Etiam justo.', 729, 7, 3, 47),
+ (185, 5, 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', 326, 2, 1, 81),
+ (186, 1, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', 770, 1, 8, 182),
+ (187, 7, 'Nulla justo.', 161, 6, 2, 68),
+ (188, 9, 'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 366, 3, 1, 151),
+ (189, 10, 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', 675, 4, 10, 102),
+ (190, 7, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', 872, 7, 2, 139),
+ (191, 4, 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 644, 8, 5, 144),
+ (192, 5, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 738, 8, 4, 78),
+ (193, 8, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 461, 1, 4, 91),
+ (194, 3, 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 881, 7, 8, 162),
+ (195, 10, 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 276, 2, 4, 191),
+ (196, 3, 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', 595, 5, 5, 151),
+ (197, 3, 'Etiam pretium iaculis justo.', 548, 5, 3, 127),
+ (198, 1, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 574, 5, 6, 199),
+ (199, 3, 'Aliquam erat volutpat. In congue.', 502, 6, 3, 22),
+ (200, 6, 'Proin interdum mauris non ligula pellentesque ultrices.', 665, 7, 4, 69),
+ (201, 8, 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 466, 4, 7, 109),
+ (202, 7, 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 816, 1, 6, 80),
+ (203, 10, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 510, 9, 6, 196),
+ (204, 1, 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 145, 1, 7, 29),
+ (205, 5, 'Donec dapibus. Duis at velit eu est congue elementum.', 283, 8, 4, 186),
+ (206, 7, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 540, 1, 4, 94),
+ (207, 1, 'Vestibulum sed magna at nunc commodo placerat.', 244, 4, 8, 143),
+ (208, 10, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 446, 3, 5, 24),
+ (209, 9, 'Nam dui.', 230, 5, 3, 65),
+ (210, 9, 'Nulla suscipit ligula in lacus.', 877, 8, 6, 27),
+ (211, 2, 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', 275, 5, 4, 58),
+ (212, 10, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 95, 5, 7, 56),
+ (213, 1, 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', 45, 7, 10, 178),
+ (214, 6, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 581, 9, 3, 172),
+ (215, 10, 'Vivamus vestibulum sagittis sapien.', 190, 1, 1, 36),
+ (216, 7, 'Nulla mollis molestie lorem. Quisque ut erat.', 998, 2, 4, 157),
+ (217, 1, 'Integer non velit.', 51, 6, 6, 163),
+ (218, 9, 'Proin interdum mauris non ligula pellentesque ultrices.', 916, 7, 2, 65),
+ (219, 3, 'Aenean fermentum. Donec ut mauris eget massa tempor convallis.', 248, 9, 7, 113),
+ (220, 6, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 312, 7, 4, 85),
+ (221, 10, 'Integer a nibh.', 566, 4, 7, 65),
+ (222, 9, 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 412, 10, 7, 14),
+ (223, 4, 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', 941, 2, 2, 129),
+ (224, 2, 'In sagittis dui vel nisl. Duis ac nibh.', 685, 6, 5, 193),
+ (225, 4, 'Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 347, 7, 4, 119),
+ (226, 1, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 624, 4, 10, 134),
+ (227, 6, 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.', 968, 7, 4, 182),
+ (228, 8, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 881, 3, 8, 118),
+ (229, 6, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 581, 2, 9, 122),
+ (230, 1, 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 331, 9, 1, 191),
+ (231, 5, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', 772, 8, 5, 113),
+ (232, 4, 'Nullam varius.', 571, 9, 10, 134),
+ (233, 6, 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 192, 3, 6, 21),
+ (234, 2, 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 172, 8, 10, 48),
+ (235, 7, 'Aenean fermentum.', 935, 1, 6, 93),
+ (236, 3, 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 15, 5, 2, 135),
+ (237, 3, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 10, 10, 1, 92),
+ (238, 1, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', 227, 5, 8, 101),
+ (239, 4, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 610, 6, 10, 102),
+ (240, 10, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 149, 3, 6, 52),
+ (241, 9, 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', 616, 1, 2, 114),
+ (242, 3, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 721, 1, 7, 115),
+ (243, 8, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', 318, 9, 5, 30),
+ (244, 5, 'Quisque ut erat. Curabitur gravida nisi at nibh.', 372, 7, 10, 131),
+ (245, 7, 'Integer tincidunt ante vel ipsum.', 289, 4, 7, 103),
+ (246, 7, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 197, 7, 4, 97),
+ (247, 9, 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', 264, 1, 4, 129),
+ (248, 10, 'Etiam justo.', 181, 6, 1, 121),
+ (249, 4, 'Nulla nisl.', 670, 2, 8, 149),
+ (250, 9, 'Nullam porttitor lacus at turpis.', 668, 7, 8, 72),
+ (251, 7, 'Nunc rhoncus dui vel sem. Sed sagittis.', 144, 3, 7, 120),
+ (252, 10, 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 116, 5, 7, 164),
+ (253, 2, 'Donec dapibus.', 896, 5, 6, 4),
+ (254, 3, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 362, 2, 5, 17),
+ (255, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 138, 9, 4, 179),
+ (256, 1, 'Aenean auctor gravida sem.', 977, 2, 2, 150),
+ (257, 6, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 16, 3, 10, 44),
+ (258, 10, 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 681, 5, 10, 77),
+ (259, 1, 'In eleifend quam a odio. In hac habitasse platea dictumst.', 805, 10, 7, 35),
+ (260, 2, 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 403, 7, 2, 37),
+ (261, 5, 'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', 890, 9, 6, 147),
+ (262, 10, 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', 629, 5, 10, 183),
+ (263, 10, 'Integer non velit.', 859, 9, 5, 22),
+ (264, 1, 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.', 661, 3, 10, 200),
+ (265, 10, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 124, 8, 2, 161),
+ (266, 9, 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 900, 4, 8, 174),
+ (267, 4, 'Sed ante. Vivamus tortor.', 957, 6, 9, 28),
+ (268, 5, 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 691, 3, 5, 142),
+ (269, 3, 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.', 897, 1, 1, 178),
+ (270, 2, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 607, 6, 3, 160),
+ (271, 7, 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 173, 1, 3, 37),
+ (272, 9, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 364, 3, 3, 69),
+ (273, 10, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 89, 6, 7, 153),
+ (274, 8, 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 323, 6, 9, 198),
+ (275, 5, 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 334, 6, 10, 103),
+ (276, 7, 'Donec semper sapien a libero.', 625, 10, 2, 119),
+ (277, 10, 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.', 54, 2, 2, 197),
+ (278, 2, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 924, 6, 4, 46),
+ (279, 8, 'Praesent blandit. Nam nulla.', 150, 7, 3, 170),
+ (280, 10, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 979, 4, 8, 115),
+ (281, 2, 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 996, 5, 1, 123),
+ (282, 9, 'Donec ut mauris eget massa tempor convallis.', 615, 9, 1, 164),
+ (283, 7, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', 122, 1, 1, 184),
+ (284, 5, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 972, 2, 3, 177),
+ (285, 5, 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 335, 3, 7, 123),
+ (286, 10, 'Morbi a ipsum. Integer a nibh. In quis justo.', 784, 8, 5, 98),
+ (287, 2, 'Sed vel enim sit amet nunc viverra dapibus.', 337, 6, 2, 108),
+ (288, 8, 'Sed ante.', 950, 2, 7, 140),
+ (289, 3, 'Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 682, 3, 7, 96),
+ (290, 7, 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 455, 6, 9, 127),
+ (291, 10, 'Nulla nisl.', 552, 10, 2, 52),
+ (292, 3, 'Proin interdum mauris non ligula pellentesque ultrices.', 939, 5, 7, 33),
+ (293, 3, 'Suspendisse potenti. Nullam porttitor lacus at turpis.', 907, 7, 1, 117),
+ (294, 4, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 791, 4, 5, 186),
+ (295, 1, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', 190, 1, 10, 80),
+ (296, 10, 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', 558, 9, 4, 162),
+ (297, 10, 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 190, 10, 3, 80),
+ (298, 10, 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 798, 2, 4, 122),
+ (299, 3, 'Pellentesque at nulla.', 647, 6, 1, 116),
+ (300, 4, 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 82, 5, 1, 147);
 
 /*_____________________________LOTE_____________________________________*/
 
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (1, 2, 48, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (2, 20, 48, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (3, 25, 10, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (4, 4, 9, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (5, 9, 1, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (6, 22, 13, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (7, 23, 18, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (8, 17, 18, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (9, 16, 17, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (10, 29, 27, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (11, 11, 20, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (12, 9, 38, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (13, 28, 38, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (14, 22, 35, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (15, 20, 30, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (16, 16, 34, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (17, 21, 7, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (18, 9, 2, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (19, 10, 13, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (20, 27, 31, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (21, 17, 12, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (22, 27, 31, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (23, 29, 39, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (24, 23, 14, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (25, 20, 40, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (26, 5, 5, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (27, 6, 33, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (28, 13, 38, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (29, 3, 29, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (30, 27, 38, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (31, 20, 37, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (32, 9, 12, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (33, 1, 23, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (34, 6, 49, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (35, 22, 30, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (36, 25, 1, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (37, 2, 31, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (38, 22, 18, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (39, 3, 39, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (40, 18, 11, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (41, 14, 37, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (42, 30, 44, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (43, 24, 37, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (44, 6, 34, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (45, 30, 31, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (46, 11, 30, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (47, 11, 5, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (48, 4, 41, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (49, 21, 40, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (50, 28, 43, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (51, 16, 1, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (52, 12, 29, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (53, 9, 9, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (54, 5, 21, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (55, 26, 40, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (56, 23, 49, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (57, 21, 49, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (58, 21, 21, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (59, 24, 50, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (60, 9, 20, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (61, 16, 36, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (62, 30, 37, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (63, 30, 32, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (64, 24, 42, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (65, 14, 14, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (66, 26, 26, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (67, 4, 35, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (68, 11, 32, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (69, 29, 1, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (70, 14, 25, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (71, 26, 28, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (72, 9, 45, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (73, 10, 4, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (74, 10, 5, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (75, 10, 32, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (76, 29, 10, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (77, 13, 28, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (78, 17, 14, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (79, 9, 41, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (80, 5, 2, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (81, 28, 30, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (82, 24, 3, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (83, 10, 21, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (84, 12, 9, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (85, 17, 8, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (86, 20, 12, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (87, 8, 45, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (88, 2, 37, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (89, 16, 39, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (90, 27, 17, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (91, 10, 28, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (92, 26, 39, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (93, 14, 40, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (94, 2, 29, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (95, 17, 49, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (96, 1, 28, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (97, 30, 5, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (98, 28, 26, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (99, 8, 16, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (100, 18, 15, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (101, 7, 7, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (102, 8, 48, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (103, 4, 1, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (104, 30, 24, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (105, 12, 24, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (106, 12, 39, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (107, 30, 46, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (108, 10, 30, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (109, 17, 30, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (110, 29, 45, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (111, 29, 36, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (112, 8, 32, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (113, 29, 36, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (114, 3, 38, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (115, 8, 49, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (116, 5, 43, 23);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (117, 5, 7, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (118, 21, 29, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (119, 11, 41, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (120, 10, 19, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (121, 11, 22, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (122, 10, 50, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (123, 12, 6, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (124, 25, 20, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (125, 19, 50, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (126, 12, 1, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (127, 14, 9, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (128, 12, 7, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (129, 6, 22, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (130, 24, 36, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (131, 27, 42, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (132, 2, 30, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (133, 15, 15, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (134, 22, 3, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (135, 5, 34, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (136, 21, 15, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (137, 19, 16, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (138, 14, 46, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (139, 12, 29, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (140, 7, 47, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (141, 13, 31, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (142, 19, 10, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (143, 14, 25, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (144, 24, 35, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (145, 18, 18, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (146, 23, 49, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (147, 30, 45, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (148, 22, 16, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (149, 27, 35, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (150, 6, 32, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (151, 12, 2, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (152, 20, 49, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (153, 2, 26, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (154, 18, 32, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (155, 14, 17, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (156, 25, 26, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (157, 9, 47, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (158, 15, 21, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (159, 25, 7, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (160, 4, 47, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (161, 23, 29, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (162, 25, 33, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (163, 29, 21, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (164, 14, 50, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (165, 6, 23, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (166, 15, 1, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (167, 30, 7, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (168, 19, 32, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (169, 15, 26, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (170, 22, 48, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (171, 10, 43, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (172, 14, 48, 36);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (173, 7, 43, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (174, 27, 33, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (175, 21, 11, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (176, 19, 18, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (177, 7, 17, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (178, 17, 27, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (179, 30, 31, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (180, 9, 21, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (181, 17, 31, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (182, 15, 47, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (183, 22, 25, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (184, 24, 42, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (185, 26, 46, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (186, 19, 19, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (187, 29, 47, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (188, 7, 47, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (189, 23, 44, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (190, 26, 47, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (191, 19, 3, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (192, 8, 34, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (193, 12, 41, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (194, 30, 12, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (195, 27, 35, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (196, 30, 48, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (197, 13, 36, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (198, 8, 10, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (199, 2, 31, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (200, 10, 6, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (201, 24, 16, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (202, 18, 34, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (203, 9, 35, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (204, 29, 16, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (205, 23, 12, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (206, 23, 17, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (207, 25, 8, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (208, 15, 13, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (209, 5, 14, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (210, 9, 28, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (211, 22, 14, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (212, 27, 45, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (213, 26, 9, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (214, 3, 47, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (215, 22, 32, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (216, 21, 28, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (217, 25, 47, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (218, 9, 33, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (219, 16, 3, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (220, 27, 47, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (221, 28, 13, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (222, 24, 3, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (223, 4, 4, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (224, 3, 20, 36);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (225, 27, 20, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (226, 28, 30, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (227, 30, 40, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (228, 18, 7, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (229, 3, 27, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (230, 15, 23, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (231, 7, 23, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (232, 18, 18, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (233, 30, 35, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (234, 15, 29, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (235, 12, 18, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (236, 18, 41, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (237, 27, 17, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (238, 3, 11, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (239, 21, 28, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (240, 18, 40, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (241, 21, 39, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (242, 7, 31, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (243, 21, 36, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (244, 2, 29, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (245, 25, 2, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (246, 1, 23, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (247, 27, 23, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (248, 20, 23, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (249, 4, 27, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (250, 20, 12, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (251, 18, 34, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (252, 1, 24, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (253, 18, 49, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (254, 30, 4, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (255, 7, 21, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (256, 18, 19, 36);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (257, 2, 28, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (258, 21, 46, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (259, 4, 12, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (260, 18, 19, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (261, 7, 36, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (262, 20, 1, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (263, 11, 29, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (264, 10, 43, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (265, 3, 43, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (266, 21, 22, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (267, 16, 12, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (268, 16, 44, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (269, 11, 10, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (270, 19, 1, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (271, 30, 8, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (272, 5, 46, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (273, 12, 24, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (274, 18, 29, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (275, 4, 37, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (276, 10, 34, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (277, 6, 10, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (278, 16, 46, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (279, 18, 18, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (280, 25, 48, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (281, 26, 34, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (282, 10, 32, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (283, 16, 34, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (284, 25, 3, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (285, 15, 5, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (286, 7, 6, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (287, 15, 49, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (288, 27, 40, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (289, 2, 5, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (290, 15, 49, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (291, 20, 21, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (292, 30, 29, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (293, 1, 31, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (294, 16, 24, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (295, 18, 29, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (296, 21, 49, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (297, 25, 41, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (298, 18, 28, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (299, 3, 46, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (300, 8, 11, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (301, 17, 4, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (302, 16, 41, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (303, 4, 11, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (304, 9, 22, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (305, 27, 27, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (306, 21, 4, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (307, 29, 14, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (308, 1, 21, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (309, 27, 9, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (310, 27, 34, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (311, 19, 3, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (312, 17, 47, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (313, 20, 28, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (314, 7, 7, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (315, 29, 12, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (316, 24, 20, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (317, 12, 3, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (318, 29, 18, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (319, 22, 31, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (320, 26, 9, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (321, 20, 2, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (322, 29, 35, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (323, 19, 8, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (324, 9, 35, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (325, 2, 22, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (326, 19, 27, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (327, 10, 14, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (328, 19, 15, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (329, 29, 2, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (330, 3, 47, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (331, 24, 12, 27);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (332, 29, 7, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (333, 21, 35, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (334, 2, 26, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (335, 17, 37, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (336, 21, 17, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (337, 18, 6, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (338, 12, 28, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (339, 11, 2, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (340, 28, 5, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (341, 22, 7, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (342, 7, 23, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (343, 11, 5, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (344, 29, 21, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (345, 1, 16, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (346, 6, 19, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (347, 17, 44, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (348, 11, 19, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (349, 27, 7, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (350, 13, 36, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (351, 2, 27, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (352, 22, 20, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (353, 9, 5, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (354, 4, 5, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (355, 7, 20, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (356, 17, 31, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (357, 16, 4, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (358, 29, 14, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (359, 4, 27, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (360, 20, 50, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (361, 23, 43, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (362, 1, 1, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (363, 23, 31, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (364, 5, 48, 16);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (365, 26, 23, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (366, 8, 6, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (367, 12, 37, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (368, 17, 1, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (369, 27, 41, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (370, 5, 35, 49);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (371, 16, 36, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (372, 25, 24, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (373, 18, 13, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (374, 4, 35, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (375, 14, 42, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (376, 19, 35, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (377, 14, 15, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (378, 8, 16, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (379, 15, 25, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (380, 3, 29, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (381, 10, 9, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (382, 5, 15, 23);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (383, 27, 32, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (384, 20, 14, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (385, 8, 45, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (386, 3, 26, 32);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (387, 28, 48, 40);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (388, 24, 4, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (389, 12, 26, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (390, 12, 13, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (391, 13, 44, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (392, 24, 3, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (393, 26, 37, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (394, 12, 17, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (395, 14, 20, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (396, 12, 48, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (397, 15, 31, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (398, 16, 22, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (399, 26, 43, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (400, 8, 15, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (401, 30, 23, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (402, 26, 20, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (403, 16, 49, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (404, 11, 15, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (405, 18, 21, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (406, 6, 4, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (407, 22, 11, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (408, 1, 22, 8);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (409, 4, 21, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (410, 14, 21, 44);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (411, 1, 18, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (412, 4, 37, 18);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (413, 15, 10, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (414, 18, 19, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (415, 15, 42, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (416, 29, 45, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (417, 1, 28, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (418, 21, 4, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (419, 26, 23, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (420, 5, 4, 14);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (421, 9, 50, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (422, 21, 29, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (423, 7, 3, 20);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (424, 15, 13, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (425, 5, 3, 26);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (426, 19, 36, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (427, 12, 12, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (428, 8, 48, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (429, 15, 12, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (430, 23, 20, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (431, 17, 14, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (432, 14, 34, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (433, 23, 13, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (434, 16, 18, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (435, 11, 10, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (436, 15, 8, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (437, 21, 45, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (438, 25, 16, 41);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (439, 29, 46, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (440, 1, 47, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (441, 20, 48, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (442, 16, 42, 50);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (443, 27, 16, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (444, 17, 9, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (445, 13, 12, 1);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (446, 28, 6, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (447, 18, 43, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (448, 11, 19, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (449, 13, 36, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (450, 8, 44, 48);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (451, 22, 16, 38);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (452, 16, 37, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (453, 5, 31, 36);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (454, 18, 10, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (455, 27, 1, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (456, 7, 43, 15);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (457, 23, 31, 3);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (458, 14, 31, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (459, 20, 24, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (460, 1, 30, 29);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (461, 23, 30, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (462, 16, 23, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (463, 9, 47, 34);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (464, 21, 27, 28);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (465, 15, 22, 12);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (466, 19, 1, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (467, 14, 7, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (468, 22, 8, 24);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (469, 18, 29, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (470, 20, 38, 37);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (471, 6, 50, 13);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (472, 14, 6, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (473, 10, 11, 33);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (474, 16, 20, 4);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (475, 19, 33, 45);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (476, 24, 30, 22);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (477, 24, 44, 17);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (478, 12, 13, 11);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (479, 17, 44, 25);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (480, 26, 13, 23);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (481, 11, 22, 46);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (482, 30, 45, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (483, 21, 42, 35);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (484, 27, 45, 31);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (485, 4, 37, 30);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (486, 19, 12, 2);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (487, 19, 12, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (488, 12, 13, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (489, 26, 26, 7);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (490, 8, 42, 47);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (491, 4, 18, 21);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (492, 22, 45, 36);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (493, 24, 50, 6);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (494, 17, 38, 42);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (495, 22, 46, 5);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (496, 7, 47, 39);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (497, 3, 34, 10);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (498, 12, 47, 43);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (499, 4, 3, 9);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (500, 30, 13, 35);
+ insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values
+ (1, 2, 48, 19),
+ (3, 25, 10, 47),
+ (4, 4, 9, 4),
+ (5, 9, 1, 20),
+ (6, 22, 13, 47),
+ (7, 23, 18, 38),
+ (8, 17, 18, 2),
+ (9, 16, 17, 45),
+ (10, 29, 27, 29),
+ (11, 11, 20, 34),
+ (12, 9, 38, 42),
+ (13, 28, 38, 17),
+ (14, 22, 35, 38),
+ (15, 20, 30, 19),
+ (16, 16, 34, 3),
+ (17, 21, 7, 27),
+ (18, 9, 2, 10),
+ (19, 10, 13, 19),
+ (20, 27, 31, 37),
+ (21, 17, 12, 24),
+ (22, 27, 31, 9),
+ (23, 29, 39, 6),
+ (24, 23, 14, 27),
+ (25, 20, 40, 15),
+ (26, 5, 5, 37),
+ (27, 6, 33, 7),
+ (28, 13, 38, 30),
+ (29, 3, 29, 35),
+ (30, 27, 38, 46),
+ (31, 20, 37, 34),
+ (32, 9, 12, 14),
+ (33, 1, 23, 3),
+ (34, 6, 49, 7),
+ (35, 22, 30, 42),
+ (36, 25, 1, 6),
+ (37, 2, 31, 16),
+ (38, 22, 18, 38),
+ (39, 3, 39, 42),
+ (40, 18, 11, 31),
+ (41, 14, 37, 39),
+ (42, 30, 44, 24),
+ (43, 24, 37, 37),
+ (44, 6, 34, 3),
+ (45, 30, 31, 45),
+ (46, 11, 30, 46),
+ (47, 11, 5, 39),
+ (48, 4, 41, 21),
+ (49, 21, 40, 32),
+ (50, 28, 43, 14),
+ (51, 16, 1, 1),
+ (52, 12, 29, 4),
+ (53, 9, 9, 9),
+ (54, 5, 21, 31),
+ (55, 26, 40, 33),
+ (56, 23, 49, 43),
+ (57, 21, 49, 3),
+ (58, 21, 21, 20),
+ (59, 24, 50, 1),
+ (60, 9, 20, 27),
+ (61, 16, 36, 5),
+ (62, 30, 37, 50),
+ (63, 30, 32, 30),
+ (64, 24, 42, 26),
+ (65, 14, 14, 5),
+ (66, 26, 26, 50),
+ (67, 4, 35, 43),
+ (68, 11, 32, 28),
+ (69, 29, 1, 38),
+ (70, 14, 25, 16),
+ (71, 26, 28, 9),
+ (72, 9, 45, 44),
+ (73, 10, 4, 48),
+ (74, 10, 5, 20),
+ (75, 10, 32, 22),
+ (76, 29, 10, 18),
+ (77, 13, 28, 38),
+ (78, 17, 14, 1),
+ (79, 9, 41, 27),
+ (80, 5, 2, 2),
+ (81, 28, 30, 47),
+ (82, 24, 3, 4),
+ (83, 10, 21, 22),
+ (84, 12, 9, 28),
+ (85, 17, 8, 32),
+ (86, 20, 12, 42),
+ (87, 8, 45, 17),
+ (88, 2, 37, 14),
+ (89, 16, 39, 50),
+ (90, 27, 17, 41),
+ (91, 10, 28, 49),
+ (92, 26, 39, 44),
+ (93, 14, 40, 44),
+ (94, 2, 29, 26),
+ (95, 17, 49, 21),
+ (96, 1, 28, 24),
+ (97, 30, 5, 11),
+ (98, 28, 26, 13),
+ (99, 8, 16, 15),
+ (100, 18, 15, 30),
+ (101, 7, 7, 10),
+ (102, 8, 48, 22),
+ (103, 4, 1, 47),
+ (104, 30, 24, 11),
+ (105, 12, 24, 35),
+ (106, 12, 39, 8),
+ (107, 30, 46, 39),
+ (108, 10, 30, 47),
+ (109, 17, 30, 50),
+ (110, 29, 45, 42),
+ (111, 29, 36, 48),
+ (112, 8, 32, 31),
+ (113, 29, 36, 29),
+ (114, 3, 38, 19),
+ (115, 8, 49, 17),
+ (116, 5, 43, 23),
+ (117, 5, 7, 26),
+ (118, 21, 29, 42),
+ (119, 11, 41, 16),
+ (120, 10, 19, 32),
+ (121, 11, 22, 41),
+ (122, 10, 50, 30),
+ (123, 12, 6, 6),
+ (124, 25, 20, 27),
+ (125, 19, 50, 21),
+ (126, 12, 1, 38),
+ (127, 14, 9, 30),
+ (128, 12, 7, 10),
+ (129, 6, 22, 19),
+ (130, 24, 36, 44),
+ (131, 27, 42, 28),
+ (132, 2, 30, 44),
+ (133, 15, 15, 39),
+ (134, 22, 3, 45),
+ (135, 5, 34, 33),
+ (136, 21, 15, 30),
+ (137, 19, 16, 34),
+ (138, 14, 46, 13),
+ (139, 12, 29, 19),
+ (140, 7, 47, 19),
+ (141, 13, 31, 50),
+ (142, 19, 10, 40),
+ (143, 14, 25, 24),
+ (144, 24, 35, 4),
+ (145, 18, 18, 14),
+ (146, 23, 49, 21),
+ (147, 30, 45, 46),
+ (148, 22, 16, 34),
+ (149, 27, 35, 30),
+ (150, 6, 32, 38),
+ (151, 12, 2, 44),
+ (152, 20, 49, 2),
+ (153, 2, 26, 41),
+ (154, 18, 32, 5),
+ (155, 14, 17, 41),
+ (156, 25, 26, 32),
+ (157, 9, 47, 38),
+ (158, 15, 21, 31),
+ (159, 25, 7, 49),
+ (160, 4, 47, 33),
+ (161, 23, 29, 49),
+ (162, 25, 33, 17),
+ (163, 29, 21, 43),
+ (164, 14, 50, 33),
+ (165, 6, 23, 4),
+ (166, 15, 1, 9),
+ (167, 30, 7, 48),
+ (168, 19, 32, 12),
+ (169, 15, 26, 11),
+ (170, 22, 48, 21),
+ (171, 10, 43, 20),
+ (172, 14, 48, 36),
+ (173, 7, 43, 9),
+ (174, 27, 33, 35),
+ (175, 21, 11, 6),
+ (176, 19, 18, 9),
+ (177, 7, 17, 15),
+ (178, 17, 27, 7),
+ (179, 30, 31, 27),
+ (180, 9, 21, 19),
+ (181, 17, 31, 25),
+ (182, 15, 47, 8),
+ (183, 22, 25, 47),
+ (184, 24, 42, 28),
+ (185, 26, 46, 19),
+ (186, 19, 19, 12),
+ (187, 29, 47, 21),
+ (188, 7, 47, 6),
+ (189, 23, 44, 28),
+ (190, 26, 47, 11),
+ (191, 19, 3, 15),
+ (192, 8, 34, 13),
+ (193, 12, 41, 16),
+ (194, 30, 12, 5),
+ (195, 27, 35, 28),
+ (196, 30, 48, 39),
+ (197, 13, 36, 19),
+ (198, 8, 10, 3),
+ (199, 2, 31, 21),
+ (200, 10, 6, 28),
+ (201, 24, 16, 7),
+ (202, 18, 34, 5),
+ (203, 9, 35, 27),
+ (204, 29, 16, 30),
+ (205, 23, 12, 11),
+ (206, 23, 17, 46),
+ (207, 25, 8, 34),
+ (208, 15, 13, 37),
+ (209, 5, 14, 21),
+ (210, 9, 28, 17),
+ (211, 22, 14, 5),
+ (212, 27, 45, 16),
+ (213, 26, 9, 39),
+ (214, 3, 47, 10),
+ (215, 22, 32, 16),
+ (216, 21, 28, 25),
+ (217, 25, 47, 34),
+ (218, 9, 33, 43),
+ (219, 16, 3, 32),
+ (220, 27, 47, 40),
+ (221, 28, 13, 11),
+ (222, 24, 3, 2),
+ (223, 4, 4, 20),
+ (224, 3, 20, 36),
+ (225, 27, 20, 20),
+ (226, 28, 30, 39),
+ (227, 30, 40, 30),
+ (228, 18, 7, 20),
+ (229, 3, 27, 39),
+ (230, 15, 23, 42),
+ (231, 7, 23, 44),
+ (232, 18, 18, 22),
+ (233, 30, 35, 9),
+ (234, 15, 29, 45),
+ (235, 12, 18, 9),
+ (236, 18, 41, 26),
+ (237, 27, 17, 50),
+ (238, 3, 11, 29),
+ (239, 21, 28, 28),
+ (240, 18, 40, 48),
+ (241, 21, 39, 7),
+ (242, 7, 31, 5),
+ (243, 21, 36, 12),
+ (244, 2, 29, 41),
+ (245, 25, 2, 45),
+ (246, 1, 23, 49),
+ (247, 27, 23, 7),
+ (248, 20, 23, 22),
+ (249, 4, 27, 2),
+ (250, 20, 12, 1),
+ (251, 18, 34, 7),
+ (252, 1, 24, 16),
+ (253, 18, 49, 47),
+ (254, 30, 4, 28),
+ (255, 7, 21, 16),
+ (256, 18, 19, 36),
+ (257, 2, 28, 3),
+ (258, 21, 46, 14),
+ (259, 4, 12, 40),
+ (260, 18, 19, 33),
+ (261, 7, 36, 3),
+ (262, 20, 1, 9),
+ (263, 11, 29, 34),
+ (264, 10, 43, 38),
+ (265, 3, 43, 22),
+ (266, 21, 22, 14),
+ (267, 16, 12, 20),
+ (268, 16, 44, 18),
+ (269, 11, 10, 24),
+ (270, 19, 1, 33),
+ (271, 30, 8, 26),
+ (272, 5, 46, 39),
+ (273, 12, 24, 28),
+ (274, 18, 29, 41),
+ (275, 4, 37, 33),
+ (276, 10, 34, 29),
+ (277, 6, 10, 8),
+ (278, 16, 46, 9),
+ (279, 18, 18, 45),
+ (280, 25, 48, 2),
+ (281, 26, 34, 28),
+ (282, 10, 32, 47),
+ (283, 16, 34, 32),
+ (284, 25, 3, 34),
+ (285, 15, 5, 12),
+ (286, 7, 6, 30),
+ (287, 15, 49, 20),
+ (288, 27, 40, 46),
+ (289, 2, 5, 31),
+ (290, 15, 49, 44),
+ (291, 20, 21, 41),
+ (292, 30, 29, 11),
+ (293, 1, 31, 45),
+ (294, 16, 24, 20),
+ (295, 18, 29, 49),
+ (296, 21, 49, 45),
+ (297, 25, 41, 50),
+ (298, 18, 28, 27),
+ (299, 3, 46, 38),
+ (300, 8, 11, 17),
+ (301, 17, 4, 11),
+ (302, 16, 41, 1),
+ (303, 4, 11, 46),
+ (304, 9, 22, 48),
+ (305, 27, 27, 34),
+ (306, 21, 4, 47),
+ (307, 29, 14, 7),
+ (308, 1, 21, 5),
+ (309, 27, 9, 39),
+ (310, 27, 34, 8),
+ (311, 19, 3, 13),
+ (312, 17, 47, 44),
+ (313, 20, 28, 9),
+ (314, 7, 7, 41),
+ (315, 29, 12, 42),
+ (316, 24, 20, 9),
+ (317, 12, 3, 1),
+ (318, 29, 18, 7),
+ (319, 22, 31, 45),
+ (320, 26, 9, 40),
+ (321, 20, 2, 14),
+ (322, 29, 35, 5),
+ (323, 19, 8, 29),
+ (324, 9, 35, 44),
+ (325, 2, 22, 31),
+ (326, 19, 27, 2),
+ (327, 10, 14, 44),
+ (328, 19, 15, 32),
+ (329, 29, 2, 32),
+ (330, 3, 47, 28),
+ (331, 24, 12, 27),
+ (332, 29, 7, 18),
+ (333, 21, 35, 8),
+ (334, 2, 26, 16),
+ (335, 17, 37, 31),
+ (336, 21, 17, 50),
+ (337, 18, 6, 35),
+ (338, 12, 28, 15),
+ (339, 11, 2, 3),
+ (340, 28, 5, 21),
+ (341, 22, 7, 34),
+ (342, 7, 23, 34),
+ (343, 11, 5, 43),
+ (344, 29, 21, 8),
+ (345, 1, 16, 45),
+ (346, 6, 19, 38),
+ (347, 17, 44, 3),
+ (348, 11, 19, 40),
+ (349, 27, 7, 28),
+ (350, 13, 36, 39),
+ (351, 2, 27, 29),
+ (352, 22, 20, 14),
+ (353, 9, 5, 25),
+ (354, 4, 5, 31),
+ (355, 7, 20, 28),
+ (356, 17, 31, 37),
+ (357, 16, 4, 18),
+ (358, 29, 14, 30),
+ (359, 4, 27, 43),
+ (360, 20, 50, 49),
+ (361, 23, 43, 12),
+ (362, 1, 1, 40),
+ (363, 23, 31, 17),
+ (364, 5, 48, 16),
+ (365, 26, 23, 6),
+ (366, 8, 6, 41),
+ (367, 12, 37, 4),
+ (368, 17, 1, 6),
+ (369, 27, 41, 6),
+ (370, 5, 35, 49),
+ (371, 16, 36, 45),
+ (372, 25, 24, 18),
+ (373, 18, 13, 40),
+ (374, 4, 35, 45),
+ (375, 14, 42, 50),
+ (376, 19, 35, 6),
+ (377, 14, 15, 34),
+ (378, 8, 16, 29),
+ (379, 15, 25, 35),
+ (380, 3, 29, 24),
+ (381, 10, 9, 15),
+ (382, 5, 15, 23),
+ (383, 27, 32, 6),
+ (384, 20, 14, 24),
+ (385, 8, 45, 32),
+ (386, 3, 26, 32),
+ (387, 28, 48, 40),
+ (388, 24, 4, 28),
+ (389, 12, 26, 5),
+ (390, 12, 13, 14),
+ (391, 13, 44, 35),
+ (392, 24, 3, 28),
+ (393, 26, 37, 11),
+ (394, 12, 17, 11),
+ (395, 14, 20, 46),
+ (396, 12, 48, 25),
+ (397, 15, 31, 10),
+ (398, 16, 22, 24),
+ (399, 26, 43, 24),
+ (400, 8, 15, 42),
+ (401, 30, 23, 41),
+ (402, 26, 20, 8),
+ (403, 16, 49, 6),
+ (404, 11, 15, 34),
+ (405, 18, 21, 2),
+ (406, 6, 4, 30),
+ (407, 22, 11, 14),
+ (408, 1, 22, 8),
+ (409, 4, 21, 21),
+ (410, 14, 21, 44),
+ (411, 1, 18, 20),
+ (412, 4, 37, 18),
+ (413, 15, 10, 46),
+ (414, 18, 19, 12),
+ (415, 15, 42, 19),
+ (416, 29, 45, 37),
+ (417, 1, 28, 43),
+ (418, 21, 4, 19),
+ (419, 26, 23, 42),
+ (420, 5, 4, 14),
+ (421, 9, 50, 37),
+ (422, 21, 29, 31),
+ (423, 7, 3, 20),
+ (424, 15, 13, 47),
+ (425, 5, 3, 26),
+ (426, 19, 36, 13),
+ (427, 12, 12, 22),
+ (428, 8, 48, 38),
+ (429, 15, 12, 10),
+ (430, 23, 20, 19),
+ (431, 17, 14, 21),
+ (432, 14, 34, 3),
+ (433, 23, 13, 25),
+ (434, 16, 18, 30),
+ (435, 11, 10, 17),
+ (436, 15, 8, 48),
+ (437, 21, 45, 2),
+ (438, 25, 16, 41),
+ (439, 29, 46, 11),
+ (440, 1, 47, 47),
+ (441, 20, 48, 3),
+ (442, 16, 42, 50),
+ (443, 27, 16, 7),
+ (444, 17, 9, 6),
+ (445, 13, 12, 1),
+ (446, 28, 6, 11),
+ (447, 18, 43, 4),
+ (448, 11, 19, 10),
+ (449, 13, 36, 21),
+ (450, 8, 44, 48),
+ (451, 22, 16, 38),
+ (452, 16, 37, 6),
+ (453, 5, 31, 36),
+ (454, 18, 10, 5),
+ (455, 27, 1, 30),
+ (456, 7, 43, 15),
+ (457, 23, 31, 3),
+ (458, 14, 31, 4),
+ (459, 20, 24, 12),
+ (460, 1, 30, 29),
+ (461, 23, 30, 43),
+ (462, 16, 23, 11),
+ (463, 9, 47, 34),
+ (464, 21, 27, 28),
+ (465, 15, 22, 12),
+ (466, 19, 1, 39),
+ (467, 14, 7, 35),
+ (468, 22, 8, 24),
+ (469, 18, 29, 10),
+ (470, 20, 38, 37),
+ (471, 6, 50, 13),
+ (472, 14, 6, 31),
+ (473, 10, 11, 33),
+ (474, 16, 20, 4),
+ (475, 19, 33, 45),
+ (476, 24, 30, 22),
+ (477, 24, 44, 17),
+ (478, 12, 13, 11),
+ (479, 17, 44, 25),
+ (480, 26, 13, 23),
+ (481, 11, 22, 46),
+ (482, 30, 45, 47),
+ (483, 21, 42, 35),
+ (484, 27, 45, 31),
+ (485, 4, 37, 30),
+ (486, 19, 12, 2),
+ (487, 19, 12, 9),
+ (488, 12, 13, 10),
+ (489, 26, 26, 7),
+ (490, 8, 42, 47),
+ (491, 4, 18, 21),
+ (492, 22, 45, 36),
+ (493, 24, 50, 6),
+ (494, 17, 38, 42),
+ (495, 22, 46, 5),
+ (496, 7, 47, 39),
+ (497, 3, 34, 10),
+ (498, 12, 47, 43),
+ (499, 4, 3, 9),
+ (500, 30, 13, 35);
 
 /*_____________________________CONTAINER_____________________________________*/
 
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (1, '2008-01-18', 73.55, 84.84, 77.85, 7499, 'Em uso', 170, 1, 460, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (2, '2017-09-17', 43.12, 23.37, 43.0, 118, 'Disponivel', 148, 2, 82, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (3, '2011-04-02', 52.68, 37.42, 90.87, 2716, 'Desmobilizado', 225, 2, 425, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (4, '2006-04-23', 33.24, 30.8, 62.57, 3215, 'Em manutenção', 155, 2, 45, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (5, '2003-08-21', 57.45, 38.52, 96.5, 3341, 'Desmobilizado', 237, 2, 64, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (6, '2014-03-04', 97.64, 98.69, 48.88, 3543, 'Em manutenção', 91, 1, 427, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (7, '2012-04-09', 42.35, 6.43, 70.09, 1762, 'Em manutenção', 20, 2, 345, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (8, '2015-08-23', 66.99, 47.06, 86.88, 1247, 'Disponivel', 7, 1, 272, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (9, '2006-09-11', 8.1, 74.84, 13.49, 7067, 'Em manutenção', 16, 1, 422, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (10, '2010-06-28', 61.31, 91.4, 10.52, 8307, 'Disponivel', 12, 2, 221, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (11, '2004-10-24', 64.5, 70.26, 84.12, 4722, 'Desmobilizado', 37, 2, 441, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (12, '2016-08-19', 41.16, 98.02, 74.35, 6717, 'Em uso', 154, 2, 139, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (13, '2005-12-08', 33.25, 16.42, 44.46, 3746, 'Em manutenção', 218, 2, 425, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (14, '2002-12-16', 67.04, 92.39, 24.84, 575, 'Disponivel', 120, 2, 289, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (15, '2018-08-05', 76.42, 97.04, 69.58, 2121, 'Desmobilizado', 128, 2, 95, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (16, '2000-06-16', 48.57, 4.88, 51.96, 6464, 'Disponivel', 165, 2, 427, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (17, '2007-11-11', 99.01, 85.06, 4.14, 1906, 'Disponivel', 52, 1, 454, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (18, '2006-02-12', 39.51, 71.95, 53.24, 1752, 'Disponivel', 90, 1, 440, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (19, '2016-10-01', 27.05, 59.84, 69.69, 5828, 'Disponivel', 71, 2, 356, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (20, '2000-07-28', 40.06, 66.09, 78.14, 2229, 'Em uso', 238, 2, 276, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (21, '2012-07-17', 87.39, 64.98, 72.96, 6908, 'Em uso', 66, 1, 38, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (22, '2006-03-30', 61.39, 79.64, 11.25, 5450, 'Disponivel', 134, 1, 70, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (23, '2003-06-26', 16.37, 99.07, 72.2, 213, 'Em manutenção', 63, 1, 11, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (24, '2003-10-14', 83.63, 60.59, 76.42, 2990, 'Desmobilizado', 215, 1, 125, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (25, '2001-02-12', 13.51, 93.52, 6.84, 3776, 'Disponivel', 181, 1, 162, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (26, '2009-06-25', 57.07, 92.57, 50.65, 1028, 'Em uso', 91, 1, 417, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (27, '2017-12-12', 1.67, 5.48, 92.81, 9943, 'Em manutenção', 210, 1, 176, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (28, '2001-10-26', 84.6, 74.12, 80.18, 3395, 'Desmobilizado', 29, 2, 210, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (29, '2004-01-06', 62.65, 34.02, 38.18, 7137, 'Desmobilizado', 190, 1, 48, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (30, '2005-09-11', 25.46, 67.75, 60.94, 7008, 'Desmobilizado', 211, 1, 290, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (31, '2005-11-04', 43.08, 86.82, 81.3, 4612, 'Disponivel', 186, 1, 249, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (32, '2015-03-31', 95.1, 30.27, 5.26, 8580, 'Em manutenção', 197, 1, 226, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (33, '2019-01-22', 55.09, 75.49, 91.8, 1561, 'Desmobilizado', 42, 2, 65, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (34, '2014-09-22', 90.25, 10.16, 85.38, 571, 'Desmobilizado', 211, 1, 383, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (35, '2004-06-21', 58.32, 15.67, 57.45, 3359, 'Desmobilizado', 134, 1, 244, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (36, '2000-09-14', 38.29, 31.5, 40.6, 8225, 'Em uso', 167, 1, 36, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (37, '2003-09-16', 62.45, 12.57, 43.62, 3723, 'Em manutenção', 48, 2, 500, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (38, '2004-03-26', 80.19, 41.64, 29.15, 1331, 'Em manutenção', 186, 1, 274, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (39, '2008-09-16', 79.9, 56.48, 89.69, 4826, 'Em uso', 127, 2, 33, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (40, '2006-06-20', 71.75, 43.82, 42.97, 6304, 'Disponivel', 224, 2, 9, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (41, '2002-11-28', 77.39, 12.2, 21.82, 7846, 'Em manutenção', 39, 2, 180, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (42, '2010-06-30', 96.08, 36.88, 85.91, 1510, 'Em manutenção', 78, 1, 209, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (43, '2004-04-08', 31.89, 98.48, 61.51, 1371, 'Em manutenção', 218, 1, 110, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (44, '2011-10-05', 12.23, 29.17, 53.12, 3506, 'Disponivel', 118, 1, 327, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (45, '2002-11-23', 16.03, 85.01, 40.59, 867, 'Em manutenção', 24, 2, 317, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (46, '2009-04-10', 45.08, 46.33, 89.99, 3787, 'Em uso', 12, 2, 413, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (47, '2002-02-02', 93.02, 30.91, 47.49, 7620, 'Em manutenção', 74, 2, 482, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (48, '2005-06-25', 83.85, 77.55, 1.17, 1117, 'Desmobilizado', 27, 1, 148, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (49, '2013-11-07', 48.3, 88.68, 42.01, 2171, 'Disponivel', 135, 2, 469, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (50, '2006-02-12', 57.74, 22.91, 70.14, 3141, 'Desmobilizado', 3, 2, 314, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (51, '2018-10-11', 5.07, 44.6, 94.43, 707, 'Desmobilizado', 150, 1, 232, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (52, '2018-05-30', 99.5, 59.85, 74.99, 4098, 'Desmobilizado', 178, 1, 245, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (53, '2018-12-27', 48.67, 71.89, 70.86, 6677, 'Em uso', 137, 2, 253, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (54, '2003-11-08', 68.37, 66.55, 8.26, 3653, 'Em uso', 166, 1, 10, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (55, '2018-11-17', 91.34, 84.19, 91.79, 1781, 'Disponivel', 229, 2, 451, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (56, '2000-07-03', 41.52, 31.58, 53.55, 5852, 'Em manutenção', 1, 1, 321, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (57, '2001-04-10', 46.74, 72.68, 52.48, 5629, 'Em manutenção', 103, 2, 382, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (58, '2011-04-28', 31.75, 9.05, 41.23, 6937, 'Desmobilizado', 150, 2, 325, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (59, '2007-03-11', 74.36, 51.85, 59.16, 6671, 'Disponivel', 97, 2, 435, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (60, '2009-10-28', 68.97, 4.85, 28.73, 8288, 'Em uso', 226, 1, 364, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (61, '2002-06-05', 61.46, 73.2, 89.41, 6356, 'Disponivel', 155, 1, 187, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (62, '2003-10-13', 80.57, 74.73, 69.29, 5960, 'Em uso', 155, 1, 121, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (63, '2002-07-13', 19.18, 40.36, 40.05, 647, 'Desmobilizado', 212, 2, 286, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (64, '2006-07-08', 13.36, 38.42, 75.66, 337, 'Em manutenção', 14, 2, 459, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (65, '2011-10-22', 46.46, 75.21, 20.38, 8665, 'Disponivel', 189, 1, 370, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (66, '2011-10-22', 38.44, 84.02, 85.94, 7633, 'Em manutenção', 128, 1, 244, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (67, '2001-10-25', 90.89, 56.39, 44.15, 6140, 'Em uso', 136, 1, 474, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (68, '2009-07-17', 66.39, 45.65, 13.47, 4391, 'Em uso', 213, 1, 5, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (69, '2010-02-09', 14.52, 20.83, 43.21, 4903, 'Em uso', 83, 2, 369, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (70, '2001-02-24', 2.42, 29.18, 19.93, 2795, 'Disponivel', 82, 1, 4, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (71, '2013-11-15', 1.68, 8.96, 88.75, 7657, 'Desmobilizado', 120, 1, 27, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (72, '2017-10-07', 76.35, 55.07, 97.28, 1574, 'Em manutenção', 236, 2, 254, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (73, '2012-12-02', 82.46, 64.87, 81.04, 7940, 'Em manutenção', 172, 2, 283, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (74, '2010-02-01', 23.76, 58.48, 47.45, 1242, 'Em uso', 240, 1, 299, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (75, '2012-06-12', 47.85, 87.49, 36.69, 9522, 'Em uso', 20, 2, 89, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (76, '2002-03-01', 36.36, 67.5, 17.53, 7972, 'Disponivel', 190, 2, 413, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (77, '2014-12-26', 98.59, 63.85, 80.52, 147, 'Em manutenção', 131, 1, 61, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (78, '2004-02-26', 92.55, 20.66, 91.78, 5298, 'Em manutenção', 15, 2, 496, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (79, '2015-12-24', 10.78, 23.13, 7.95, 8044, 'Em uso', 170, 1, 45, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (80, '2006-10-31', 61.56, 47.37, 27.38, 1171, 'Em uso', 195, 2, 248, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (81, '2017-02-07', 26.66, 49.29, 75.33, 8735, 'Em uso', 107, 2, 432, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (82, '2002-11-12', 59.29, 25.79, 96.34, 5865, 'Em uso', 28, 1, 333, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (83, '2013-08-25', 19.38, 66.46, 70.3, 4777, 'Desmobilizado', 167, 2, 328, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (84, '2009-03-19', 37.65, 96.73, 66.86, 9635, 'Disponivel', 237, 2, 351, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (85, '2005-07-15', 31.88, 58.64, 75.54, 5056, 'Em uso', 154, 2, 418, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (86, '2010-01-22', 57.26, 47.9, 92.86, 4234, 'Desmobilizado', 211, 2, 210, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (87, '2013-04-16', 81.57, 4.72, 52.23, 4003, 'Em uso', 69, 2, 438, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (88, '2010-05-04', 16.65, 14.26, 78.41, 7305, 'Disponivel', 102, 1, 97, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (89, '2016-07-31', 93.45, 43.3, 32.59, 1783, 'Desmobilizado', 175, 1, 105, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (90, '2019-03-02', 96.96, 27.43, 95.24, 3963, 'Em uso', 8, 2, 451, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (91, '2019-01-27', 52.9, 86.39, 12.35, 6816, 'Disponivel', 119, 2, 364, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (92, '2010-12-27', 73.72, 90.72, 3.11, 8881, 'Em uso', 35, 1, 253, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (93, '2013-07-17', 89.01, 15.81, 70.39, 5881, 'Em manutenção', 207, 1, 138, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (94, '2014-04-29', 96.7, 84.22, 17.86, 2758, 'Disponivel', 92, 2, 136, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (95, '2004-10-01', 77.42, 98.73, 64.27, 4712, 'Em manutenção', 154, 2, 114, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (96, '2012-09-08', 53.01, 11.12, 37.04, 3800, 'Em uso', 80, 1, 493, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (97, '2006-09-13', 66.25, 99.56, 15.4, 6471, 'Em manutenção', 164, 2, 248, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (98, '2010-05-04', 50.27, 22.35, 21.41, 7168, 'Em uso', 165, 1, 110, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (99, '2009-07-18', 99.07, 77.39, 13.64, 6231, 'Em uso', 224, 2, 330, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (100, '2013-08-13', 35.13, 65.66, 58.83, 5988, 'Disponivel', 70, 2, 371, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (101, '2006-01-12', 56.74, 82.57, 75.12, 3288, 'Em manutenção', 116, 2, 386, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (102, '2013-07-20', 66.69, 29.65, 85.58, 651, 'Disponivel', 103, 2, 107, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (103, '2014-03-23', 66.1, 45.63, 57.33, 5376, 'Em manutenção', 118, 2, 41, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (104, '2015-06-02', 4.56, 85.6, 71.87, 991, 'Desmobilizado', 123, 2, 135, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (105, '2007-09-03', 50.61, 42.01, 77.09, 7450, 'Em uso', 119, 1, 14, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (106, '2016-09-06', 73.95, 55.96, 54.31, 6730, 'Em uso', 183, 2, 497, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (107, '2008-01-25', 12.96, 97.06, 68.48, 3409, 'Em manutenção', 34, 1, 257, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (108, '2005-05-26', 37.34, 1.51, 84.28, 4737, 'Em uso', 42, 2, 479, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (109, '2001-12-09', 9.49, 15.84, 94.24, 9773, 'Disponivel', 215, 2, 447, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (110, '2001-05-28', 45.88, 57.17, 96.52, 3002, 'Disponivel', 220, 2, 121, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (111, '2015-02-08', 38.32, 82.07, 7.17, 2260, 'Disponivel', 33, 1, 334, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (112, '2004-02-02', 82.94, 93.32, 53.71, 4223, 'Em uso', 58, 1, 231, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (113, '2008-12-28', 53.24, 74.5, 73.46, 2084, 'Em manutenção', 31, 1, 153, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (114, '2008-10-23', 91.56, 24.96, 80.21, 522, 'Disponivel', 186, 2, 146, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (115, '2010-09-24', 23.19, 5.77, 74.93, 7502, 'Em manutenção', 63, 1, 491, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (116, '2010-10-29', 9.2, 26.4, 10.56, 9120, 'Em manutenção', 168, 2, 257, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (117, '2009-08-26', 44.2, 40.99, 8.61, 3285, 'Disponivel', 193, 1, 427, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (118, '2013-07-26', 34.75, 93.73, 18.91, 1128, 'Desmobilizado', 28, 2, 112, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (119, '2000-10-21', 11.88, 31.96, 59.27, 4709, 'Em manutenção', 116, 2, 83, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (120, '2019-05-16', 47.15, 8.53, 95.89, 920, 'Em uso', 183, 1, 3, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (121, '2012-11-04', 48.95, 22.47, 14.87, 1032, 'Desmobilizado', 45, 2, 272, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (122, '2016-07-07', 6.63, 36.65, 51.19, 9217, 'Em manutenção', 176, 1, 352, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (123, '2012-04-26', 90.38, 84.95, 90.02, 6068, 'Disponivel', 190, 1, 2, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (124, '2004-10-21', 83.98, 24.28, 18.8, 7341, 'Em uso', 13, 1, 283, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (125, '2018-12-03', 55.71, 21.35, 83.68, 6338, 'Em manutenção', 166, 1, 323, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (126, '2008-06-18', 26.17, 73.71, 31.15, 279, 'Disponivel', 100, 1, 275, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (127, '2005-10-09', 42.48, 34.24, 36.3, 1790, 'Disponivel', 194, 1, 386, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (128, '2011-06-28', 15.15, 5.12, 46.99, 3983, 'Disponivel', 9, 1, 123, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (129, '2009-11-17', 78.85, 80.03, 6.95, 2134, 'Disponivel', 120, 2, 95, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (130, '2015-12-29', 52.17, 53.32, 72.77, 1316, 'Em manutenção', 10, 2, 201, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (131, '2015-03-17', 16.15, 73.24, 83.41, 6203, 'Disponivel', 51, 1, 254, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (132, '2005-02-12', 18.89, 99.76, 70.05, 7824, 'Disponivel', 140, 1, 200, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (133, '2006-09-29', 33.02, 50.45, 90.02, 7801, 'Em uso', 199, 1, 35, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (134, '2011-02-01', 85.15, 36.28, 82.21, 9562, 'Em uso', 85, 1, 319, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (135, '2007-06-11', 78.44, 37.46, 53.21, 4429, 'Desmobilizado', 138, 1, 342, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (136, '2012-04-28', 40.11, 5.44, 49.23, 6070, 'Desmobilizado', 201, 1, 220, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (137, '2003-12-13', 49.82, 37.63, 77.94, 5392, 'Disponivel', 118, 1, 201, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (138, '2018-10-01', 29.37, 4.43, 51.3, 3411, 'Em manutenção', 163, 2, 129, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (139, '2001-12-30', 78.62, 4.45, 51.58, 5009, 'Em manutenção', 212, 1, 98, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (140, '2017-05-08', 50.98, 97.87, 86.14, 1814, 'Em manutenção', 210, 1, 332, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (141, '2005-06-14', 22.66, 1.04, 9.79, 4655, 'Desmobilizado', 29, 2, 156, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (142, '2001-01-17', 30.78, 1.6, 5.03, 5253, 'Em uso', 7, 2, 144, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (143, '2012-12-18', 5.41, 63.59, 20.34, 9441, 'Em uso', 129, 2, 21, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (144, '2016-09-07', 10.01, 51.52, 49.03, 3139, 'Desmobilizado', 50, 2, 411, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (145, '2009-05-01', 36.51, 47.19, 96.15, 17, 'Em manutenção', 73, 1, 417, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (146, '2003-01-13', 31.9, 72.38, 11.44, 7483, 'Disponivel', 237, 1, 112, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (147, '2008-03-24', 72.38, 84.48, 57.51, 8948, 'Em manutenção', 44, 1, 80, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (148, '2005-05-12', 68.49, 15.47, 94.96, 9170, 'Disponivel', 177, 2, 145, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (149, '2009-09-30', 74.89, 49.07, 54.66, 9356, 'Desmobilizado', 71, 1, 441, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (150, '2002-05-25', 11.91, 55.2, 47.47, 7628, 'Em uso', 101, 1, 384, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (151, '2006-01-06', 59.66, 62.93, 3.85, 7046, 'Desmobilizado', 115, 1, 361, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (152, '2005-07-10', 65.47, 64.97, 95.57, 3054, 'Desmobilizado', 65, 2, 493, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (153, '2019-03-24', 29.02, 25.97, 69.88, 8708, 'Desmobilizado', 199, 1, 398, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (154, '2013-11-14', 87.2, 84.29, 73.11, 2639, 'Desmobilizado', 2, 1, 96, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (155, '2008-11-30', 91.49, 58.63, 56.45, 4241, 'Em manutenção', 215, 1, 428, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (156, '2008-09-10', 16.03, 70.71, 34.84, 9703, 'Em manutenção', 230, 2, 429, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (157, '2008-03-26', 4.19, 3.73, 12.22, 797, 'Em manutenção', 154, 2, 102, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (158, '2001-03-02', 2.02, 66.93, 61.02, 9053, 'Disponivel', 87, 1, 10, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (159, '2018-06-18', 97.13, 67.22, 9.85, 4351, 'Em manutenção', 106, 2, 157, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (160, '2016-06-06', 7.32, 37.9, 74.34, 9897, 'Em uso', 178, 1, 1, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (161, '2014-05-27', 18.07, 39.19, 42.6, 9040, 'Disponivel', 36, 2, 498, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (162, '2008-05-19', 70.54, 64.08, 51.09, 8435, 'Em manutenção', 42, 2, 163, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (163, '2001-06-03', 60.44, 27.33, 3.47, 3876, 'Disponivel', 148, 2, 397, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (164, '2017-08-07', 74.86, 19.01, 27.03, 8226, 'Desmobilizado', 80, 2, 152, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (165, '2001-08-24', 39.49, 29.15, 30.51, 8807, 'Em manutenção', 185, 2, 162, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (166, '2002-02-16', 20.85, 16.16, 83.54, 9546, 'Disponivel', 169, 2, 167, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (167, '2018-05-16', 94.54, 79.28, 9.66, 6719, 'Em manutenção', 14, 2, 428, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (168, '2019-06-03', 62.3, 39.94, 85.59, 3264, 'Desmobilizado', 204, 2, 420, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (169, '2004-03-16', 85.17, 48.88, 77.04, 9171, 'Em uso', 21, 2, 165, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (170, '2013-05-28', 33.5, 26.77, 65.45, 2751, 'Em uso', 28, 2, 70, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (171, '2015-10-23', 11.97, 43.3, 19.02, 9523, 'Desmobilizado', 108, 2, 164, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (172, '2008-10-24', 75.75, 33.57, 24.64, 5389, 'Em manutenção', 139, 1, 440, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (173, '2017-04-05', 18.47, 39.34, 27.62, 7687, 'Desmobilizado', 9, 1, 206, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (174, '2006-12-10', 75.54, 70.83, 51.97, 9926, 'Em manutenção', 6, 1, 16, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (175, '2006-04-22', 62.28, 98.78, 85.59, 660, 'Em uso', 206, 1, 209, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (176, '2005-04-30', 21.19, 10.28, 67.1, 2233, 'Em uso', 223, 1, 440, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (177, '2004-08-26', 32.43, 79.77, 42.46, 6162, 'Em manutenção', 199, 1, 471, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (178, '2015-11-04', 89.01, 38.44, 23.41, 7377, 'Em uso', 34, 1, 238, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (179, '2001-10-23', 30.55, 40.09, 92.49, 6409, 'Em uso', 230, 2, 215, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (180, '2017-06-08', 12.12, 41.8, 28.47, 8203, 'Desmobilizado', 185, 2, 260, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (181, '2018-12-25', 8.3, 84.5, 1.14, 1973, 'Desmobilizado', 215, 2, 110, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (182, '2017-06-01', 59.16, 90.72, 7.72, 496, 'Em manutenção', 57, 2, 351, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (183, '2008-04-24', 73.48, 96.04, 41.57, 8812, 'Disponivel', 177, 2, 36, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (184, '2004-11-28', 90.08, 34.57, 61.97, 1393, 'Em uso', 237, 1, 354, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (185, '2018-01-28', 87.24, 80.68, 32.3, 4613, 'Disponivel', 227, 2, 374, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (186, '2015-07-06', 53.43, 2.73, 84.1, 83, 'Em uso', 225, 2, 21, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (187, '2007-08-13', 28.72, 45.29, 10.85, 379, 'Em uso', 20, 2, 144, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (188, '2008-11-30', 92.6, 67.44, 88.79, 153, 'Desmobilizado', 7, 2, 211, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (189, '2012-11-09', 2.84, 82.13, 42.21, 3852, 'Em uso', 82, 2, 137, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (190, '2012-01-03', 40.87, 83.51, 31.27, 1236, 'Disponivel', 221, 2, 142, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (191, '2018-02-14', 37.03, 99.0, 25.78, 3925, 'Disponivel', 174, 1, 213, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (192, '2013-07-04', 90.88, 21.96, 11.8, 4641, 'Em manutenção', 164, 1, 160, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (193, '2012-09-15', 90.77, 41.77, 49.91, 9344, 'Desmobilizado', 120, 1, 138, true);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (194, '2000-11-23', 68.37, 83.25, 51.5, 5947, 'Desmobilizado', 62, 1, 7, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (195, '2001-06-12', 19.38, 71.71, 49.06, 6769, 'Desmobilizado', 174, 2, 454, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (196, '2003-08-09', 78.04, 12.73, 42.42, 2670, 'Disponivel', 137, 1, 440, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (197, '2000-08-03', 49.49, 23.71, 20.39, 287, 'Em uso', 32, 1, 397, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (198, '2015-09-11', 33.73, 98.72, 86.37, 5675, 'Desmobilizado', 193, 1, 476, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (199, '2000-10-25', 69.97, 68.76, 98.48, 7117, 'Em uso', 131, 2, 384, false);
-insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values (200, '2013-10-21', 28.59, 57.08, 3.94, 2243, 'Em manutenção', 161, 2, 26, false);
+insert into Container (idcontainer_pk, dataaquisicao, comprimento, altura, largura, capacidade, statuscontainer, vidautil, lotacaoatual, idlote_fk, disponibilidade) values
+(1, '2008-01-18', 73.55, 84.84, 77.85, 7499, 'Em uso', 170, 1, 460, true),
+ (2, '2017-09-17', 43.12, 23.37, 43.0, 118, 'Disponivel', 148, 2, 82, true),
+ (3, '2011-04-02', 52.68, 37.42, 90.87, 2716, 'Desmobilizado', 225, 2, 425, false),
+ (4, '2006-04-23', 33.24, 30.8, 62.57, 3215, 'Em manutenção', 155, 2, 45, true),
+ (5, '2003-08-21', 57.45, 38.52, 96.5, 3341, 'Desmobilizado', 237, 2, 64, false),
+ (6, '2014-03-04', 97.64, 98.69, 48.88, 3543, 'Em manutenção', 91, 1, 427, false),
+ (7, '2012-04-09', 42.35, 6.43, 70.09, 1762, 'Em manutenção', 20, 2, 345, true),
+ (8, '2015-08-23', 66.99, 47.06, 86.88, 1247, 'Disponivel', 7, 1, 272, false),
+ (9, '2006-09-11', 8.1, 74.84, 13.49, 7067, 'Em manutenção', 16, 1, 422, true),
+ (10, '2010-06-28', 61.31, 91.4, 10.52, 8307, 'Disponivel', 12, 2, 221, false),
+ (11, '2004-10-24', 64.5, 70.26, 84.12, 4722, 'Desmobilizado', 37, 2, 441, true),
+ (12, '2016-08-19', 41.16, 98.02, 74.35, 6717, 'Em uso', 154, 2, 139, false),
+ (13, '2005-12-08', 33.25, 16.42, 44.46, 3746, 'Em manutenção', 218, 2, 425, false),
+ (14, '2002-12-16', 67.04, 92.39, 24.84, 575, 'Disponivel', 120, 2, 289, true),
+ (15, '2018-08-05', 76.42, 97.04, 69.58, 2121, 'Desmobilizado', 128, 2, 95, false),
+ (16, '2000-06-16', 48.57, 4.88, 51.96, 6464, 'Disponivel', 165, 2, 427, true),
+ (17, '2007-11-11', 99.01, 85.06, 4.14, 1906, 'Disponivel', 52, 1, 454, true),
+ (18, '2006-02-12', 39.51, 71.95, 53.24, 1752, 'Disponivel', 90, 1, 440, false),
+ (19, '2016-10-01', 27.05, 59.84, 69.69, 5828, 'Disponivel', 71, 2, 356, false),
+ (20, '2000-07-28', 40.06, 66.09, 78.14, 2229, 'Em uso', 238, 2, 276, false),
+ (21, '2012-07-17', 87.39, 64.98, 72.96, 6908, 'Em uso', 66, 1, 38, true),
+ (22, '2006-03-30', 61.39, 79.64, 11.25, 5450, 'Disponivel', 134, 1, 70, true),
+ (23, '2003-06-26', 16.37, 99.07, 72.2, 213, 'Em manutenção', 63, 1, 11, true),
+ (24, '2003-10-14', 83.63, 60.59, 76.42, 2990, 'Desmobilizado', 215, 1, 125, true),
+ (25, '2001-02-12', 13.51, 93.52, 6.84, 3776, 'Disponivel', 181, 1, 162, false),
+ (26, '2009-06-25', 57.07, 92.57, 50.65, 1028, 'Em uso', 91, 1, 417, false),
+ (27, '2017-12-12', 1.67, 5.48, 92.81, 9943, 'Em manutenção', 210, 1, 176, true),
+ (28, '2001-10-26', 84.6, 74.12, 80.18, 3395, 'Desmobilizado', 29, 2, 210, true),
+ (29, '2004-01-06', 62.65, 34.02, 38.18, 7137, 'Desmobilizado', 190, 1, 48, false),
+ (30, '2005-09-11', 25.46, 67.75, 60.94, 7008, 'Desmobilizado', 211, 1, 290, true),
+ (31, '2005-11-04', 43.08, 86.82, 81.3, 4612, 'Disponivel', 186, 1, 249, true),
+ (32, '2015-03-31', 95.1, 30.27, 5.26, 8580, 'Em manutenção', 197, 1, 226, false),
+ (33, '2019-01-22', 55.09, 75.49, 91.8, 1561, 'Desmobilizado', 42, 2, 65, true),
+ (34, '2014-09-22', 90.25, 10.16, 85.38, 571, 'Desmobilizado', 211, 1, 383, false),
+ (35, '2004-06-21', 58.32, 15.67, 57.45, 3359, 'Desmobilizado', 134, 1, 244, false),
+ (36, '2000-09-14', 38.29, 31.5, 40.6, 8225, 'Em uso', 167, 1, 36, true),
+ (37, '2003-09-16', 62.45, 12.57, 43.62, 3723, 'Em manutenção', 48, 2, 500, false),
+ (38, '2004-03-26', 80.19, 41.64, 29.15, 1331, 'Em manutenção', 186, 1, 274, true),
+ (39, '2008-09-16', 79.9, 56.48, 89.69, 4826, 'Em uso', 127, 2, 33, false),
+ (40, '2006-06-20', 71.75, 43.82, 42.97, 6304, 'Disponivel', 224, 2, 9, true),
+ (41, '2002-11-28', 77.39, 12.2, 21.82, 7846, 'Em manutenção', 39, 2, 180, true),
+ (42, '2010-06-30', 96.08, 36.88, 85.91, 1510, 'Em manutenção', 78, 1, 209, false),
+ (43, '2004-04-08', 31.89, 98.48, 61.51, 1371, 'Em manutenção', 218, 1, 110, false),
+ (44, '2011-10-05', 12.23, 29.17, 53.12, 3506, 'Disponivel', 118, 1, 327, false),
+ (45, '2002-11-23', 16.03, 85.01, 40.59, 867, 'Em manutenção', 24, 2, 317, false),
+ (46, '2009-04-10', 45.08, 46.33, 89.99, 3787, 'Em uso', 12, 2, 413, false),
+ (47, '2002-02-02', 93.02, 30.91, 47.49, 7620, 'Em manutenção', 74, 2, 482, true),
+ (48, '2005-06-25', 83.85, 77.55, 1.17, 1117, 'Desmobilizado', 27, 1, 148, false),
+ (49, '2013-11-07', 48.3, 88.68, 42.01, 2171, 'Disponivel', 135, 2, 469, true),
+ (50, '2006-02-12', 57.74, 22.91, 70.14, 3141, 'Desmobilizado', 3, 2, 314, true),
+ (51, '2018-10-11', 5.07, 44.6, 94.43, 707, 'Desmobilizado', 150, 1, 232, false),
+ (52, '2018-05-30', 99.5, 59.85, 74.99, 4098, 'Desmobilizado', 178, 1, 245, true),
+ (53, '2018-12-27', 48.67, 71.89, 70.86, 6677, 'Em uso', 137, 2, 253, false),
+ (54, '2003-11-08', 68.37, 66.55, 8.26, 3653, 'Em uso', 166, 1, 10, false),
+ (55, '2018-11-17', 91.34, 84.19, 91.79, 1781, 'Disponivel', 229, 2, 451, true),
+ (56, '2000-07-03', 41.52, 31.58, 53.55, 5852, 'Em manutenção', 1, 1, 321, true),
+ (57, '2001-04-10', 46.74, 72.68, 52.48, 5629, 'Em manutenção', 103, 2, 382, false),
+ (58, '2011-04-28', 31.75, 9.05, 41.23, 6937, 'Desmobilizado', 150, 2, 325, true),
+ (59, '2007-03-11', 74.36, 51.85, 59.16, 6671, 'Disponivel', 97, 2, 435, true),
+ (60, '2009-10-28', 68.97, 4.85, 28.73, 8288, 'Em uso', 226, 1, 364, false),
+ (61, '2002-06-05', 61.46, 73.2, 89.41, 6356, 'Disponivel', 155, 1, 187, false),
+ (62, '2003-10-13', 80.57, 74.73, 69.29, 5960, 'Em uso', 155, 1, 121, true),
+ (63, '2002-07-13', 19.18, 40.36, 40.05, 647, 'Desmobilizado', 212, 2, 286, false),
+ (64, '2006-07-08', 13.36, 38.42, 75.66, 337, 'Em manutenção', 14, 2, 459, false),
+ (65, '2011-10-22', 46.46, 75.21, 20.38, 8665, 'Disponivel', 189, 1, 370, true),
+ (66, '2011-10-22', 38.44, 84.02, 85.94, 7633, 'Em manutenção', 128, 1, 244, false),
+ (67, '2001-10-25', 90.89, 56.39, 44.15, 6140, 'Em uso', 136, 1, 474, true),
+ (68, '2009-07-17', 66.39, 45.65, 13.47, 4391, 'Em uso', 213, 1, 5, false),
+ (69, '2010-02-09', 14.52, 20.83, 43.21, 4903, 'Em uso', 83, 2, 369, false),
+ (70, '2001-02-24', 2.42, 29.18, 19.93, 2795, 'Disponivel', 82, 1, 4, true),
+ (71, '2013-11-15', 1.68, 8.96, 88.75, 7657, 'Desmobilizado', 120, 1, 27, false),
+ (72, '2017-10-07', 76.35, 55.07, 97.28, 1574, 'Em manutenção', 236, 2, 254, true),
+ (73, '2012-12-02', 82.46, 64.87, 81.04, 7940, 'Em manutenção', 172, 2, 283, false),
+ (74, '2010-02-01', 23.76, 58.48, 47.45, 1242, 'Em uso', 240, 1, 299, false),
+ (75, '2012-06-12', 47.85, 87.49, 36.69, 9522, 'Em uso', 20, 2, 89, false),
+ (76, '2002-03-01', 36.36, 67.5, 17.53, 7972, 'Disponivel', 190, 2, 413, false),
+ (77, '2014-12-26', 98.59, 63.85, 80.52, 147, 'Em manutenção', 131, 1, 61, false),
+ (78, '2004-02-26', 92.55, 20.66, 91.78, 5298, 'Em manutenção', 15, 2, 496, true),
+ (79, '2015-12-24', 10.78, 23.13, 7.95, 8044, 'Em uso', 170, 1, 45, false),
+ (80, '2006-10-31', 61.56, 47.37, 27.38, 1171, 'Em uso', 195, 2, 248, true),
+ (81, '2017-02-07', 26.66, 49.29, 75.33, 8735, 'Em uso', 107, 2, 432, false),
+ (82, '2002-11-12', 59.29, 25.79, 96.34, 5865, 'Em uso', 28, 1, 333, false),
+ (83, '2013-08-25', 19.38, 66.46, 70.3, 4777, 'Desmobilizado', 167, 2, 328, true),
+ (84, '2009-03-19', 37.65, 96.73, 66.86, 9635, 'Disponivel', 237, 2, 351, true),
+ (85, '2005-07-15', 31.88, 58.64, 75.54, 5056, 'Em uso', 154, 2, 418, true),
+ (86, '2010-01-22', 57.26, 47.9, 92.86, 4234, 'Desmobilizado', 211, 2, 210, true),
+ (87, '2013-04-16', 81.57, 4.72, 52.23, 4003, 'Em uso', 69, 2, 438, true),
+ (88, '2010-05-04', 16.65, 14.26, 78.41, 7305, 'Disponivel', 102, 1, 97, false),
+ (89, '2016-07-31', 93.45, 43.3, 32.59, 1783, 'Desmobilizado', 175, 1, 105, true),
+ (90, '2019-03-02', 96.96, 27.43, 95.24, 3963, 'Em uso', 8, 2, 451, true),
+ (91, '2019-01-27', 52.9, 86.39, 12.35, 6816, 'Disponivel', 119, 2, 364, true),
+ (92, '2010-12-27', 73.72, 90.72, 3.11, 8881, 'Em uso', 35, 1, 253, true),
+ (93, '2013-07-17', 89.01, 15.81, 70.39, 5881, 'Em manutenção', 207, 1, 138, true),
+ (94, '2014-04-29', 96.7, 84.22, 17.86, 2758, 'Disponivel', 92, 2, 136, false),
+ (95, '2004-10-01', 77.42, 98.73, 64.27, 4712, 'Em manutenção', 154, 2, 114, false),
+ (96, '2012-09-08', 53.01, 11.12, 37.04, 3800, 'Em uso', 80, 1, 493, false),
+ (97, '2006-09-13', 66.25, 99.56, 15.4, 6471, 'Em manutenção', 164, 2, 248, false),
+ (98, '2010-05-04', 50.27, 22.35, 21.41, 7168, 'Em uso', 165, 1, 110, true),
+ (99, '2009-07-18', 99.07, 77.39, 13.64, 6231, 'Em uso', 224, 2, 330, false),
+ (100, '2013-08-13', 35.13, 65.66, 58.83, 5988, 'Disponivel', 70, 2, 371, true),
+ (101, '2006-01-12', 56.74, 82.57, 75.12, 3288, 'Em manutenção', 116, 2, 386, false),
+ (102, '2013-07-20', 66.69, 29.65, 85.58, 651, 'Disponivel', 103, 2, 107, false),
+ (103, '2014-03-23', 66.1, 45.63, 57.33, 5376, 'Em manutenção', 118, 2, 41, false),
+ (104, '2015-06-02', 4.56, 85.6, 71.87, 991, 'Desmobilizado', 123, 2, 135, false),
+ (105, '2007-09-03', 50.61, 42.01, 77.09, 7450, 'Em uso', 119, 1, 14, false),
+ (106, '2016-09-06', 73.95, 55.96, 54.31, 6730, 'Em uso', 183, 2, 497, false),
+ (107, '2008-01-25', 12.96, 97.06, 68.48, 3409, 'Em manutenção', 34, 1, 257, false),
+ (108, '2005-05-26', 37.34, 1.51, 84.28, 4737, 'Em uso', 42, 2, 479, true),
+ (109, '2001-12-09', 9.49, 15.84, 94.24, 9773, 'Disponivel', 215, 2, 447, false),
+ (110, '2001-05-28', 45.88, 57.17, 96.52, 3002, 'Disponivel', 220, 2, 121, false),
+ (111, '2015-02-08', 38.32, 82.07, 7.17, 2260, 'Disponivel', 33, 1, 334, false),
+ (112, '2004-02-02', 82.94, 93.32, 53.71, 4223, 'Em uso', 58, 1, 231, true),
+ (113, '2008-12-28', 53.24, 74.5, 73.46, 2084, 'Em manutenção', 31, 1, 153, true),
+ (114, '2008-10-23', 91.56, 24.96, 80.21, 522, 'Disponivel', 186, 2, 146, false),
+ (115, '2010-09-24', 23.19, 5.77, 74.93, 7502, 'Em manutenção', 63, 1, 491, true),
+ (116, '2010-10-29', 9.2, 26.4, 10.56, 9120, 'Em manutenção', 168, 2, 257, true),
+ (117, '2009-08-26', 44.2, 40.99, 8.61, 3285, 'Disponivel', 193, 1, 427, true),
+ (118, '2013-07-26', 34.75, 93.73, 18.91, 1128, 'Desmobilizado', 28, 2, 112, true),
+ (119, '2000-10-21', 11.88, 31.96, 59.27, 4709, 'Em manutenção', 116, 2, 83, true),
+ (120, '2019-05-16', 47.15, 8.53, 95.89, 920, 'Em uso', 183, 1, 3, false),
+ (121, '2012-11-04', 48.95, 22.47, 14.87, 1032, 'Desmobilizado', 45, 2, 272, true),
+ (122, '2016-07-07', 6.63, 36.65, 51.19, 9217, 'Em manutenção', 176, 1, 352, true),
+ (123, '2012-04-26', 90.38, 84.95, 90.02, 6068, 'Disponivel', 190, 1, 2, true),
+ (124, '2004-10-21', 83.98, 24.28, 18.8, 7341, 'Em uso', 13, 1, 283, false),
+ (125, '2018-12-03', 55.71, 21.35, 83.68, 6338, 'Em manutenção', 166, 1, 323, false),
+ (126, '2008-06-18', 26.17, 73.71, 31.15, 279, 'Disponivel', 100, 1, 275, false),
+ (127, '2005-10-09', 42.48, 34.24, 36.3, 1790, 'Disponivel', 194, 1, 386, false),
+ (128, '2011-06-28', 15.15, 5.12, 46.99, 3983, 'Disponivel', 9, 1, 123, true),
+ (129, '2009-11-17', 78.85, 80.03, 6.95, 2134, 'Disponivel', 120, 2, 95, false),
+ (130, '2015-12-29', 52.17, 53.32, 72.77, 1316, 'Em manutenção', 10, 2, 201, false),
+ (131, '2015-03-17', 16.15, 73.24, 83.41, 6203, 'Disponivel', 51, 1, 254, false),
+ (132, '2005-02-12', 18.89, 99.76, 70.05, 7824, 'Disponivel', 140, 1, 200, false),
+ (133, '2006-09-29', 33.02, 50.45, 90.02, 7801, 'Em uso', 199, 1, 35, false),
+ (134, '2011-02-01', 85.15, 36.28, 82.21, 9562, 'Em uso', 85, 1, 319, false),
+ (135, '2007-06-11', 78.44, 37.46, 53.21, 4429, 'Desmobilizado', 138, 1, 342, true),
+ (136, '2012-04-28', 40.11, 5.44, 49.23, 6070, 'Desmobilizado', 201, 1, 220, false),
+ (137, '2003-12-13', 49.82, 37.63, 77.94, 5392, 'Disponivel', 118, 1, 201, true),
+ (138, '2018-10-01', 29.37, 4.43, 51.3, 3411, 'Em manutenção', 163, 2, 129, false),
+ (139, '2001-12-30', 78.62, 4.45, 51.58, 5009, 'Em manutenção', 212, 1, 98, false),
+ (140, '2017-05-08', 50.98, 97.87, 86.14, 1814, 'Em manutenção', 210, 1, 332, true),
+ (141, '2005-06-14', 22.66, 1.04, 9.79, 4655, 'Desmobilizado', 29, 2, 156, true),
+ (142, '2001-01-17', 30.78, 1.6, 5.03, 5253, 'Em uso', 7, 2, 144, true),
+ (143, '2012-12-18', 5.41, 63.59, 20.34, 9441, 'Em uso', 129, 2, 21, false),
+ (144, '2016-09-07', 10.01, 51.52, 49.03, 3139, 'Desmobilizado', 50, 2, 411, true),
+ (145, '2009-05-01', 36.51, 47.19, 96.15, 17, 'Em manutenção', 73, 1, 417, false),
+ (146, '2003-01-13', 31.9, 72.38, 11.44, 7483, 'Disponivel', 237, 1, 112, false),
+ (147, '2008-03-24', 72.38, 84.48, 57.51, 8948, 'Em manutenção', 44, 1, 80, true),
+ (148, '2005-05-12', 68.49, 15.47, 94.96, 9170, 'Disponivel', 177, 2, 145, false),
+ (149, '2009-09-30', 74.89, 49.07, 54.66, 9356, 'Desmobilizado', 71, 1, 441, false),
+ (150, '2002-05-25', 11.91, 55.2, 47.47, 7628, 'Em uso', 101, 1, 384, false),
+ (151, '2006-01-06', 59.66, 62.93, 3.85, 7046, 'Desmobilizado', 115, 1, 361, false),
+ (152, '2005-07-10', 65.47, 64.97, 95.57, 3054, 'Desmobilizado', 65, 2, 493, false),
+ (153, '2019-03-24', 29.02, 25.97, 69.88, 8708, 'Desmobilizado', 199, 1, 398, true),
+ (154, '2013-11-14', 87.2, 84.29, 73.11, 2639, 'Desmobilizado', 2, 1, 96, true),
+ (155, '2008-11-30', 91.49, 58.63, 56.45, 4241, 'Em manutenção', 215, 1, 428, false),
+ (156, '2008-09-10', 16.03, 70.71, 34.84, 9703, 'Em manutenção', 230, 2, 429, true),
+ (157, '2008-03-26', 4.19, 3.73, 12.22, 797, 'Em manutenção', 154, 2, 102, false),
+ (158, '2001-03-02', 2.02, 66.93, 61.02, 9053, 'Disponivel', 87, 1, 10, true),
+ (159, '2018-06-18', 97.13, 67.22, 9.85, 4351, 'Em manutenção', 106, 2, 157, true),
+ (160, '2016-06-06', 7.32, 37.9, 74.34, 9897, 'Em uso', 178, 1, 1, false),
+ (161, '2014-05-27', 18.07, 39.19, 42.6, 9040, 'Disponivel', 36, 2, 498, true),
+ (162, '2008-05-19', 70.54, 64.08, 51.09, 8435, 'Em manutenção', 42, 2, 163, false),
+ (163, '2001-06-03', 60.44, 27.33, 3.47, 3876, 'Disponivel', 148, 2, 397, false),
+ (164, '2017-08-07', 74.86, 19.01, 27.03, 8226, 'Desmobilizado', 80, 2, 152, false),
+ (165, '2001-08-24', 39.49, 29.15, 30.51, 8807, 'Em manutenção', 185, 2, 162, true),
+ (166, '2002-02-16', 20.85, 16.16, 83.54, 9546, 'Disponivel', 169, 2, 167, true),
+ (167, '2018-05-16', 94.54, 79.28, 9.66, 6719, 'Em manutenção', 14, 2, 428, false),
+ (168, '2019-06-03', 62.3, 39.94, 85.59, 3264, 'Desmobilizado', 204, 2, 420, false),
+ (169, '2004-03-16', 85.17, 48.88, 77.04, 9171, 'Em uso', 21, 2, 165, false),
+ (170, '2013-05-28', 33.5, 26.77, 65.45, 2751, 'Em uso', 28, 2, 70, false),
+ (171, '2015-10-23', 11.97, 43.3, 19.02, 9523, 'Desmobilizado', 108, 2, 164, true),
+ (172, '2008-10-24', 75.75, 33.57, 24.64, 5389, 'Em manutenção', 139, 1, 440, true),
+ (173, '2017-04-05', 18.47, 39.34, 27.62, 7687, 'Desmobilizado', 9, 1, 206, false),
+ (174, '2006-12-10', 75.54, 70.83, 51.97, 9926, 'Em manutenção', 6, 1, 16, true),
+ (175, '2006-04-22', 62.28, 98.78, 85.59, 660, 'Em uso', 206, 1, 209, true),
+ (176, '2005-04-30', 21.19, 10.28, 67.1, 2233, 'Em uso', 223, 1, 440, false),
+ (177, '2004-08-26', 32.43, 79.77, 42.46, 6162, 'Em manutenção', 199, 1, 471, false),
+ (178, '2015-11-04', 89.01, 38.44, 23.41, 7377, 'Em uso', 34, 1, 238, false),
+ (179, '2001-10-23', 30.55, 40.09, 92.49, 6409, 'Em uso', 230, 2, 215, false),
+ (180, '2017-06-08', 12.12, 41.8, 28.47, 8203, 'Desmobilizado', 185, 2, 260, false),
+ (181, '2018-12-25', 8.3, 84.5, 1.14, 1973, 'Desmobilizado', 215, 2, 110, true),
+ (182, '2017-06-01', 59.16, 90.72, 7.72, 496, 'Em manutenção', 57, 2, 351, false),
+ (183, '2008-04-24', 73.48, 96.04, 41.57, 8812, 'Disponivel', 177, 2, 36, false),
+ (184, '2004-11-28', 90.08, 34.57, 61.97, 1393, 'Em uso', 237, 1, 354, true),
+ (185, '2018-01-28', 87.24, 80.68, 32.3, 4613, 'Disponivel', 227, 2, 374, false),
+ (186, '2015-07-06', 53.43, 2.73, 84.1, 83, 'Em uso', 225, 2, 21, false),
+ (187, '2007-08-13', 28.72, 45.29, 10.85, 379, 'Em uso', 20, 2, 144, false),
+ (188, '2008-11-30', 92.6, 67.44, 88.79, 153, 'Desmobilizado', 7, 2, 211, false),
+ (189, '2012-11-09', 2.84, 82.13, 42.21, 3852, 'Em uso', 82, 2, 137, true),
+ (190, '2012-01-03', 40.87, 83.51, 31.27, 1236, 'Disponivel', 221, 2, 142, false),
+ (191, '2018-02-14', 37.03, 99.0, 25.78, 3925, 'Disponivel', 174, 1, 213, true),
+ (192, '2013-07-04', 90.88, 21.96, 11.8, 4641, 'Em manutenção', 164, 1, 160, true),
+ (193, '2012-09-15', 90.77, 41.77, 49.91, 9344, 'Desmobilizado', 120, 1, 138, true),
+ (194, '2000-11-23', 68.37, 83.25, 51.5, 5947, 'Desmobilizado', 62, 1, 7, false),
+ (195, '2001-06-12', 19.38, 71.71, 49.06, 6769, 'Desmobilizado', 174, 2, 454, false),
+ (196, '2003-08-09', 78.04, 12.73, 42.42, 2670, 'Disponivel', 137, 1, 440, false),
+ (197, '2000-08-03', 49.49, 23.71, 20.39, 287, 'Em uso', 32, 1, 397, false),
+ (198, '2015-09-11', 33.73, 98.72, 86.37, 5675, 'Desmobilizado', 193, 1, 476, false),
+ (199, '2000-10-25', 69.97, 68.76, 98.48, 7117, 'Em uso', 131, 2, 384, false),
+ (200, '2013-10-21', 28.59, 57.08, 3.94, 2243, 'Em manutenção', 161, 2, 26, false);
 
 /*_____________________________FUNCIONARIO_____________________________________*/
 
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pboyes0@sciencedirect.com', '2018-08-24', 3105.52, '1516 Bowman Road', 887551, 632317879, 1, '2695523421', '1971-07-08', 'Product Management', 56);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('wchastenet1@fda.gov', '2018-01-26', 4428.28, '5 Waywood Plaza', 905262, 839860469, 2, '9505780791', '1982-02-12', 'Support', 1);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bgaythwaite2@jiathis.com', '2018-08-10', 9479.16, '20538 Kensington Trail', 960178, 49557806, 3, '1541292145', '1976-09-12', 'Research and Development', 73);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('estronack3@aol.com', '2017-12-12', 5773.53, '2 Valley Edge Point', 217990, 457822420, 4, '1093790331', '1998-06-22', 'Support', 29);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ksibthorpe4@timesonline.co.uk', '2018-08-02', 5085.52, '1778 Dakota Parkway', 61355, 437391227, 5, '5409754408', '1991-12-16', 'Accounting', 14);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('tghirardi5@biblegateway.com', '2017-12-14', 413.89, '102 Shoshone Pass', 284927, 979442172, 6, '5699962614', '1986-07-23', 'Accounting', 80);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('edybell6@walmart.com', '2018-09-22', 5625.87, '6239 Cherokee Plaza', 324536, 173318742, 7, '7068552554', '1991-05-05', 'Engineering', 96);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jkopisch7@de.vu', '2017-08-05', 6202.04, '221 Victoria Hill', 114622, 443681488, 8, '7831597787', '1983-05-25', 'Accounting', 53);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('aianinotti8@quantcast.com', '2018-03-23', 1925.76, '25 Fairfield Park', 968403, 470465790, 9, '6029260879', '1996-11-21', 'Business Development', 82);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lallmark9@ox.ac.uk', '2018-02-03', 835.18, '83341 Village Avenue', 278336, 608387905, 10, '5366248136', '1972-10-05', 'Business Development', 5);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ftowrissa@cloudflare.com', '2019-03-10', 7359.4, '75111 Union Plaza', 799316, 91939821, 11, '6364602852', '1971-04-08', 'Marketing', 90);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('eabramib@java.com', '2018-08-15', 5062.59, '622 Swallow Center', 935676, 440771088, 12, '7349070850', '1998-09-12', 'Legal', 7);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gdodgec@pbs.org', '2019-02-14', 4724.5, '38 Lakewood Center', 365421, 741641270, 13, '4432919758', '1996-02-19', 'Support', 38);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cmacinerneyd@tumblr.com', '2018-10-24', 7364.27, '3550 Di Loreto Alley', 592497, 527410102, 14, '3189010114', '1980-01-01', 'Sales', 78);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jedowese@ezinearticles.com', '2018-07-13', 5978.56, '1124 Ryan Pass', 555444, 335522589, 15, '6474511540', '1974-03-27', 'Accounting', 76);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jhabberjamf@shutterfly.com', '2019-04-13', 4307.26, '5841 Burrows Drive', 233133, 172682095, 16, '5128688453', '1983-01-26', 'Product Management', 89);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cnuschag@about.com', '2017-10-23', 7512.99, '814 Monterey Circle', 694644, 460867151, 17, '3332848397', '1970-06-28', 'Accounting', 100);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jbarklyh@hp.com', '2019-02-13', 3517.86, '92481 Homewood Street', 342878, 823154675, 18, '3127897545', '1975-10-01', 'Services', 2);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ksueteri@flickr.com', '2018-06-29', 5559.41, '9743 Lindbergh Junction', 952372, 943156435, 19, '5839519256', '1994-05-11', 'Legal', 43);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dhuggardj@salon.com', '2018-03-19', 8589.95, '34178 Scott Drive', 69533, 880630667, 20, '2518285848', '1991-04-08', 'Services', 90);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('nbellardk@gnu.org', '2017-10-19', 4200.59, '61 Lyons Alley', 71652, 807805211, 21, '2548520882', '1982-10-28', 'Legal', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('kohagirtiel@scribd.com', '2018-02-06', 2620.42, '61478 Bluestem Point', 707040, 694501418, 22, '7928989345', '1971-07-07', 'Support', 46);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('hwestm@usnews.com', '2019-04-25', 5010.62, '771 Ruskin Road', 861129, 564265971, 23, '1856206386', '1984-11-27', 'Marketing', 54);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('afairmann@dropbox.com', '2018-11-02', 6967.62, '2 Lakewood Gardens Junction', 520885, 940728289, 24, '8187022621', '1986-07-31', 'Research and Development', 30);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('afilkovo@networkadvertising.org', '2018-07-14', 7515.09, '76896 Summerview Road', 482018, 935696999, 25, '2714320370', '1979-02-02', 'Services', 8);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dtemplmanp@tinyurl.com', '2018-08-20', 5752.88, '6364 Blackbird Drive', 601064, 674255829, 26, '6943181463', '1992-04-25', 'Accounting', 45);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('shubyq@hugedomains.com', '2019-05-11', 4866.8, '56 Loeprich Crossing', 566358, 818220277, 27, '5122866980', '1998-09-15', 'Services', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bweatherhoggr@ucoz.com', '2019-01-29', 7931.05, '53 Gina Avenue', 567065, 85332232, 28, '7118369144', '1994-12-14', 'Human Resources', 50);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dsircombs@yale.edu', '2019-01-01', 1347.52, '916 Fremont Park', 423207, 848477957, 29, '7512857874', '1985-11-27', 'Legal', 5);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('techlint@delicious.com', '2019-03-11', 9777.16, '6 Esker Road', 881325, 230080461, 30, '9278070000', '1976-02-20', 'Marketing', 54);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('kglancyu@biblegateway.com', '2018-12-07', 7451.2, '91910 Bonner Terrace', 342463, 596640179, 31, '1068521100', '1998-03-23', 'Services', 50);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('qpedrocchiv@jugem.jp', '2017-09-27', 2264.79, '45 Delaware Street', 147041, 851506564, 32, '7949907378', '1980-10-07', 'Engineering', 15);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jrusbridgew@psu.edu', '2018-12-28', 8921.59, '3170 Utah Parkway', 702519, 810823498, 33, '7982691760', '1991-11-09', 'Accounting', 57);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dmoorhousex@sciencedaily.com', '2018-01-20', 630.84, '370 Badeau Terrace', 858819, 605613947, 34, '7686818395', '1977-07-17', 'Marketing', 42);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('asearsy@people.com.cn', '2018-05-19', 4075.02, '6 Hansons Way', 319283, 130346081, 35, '4796006368', '1980-05-22', 'Engineering', 4);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('csamettz@blogger.com', '2019-03-03', 9333.02, '06188 Dunning Lane', 314718, 160190957, 36, '2658525353', '1981-10-12', 'Accounting', 49);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('amatzel10@mozilla.com', '2019-01-02', 9678.81, '2 Norway Maple Court', 115912, 303962871, 37, '3175941356', '1993-08-12', 'Business Development', 14);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('tebunoluwa11@weebly.com', '2019-04-30', 5423.26, '01 Waubesa Road', 344937, 983539097, 38, '5981515049', '1983-07-31', 'Accounting', 90);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('plovstrom12@cyberchimps.com', '2019-04-29', 9423.02, '7169 Dapin Alley', 12773, 998394284, 39, '6797214532', '1996-03-26', 'Services', 94);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ccollar13@ebay.co.uk', '2019-01-16', 4510.27, '5459 Magdeline Court', 353606, 722613182, 40, '9953031095', '1984-08-30', 'Product Management', 15);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jcrippes14@marriott.com', '2019-04-10', 5043.72, '955 Moland Drive', 526729, 13643821, 41, '4311373980', '1986-05-10', 'Legal', 72);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rida15@cdc.gov', '2018-05-30', 1989.16, '9033 Pepper Wood Plaza', 777712, 312066580, 42, '8698182888', '1974-07-14', 'Engineering', 4);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('chaselwood16@miitbeian.gov.cn', '2018-11-27', 3978.85, '602 Di Loreto Plaza', 826506, 823747497, 43, '2063224119', '1973-06-30', 'Marketing', 83);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dcapener17@upenn.edu', '2017-12-21', 9000.95, '15 Almo Lane', 777873, 276336242, 44, '2486677583', '1981-01-01', 'Engineering', 66);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('fsambiedge18@ycombinator.com', '2017-07-15', 8097.41, '6487 Schiller Point', 29653, 784449910, 45, '7155159331', '1974-12-17', 'Engineering', 31);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('fsibson19@php.net', '2017-11-17', 6534.89, '8277 Holmberg Street', 716784, 822179251, 46, '9931286316', '1990-06-07', 'Sales', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('afurse1a@usatoday.com', '2019-05-17', 7631.76, '56318 Butterfield Crossing', 948660, 576878096, 47, '7351402648', '1977-02-21', 'Business Development', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('hbrodeur1b@zimbio.com', '2018-05-26', 8353.39, '96 Kensington Street', 232792, 693180930, 48, '5379354186', '1993-11-04', 'Engineering', 100);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('idoddemeede1c@slideshare.net', '2019-03-30', 5964.87, '1 Dottie Road', 182972, 877246203, 49, '7379576270', '1976-09-07', 'Legal', 56);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('onoseworthy1d@ibm.com', '2017-12-26', 8046.58, '1 Susan Avenue', 869220, 967885426, 50, '3472265682', '1971-01-31', 'Services', 56);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sbennet1e@wisc.edu', '2018-11-26', 2844.4, '71 Delaware Pass', 213196, 145202856, 51, '7867954690', '1989-08-23', 'Accounting', 40);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sroeby1f@salon.com', '2018-04-03', 4107.64, '57 Golden Leaf Terrace', 706803, 331251493, 52, '1557108524', '1992-03-24', 'Product Management', 75);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cgaskins1g@mail.ru', '2017-09-13', 2163.23, '68052 Fulton Park', 532707, 703349710, 53, '8925161892', '1988-08-26', 'Training', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dpollak1h@smugmug.com', '2018-12-15', 2305.57, '99594 Annamark Avenue', 726472, 907864868, 54, '3289987402', '1978-01-04', 'Legal', 96);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jfattore1i@ezinearticles.com', '2018-03-19', 2816.8, '365 Starling Point', 336073, 233976524, 55, '3121050233', '1978-11-05', 'Engineering', 62);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rpealing1j@mashable.com', '2018-03-22', 6095.8, '86157 Veith Center', 693857, 572486661, 56, '1819588769', '1990-02-28', 'Engineering', 27);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('kareles1k@shop-pro.jp', '2018-10-29', 5693.71, '128 4th Drive', 180941, 916544862, 57, '7855526612', '1983-05-10', 'Engineering', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('uwildey1l@mysql.com', '2018-05-07', 9081.88, '33 Iowa Park', 615560, 965358833, 58, '3652128450', '1996-11-02', 'Product Management', 85);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('churran1m@zimbio.com', '2018-05-01', 452.63, '94946 Canary Circle', 999693, 436313219, 59, '7403846076', '1992-06-07', 'Legal', 77);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ryablsley1n@hugedomains.com', '2018-12-26', 7346.5, '680 Meadow Vale Crossing', 275695, 648225664, 60, '1826475219', '1998-05-28', 'Services', 2);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mladon1o@blogs.com', '2019-05-07', 5733.19, '1 Darwin Avenue', 390957, 110492718, 61, '6356750809', '1987-03-13', 'Training', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mfaber1p@photobucket.com', '2019-05-05', 9653.67, '6 John Wall Terrace', 374636, 555494375, 62, '1395153374', '1972-05-28', 'Support', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ydownie1q@webnode.com', '2017-11-12', 2276.41, '481 Stone Corner Alley', 507979, 161089329, 63, '3098865147', '1979-06-14', 'Marketing', 38);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ndawe1r@facebook.com', '2017-10-03', 6162.9, '5 Mariners Cove Way', 19356, 815541567, 64, '3154215564', '1972-07-24', 'Training', 5);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('wmartinat1s@sun.com', '2019-05-04', 7660.62, '926 Dayton Junction', 313416, 587975110, 65, '1026390886', '1993-03-17', 'Business Development', 86);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('aallwood1t@a8.net', '2019-01-26', 7247.32, '71063 Superior Alley', 139063, 629099401, 66, '3961294199', '1982-11-14', 'Human Resources', 1);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('atreneer1u@people.com.cn', '2018-10-22', 5763.62, '520 Mesta Park', 470030, 661250337, 67, '8261118545', '1983-10-09', 'Research and Development', 68);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bmaletratt1v@umich.edu', '2018-06-18', 7739.49, '3397 Sheridan Parkway', 276946, 899827137, 68, '4944770876', '1974-01-04', 'Human Resources', 99);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jorbell1w@ebay.co.uk', '2017-12-23', 7770.9, '9 Granby Avenue', 827869, 646908119, 69, '1048668495', '1991-03-11', 'Support', 48);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jpettitt1x@ebay.com', '2018-09-04', 5256.92, '53 7th Street', 962230, 594921499, 70, '9201600990', '1992-01-13', 'Business Development', 11);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('eyurin1y@tripod.com', '2018-08-30', 215.93, '30 Laurel Point', 618063, 907256415, 71, '3911640912', '1993-11-02', 'Marketing', 17);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jbriston1z@globo.com', '2019-04-14', 5038.39, '888 Division Alley', 190989, 705110189, 72, '8664815040', '1978-12-02', 'Research and Development', 88);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('zmcinally20@nationalgeographic.com', '2018-07-03', 5436.29, '2 Amoth Lane', 599967, 80103848, 73, '5915792364', '1998-01-16', 'Human Resources', 58);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('igillies21@bluehost.com', '2018-06-12', 3409.91, '344 Northland Road', 173814, 256729212, 74, '1987124977', '1995-05-23', 'Accounting', 18);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bleachman22@networkadvertising.org', '2017-08-20', 6474.27, '261 Hansons Court', 247915, 497107232, 75, '5008774776', '1981-10-29', 'Sales', 1);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gmattusevich23@angelfire.com', '2019-05-28', 2800.02, '97550 Anzinger Hill', 757422, 73580423, 76, '9353905779', '1997-03-07', 'Sales', 19);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dstreetley24@economist.com', '2018-04-11', 2141.55, '1562 Petterle Center', 943424, 667978077, 77, '7051739064', '1992-08-11', 'Business Development', 24);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('hnehl25@sogou.com', '2019-03-31', 661.32, '356 Mariners Cove Place', 598610, 729590217, 78, '3112949126', '1994-07-06', 'Product Management', 51);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dnunns26@state.gov', '2019-04-29', 5808.31, '1 Summerview Point', 483220, 187534941, 79, '9433263193', '1980-10-16', 'Engineering', 94);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('apawle27@dell.com', '2018-11-08', 9415.98, '32821 Mendota Alley', 480814, 649815169, 80, '2146657768', '1997-01-21', 'Sales', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pdoxey28@wix.com', '2017-12-22', 2640.01, '07 Lillian Center', 674404, 265015458, 81, '5016403513', '1978-01-20', 'Business Development', 39);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pjewers29@acquirethisname.com', '2018-02-11', 14.54, '784 Dapin Point', 828506, 550244914, 82, '8278919986', '1995-06-21', 'Marketing', 91);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cdemann2a@creativecommons.org', '2019-03-13', 8617.67, '5328 5th Road', 352374, 552273898, 83, '8452722306', '1989-08-06', 'Training', 60);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dedridge2b@weebly.com', '2018-09-13', 9042.35, '429 Paget Way', 732260, 294175258, 84, '3745964136', '1975-06-15', 'Engineering', 80);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rhanrott2c@reuters.com', '2018-11-01', 4588.35, '36942 Carberry Point', 880322, 591265605, 85, '8694934217', '1972-03-31', 'Marketing', 41);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('geades2d@symantec.com', '2019-03-18', 3816.13, '038 Ridge Oak Terrace', 598678, 694405807, 86, '6641557319', '1994-10-01', 'Services', 13);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('iodoogan2e@phpbb.com', '2019-04-15', 4493.48, '135 Loeprich Terrace', 670711, 780737473, 87, '5544586303', '1984-02-24', 'Training', 89);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ileet2f@wikispaces.com', '2019-05-05', 8056.63, '255 Birchwood Trail', 345991, 652576092, 88, '3626149207', '1999-04-13', 'Legal', 93);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('npoli2g@mozilla.org', '2018-03-29', 375.26, '62430 Truax Court', 22921, 979974970, 89, '2938038508', '1971-08-19', 'Engineering', 79);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sitscowics2h@phoca.cz', '2018-03-22', 5021.99, '74506 Marquette Drive', 179650, 332280520, 90, '9191410393', '1976-05-05', 'Support', 71);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bjames2i@addtoany.com', '2017-11-16', 3887.32, '195 Green Hill', 679067, 673266500, 91, '6968005000', '1994-09-16', 'Product Management', 53);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gtroak2j@go.com', '2018-11-19', 4125.07, '96 Moose Road', 595599, 917602300, 92, '7881709758', '1996-04-10', 'Marketing', 11);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('obrik2k@linkedin.com', '2018-11-13', 3029.3, '9737 Bluejay Court', 459825, 990355858, 93, '5815188963', '1991-11-14', 'Research and Development', 29);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jelderfield2l@parallels.com', '2018-06-01', 5052.28, '87625 Jana Crossing', 374710, 83931900, 94, '3053084659', '1983-09-06', 'Research and Development', 44);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ksenyard2m@lulu.com', '2017-12-06', 2866.18, '9926 Ridge Oak Lane', 995802, 674298880, 95, '9921162891', '1972-05-17', 'Training', 51);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('oedge2n@marketwatch.com', '2017-08-15', 7328.47, '193 Roxbury Terrace', 904509, 535638961, 96, '3691661714', '1999-04-16', 'Services', 74);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cbryers2o@studiopress.com', '2018-10-10', 5317.36, '2515 International Pass', 622513, 926577429, 97, '8735449521', '1997-10-14', 'Human Resources', 24);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gdurrand2p@4shared.com', '2018-10-31', 5077.82, '98285 Sugar Way', 483978, 667452851, 98, '7144244528', '1982-11-10', 'Business Development', 26);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ndaguanno2q@wired.com', '2017-11-30', 8568.04, '9 Gale Hill', 239637, 630099763, 99, '9287283195', '1977-10-16', 'Human Resources', 76);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cellingham2r@about.com', '2018-10-13', 7977.39, '21027 Toban Street', 686060, 217058721, 100, '6307407130', '1995-04-22', 'Legal', 47);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ctutchell2s@reuters.com', '2018-12-27', 6938.46, '2156 Johnson Street', 642203, 517144810, 101, '3163435658', '1984-12-22', 'Legal', 26);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lcargo2t@deviantart.com', '2017-08-16', 6089.51, '0118 Quincy Pass', 634905, 22653319, 102, '7207225161', '1976-02-04', 'Business Development', 28);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('vsvanini2u@imgur.com', '2019-02-04', 487.98, '4 Almo Park', 175140, 461651414, 103, '2586691184', '1970-01-11', 'Human Resources', 93);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('vknagges2v@about.me', '2018-10-29', 6433.03, '2 Reindahl Point', 495972, 513681102, 104, '8617196644', '1983-04-27', 'Engineering', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jfewlass2w@slashdot.org', '2019-05-24', 9908.78, '2 Moulton Circle', 862431, 387973552, 105, '4658430013', '1973-10-29', 'Accounting', 46);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('msmalles2x@opensource.org', '2017-10-22', 5195.1, '2 Anthes Circle', 422051, 697857107, 106, '1225074070', '1994-10-14', 'Legal', 95);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mklemmt2y@home.pl', '2017-07-14', 3723.14, '801 Stuart Way', 708619, 463839155, 107, '5029811176', '1987-05-16', 'Legal', 98);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dbarti2z@amazon.de', '2018-04-13', 3639.46, '4673 Swallow Trail', 888240, 457037974, 108, '8361217320', '1988-06-16', 'Legal', 70);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ddelcastel30@goo.ne.jp', '2018-07-14', 8339.25, '68 Blaine Point', 648410, 751728487, 109, '5732617048', '1972-01-15', 'Research and Development', 46);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('areap31@craigslist.org', '2018-10-08', 4913.54, '9516 Bonner Junction', 432244, 22264926, 110, '5962668070', '1981-10-01', 'Research and Development', 42);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('flakenden32@seattletimes.com', '2019-03-25', 4906.17, '71 Maple Wood Place', 665874, 315853623, 111, '3007226688', '1970-01-26', 'Training', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('vtruckell33@csmonitor.com', '2018-10-31', 1915.19, '5 Ridgeway Street', 690904, 905610491, 112, '6782859084', '1980-05-01', 'Sales', 49);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('agotliffe34@europa.eu', '2018-10-28', 2858.88, '56 Jay Junction', 145023, 239333038, 113, '3371944452', '1990-03-03', 'Sales', 3);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mmanzell35@businessweek.com', '2018-03-30', 3232.43, '90 Gale Hill', 898604, 330062472, 114, '7291483523', '1994-04-05', 'Services', 57);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ggillis36@unicef.org', '2017-12-06', 6278.98, '5983 Merry Trail', 325804, 942917765, 115, '5566100576', '1998-01-13', 'Research and Development', 96);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jocallaghan37@google.ca', '2018-12-20', 7987.14, '400 Thompson Drive', 496498, 372244719, 116, '7092657677', '1973-05-05', 'Support', 86);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cgerritsma38@people.com.cn', '2018-01-09', 5125.99, '638 Forest Run Trail', 89590, 561645941, 117, '4666685140', '1995-05-27', 'Legal', 35);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cgobel39@github.com', '2018-04-18', 1242.41, '06 Lindbergh Point', 766193, 885157389, 118, '4823045128', '1977-04-12', 'Sales', 34);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ahullot3a@rediff.com', '2017-09-07', 5563.63, '59184 North Parkway', 527147, 531679960, 119, '6012274790', '1982-02-23', 'Engineering', 87);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ieliassen3b@techcrunch.com', '2019-04-22', 9637.18, '37 Caliangt Point', 160183, 498828150, 120, '2352684077', '1980-03-29', 'Product Management', 25);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('astathor3c@hc360.com', '2017-12-18', 1178.3, '2 Waxwing Plaza', 424588, 487919366, 121, '4725142827', '1993-04-23', 'Training', 71);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gpedlar3d@multiply.com', '2019-04-22', 3731.26, '8 Northwestern Point', 42793, 101108297, 122, '8542277079', '1972-12-25', 'Sales', 60);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gskalls3e@forbes.com', '2017-07-09', 5354.98, '84 Debra Lane', 244679, 494926310, 123, '6557914145', '1975-09-16', 'Services', 48);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('icheccuzzi3f@cafepress.com', '2019-02-11', 9521.93, '3 Oak Crossing', 911250, 867517138, 124, '1918444526', '1977-06-18', 'Legal', 35);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('phuntriss3g@yellowbook.com', '2019-05-22', 3661.4, '02 Leroy Way', 509677, 775075760, 125, '9207893833', '1972-11-29', 'Support', 10);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gvonnassau3h@dropbox.com', '2017-07-17', 7557.34, '54082 Crest Line Lane', 660322, 479275319, 126, '2465753232', '1978-08-05', 'Engineering', 41);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gfarrall3i@list-manage.com', '2018-02-15', 1762.74, '9 Gulseth Court', 752037, 436263454, 127, '2387108808', '1978-03-29', 'Accounting', 67);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ivandenhoff3j@mit.edu', '2019-05-02', 8232.36, '6695 Fallview Point', 382976, 980084118, 128, '3921524370', '1984-06-11', 'Business Development', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ogobel3k@creativecommons.org', '2018-10-19', 53.78, '2170 Crowley Pass', 458379, 143451391, 129, '5125547197', '1985-02-08', 'Marketing', 26);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jlathbury3l@printfriendly.com', '2017-10-01', 1517.27, '5797 Heffernan Terrace', 95894, 443518842, 130, '7573421413', '1992-12-26', 'Sales', 40);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rbison3m@trellian.com', '2018-06-09', 632.55, '3213 Mariners Cove Drive', 814006, 136335521, 131, '3108005072', '1972-11-22', 'Business Development', 51);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('abellenger3n@ucoz.ru', '2019-03-12', 6713.15, '97 Portage Center', 604801, 161526099, 132, '1791920480', '1971-03-09', 'Engineering', 75);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mberre3o@desdev.cn', '2017-09-11', 2110.78, '4 Bluejay Plaza', 114559, 575170805, 133, '2977528936', '1999-05-18', 'Product Management', 27);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gconing3p@aol.com', '2017-07-01', 2914.42, '7186 Evergreen Hill', 321461, 746718062, 134, '6752255847', '1983-01-08', 'Product Management', 78);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jbellringer3q@istockphoto.com', '2018-01-10', 9978.82, '18 Clarendon Plaza', 65036, 141892658, 135, '9753429871', '1990-02-14', 'Services', 34);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lrowett3r@webnode.com', '2019-05-23', 886.52, '4173 Westerfield Court', 766967, 392881185, 136, '5559237399', '1976-10-03', 'Product Management', 7);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lgallamore3s@vistaprint.com', '2018-07-18', 4885.87, '8 Kensington Road', 238931, 966238112, 137, '8292273293', '1998-11-05', 'Support', 17);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bkurtis3t@nationalgeographic.com', '2017-09-03', 2209.32, '1 Center Center', 474209, 535967887, 138, '3707239026', '1994-09-18', 'Legal', 91);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ydeyenhardt3u@technorati.com', '2017-08-15', 4513.17, '7375 Claremont Road', 448000, 26469196, 139, '2801862619', '1997-05-21', 'Human Resources', 85);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bmcart3v@usda.gov', '2017-11-04', 6319.02, '89174 Myrtle Terrace', 39850, 70024429, 140, '9834459752', '1980-05-18', 'Sales', 65);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mtolle3w@yelp.com', '2017-08-01', 5809.17, '6 Golden Leaf Pass', 249690, 158347671, 141, '6999647126', '1986-05-02', 'Product Management', 75);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('educhesne3x@reddit.com', '2018-06-21', 9528.48, '81834 Monica Lane', 59674, 391904017, 142, '1626300442', '1993-07-05', 'Services', 88);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ulaffin3y@buzzfeed.com', '2019-02-23', 9677.71, '6645 Golf Course Place', 547004, 623368821, 143, '7111007996', '1970-07-31', 'Services', 18);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dbibbie3z@delicious.com', '2018-12-03', 6527.92, '0 Mallory Terrace', 271673, 236865977, 144, '7657585881', '1973-09-23', 'Engineering', 11);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cburdis40@jugem.jp', '2018-03-09', 5397.84, '3515 Mayfield Junction', 940372, 602194287, 145, '3311131365', '1996-09-10', 'Product Management', 100);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ssturgeon41@time.com', '2018-03-03', 7416.48, '113 Norway Maple Pass', 373584, 621204692, 146, '3011642962', '1998-09-03', 'Sales', 73);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sfeasey42@cargocollective.com', '2019-05-19', 6037.95, '4557 Crowley Avenue', 667161, 44367404, 147, '6914080162', '1976-07-26', 'Training', 97);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mwemyss43@usda.gov', '2018-02-27', 862.48, '03 Montana Plaza', 487108, 619814476, 148, '8534373024', '1993-01-04', 'Legal', 96);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sgraeber44@sitemeter.com', '2017-08-29', 8484.18, '04846 Grover Circle', 452804, 820722860, 149, '3367282898', '1985-11-29', 'Legal', 33);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mdyche45@statcounter.com', '2018-11-12', 1876.77, '50 Maple Parkway', 215219, 195324655, 150, '2489377571', '1983-01-30', 'Support', 26);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pantley46@quantcast.com', '2017-09-18', 74.79, '7142 Coolidge Terrace', 536969, 624769619, 151, '2034163369', '1993-12-17', 'Business Development', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('zgooda47@ca.gov', '2018-07-15', 855.17, '53 Sherman Point', 913516, 5423086, 152, '5805176341', '1982-05-04', 'Services', 9);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rgarforth48@discovery.com', '2018-05-17', 8329.08, '4801 Carpenter Drive', 552435, 560536691, 153, '2866838805', '1985-02-13', 'Human Resources', 18);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('kfolonin49@go.com', '2018-08-14', 8563.1, '680 Doe Crossing Crossing', 275119, 373106074, 154, '5011903453', '1978-02-18', 'Support', 7);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rfiddiman4a@furl.net', '2018-06-22', 5854.01, '061 Valley Edge Parkway', 251922, 311342637, 155, '5523482017', '1978-10-19', 'Engineering', 37);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('nsmail4b@so-net.ne.jp', '2018-05-06', 3146.85, '9 Commercial Trail', 628845, 170049560, 156, '6383441334', '1987-10-08', 'Accounting', 55);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('nbonnesen4c@apple.com', '2019-02-06', 2118.08, '823 Eagle Crest Trail', 995491, 596099764, 157, '1083921354', '1982-12-09', 'Training', 51);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('abatie4d@blogs.com', '2019-02-07', 4115.85, '48402 Huxley Lane', 2784, 101011438, 158, '6026224788', '1975-01-08', 'Engineering', 38);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('aropp4e@imdb.com', '2019-03-09', 7144.61, '2056 Golden Leaf Plaza', 361828, 421966645, 159, '3899547817', '1970-08-07', 'Marketing', 91);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('flapham4f@com.com', '2018-01-21', 1508.22, '28 Meadow Valley Street', 197422, 955151455, 160, '2605961451', '1970-02-04', 'Sales', 79);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('erobecon4g@creativecommons.org', '2017-12-10', 5976.73, '5 Continental Center', 265950, 22061767, 161, '9795584702', '1994-08-12', 'Legal', 39);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lkelland4h@arstechnica.com', '2018-05-20', 9264.64, '124 Bowman Drive', 664583, 428286266, 162, '7328712508', '1972-05-01', 'Product Management', 82);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ckofax4i@hud.gov', '2019-02-20', 5751.83, '18690 Summit Junction', 461419, 283366627, 163, '9944319223', '1981-06-29', 'Accounting', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ubiggerstaff4j@behance.net', '2017-12-20', 4047.85, '2046 Shelley Lane', 96556, 435514736, 164, '2407352227', '1981-08-08', 'Engineering', 17);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('nsafhill4k@icq.com', '2018-08-08', 7310.27, '157 Banding Park', 194131, 430458117, 165, '2356764317', '1988-10-30', 'Engineering', 100);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('emcgarvie4l@friendfeed.com', '2019-01-28', 3607.41, '7 Maywood Park', 85728, 663888517, 166, '4579826003', '1987-06-11', 'Research and Development', 4);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('eesch4m@google.com.au', '2018-04-22', 1139.35, '2 Crescent Oaks Center', 75424, 792429906, 167, '2737208138', '1993-04-11', 'Product Management', 77);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('thuriche4n@ebay.com', '2019-04-22', 737.51, '19 Reindahl Crossing', 559648, 631889758, 168, '2143093279', '1999-05-21', 'Business Development', 67);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('graxworthy4o@webnode.com', '2019-03-11', 6158.44, '83426 Hudson Parkway', 122032, 57437915, 169, '4179034792', '1972-07-19', 'Accounting', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('llambie4p@unesco.org', '2018-09-13', 7978.11, '0692 Mayer Way', 479154, 355532855, 170, '2852109719', '1975-12-27', 'Marketing', 51);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('fscothorn4q@time.com', '2018-06-11', 6605.69, '87 Granby Trail', 776296, 995274773, 171, '2565993980', '1995-09-16', 'Research and Development', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('jgley4r@imdb.com', '2019-03-22', 9384.81, '08 Village Hill', 621106, 817135178, 172, '9413117136', '1974-04-15', 'Marketing', 19);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ibuxcey4s@arstechnica.com', '2018-01-06', 2806.93, '51 Mccormick Crossing', 852775, 106080260, 173, '2767196179', '1993-11-08', 'Support', 2);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bfaltskog4t@disqus.com', '2019-01-12', 1195.89, '8 Forest Run Street', 647144, 842633683, 174, '2275324844', '1985-05-07', 'Support', 91);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('dburchess4u@xing.com', '2019-05-09', 4678.39, '29 International Street', 258254, 60997132, 175, '4023791007', '1983-06-23', 'Business Development', 76);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ebourley4v@wordpress.org', '2018-02-22', 386.89, '66564 Lighthouse Bay Plaza', 543717, 536495394, 176, '6365569419', '1999-03-09', 'Legal', 39);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('gmicco4w@msu.edu', '2017-11-20', 1501.2, '05519 Logan Road', 289673, 944973197, 177, '4638766731', '1981-03-23', 'Business Development', 33);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('frosbrough4x@theguardian.com', '2019-01-16', 8728.7, '5072 Golf View Drive', 156294, 857837674, 178, '5973843707', '1973-03-15', 'Support', 17);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rcruz4y@constantcontact.com', '2017-12-08', 6689.16, '26505 Superior Lane', 674383, 778239437, 179, '9892796466', '1972-06-22', 'Human Resources', 84);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('splayfair4z@miibeian.gov.cn', '2017-09-29', 3653.9, '83 Buena Vista Plaza', 861176, 776724159, 180, '1928145825', '1987-11-16', 'Engineering', 50);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('bpotticary50@unesco.org', '2019-05-25', 9075.32, '8646 Spenser Parkway', 613259, 845732762, 181, '1292236240', '1984-06-01', 'Engineering', 39);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cmccandie51@yelp.com', '2018-12-27', 5414.58, '80 Kingsford Pass', 218958, 695277294, 182, '1626935359', '1974-01-11', 'Support', 1);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ebasham52@zimbio.com', '2019-03-02', 2145.97, '280 Talmadge Point', 640363, 355670400, 183, '1297701517', '1971-11-17', 'Legal', 2);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('imangeot53@disqus.com', '2017-09-20', 7036.67, '273 Oakridge Alley', 597535, 978640225, 184, '9264488987', '1971-05-11', 'Product Management', 93);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mbickers54@wunderground.com', '2017-08-05', 2139.64, '8888 Becker Center', 47749, 777077646, 185, '1524717139', '1985-10-03', 'Research and Development', 63);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('kpattington55@vkontakte.ru', '2019-05-15', 3792.69, '18 Anderson Court', 810235, 122004637, 186, '1786203337', '1975-08-25', 'Sales', 47);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('lalmon56@reuters.com', '2017-09-23', 2452.38, '2721 Debra Hill', 536706, 986324098, 187, '8015144093', '1978-12-13', 'Legal', 13);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rlundy57@ft.com', '2018-11-04', 280.73, '4 Swallow Point', 464662, 907377754, 188, '6154312038', '1991-04-24', 'Engineering', 25);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('spunt58@youtube.com', '2017-12-28', 3914.57, '29 Cherokee Hill', 518315, 293565418, 189, '2167197874', '1995-02-26', 'Research and Development', 93);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mfields59@constantcontact.com', '2019-03-20', 1590.41, '371 Elmside Avenue', 559532, 912596128, 190, '5055143289', '1984-05-10', 'Business Development', 32);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('ycharlotte5a@pbs.org', '2018-08-31', 2051.84, '8161 Hayes Pass', 655423, 88842299, 191, '9881886683', '1977-01-13', 'Research and Development', 31);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('cbirdseye5b@prnewswire.com', '2018-06-20', 4667.6, '8 Northridge Center', 15778, 671144851, 192, '4037223767', '1986-09-13', 'Engineering', 69);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('sswindell5c@state.tx.us', '2019-05-08', 197.02, '2 Pond Lane', 505289, 798605049, 193, '4385948210', '1971-01-07', 'Human Resources', 66);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pchawkley5d@elegantthemes.com', '2017-09-07', 916.16, '9 Ridge Oak Road', 537562, 521030574, 194, '2672719155', '1972-01-27', 'Support', 35);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rowbrick5e@hubpages.com', '2017-10-05', 5883.5, '8185 Novick Point', 5686, 435659023, 195, '1998081163', '1996-03-18', 'Accounting', 73);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('mleat5f@nature.com', '2017-10-19', 1701.19, '66 Clyde Gallagher Avenue', 20911, 214701544, 196, '7251651901', '1999-02-15', 'Engineering', 21);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('rreeks5g@eepurl.com', '2018-01-04', 2712.75, '0643 Eliot Crossing', 977871, 727520378, 197, '1183408771', '1989-03-08', 'Marketing', 75);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('arenforth5h@mit.edu', '2018-09-12', 6135.89, '1 Dixon Parkway', 759198, 989236836, 198, '5124290934', '1994-05-11', 'Business Development', 10);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('meastcott5i@google.de', '2019-03-14', 859.16, '263 Pepper Wood Center', 960208, 274513524, 199, '3697137277', '1990-02-16', 'Marketing', 29);
-insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('msalliere5j@liveinternet.ru', '2017-12-18', 8583.89, '004 Waxwing Street', 356111, 380263452, 200, '3413047682', '1989-11-30', 'Research and Development', 24);
+insert into Funcionario (emailFuncionario, datacontratacao, salario, endereco, matricula, rg, idfuncionario_pk, telefone, datanascimento, departamento, idunidade_fk) values ('pboyes0@sciencedirect.com', '2018-08-24', 3105.52, '1516 Bowman Road', 887551, 632317879, 1, '2695523421', '1971-07-08', 'Product Management', 56),
+ ('wchastenet1@fda.gov', '2018-01-26', 4428.28, '5 Waywood Plaza', 905262, 839860469, 2, '9505780791', '1982-02-12', 'Support', 1),
+ ('bgaythwaite2@jiathis.com', '2018-08-10', 9479.16, '20538 Kensington Trail', 960178, 49557806, 3, '1541292145', '1976-09-12', 'Research and Development', 73),
+ ('estronack3@aol.com', '2017-12-12', 5773.53, '2 Valley Edge Point', 217990, 457822420, 4, '1093790331', '1998-06-22', 'Support', 29),
+ ('ksibthorpe4@timesonline.co.uk', '2018-08-02', 5085.52, '1778 Dakota Parkway', 61355, 437391227, 5, '5409754408', '1991-12-16', 'Accounting', 14),
+ ('tghirardi5@biblegateway.com', '2017-12-14', 413.89, '102 Shoshone Pass', 284927, 979442172, 6, '5699962614', '1986-07-23', 'Accounting', 80),
+ ('edybell6@walmart.com', '2018-09-22', 5625.87, '6239 Cherokee Plaza', 324536, 173318742, 7, '7068552554', '1991-05-05', 'Engineering', 96),
+ ('jkopisch7@de.vu', '2017-08-05', 6202.04, '221 Victoria Hill', 114622, 443681488, 8, '7831597787', '1983-05-25', 'Accounting', 53),
+ ('aianinotti8@quantcast.com', '2018-03-23', 1925.76, '25 Fairfield Park', 968403, 470465790, 9, '6029260879', '1996-11-21', 'Business Development', 82),
+ ('lallmark9@ox.ac.uk', '2018-02-03', 835.18, '83341 Village Avenue', 278336, 608387905, 10, '5366248136', '1972-10-05', 'Business Development', 5),
+ ('ftowrissa@cloudflare.com', '2019-03-10', 7359.4, '75111 Union Plaza', 799316, 91939821, 11, '6364602852', '1971-04-08', 'Marketing', 90),
+ ('eabramib@java.com', '2018-08-15', 5062.59, '622 Swallow Center', 935676, 440771088, 12, '7349070850', '1998-09-12', 'Legal', 7),
+ ('gdodgec@pbs.org', '2019-02-14', 4724.5, '38 Lakewood Center', 365421, 741641270, 13, '4432919758', '1996-02-19', 'Support', 38),
+ ('cmacinerneyd@tumblr.com', '2018-10-24', 7364.27, '3550 Di Loreto Alley', 592497, 527410102, 14, '3189010114', '1980-01-01', 'Sales', 78),
+ ('jedowese@ezinearticles.com', '2018-07-13', 5978.56, '1124 Ryan Pass', 555444, 335522589, 15, '6474511540', '1974-03-27', 'Accounting', 76),
+ ('jhabberjamf@shutterfly.com', '2019-04-13', 4307.26, '5841 Burrows Drive', 233133, 172682095, 16, '5128688453', '1983-01-26', 'Product Management', 89),
+ ('cnuschag@about.com', '2017-10-23', 7512.99, '814 Monterey Circle', 694644, 460867151, 17, '3332848397', '1970-06-28', 'Accounting', 100),
+ ('jbarklyh@hp.com', '2019-02-13', 3517.86, '92481 Homewood Street', 342878, 823154675, 18, '3127897545', '1975-10-01', 'Services', 2),
+ ('ksueteri@flickr.com', '2018-06-29', 5559.41, '9743 Lindbergh Junction', 952372, 943156435, 19, '5839519256', '1994-05-11', 'Legal', 43),
+ ('dhuggardj@salon.com', '2018-03-19', 8589.95, '34178 Scott Drive', 69533, 880630667, 20, '2518285848', '1991-04-08', 'Services', 90),
+ ('nbellardk@gnu.org', '2017-10-19', 4200.59, '61 Lyons Alley', 71652, 807805211, 21, '2548520882', '1982-10-28', 'Legal', 44),
+ ('kohagirtiel@scribd.com', '2018-02-06', 2620.42, '61478 Bluestem Point', 707040, 694501418, 22, '7928989345', '1971-07-07', 'Support', 46),
+ ('hwestm@usnews.com', '2019-04-25', 5010.62, '771 Ruskin Road', 861129, 564265971, 23, '1856206386', '1984-11-27', 'Marketing', 54),
+ ('afairmann@dropbox.com', '2018-11-02', 6967.62, '2 Lakewood Gardens Junction', 520885, 940728289, 24, '8187022621', '1986-07-31', 'Research and Development', 30),
+ ('afilkovo@networkadvertising.org', '2018-07-14', 7515.09, '76896 Summerview Road', 482018, 935696999, 25, '2714320370', '1979-02-02', 'Services', 8),
+ ('dtemplmanp@tinyurl.com', '2018-08-20', 5752.88, '6364 Blackbird Drive', 601064, 674255829, 26, '6943181463', '1992-04-25', 'Accounting', 45),
+ ('shubyq@hugedomains.com', '2019-05-11', 4866.8, '56 Loeprich Crossing', 566358, 818220277, 27, '5122866980', '1998-09-15', 'Services', 55),
+ ('bweatherhoggr@ucoz.com', '2019-01-29', 7931.05, '53 Gina Avenue', 567065, 85332232, 28, '7118369144', '1994-12-14', 'Human Resources', 50),
+ ('dsircombs@yale.edu', '2019-01-01', 1347.52, '916 Fremont Park', 423207, 848477957, 29, '7512857874', '1985-11-27', 'Legal', 5),
+ ('techlint@delicious.com', '2019-03-11', 9777.16, '6 Esker Road', 881325, 230080461, 30, '9278070000', '1976-02-20', 'Marketing', 54),
+ ('kglancyu@biblegateway.com', '2018-12-07', 7451.2, '91910 Bonner Terrace', 342463, 596640179, 31, '1068521100', '1998-03-23', 'Services', 50),
+ ('qpedrocchiv@jugem.jp', '2017-09-27', 2264.79, '45 Delaware Street', 147041, 851506564, 32, '7949907378', '1980-10-07', 'Engineering', 15),
+ ('jrusbridgew@psu.edu', '2018-12-28', 8921.59, '3170 Utah Parkway', 702519, 810823498, 33, '7982691760', '1991-11-09', 'Accounting', 57),
+ ('dmoorhousex@sciencedaily.com', '2018-01-20', 630.84, '370 Badeau Terrace', 858819, 605613947, 34, '7686818395', '1977-07-17', 'Marketing', 42),
+ ('asearsy@people.com.cn', '2018-05-19', 4075.02, '6 Hansons Way', 319283, 130346081, 35, '4796006368', '1980-05-22', 'Engineering', 4),
+ ('csamettz@blogger.com', '2019-03-03', 9333.02, '06188 Dunning Lane', 314718, 160190957, 36, '2658525353', '1981-10-12', 'Accounting', 49),
+ ('amatzel10@mozilla.com', '2019-01-02', 9678.81, '2 Norway Maple Court', 115912, 303962871, 37, '3175941356', '1993-08-12', 'Business Development', 14),
+ ('tebunoluwa11@weebly.com', '2019-04-30', 5423.26, '01 Waubesa Road', 344937, 983539097, 38, '5981515049', '1983-07-31', 'Accounting', 90),
+ ('plovstrom12@cyberchimps.com', '2019-04-29', 9423.02, '7169 Dapin Alley', 12773, 998394284, 39, '6797214532', '1996-03-26', 'Services', 94),
+ ('ccollar13@ebay.co.uk', '2019-01-16', 4510.27, '5459 Magdeline Court', 353606, 722613182, 40, '9953031095', '1984-08-30', 'Product Management', 15),
+ ('jcrippes14@marriott.com', '2019-04-10', 5043.72, '955 Moland Drive', 526729, 13643821, 41, '4311373980', '1986-05-10', 'Legal', 72),
+ ('rida15@cdc.gov', '2018-05-30', 1989.16, '9033 Pepper Wood Plaza', 777712, 312066580, 42, '8698182888', '1974-07-14', 'Engineering', 4),
+ ('chaselwood16@miitbeian.gov.cn', '2018-11-27', 3978.85, '602 Di Loreto Plaza', 826506, 823747497, 43, '2063224119', '1973-06-30', 'Marketing', 83),
+ ('dcapener17@upenn.edu', '2017-12-21', 9000.95, '15 Almo Lane', 777873, 276336242, 44, '2486677583', '1981-01-01', 'Engineering', 66),
+ ('fsambiedge18@ycombinator.com', '2017-07-15', 8097.41, '6487 Schiller Point', 29653, 784449910, 45, '7155159331', '1974-12-17', 'Engineering', 31),
+ ('fsibson19@php.net', '2017-11-17', 6534.89, '8277 Holmberg Street', 716784, 822179251, 46, '9931286316', '1990-06-07', 'Sales', 44),
+ ('afurse1a@usatoday.com', '2019-05-17', 7631.76, '56318 Butterfield Crossing', 948660, 576878096, 47, '7351402648', '1977-02-21', 'Business Development', 44),
+ ('hbrodeur1b@zimbio.com', '2018-05-26', 8353.39, '96 Kensington Street', 232792, 693180930, 48, '5379354186', '1993-11-04', 'Engineering', 100),
+ ('idoddemeede1c@slideshare.net', '2019-03-30', 5964.87, '1 Dottie Road', 182972, 877246203, 49, '7379576270', '1976-09-07', 'Legal', 56),
+ ('onoseworthy1d@ibm.com', '2017-12-26', 8046.58, '1 Susan Avenue', 869220, 967885426, 50, '3472265682', '1971-01-31', 'Services', 56),
+ ('sbennet1e@wisc.edu', '2018-11-26', 2844.4, '71 Delaware Pass', 213196, 145202856, 51, '7867954690', '1989-08-23', 'Accounting', 40),
+ ('sroeby1f@salon.com', '2018-04-03', 4107.64, '57 Golden Leaf Terrace', 706803, 331251493, 52, '1557108524', '1992-03-24', 'Product Management', 75),
+ ('cgaskins1g@mail.ru', '2017-09-13', 2163.23, '68052 Fulton Park', 532707, 703349710, 53, '8925161892', '1988-08-26', 'Training', 21),
+ ('dpollak1h@smugmug.com', '2018-12-15', 2305.57, '99594 Annamark Avenue', 726472, 907864868, 54, '3289987402', '1978-01-04', 'Legal', 96),
+ ('jfattore1i@ezinearticles.com', '2018-03-19', 2816.8, '365 Starling Point', 336073, 233976524, 55, '3121050233', '1978-11-05', 'Engineering', 62),
+ ('rpealing1j@mashable.com', '2018-03-22', 6095.8, '86157 Veith Center', 693857, 572486661, 56, '1819588769', '1990-02-28', 'Engineering', 27),
+ ('kareles1k@shop-pro.jp', '2018-10-29', 5693.71, '128 4th Drive', 180941, 916544862, 57, '7855526612', '1983-05-10', 'Engineering', 44),
+ ('uwildey1l@mysql.com', '2018-05-07', 9081.88, '33 Iowa Park', 615560, 965358833, 58, '3652128450', '1996-11-02', 'Product Management', 85),
+ ('churran1m@zimbio.com', '2018-05-01', 452.63, '94946 Canary Circle', 999693, 436313219, 59, '7403846076', '1992-06-07', 'Legal', 77),
+ ('ryablsley1n@hugedomains.com', '2018-12-26', 7346.5, '680 Meadow Vale Crossing', 275695, 648225664, 60, '1826475219', '1998-05-28', 'Services', 2),
+ ('mladon1o@blogs.com', '2019-05-07', 5733.19, '1 Darwin Avenue', 390957, 110492718, 61, '6356750809', '1987-03-13', 'Training', 44),
+ ('mfaber1p@photobucket.com', '2019-05-05', 9653.67, '6 John Wall Terrace', 374636, 555494375, 62, '1395153374', '1972-05-28', 'Support', 55),
+ ('ydownie1q@webnode.com', '2017-11-12', 2276.41, '481 Stone Corner Alley', 507979, 161089329, 63, '3098865147', '1979-06-14', 'Marketing', 38),
+ ('ndawe1r@facebook.com', '2017-10-03', 6162.9, '5 Mariners Cove Way', 19356, 815541567, 64, '3154215564', '1972-07-24', 'Training', 5),
+ ('wmartinat1s@sun.com', '2019-05-04', 7660.62, '926 Dayton Junction', 313416, 587975110, 65, '1026390886', '1993-03-17', 'Business Development', 86),
+ ('aallwood1t@a8.net', '2019-01-26', 7247.32, '71063 Superior Alley', 139063, 629099401, 66, '3961294199', '1982-11-14', 'Human Resources', 1),
+ ('atreneer1u@people.com.cn', '2018-10-22', 5763.62, '520 Mesta Park', 470030, 661250337, 67, '8261118545', '1983-10-09', 'Research and Development', 68),
+ ('bmaletratt1v@umich.edu', '2018-06-18', 7739.49, '3397 Sheridan Parkway', 276946, 899827137, 68, '4944770876', '1974-01-04', 'Human Resources', 99),
+ ('jorbell1w@ebay.co.uk', '2017-12-23', 7770.9, '9 Granby Avenue', 827869, 646908119, 69, '1048668495', '1991-03-11', 'Support', 48),
+ ('jpettitt1x@ebay.com', '2018-09-04', 5256.92, '53 7th Street', 962230, 594921499, 70, '9201600990', '1992-01-13', 'Business Development', 11),
+ ('eyurin1y@tripod.com', '2018-08-30', 215.93, '30 Laurel Point', 618063, 907256415, 71, '3911640912', '1993-11-02', 'Marketing', 17),
+ ('jbriston1z@globo.com', '2019-04-14', 5038.39, '888 Division Alley', 190989, 705110189, 72, '8664815040', '1978-12-02', 'Research and Development', 88),
+ ('zmcinally20@nationalgeographic.com', '2018-07-03', 5436.29, '2 Amoth Lane', 599967, 80103848, 73, '5915792364', '1998-01-16', 'Human Resources', 58),
+ ('igillies21@bluehost.com', '2018-06-12', 3409.91, '344 Northland Road', 173814, 256729212, 74, '1987124977', '1995-05-23', 'Accounting', 18),
+ ('bleachman22@networkadvertising.org', '2017-08-20', 6474.27, '261 Hansons Court', 247915, 497107232, 75, '5008774776', '1981-10-29', 'Sales', 1),
+ ('gmattusevich23@angelfire.com', '2019-05-28', 2800.02, '97550 Anzinger Hill', 757422, 73580423, 76, '9353905779', '1997-03-07', 'Sales', 19),
+ ('dstreetley24@economist.com', '2018-04-11', 2141.55, '1562 Petterle Center', 943424, 667978077, 77, '7051739064', '1992-08-11', 'Business Development', 24),
+ ('hnehl25@sogou.com', '2019-03-31', 661.32, '356 Mariners Cove Place', 598610, 729590217, 78, '3112949126', '1994-07-06', 'Product Management', 51),
+ ('dnunns26@state.gov', '2019-04-29', 5808.31, '1 Summerview Point', 483220, 187534941, 79, '9433263193', '1980-10-16', 'Engineering', 94),
+ ('apawle27@dell.com', '2018-11-08', 9415.98, '32821 Mendota Alley', 480814, 649815169, 80, '2146657768', '1997-01-21', 'Sales', 55),
+ ('pdoxey28@wix.com', '2017-12-22', 2640.01, '07 Lillian Center', 674404, 265015458, 81, '5016403513', '1978-01-20', 'Business Development', 39),
+ ('pjewers29@acquirethisname.com', '2018-02-11', 14.54, '784 Dapin Point', 828506, 550244914, 82, '8278919986', '1995-06-21', 'Marketing', 91),
+ ('cdemann2a@creativecommons.org', '2019-03-13', 8617.67, '5328 5th Road', 352374, 552273898, 83, '8452722306', '1989-08-06', 'Training', 60),
+ ('dedridge2b@weebly.com', '2018-09-13', 9042.35, '429 Paget Way', 732260, 294175258, 84, '3745964136', '1975-06-15', 'Engineering', 80),
+ ('rhanrott2c@reuters.com', '2018-11-01', 4588.35, '36942 Carberry Point', 880322, 591265605, 85, '8694934217', '1972-03-31', 'Marketing', 41),
+ ('geades2d@symantec.com', '2019-03-18', 3816.13, '038 Ridge Oak Terrace', 598678, 694405807, 86, '6641557319', '1994-10-01', 'Services', 13),
+ ('iodoogan2e@phpbb.com', '2019-04-15', 4493.48, '135 Loeprich Terrace', 670711, 780737473, 87, '5544586303', '1984-02-24', 'Training', 89),
+ ('ileet2f@wikispaces.com', '2019-05-05', 8056.63, '255 Birchwood Trail', 345991, 652576092, 88, '3626149207', '1999-04-13', 'Legal', 93),
+ ('npoli2g@mozilla.org', '2018-03-29', 375.26, '62430 Truax Court', 22921, 979974970, 89, '2938038508', '1971-08-19', 'Engineering', 79),
+ ('sitscowics2h@phoca.cz', '2018-03-22', 5021.99, '74506 Marquette Drive', 179650, 332280520, 90, '9191410393', '1976-05-05', 'Support', 71),
+ ('bjames2i@addtoany.com', '2017-11-16', 3887.32, '195 Green Hill', 679067, 673266500, 91, '6968005000', '1994-09-16', 'Product Management', 53),
+ ('gtroak2j@go.com', '2018-11-19', 4125.07, '96 Moose Road', 595599, 917602300, 92, '7881709758', '1996-04-10', 'Marketing', 11),
+ ('obrik2k@linkedin.com', '2018-11-13', 3029.3, '9737 Bluejay Court', 459825, 990355858, 93, '5815188963', '1991-11-14', 'Research and Development', 29),
+ ('jelderfield2l@parallels.com', '2018-06-01', 5052.28, '87625 Jana Crossing', 374710, 83931900, 94, '3053084659', '1983-09-06', 'Research and Development', 44),
+ ('ksenyard2m@lulu.com', '2017-12-06', 2866.18, '9926 Ridge Oak Lane', 995802, 674298880, 95, '9921162891', '1972-05-17', 'Training', 51),
+ ('oedge2n@marketwatch.com', '2017-08-15', 7328.47, '193 Roxbury Terrace', 904509, 535638961, 96, '3691661714', '1999-04-16', 'Services', 74),
+ ('cbryers2o@studiopress.com', '2018-10-10', 5317.36, '2515 International Pass', 622513, 926577429, 97, '8735449521', '1997-10-14', 'Human Resources', 24),
+ ('gdurrand2p@4shared.com', '2018-10-31', 5077.82, '98285 Sugar Way', 483978, 667452851, 98, '7144244528', '1982-11-10', 'Business Development', 26),
+ ('ndaguanno2q@wired.com', '2017-11-30', 8568.04, '9 Gale Hill', 239637, 630099763, 99, '9287283195', '1977-10-16', 'Human Resources', 76),
+ ('cellingham2r@about.com', '2018-10-13', 7977.39, '21027 Toban Street', 686060, 217058721, 100, '6307407130', '1995-04-22', 'Legal', 47),
+ ('ctutchell2s@reuters.com', '2018-12-27', 6938.46, '2156 Johnson Street', 642203, 517144810, 101, '3163435658', '1984-12-22', 'Legal', 26),
+ ('lcargo2t@deviantart.com', '2017-08-16', 6089.51, '0118 Quincy Pass', 634905, 22653319, 102, '7207225161', '1976-02-04', 'Business Development', 28),
+ ('vsvanini2u@imgur.com', '2019-02-04', 487.98, '4 Almo Park', 175140, 461651414, 103, '2586691184', '1970-01-11', 'Human Resources', 93),
+ ('vknagges2v@about.me', '2018-10-29', 6433.03, '2 Reindahl Point', 495972, 513681102, 104, '8617196644', '1983-04-27', 'Engineering', 55),
+ ('jfewlass2w@slashdot.org', '2019-05-24', 9908.78, '2 Moulton Circle', 862431, 387973552, 105, '4658430013', '1973-10-29', 'Accounting', 46),
+ ('msmalles2x@opensource.org', '2017-10-22', 5195.1, '2 Anthes Circle', 422051, 697857107, 106, '1225074070', '1994-10-14', 'Legal', 95),
+ ('mklemmt2y@home.pl', '2017-07-14', 3723.14, '801 Stuart Way', 708619, 463839155, 107, '5029811176', '1987-05-16', 'Legal', 98),
+ ('dbarti2z@amazon.de', '2018-04-13', 3639.46, '4673 Swallow Trail', 888240, 457037974, 108, '8361217320', '1988-06-16', 'Legal', 70),
+ ('ddelcastel30@goo.ne.jp', '2018-07-14', 8339.25, '68 Blaine Point', 648410, 751728487, 109, '5732617048', '1972-01-15', 'Research and Development', 46),
+ ('areap31@craigslist.org', '2018-10-08', 4913.54, '9516 Bonner Junction', 432244, 22264926, 110, '5962668070', '1981-10-01', 'Research and Development', 42),
+ ('flakenden32@seattletimes.com', '2019-03-25', 4906.17, '71 Maple Wood Place', 665874, 315853623, 111, '3007226688', '1970-01-26', 'Training', 55),
+ ('vtruckell33@csmonitor.com', '2018-10-31', 1915.19, '5 Ridgeway Street', 690904, 905610491, 112, '6782859084', '1980-05-01', 'Sales', 49),
+ ('agotliffe34@europa.eu', '2018-10-28', 2858.88, '56 Jay Junction', 145023, 239333038, 113, '3371944452', '1990-03-03', 'Sales', 3),
+ ('mmanzell35@businessweek.com', '2018-03-30', 3232.43, '90 Gale Hill', 898604, 330062472, 114, '7291483523', '1994-04-05', 'Services', 57),
+ ('ggillis36@unicef.org', '2017-12-06', 6278.98, '5983 Merry Trail', 325804, 942917765, 115, '5566100576', '1998-01-13', 'Research and Development', 96),
+ ('jocallaghan37@google.ca', '2018-12-20', 7987.14, '400 Thompson Drive', 496498, 372244719, 116, '7092657677', '1973-05-05', 'Support', 86),
+ ('cgerritsma38@people.com.cn', '2018-01-09', 5125.99, '638 Forest Run Trail', 89590, 561645941, 117, '4666685140', '1995-05-27', 'Legal', 35),
+ ('cgobel39@github.com', '2018-04-18', 1242.41, '06 Lindbergh Point', 766193, 885157389, 118, '4823045128', '1977-04-12', 'Sales', 34),
+ ('ahullot3a@rediff.com', '2017-09-07', 5563.63, '59184 North Parkway', 527147, 531679960, 119, '6012274790', '1982-02-23', 'Engineering', 87),
+ ('ieliassen3b@techcrunch.com', '2019-04-22', 9637.18, '37 Caliangt Point', 160183, 498828150, 120, '2352684077', '1980-03-29', 'Product Management', 25),
+ ('astathor3c@hc360.com', '2017-12-18', 1178.3, '2 Waxwing Plaza', 424588, 487919366, 121, '4725142827', '1993-04-23', 'Training', 71),
+ ('gpedlar3d@multiply.com', '2019-04-22', 3731.26, '8 Northwestern Point', 42793, 101108297, 122, '8542277079', '1972-12-25', 'Sales', 60),
+ ('gskalls3e@forbes.com', '2017-07-09', 5354.98, '84 Debra Lane', 244679, 494926310, 123, '6557914145', '1975-09-16', 'Services', 48),
+ ('icheccuzzi3f@cafepress.com', '2019-02-11', 9521.93, '3 Oak Crossing', 911250, 867517138, 124, '1918444526', '1977-06-18', 'Legal', 35),
+ ('phuntriss3g@yellowbook.com', '2019-05-22', 3661.4, '02 Leroy Way', 509677, 775075760, 125, '9207893833', '1972-11-29', 'Support', 10),
+ ('gvonnassau3h@dropbox.com', '2017-07-17', 7557.34, '54082 Crest Line Lane', 660322, 479275319, 126, '2465753232', '1978-08-05', 'Engineering', 41),
+ ('gfarrall3i@list-manage.com', '2018-02-15', 1762.74, '9 Gulseth Court', 752037, 436263454, 127, '2387108808', '1978-03-29', 'Accounting', 67),
+ ('ivandenhoff3j@mit.edu', '2019-05-02', 8232.36, '6695 Fallview Point', 382976, 980084118, 128, '3921524370', '1984-06-11', 'Business Development', 55),
+ ('ogobel3k@creativecommons.org', '2018-10-19', 53.78, '2170 Crowley Pass', 458379, 143451391, 129, '5125547197', '1985-02-08', 'Marketing', 26),
+ ('jlathbury3l@printfriendly.com', '2017-10-01', 1517.27, '5797 Heffernan Terrace', 95894, 443518842, 130, '7573421413', '1992-12-26', 'Sales', 40),
+ ('rbison3m@trellian.com', '2018-06-09', 632.55, '3213 Mariners Cove Drive', 814006, 136335521, 131, '3108005072', '1972-11-22', 'Business Development', 51),
+ ('abellenger3n@ucoz.ru', '2019-03-12', 6713.15, '97 Portage Center', 604801, 161526099, 132, '1791920480', '1971-03-09', 'Engineering', 75),
+ ('mberre3o@desdev.cn', '2017-09-11', 2110.78, '4 Bluejay Plaza', 114559, 575170805, 133, '2977528936', '1999-05-18', 'Product Management', 27),
+ ('gconing3p@aol.com', '2017-07-01', 2914.42, '7186 Evergreen Hill', 321461, 746718062, 134, '6752255847', '1983-01-08', 'Product Management', 78),
+ ('jbellringer3q@istockphoto.com', '2018-01-10', 9978.82, '18 Clarendon Plaza', 65036, 141892658, 135, '9753429871', '1990-02-14', 'Services', 34),
+ ('lrowett3r@webnode.com', '2019-05-23', 886.52, '4173 Westerfield Court', 766967, 392881185, 136, '5559237399', '1976-10-03', 'Product Management', 7),
+ ('lgallamore3s@vistaprint.com', '2018-07-18', 4885.87, '8 Kensington Road', 238931, 966238112, 137, '8292273293', '1998-11-05', 'Support', 17),
+ ('bkurtis3t@nationalgeographic.com', '2017-09-03', 2209.32, '1 Center Center', 474209, 535967887, 138, '3707239026', '1994-09-18', 'Legal', 91),
+ ('ydeyenhardt3u@technorati.com', '2017-08-15', 4513.17, '7375 Claremont Road', 448000, 26469196, 139, '2801862619', '1997-05-21', 'Human Resources', 85),
+ ('bmcart3v@usda.gov', '2017-11-04', 6319.02, '89174 Myrtle Terrace', 39850, 70024429, 140, '9834459752', '1980-05-18', 'Sales', 65),
+ ('mtolle3w@yelp.com', '2017-08-01', 5809.17, '6 Golden Leaf Pass', 249690, 158347671, 141, '6999647126', '1986-05-02', 'Product Management', 75),
+ ('educhesne3x@reddit.com', '2018-06-21', 9528.48, '81834 Monica Lane', 59674, 391904017, 142, '1626300442', '1993-07-05', 'Services', 88),
+ ('ulaffin3y@buzzfeed.com', '2019-02-23', 9677.71, '6645 Golf Course Place', 547004, 623368821, 143, '7111007996', '1970-07-31', 'Services', 18),
+ ('dbibbie3z@delicious.com', '2018-12-03', 6527.92, '0 Mallory Terrace', 271673, 236865977, 144, '7657585881', '1973-09-23', 'Engineering', 11),
+ ('cburdis40@jugem.jp', '2018-03-09', 5397.84, '3515 Mayfield Junction', 940372, 602194287, 145, '3311131365', '1996-09-10', 'Product Management', 100),
+ ('ssturgeon41@time.com', '2018-03-03', 7416.48, '113 Norway Maple Pass', 373584, 621204692, 146, '3011642962', '1998-09-03', 'Sales', 73),
+ ('sfeasey42@cargocollective.com', '2019-05-19', 6037.95, '4557 Crowley Avenue', 667161, 44367404, 147, '6914080162', '1976-07-26', 'Training', 97),
+ ('mwemyss43@usda.gov', '2018-02-27', 862.48, '03 Montana Plaza', 487108, 619814476, 148, '8534373024', '1993-01-04', 'Legal', 96),
+ ('sgraeber44@sitemeter.com', '2017-08-29', 8484.18, '04846 Grover Circle', 452804, 820722860, 149, '3367282898', '1985-11-29', 'Legal', 33),
+ ('mdyche45@statcounter.com', '2018-11-12', 1876.77, '50 Maple Parkway', 215219, 195324655, 150, '2489377571', '1983-01-30', 'Support', 26),
+ ('pantley46@quantcast.com', '2017-09-18', 74.79, '7142 Coolidge Terrace', 536969, 624769619, 151, '2034163369', '1993-12-17', 'Business Development', 21),
+ ('zgooda47@ca.gov', '2018-07-15', 855.17, '53 Sherman Point', 913516, 5423086, 152, '5805176341', '1982-05-04', 'Services', 9),
+ ('rgarforth48@discovery.com', '2018-05-17', 8329.08, '4801 Carpenter Drive', 552435, 560536691, 153, '2866838805', '1985-02-13', 'Human Resources', 18),
+ ('kfolonin49@go.com', '2018-08-14', 8563.1, '680 Doe Crossing Crossing', 275119, 373106074, 154, '5011903453', '1978-02-18', 'Support', 7),
+ ('rfiddiman4a@furl.net', '2018-06-22', 5854.01, '061 Valley Edge Parkway', 251922, 311342637, 155, '5523482017', '1978-10-19', 'Engineering', 37),
+ ('nsmail4b@so-net.ne.jp', '2018-05-06', 3146.85, '9 Commercial Trail', 628845, 170049560, 156, '6383441334', '1987-10-08', 'Accounting', 55),
+ ('nbonnesen4c@apple.com', '2019-02-06', 2118.08, '823 Eagle Crest Trail', 995491, 596099764, 157, '1083921354', '1982-12-09', 'Training', 51),
+ ('abatie4d@blogs.com', '2019-02-07', 4115.85, '48402 Huxley Lane', 2784, 101011438, 158, '6026224788', '1975-01-08', 'Engineering', 38),
+ ('aropp4e@imdb.com', '2019-03-09', 7144.61, '2056 Golden Leaf Plaza', 361828, 421966645, 159, '3899547817', '1970-08-07', 'Marketing', 91),
+ ('flapham4f@com.com', '2018-01-21', 1508.22, '28 Meadow Valley Street', 197422, 955151455, 160, '2605961451', '1970-02-04', 'Sales', 79),
+ ('erobecon4g@creativecommons.org', '2017-12-10', 5976.73, '5 Continental Center', 265950, 22061767, 161, '9795584702', '1994-08-12', 'Legal', 39),
+ ('lkelland4h@arstechnica.com', '2018-05-20', 9264.64, '124 Bowman Drive', 664583, 428286266, 162, '7328712508', '1972-05-01', 'Product Management', 82),
+ ('ckofax4i@hud.gov', '2019-02-20', 5751.83, '18690 Summit Junction', 461419, 283366627, 163, '9944319223', '1981-06-29', 'Accounting', 21),
+ ('ubiggerstaff4j@behance.net', '2017-12-20', 4047.85, '2046 Shelley Lane', 96556, 435514736, 164, '2407352227', '1981-08-08', 'Engineering', 17),
+ ('nsafhill4k@icq.com', '2018-08-08', 7310.27, '157 Banding Park', 194131, 430458117, 165, '2356764317', '1988-10-30', 'Engineering', 100),
+ ('emcgarvie4l@friendfeed.com', '2019-01-28', 3607.41, '7 Maywood Park', 85728, 663888517, 166, '4579826003', '1987-06-11', 'Research and Development', 4),
+ ('eesch4m@google.com.au', '2018-04-22', 1139.35, '2 Crescent Oaks Center', 75424, 792429906, 167, '2737208138', '1993-04-11', 'Product Management', 77),
+ ('thuriche4n@ebay.com', '2019-04-22', 737.51, '19 Reindahl Crossing', 559648, 631889758, 168, '2143093279', '1999-05-21', 'Business Development', 67),
+ ('graxworthy4o@webnode.com', '2019-03-11', 6158.44, '83426 Hudson Parkway', 122032, 57437915, 169, '4179034792', '1972-07-19', 'Accounting', 21),
+ ('llambie4p@unesco.org', '2018-09-13', 7978.11, '0692 Mayer Way', 479154, 355532855, 170, '2852109719', '1975-12-27', 'Marketing', 51),
+ ('fscothorn4q@time.com', '2018-06-11', 6605.69, '87 Granby Trail', 776296, 995274773, 171, '2565993980', '1995-09-16', 'Research and Development', 21),
+ ('jgley4r@imdb.com', '2019-03-22', 9384.81, '08 Village Hill', 621106, 817135178, 172, '9413117136', '1974-04-15', 'Marketing', 19),
+ ('ibuxcey4s@arstechnica.com', '2018-01-06', 2806.93, '51 Mccormick Crossing', 852775, 106080260, 173, '2767196179', '1993-11-08', 'Support', 2),
+ ('bfaltskog4t@disqus.com', '2019-01-12', 1195.89, '8 Forest Run Street', 647144, 842633683, 174, '2275324844', '1985-05-07', 'Support', 91),
+ ('dburchess4u@xing.com', '2019-05-09', 4678.39, '29 International Street', 258254, 60997132, 175, '4023791007', '1983-06-23', 'Business Development', 76),
+ ('ebourley4v@wordpress.org', '2018-02-22', 386.89, '66564 Lighthouse Bay Plaza', 543717, 536495394, 176, '6365569419', '1999-03-09', 'Legal', 39),
+ ('gmicco4w@msu.edu', '2017-11-20', 1501.2, '05519 Logan Road', 289673, 944973197, 177, '4638766731', '1981-03-23', 'Business Development', 33),
+ ('frosbrough4x@theguardian.com', '2019-01-16', 8728.7, '5072 Golf View Drive', 156294, 857837674, 178, '5973843707', '1973-03-15', 'Support', 17),
+ ('rcruz4y@constantcontact.com', '2017-12-08', 6689.16, '26505 Superior Lane', 674383, 778239437, 179, '9892796466', '1972-06-22', 'Human Resources', 84),
+ ('splayfair4z@miibeian.gov.cn', '2017-09-29', 3653.9, '83 Buena Vista Plaza', 861176, 776724159, 180, '1928145825', '1987-11-16', 'Engineering', 50),
+ ('bpotticary50@unesco.org', '2019-05-25', 9075.32, '8646 Spenser Parkway', 613259, 845732762, 181, '1292236240', '1984-06-01', 'Engineering', 39),
+ ('cmccandie51@yelp.com', '2018-12-27', 5414.58, '80 Kingsford Pass', 218958, 695277294, 182, '1626935359', '1974-01-11', 'Support', 1),
+ ('ebasham52@zimbio.com', '2019-03-02', 2145.97, '280 Talmadge Point', 640363, 355670400, 183, '1297701517', '1971-11-17', 'Legal', 2),
+ ('imangeot53@disqus.com', '2017-09-20', 7036.67, '273 Oakridge Alley', 597535, 978640225, 184, '9264488987', '1971-05-11', 'Product Management', 93),
+ ('mbickers54@wunderground.com', '2017-08-05', 2139.64, '8888 Becker Center', 47749, 777077646, 185, '1524717139', '1985-10-03', 'Research and Development', 63),
+ ('kpattington55@vkontakte.ru', '2019-05-15', 3792.69, '18 Anderson Court', 810235, 122004637, 186, '1786203337', '1975-08-25', 'Sales', 47),
+ ('lalmon56@reuters.com', '2017-09-23', 2452.38, '2721 Debra Hill', 536706, 986324098, 187, '8015144093', '1978-12-13', 'Legal', 13),
+ ('rlundy57@ft.com', '2018-11-04', 280.73, '4 Swallow Point', 464662, 907377754, 188, '6154312038', '1991-04-24', 'Engineering', 25),
+ ('spunt58@youtube.com', '2017-12-28', 3914.57, '29 Cherokee Hill', 518315, 293565418, 189, '2167197874', '1995-02-26', 'Research and Development', 93),
+ ('mfields59@constantcontact.com', '2019-03-20', 1590.41, '371 Elmside Avenue', 559532, 912596128, 190, '5055143289', '1984-05-10', 'Business Development', 32),
+ ('ycharlotte5a@pbs.org', '2018-08-31', 2051.84, '8161 Hayes Pass', 655423, 88842299, 191, '9881886683', '1977-01-13', 'Research and Development', 31),
+ ('cbirdseye5b@prnewswire.com', '2018-06-20', 4667.6, '8 Northridge Center', 15778, 671144851, 192, '4037223767', '1986-09-13', 'Engineering', 69),
+ ('sswindell5c@state.tx.us', '2019-05-08', 197.02, '2 Pond Lane', 505289, 798605049, 193, '4385948210', '1971-01-07', 'Human Resources', 66),
+ ('pchawkley5d@elegantthemes.com', '2017-09-07', 916.16, '9 Ridge Oak Road', 537562, 521030574, 194, '2672719155', '1972-01-27', 'Support', 35),
+ ('rowbrick5e@hubpages.com', '2017-10-05', 5883.5, '8185 Novick Point', 5686, 435659023, 195, '1998081163', '1996-03-18', 'Accounting', 73),
+ ('mleat5f@nature.com', '2017-10-19', 1701.19, '66 Clyde Gallagher Avenue', 20911, 214701544, 196, '7251651901', '1999-02-15', 'Engineering', 21),
+ ('rreeks5g@eepurl.com', '2018-01-04', 2712.75, '0643 Eliot Crossing', 977871, 727520378, 197, '1183408771', '1989-03-08', 'Marketing', 75),
+ ('arenforth5h@mit.edu', '2018-09-12', 6135.89, '1 Dixon Parkway', 759198, 989236836, 198, '5124290934', '1994-05-11', 'Business Development', 10),
+ ('meastcott5i@google.de', '2019-03-14', 859.16, '263 Pepper Wood Center', 960208, 274513524, 199, '3697137277', '1990-02-16', 'Marketing', 29),
+ ('msalliere5j@liveinternet.ru', '2017-12-18', 8583.89, '004 Waxwing Street', 356111, 380263452, 200, '3413047682', '1989-11-30', 'Research and Development', 24);
 
 /*_____________________________VEICULO_____________________________________*/
 
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (1, 13, '5063 Crest Line Hill', 'Audi', 43.92, 4851.01, 'Em manutenção', 100, 167, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (2, 16, '78 Bunting Way', 'Chevrolet', 45.04, 5055.66, 'Em uso', 15, 158, 12, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (3, 3, '8 Warbler Alley', 'Land Rover', 48.68, 1304.05, 'Em uso', 1, 177, 3, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (4, 2, '45 Autumn Leaf Terrace', 'Nissan', 87.46, 6400.33, 'Em uso', 21, 91, 2, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (5, 16, '2823 Laurel Street', 'Mercedes-Benz', 2.58, 1953.39, 'Em uso', 28, 3, 1, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (6, 8, '8170 Twin Pines Trail', 'Chevrolet', 41.0, 2581.47, 'Em uso', 88, 190, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (7, 8, '28589 Starling Way', 'Isuzu', 85.39, 4143.63, 'Em manutenção', 29, 192, 2, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (8, 9, '10 Sycamore Plaza', 'Dodge', 39.05, 3021.85, 'Disponivel', 73, 149, 4, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (9, 19, '71 Bobwhite Pass', 'Chevrolet', 96.64, 9188.76, 'Em uso', 13, 219, 3, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (10, 10, '450 Service Place', 'Pontiac', 87.75, 4383.07, 'Em manutenção', 100, 50, 7, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (11, 17, '24 Westridge Avenue', 'BMW', 8.69, 2513.67, 'Desmobilizado', 87, 67, 12, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (12, 2, '19 Miller Lane', 'Nissan', 28.5, 3156.34, 'Disponivel', 75, 183, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (13, 10, '56 Old Gate Junction', 'BMW', 22.54, 1196.0, 'Em uso', 54, 28, 8, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (14, 2, '146 Granby Place', 'Audi', 26.37, 2270.43, 'Em uso', 58, 220, 1, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (15, 10, '4 Gerald Plaza', 'Volvo', 85.22, 7833.19, 'Em manutenção', 97, 5, 4, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (16, 10, '09 Summerview Plaza', 'Dodge', 72.57, 8693.47, 'Desmobilizado', 63, 42, 6, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (17, 2, '628 Everett Trail', 'Land Rover', 54.13, 641.67, 'Em manutenção', 13, 36, 2, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (18, 3, '36359 Pearson Drive', 'Chevrolet', 10.93, 3082.8, 'Em uso', 82, 25, 2, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (19, 2, '49 Carey Center', 'Ford', 35.01, 3617.74, 'Disponivel', 11, 139, 0, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (20, 20, '9 Valley Edge Drive', 'Ford', 87.2, 9688.59, 'Desmobilizado', 58, 205, 3, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (21, 12, '98 Hollow Ridge Point', 'Mercedes-Benz', 47.49, 703.49, 'Disponivel', 3, 131, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (22, 10, '15 Jay Lane', 'Jaguar', 4.74, 743.19, 'Disponivel', 25, 69, 9, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (23, 5, '51289 Moland Pass', 'Aston Martin', 50.48, 1836.3, 'Desmobilizado', 92, 170, 2, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (24, 17, '609 Westend Lane', 'Volkswagen', 81.94, 9262.01, 'Em manutenção', 22, 133, 7, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (25, 2, '238 Nova Circle', 'Dodge', 94.15, 6673.3, 'Em manutenção', 20, 235, 1, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (26, 12, '47571 Ridge Oak Terrace', 'Audi', 20.14, 7010.58, 'Em manutenção', 90, 40, 7, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (27, 6, '1675 Vernon Circle', 'Kia', 31.67, 4762.89, 'Disponivel', 94, 119, 5, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (28, 18, '4 Badeau Trail', 'Ford', 7.66, 3810.33, 'Em manutenção', 92, 95, 10, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (29, 8, '1 Gateway Street', 'Ford', 8.02, 582.69, 'Em manutenção', 39, 154, 0, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (30, 4, '52121 Springview Crossing', 'Toyota', 94.86, 2439.22, 'Desmobilizado', 9, 121, 2, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (31, 3, '87 Express Crossing', 'Lotus', 42.61, 5615.34, 'Em manutenção', 86, 168, 0, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (32, 4, '73 Tomscot Court', 'BMW', 22.83, 9457.6, 'Em manutenção', 98, 63, 2, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (33, 10, '0 Truax Avenue', 'MINI', 11.56, 1992.79, 'Desmobilizado', 8, 24, 6, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (34, 15, '4646 Pierstorff Alley', 'Lamborghini', 78.96, 3104.12, 'Disponivel', 84, 153, 7, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (35, 5, '1189 Marcy Point', 'Chevrolet', 81.18, 1806.25, 'Em uso', 46, 38, 4, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (36, 5, '2 Hazelcrest Avenue', 'Lotus', 21.65, 991.55, 'Disponivel', 1, 125, 5, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (37, 14, '58902 Bluejay Alley', 'Mitsubishi', 19.29, 7411.92, 'Em uso', 78, 129, 6, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (38, 17, '597 Carioca Terrace', 'Ford', 61.19, 218.78, 'Desmobilizado', 44, 36, 10, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (39, 11, '64 Bartillon Lane', 'Hyundai', 27.05, 4022.65, 'Disponivel', 20, 131, 5, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (40, 19, '8484 Erie Place', 'Infiniti', 76.18, 559.21, 'Desmobilizado', 23, 62, 16, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (41, 10, '27828 Red Cloud Street', 'Kia', 28.95, 9520.78, 'Desmobilizado', 75, 186, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (42, 3, '97 Mcguire Drive', 'Nissan', 67.18, 4868.24, 'Desmobilizado', 50, 5, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (43, 16, '6516 Dawn Junction', 'Toyota', 80.68, 830.46, 'Desmobilizado', 73, 218, 3, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (44, 10, '5037 Clarendon Junction', 'Hyundai', 43.56, 1996.85, 'Em manutenção', 37, 75, 9, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (45, 8, '0 Del Mar Pass', 'Austin', 85.47, 8806.92, 'Desmobilizado', 71, 68, 4, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (46, 11, '24722 Calypso Pass', 'Chevrolet', 24.18, 1705.73, 'Disponivel', 94, 200, 6, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (47, 9, '31180 Montana Pass', 'Subaru', 59.34, 2181.32, 'Em manutenção', 32, 32, 4, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (48, 18, '5933 Lakeland Park', 'Mazda', 6.56, 2104.13, 'Desmobilizado', 100, 65, 9, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (49, 2, '4 Delladonna Way', 'Dodge', 29.89, 4024.24, 'Em manutenção', 37, 89, 1, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (50, 3, '323 Kedzie Avenue', 'Cadillac', 80.28, 1403.28, 'Em manutenção', 50, 234, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (51, 18, '716 Sunfield Plaza', 'Mitsubishi', 95.88, 5106.72, 'Desmobilizado', 14, 65, 2, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (52, 20, '6977 Portage Road', 'Isuzu', 85.44, 1020.32, 'Em manutenção', 46, 138, 10, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (53, 1, '79 Talmadge Street', 'Ford', 20.8, 290.99, 'Desmobilizado', 42, 109, 0, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (54, 13, '5382 Pierstorff Place', 'Mazda', 29.36, 9153.3, 'Desmobilizado', 27, 103, 2, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (55, 16, '832 Roxbury Center', 'Saturn', 40.56, 4948.71, 'Desmobilizado', 85, 114, 5, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (56, 10, '9 Sherman Street', 'Nissan', 87.4, 2508.42, 'Em uso', 99, 83, 8, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (57, 17, '3 1st Crossing', 'Buick', 73.85, 7150.98, 'Em uso', 78, 122, 2, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (58, 16, '851 Scott Hill', 'Lincoln', 62.17, 4947.58, 'Em uso', 74, 228, 16, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (59, 15, '2915 Ludington Junction', 'Toyota', 2.69, 7989.95, 'Em manutenção', 44, 130, 11, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (60, 18, '593 Forest Dale Center', 'Mercedes-Benz', 69.19, 8986.85, 'Em uso', 56, 57, 6, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (61, 19, '840 Hintze Plaza', 'Ford', 57.64, 6094.59, 'Disponivel', 46, 179, 0, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (62, 18, '157 Debra Drive', 'Audi', 94.94, 5004.47, 'Disponivel', 66, 171, 3, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (63, 12, '0 Declaration Alley', 'Porsche', 36.3, 7333.97, 'Disponivel', 14, 189, 6, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (64, 14, '26 Vidon Drive', 'Acura', 80.7, 7126.51, 'Em manutenção', 73, 85, 1, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (65, 2, '20067 Roth Junction', 'Land Rover', 71.07, 6558.94, 'Em manutenção', 88, 164, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (66, 7, '9705 Tennyson Point', 'Volkswagen', 76.31, 6339.53, 'Em uso', 68, 62, 2, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (67, 11, '34774 Bobwhite Pass', 'GMC', 41.35, 3801.0, 'Disponivel', 15, 60, 4, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (68, 1, '3 Merchant Crossing', 'Lamborghini', 26.76, 4012.93, 'Em manutenção', 91, 99, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (69, 6, '04234 Di Loreto Plaza', 'BMW', 88.93, 1166.36, 'Em manutenção', 27, 62, 0, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (70, 4, '95514 Schlimgen Pass', 'Lexus', 27.13, 7795.96, 'Em uso', 95, 100, 3, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (71, 12, '74489 Glacier Hill Lane', 'Ford', 50.47, 6618.67, 'Desmobilizado', 35, 210, 12, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (72, 6, '46143 Eggendart Hill', 'Mercedes-Benz', 9.42, 2417.93, 'Desmobilizado', 33, 41, 4, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (73, 13, '37 Stone Corner Place', 'Volkswagen', 57.4, 2601.1, 'Em manutenção', 72, 18, 12, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (74, 13, '5 Leroy Avenue', 'Ford', 61.41, 9716.16, 'Em uso', 17, 15, 5, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (75, 20, '174 Meadow Valley Pass', 'Lexus', 3.4, 987.27, 'Disponivel', 13, 87, 18, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (76, 14, '868 7th Crossing', 'Buick', 39.65, 5656.7, 'Disponivel', 84, 49, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (77, 13, '544 Cordelia Park', 'Toyota', 3.55, 8015.15, 'Desmobilizado', 12, 122, 4, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (78, 4, '2007 Loeprich Junction', 'Mercedes-Benz', 2.8, 3510.26, 'Em manutenção', 10, 100, 2, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (79, 8, '481 Golf Course Pass', 'GMC', 3.22, 6720.28, 'Desmobilizado', 9, 45, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (80, 13, '9440 Havey Road', 'Nissan', 50.06, 4600.85, 'Disponivel', 65, 213, 4, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (81, 3, '9 Kipling Avenue', 'Mercedes-Benz', 98.46, 9459.4, 'Em manutenção', 53, 35, 2, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (82, 3, '08 Atwood Street', 'Dodge', 32.27, 2229.29, 'Em manutenção', 11, 174, 0, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (83, 13, '454 Ohio Drive', 'Mazda', 72.13, 7236.71, 'Disponivel', 27, 58, 0, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (84, 6, '7178 Kim Way', 'Dodge', 98.01, 5088.86, 'Desmobilizado', 51, 116, 3, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (85, 7, '38700 Schmedeman Way', 'Honda', 99.39, 1911.35, 'Em manutenção', 69, 26, 4, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (86, 7, '77715 1st Parkway', 'Mercedes-Benz', 35.41, 1929.03, 'Em uso', 9, 120, 1, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (87, 15, '2343 Mifflin Pass', 'Ford', 36.75, 4040.66, 'Em uso', 1, 149, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (88, 3, '108 Lakewood Gardens Park', 'Mazda', 24.36, 8335.05, 'Em manutenção', 93, 37, 2, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (89, 19, '09360 Linden Lane', 'Chevrolet', 47.97, 4411.14, 'Desmobilizado', 22, 22, 7, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (90, 6, '4 Everett Drive', 'Lincoln', 77.54, 9829.66, 'Em manutenção', 85, 142, 2, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (91, 1, '1 Little Fleur Pass', 'Citroën', 24.9, 6885.68, 'Desmobilizado', 84, 136, 1, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (92, 4, '7832 Southridge Court', 'Ford', 7.42, 8645.98, 'Desmobilizado', 59, 31, 3, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (93, 15, '61 Columbus Avenue', 'Land Rover', 25.94, 7266.0, 'Desmobilizado', 64, 188, 2, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (94, 10, '53777 Haas Drive', 'Mitsubishi', 76.28, 421.38, 'Em manutenção', 1, 191, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (95, 8, '09 Forest Run Parkway', 'Honda', 64.89, 759.88, 'Disponivel', 22, 106, 6, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (96, 2, '0405 Butterfield Crossing', 'Lexus', 68.62, 6532.79, 'Em uso', 74, 147, 2, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (97, 6, '3 Sutteridge Plaza', 'Saturn', 94.12, 815.71, 'Em manutenção', 49, 39, 4, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (98, 8, '91 Roxbury Place', 'GMC', 94.1, 6084.62, 'Desmobilizado', 14, 206, 4, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (99, 15, '144 Rutledge Plaza', 'Dodge', 47.75, 957.82, 'Em manutenção', 68, 127, 12, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (100, 6, '582 Glendale Junction', 'Chrysler', 25.14, 3889.53, 'Em uso', 74, 36, 6, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (101, 1, '4070 Delladonna Crossing', 'Mitsubishi', 53.89, 56.8, 'Desmobilizado', 61, 59, 1, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (102, 15, '812 Pennsylvania Drive', 'Mazda', 97.47, 1220.65, 'Disponivel', 98, 136, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (103, 20, '71133 Lien Way', 'Land Rover', 10.77, 673.41, 'Desmobilizado', 2, 60, 16, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (104, 20, '4 Annamark Alley', 'Toyota', 39.17, 8693.41, 'Desmobilizado', 87, 46, 14, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (105, 14, '4410 Everett Trail', 'Ford', 14.08, 2657.58, 'Desmobilizado', 20, 75, 5, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (106, 11, '0 Division Trail', 'Isuzu', 68.99, 5532.66, 'Em manutenção', 34, 49, 2, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (107, 14, '7321 Badeau Drive', 'Pontiac', 46.29, 7406.22, 'Disponivel', 41, 21, 4, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (108, 2, '284 Village Green Terrace', 'Infiniti', 76.04, 2138.34, 'Em uso', 13, 176, 2, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (109, 15, '84 Cardinal Court', 'Nissan', 51.06, 9002.5, 'Disponivel', 62, 110, 10, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (110, 20, '6 Bartelt Terrace', 'Porsche', 94.41, 360.43, 'Em uso', 42, 155, 9, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (111, 8, '7312 Summit Park', 'Kia', 25.17, 3950.92, 'Em manutenção', 78, 160, 5, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (112, 3, '025 Rowland Alley', 'Mitsubishi', 40.4, 5892.23, 'Em manutenção', 41, 60, 0, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (113, 18, '292 Mcguire Park', 'Volkswagen', 93.04, 5140.23, 'Desmobilizado', 6, 182, 4, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (114, 15, '4 Bonner Way', 'Chevrolet', 85.76, 6797.1, 'Em manutenção', 15, 106, 12, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (115, 18, '363 Hoffman Hill', 'Honda', 43.57, 8564.26, 'Desmobilizado', 91, 4, 16, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (116, 19, '2 Farwell Circle', 'Mitsubishi', 91.14, 1126.11, 'Em uso', 100, 172, 7, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (117, 6, '50 Grim Road', 'Pontiac', 20.35, 7497.36, 'Desmobilizado', 89, 186, 5, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (118, 7, '6 Raven Trail', 'Aston Martin', 84.49, 9877.65, 'Desmobilizado', 25, 158, 7, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (119, 19, '46448 Washington Plaza', 'Oldsmobile', 25.91, 7784.64, 'Disponivel', 13, 217, 16, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (120, 16, '41414 Ridgeway Place', 'Chevrolet', 60.95, 7810.06, 'Em manutenção', 43, 215, 12, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (121, 4, '422 Steensland Terrace', 'Land Rover', 49.72, 8228.0, 'Desmobilizado', 16, 7, 4, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (122, 7, '55810 Cody Trail', 'Lotus', 12.84, 4964.81, 'Desmobilizado', 32, 196, 5, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (123, 4, '03 Towne Terrace', 'Chevrolet', 73.09, 6470.85, 'Disponivel', 68, 68, 0, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (124, 12, '53 Knutson Street', 'Toyota', 28.09, 1914.16, 'Em manutenção', 18, 31, 4, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (125, 2, '7282 Jay Junction', 'Studebaker', 59.43, 2959.54, 'Em uso', 3, 168, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (126, 2, '48 Hansons Place', 'Volkswagen', 2.35, 6279.01, 'Disponivel', 51, 81, 0, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (127, 4, '25 Shasta Lane', 'Toyota', 81.53, 68.05, 'Disponivel', 27, 57, 0, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (128, 15, '47293 Lakewood Junction', 'Pontiac', 64.74, 5362.98, 'Disponivel', 93, 43, 14, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (129, 3, '9 Fairview Plaza', 'Isuzu', 22.5, 118.84, 'Disponivel', 65, 12, 3, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (130, 2, '3938 Hovde Trail', 'Audi', 94.88, 8620.65, 'Em manutenção', 71, 131, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (131, 13, '5025 Crescent Oaks Pass', 'Chevrolet', 3.88, 8700.76, 'Em manutenção', 85, 185, 13, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (132, 20, '107 Northridge Crossing', 'Mitsubishi', 42.71, 7321.02, 'Em manutenção', 77, 228, 12, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (133, 2, '7 Norway Maple Drive', 'Lexus', 38.16, 3304.61, 'Desmobilizado', 81, 2, 1, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (134, 7, '6436 Springs Crossing', 'Acura', 36.21, 9081.0, 'Disponivel', 51, 105, 3, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (135, 12, '79060 Havey Alley', 'Buick', 54.8, 1746.67, 'Em manutenção', 22, 152, 4, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (136, 14, '386 Ohio Court', 'Subaru', 25.84, 5913.6, 'Em uso', 62, 110, 10, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (137, 18, '05 7th Pass', 'Chrysler', 93.56, 2750.49, 'Em manutenção', 7, 199, 17, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (138, 3, '1 Basil Park', 'Ford', 51.99, 5064.13, 'Desmobilizado', 36, 128, 1, true, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (139, 4, '56 Mifflin Place', 'Lamborghini', 38.93, 2413.28, 'Desmobilizado', 23, 113, 1, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (140, 9, '0204 Welch Center', 'Nissan', 81.03, 7285.03, 'Em uso', 51, 46, 6, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (141, 4, '81296 Westridge Parkway', 'Chevrolet', 61.81, 2674.53, 'Em manutenção', 63, 118, 3, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (142, 9, '293 Westport Court', 'Honda', 65.03, 3139.33, 'Desmobilizado', 79, 36, 9, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (143, 9, '854 Golden Leaf Plaza', 'Dodge', 88.39, 5299.9, 'Em manutenção', 38, 214, 1, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (144, 2, '6 Eggendart Center', 'Chevrolet', 12.16, 7625.44, 'Desmobilizado', 96, 105, 2, false, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (145, 20, '8218 Tony Hill', 'Nissan', 33.98, 2684.87, 'Em uso', 3, 121, 9, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (146, 17, '4817 Almo Parkway', 'Chrysler', 88.46, 7057.86, 'Disponivel', 51, 40, 2, true, 'Navio');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (147, 5, '485 Boyd Court', 'Nissan', 54.62, 1285.86, 'Disponivel', 9, 83, 3, false, 'Trem');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (148, 18, '711 Lerdahl Parkway', 'Cadillac', 32.36, 9151.64, 'Em uso', 85, 185, 18, true, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (149, 2, '0 Shopko Way', 'BMW', 33.12, 2776.8, 'Disponivel', 57, 174, 0, false, 'Caminhão');
-insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values (150, 16, '83932 7th Crossing', 'Audi', 72.8, 5308.32, 'Em manutenção', 6, 224, 8, true, 'Navio');
+ insert into Veiculo (idveiculo_pk, nummaxcontainers, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, tipoveiculo) values
+ (1, 13, '5063 Crest Line Hill', 'Audi', 43.92, 4851.01, 'Em manutenção', 100, 167, 1, true, 'Navio'),
+ (2, 16, '78 Bunting Way', 'Chevrolet', 45.04, 5055.66, 'Em uso', 15, 158, 12, true, 'Caminhão'),
+ (3, 3, '8 Warbler Alley', 'Land Rover', 48.68, 1304.05, 'Em uso', 1, 177, 3, true, 'Caminhão'),
+ (4, 2, '45 Autumn Leaf Terrace', 'Nissan', 87.46, 6400.33, 'Em uso', 21, 91, 2, false, 'Trem'),
+ (5, 16, '2823 Laurel Street', 'Mercedes-Benz', 2.58, 1953.39, 'Em uso', 28, 3, 1, false, 'Trem'),
+ (6, 8, '8170 Twin Pines Trail', 'Chevrolet', 41.0, 2581.47, 'Em uso', 88, 190, 0, true, 'Navio'),
+ (7, 8, '28589 Starling Way', 'Isuzu', 85.39, 4143.63, 'Em manutenção', 29, 192, 2, true, 'Trem'),
+ (8, 9, '10 Sycamore Plaza', 'Dodge', 39.05, 3021.85, 'Disponivel', 73, 149, 4, true, 'Caminhão'),
+ (9, 19, '71 Bobwhite Pass', 'Chevrolet', 96.64, 9188.76, 'Em uso', 13, 219, 3, true, 'Caminhão'),
+ (10, 10, '450 Service Place', 'Pontiac', 87.75, 4383.07, 'Em manutenção', 100, 50, 7, true, 'Trem'),
+ (11, 17, '24 Westridge Avenue', 'BMW', 8.69, 2513.67, 'Desmobilizado', 87, 67, 12, false, 'Caminhão'),
+ (12, 2, '19 Miller Lane', 'Nissan', 28.5, 3156.34, 'Disponivel', 75, 183, 0, true, 'Navio'),
+ (13, 10, '56 Old Gate Junction', 'BMW', 22.54, 1196.0, 'Em uso', 54, 28, 8, true, 'Caminhão'),
+ (14, 2, '146 Granby Place', 'Audi', 26.37, 2270.43, 'Em uso', 58, 220, 1, false, 'Trem'),
+ (15, 10, '4 Gerald Plaza', 'Volvo', 85.22, 7833.19, 'Em manutenção', 97, 5, 4, true, 'Trem'),
+ (16, 10, '09 Summerview Plaza', 'Dodge', 72.57, 8693.47, 'Desmobilizado', 63, 42, 6, false, 'Trem'),
+ (17, 2, '628 Everett Trail', 'Land Rover', 54.13, 641.67, 'Em manutenção', 13, 36, 2, true, 'Caminhão'),
+ (18, 3, '36359 Pearson Drive', 'Chevrolet', 10.93, 3082.8, 'Em uso', 82, 25, 2, true, 'Navio'),
+ (19, 2, '49 Carey Center', 'Ford', 35.01, 3617.74, 'Disponivel', 11, 139, 0, true, 'Trem'),
+ (20, 20, '9 Valley Edge Drive', 'Ford', 87.2, 9688.59, 'Desmobilizado', 58, 205, 3, false, 'Caminhão'),
+ (21, 12, '98 Hollow Ridge Point', 'Mercedes-Benz', 47.49, 703.49, 'Disponivel', 3, 131, 0, true, 'Navio'),
+ (22, 10, '15 Jay Lane', 'Jaguar', 4.74, 743.19, 'Disponivel', 25, 69, 9, true, 'Trem'),
+ (23, 5, '51289 Moland Pass', 'Aston Martin', 50.48, 1836.3, 'Desmobilizado', 92, 170, 2, false, 'Caminhão'),
+ (24, 17, '609 Westend Lane', 'Volkswagen', 81.94, 9262.01, 'Em manutenção', 22, 133, 7, true, 'Navio'),
+ (25, 2, '238 Nova Circle', 'Dodge', 94.15, 6673.3, 'Em manutenção', 20, 235, 1, false, 'Navio'),
+ (26, 12, '47571 Ridge Oak Terrace', 'Audi', 20.14, 7010.58, 'Em manutenção', 90, 40, 7, true, 'Navio'),
+ (27, 6, '1675 Vernon Circle', 'Kia', 31.67, 4762.89, 'Disponivel', 94, 119, 5, true, 'Navio'),
+ (28, 18, '4 Badeau Trail', 'Ford', 7.66, 3810.33, 'Em manutenção', 92, 95, 10, true, 'Trem'),
+ (29, 8, '1 Gateway Street', 'Ford', 8.02, 582.69, 'Em manutenção', 39, 154, 0, false, 'Caminhão'),
+ (30, 4, '52121 Springview Crossing', 'Toyota', 94.86, 2439.22, 'Desmobilizado', 9, 121, 2, false, 'Caminhão'),
+ (31, 3, '87 Express Crossing', 'Lotus', 42.61, 5615.34, 'Em manutenção', 86, 168, 0, false, 'Navio'),
+ (32, 4, '73 Tomscot Court', 'BMW', 22.83, 9457.6, 'Em manutenção', 98, 63, 2, true, 'Navio'),
+ (33, 10, '0 Truax Avenue', 'MINI', 11.56, 1992.79, 'Desmobilizado', 8, 24, 6, false, 'Trem'),
+ (34, 15, '4646 Pierstorff Alley', 'Lamborghini', 78.96, 3104.12, 'Disponivel', 84, 153, 7, true, 'Navio'),
+ (35, 5, '1189 Marcy Point', 'Chevrolet', 81.18, 1806.25, 'Em uso', 46, 38, 4, true, 'Navio'),
+ (36, 5, '2 Hazelcrest Avenue', 'Lotus', 21.65, 991.55, 'Disponivel', 1, 125, 5, true, 'Trem'),
+ (37, 14, '58902 Bluejay Alley', 'Mitsubishi', 19.29, 7411.92, 'Em uso', 78, 129, 6, false, 'Caminhão'),
+ (38, 17, '597 Carioca Terrace', 'Ford', 61.19, 218.78, 'Desmobilizado', 44, 36, 10, true, 'Navio'),
+ (39, 11, '64 Bartillon Lane', 'Hyundai', 27.05, 4022.65, 'Disponivel', 20, 131, 5, false, 'Navio'),
+ (40, 19, '8484 Erie Place', 'Infiniti', 76.18, 559.21, 'Desmobilizado', 23, 62, 16, false, 'Caminhão'),
+ (41, 10, '27828 Red Cloud Street', 'Kia', 28.95, 9520.78, 'Desmobilizado', 75, 186, 1, false, 'Caminhão'),
+ (42, 3, '97 Mcguire Drive', 'Nissan', 67.18, 4868.24, 'Desmobilizado', 50, 5, 1, true, 'Navio'),
+ (43, 16, '6516 Dawn Junction', 'Toyota', 80.68, 830.46, 'Desmobilizado', 73, 218, 3, true, 'Trem'),
+ (44, 10, '5037 Clarendon Junction', 'Hyundai', 43.56, 1996.85, 'Em manutenção', 37, 75, 9, false, 'Trem'),
+ (45, 8, '0 Del Mar Pass', 'Austin', 85.47, 8806.92, 'Desmobilizado', 71, 68, 4, true, 'Navio'),
+ (46, 11, '24722 Calypso Pass', 'Chevrolet', 24.18, 1705.73, 'Disponivel', 94, 200, 6, true, 'Trem'),
+ (47, 9, '31180 Montana Pass', 'Subaru', 59.34, 2181.32, 'Em manutenção', 32, 32, 4, false, 'Trem'),
+ (48, 18, '5933 Lakeland Park', 'Mazda', 6.56, 2104.13, 'Desmobilizado', 100, 65, 9, false, 'Caminhão'),
+ (49, 2, '4 Delladonna Way', 'Dodge', 29.89, 4024.24, 'Em manutenção', 37, 89, 1, false, 'Navio'),
+ (50, 3, '323 Kedzie Avenue', 'Cadillac', 80.28, 1403.28, 'Em manutenção', 50, 234, 1, false, 'Caminhão'),
+ (51, 18, '716 Sunfield Plaza', 'Mitsubishi', 95.88, 5106.72, 'Desmobilizado', 14, 65, 2, true, 'Trem'),
+ (52, 20, '6977 Portage Road', 'Isuzu', 85.44, 1020.32, 'Em manutenção', 46, 138, 10, false, 'Navio'),
+ (53, 1, '79 Talmadge Street', 'Ford', 20.8, 290.99, 'Desmobilizado', 42, 109, 0, false, 'Caminhão'),
+ (54, 13, '5382 Pierstorff Place', 'Mazda', 29.36, 9153.3, 'Desmobilizado', 27, 103, 2, true, 'Trem'),
+ (55, 16, '832 Roxbury Center', 'Saturn', 40.56, 4948.71, 'Desmobilizado', 85, 114, 5, false, 'Navio'),
+ (56, 10, '9 Sherman Street', 'Nissan', 87.4, 2508.42, 'Em uso', 99, 83, 8, true, 'Navio'),
+ (57, 17, '3 1st Crossing', 'Buick', 73.85, 7150.98, 'Em uso', 78, 122, 2, false, 'Navio'),
+ (58, 16, '851 Scott Hill', 'Lincoln', 62.17, 4947.58, 'Em uso', 74, 228, 16, false, 'Caminhão'),
+ (59, 15, '2915 Ludington Junction', 'Toyota', 2.69, 7989.95, 'Em manutenção', 44, 130, 11, true, 'Caminhão'),
+ (60, 18, '593 Forest Dale Center', 'Mercedes-Benz', 69.19, 8986.85, 'Em uso', 56, 57, 6, false, 'Trem'),
+ (61, 19, '840 Hintze Plaza', 'Ford', 57.64, 6094.59, 'Disponivel', 46, 179, 0, true, 'Trem'),
+ (62, 18, '157 Debra Drive', 'Audi', 94.94, 5004.47, 'Disponivel', 66, 171, 3, true, 'Caminhão'),
+ (63, 12, '0 Declaration Alley', 'Porsche', 36.3, 7333.97, 'Disponivel', 14, 189, 6, false, 'Trem'),
+ (64, 14, '26 Vidon Drive', 'Acura', 80.7, 7126.51, 'Em manutenção', 73, 85, 1, true, 'Caminhão'),
+ (65, 2, '20067 Roth Junction', 'Land Rover', 71.07, 6558.94, 'Em manutenção', 88, 164, 1, false, 'Caminhão'),
+ (66, 7, '9705 Tennyson Point', 'Volkswagen', 76.31, 6339.53, 'Em uso', 68, 62, 2, false, 'Navio'),
+ (67, 11, '34774 Bobwhite Pass', 'GMC', 41.35, 3801.0, 'Disponivel', 15, 60, 4, true, 'Caminhão'),
+ (68, 1, '3 Merchant Crossing', 'Lamborghini', 26.76, 4012.93, 'Em manutenção', 91, 99, 0, true, 'Navio'),
+ (69, 6, '04234 Di Loreto Plaza', 'BMW', 88.93, 1166.36, 'Em manutenção', 27, 62, 0, true, 'Caminhão'),
+ (70, 4, '95514 Schlimgen Pass', 'Lexus', 27.13, 7795.96, 'Em uso', 95, 100, 3, true, 'Caminhão'),
+ (71, 12, '74489 Glacier Hill Lane', 'Ford', 50.47, 6618.67, 'Desmobilizado', 35, 210, 12, false, 'Navio'),
+ (72, 6, '46143 Eggendart Hill', 'Mercedes-Benz', 9.42, 2417.93, 'Desmobilizado', 33, 41, 4, false, 'Caminhão'),
+ (73, 13, '37 Stone Corner Place', 'Volkswagen', 57.4, 2601.1, 'Em manutenção', 72, 18, 12, true, 'Caminhão'),
+ (74, 13, '5 Leroy Avenue', 'Ford', 61.41, 9716.16, 'Em uso', 17, 15, 5, true, 'Caminhão'),
+ (75, 20, '174 Meadow Valley Pass', 'Lexus', 3.4, 987.27, 'Disponivel', 13, 87, 18, false, 'Trem'),
+ (76, 14, '868 7th Crossing', 'Buick', 39.65, 5656.7, 'Disponivel', 84, 49, 0, true, 'Navio'),
+ (77, 13, '544 Cordelia Park', 'Toyota', 3.55, 8015.15, 'Desmobilizado', 12, 122, 4, false, 'Caminhão'),
+ (78, 4, '2007 Loeprich Junction', 'Mercedes-Benz', 2.8, 3510.26, 'Em manutenção', 10, 100, 2, false, 'Caminhão'),
+ (79, 8, '481 Golf Course Pass', 'GMC', 3.22, 6720.28, 'Desmobilizado', 9, 45, 1, false, 'Caminhão'),
+ (80, 13, '9440 Havey Road', 'Nissan', 50.06, 4600.85, 'Disponivel', 65, 213, 4, false, 'Navio'),
+ (81, 3, '9 Kipling Avenue', 'Mercedes-Benz', 98.46, 9459.4, 'Em manutenção', 53, 35, 2, false, 'Caminhão'),
+ (82, 3, '08 Atwood Street', 'Dodge', 32.27, 2229.29, 'Em manutenção', 11, 174, 0, true, 'Caminhão'),
+ (83, 13, '454 Ohio Drive', 'Mazda', 72.13, 7236.71, 'Disponivel', 27, 58, 0, true, 'Caminhão'),
+ (84, 6, '7178 Kim Way', 'Dodge', 98.01, 5088.86, 'Desmobilizado', 51, 116, 3, false, 'Navio'),
+ (85, 7, '38700 Schmedeman Way', 'Honda', 99.39, 1911.35, 'Em manutenção', 69, 26, 4, true, 'Caminhão'),
+ (86, 7, '77715 1st Parkway', 'Mercedes-Benz', 35.41, 1929.03, 'Em uso', 9, 120, 1, false, 'Trem'),
+ (87, 15, '2343 Mifflin Pass', 'Ford', 36.75, 4040.66, 'Em uso', 1, 149, 1, true, 'Navio'),
+ (88, 3, '108 Lakewood Gardens Park', 'Mazda', 24.36, 8335.05, 'Em manutenção', 93, 37, 2, false, 'Caminhão'),
+ (89, 19, '09360 Linden Lane', 'Chevrolet', 47.97, 4411.14, 'Desmobilizado', 22, 22, 7, true, 'Trem'),
+ (90, 6, '4 Everett Drive', 'Lincoln', 77.54, 9829.66, 'Em manutenção', 85, 142, 2, false, 'Navio'),
+ (91, 1, '1 Little Fleur Pass', 'Citroën', 24.9, 6885.68, 'Desmobilizado', 84, 136, 1, true, 'Trem'),
+ (92, 4, '7832 Southridge Court', 'Ford', 7.42, 8645.98, 'Desmobilizado', 59, 31, 3, false, 'Navio'),
+ (93, 15, '61 Columbus Avenue', 'Land Rover', 25.94, 7266.0, 'Desmobilizado', 64, 188, 2, true, 'Navio'),
+ (94, 10, '53777 Haas Drive', 'Mitsubishi', 76.28, 421.38, 'Em manutenção', 1, 191, 1, false, 'Caminhão'),
+ (95, 8, '09 Forest Run Parkway', 'Honda', 64.89, 759.88, 'Disponivel', 22, 106, 6, true, 'Trem'),
+ (96, 2, '0405 Butterfield Crossing', 'Lexus', 68.62, 6532.79, 'Em uso', 74, 147, 2, true, 'Trem'),
+ (97, 6, '3 Sutteridge Plaza', 'Saturn', 94.12, 815.71, 'Em manutenção', 49, 39, 4, false, 'Caminhão'),
+ (98, 8, '91 Roxbury Place', 'GMC', 94.1, 6084.62, 'Desmobilizado', 14, 206, 4, true, 'Navio'),
+ (99, 15, '144 Rutledge Plaza', 'Dodge', 47.75, 957.82, 'Em manutenção', 68, 127, 12, true, 'Trem'),
+ (100, 6, '582 Glendale Junction', 'Chrysler', 25.14, 3889.53, 'Em uso', 74, 36, 6, true, 'Trem'),
+ (101, 1, '4070 Delladonna Crossing', 'Mitsubishi', 53.89, 56.8, 'Desmobilizado', 61, 59, 1, true, 'Trem'),
+ (102, 15, '812 Pennsylvania Drive', 'Mazda', 97.47, 1220.65, 'Disponivel', 98, 136, 1, false, 'Caminhão'),
+ (103, 20, '71133 Lien Way', 'Land Rover', 10.77, 673.41, 'Desmobilizado', 2, 60, 16, false, 'Navio'),
+ (104, 20, '4 Annamark Alley', 'Toyota', 39.17, 8693.41, 'Desmobilizado', 87, 46, 14, true, 'Trem'),
+ (105, 14, '4410 Everett Trail', 'Ford', 14.08, 2657.58, 'Desmobilizado', 20, 75, 5, false, 'Trem'),
+ (106, 11, '0 Division Trail', 'Isuzu', 68.99, 5532.66, 'Em manutenção', 34, 49, 2, true, 'Trem'),
+ (107, 14, '7321 Badeau Drive', 'Pontiac', 46.29, 7406.22, 'Disponivel', 41, 21, 4, true, 'Navio'),
+ (108, 2, '284 Village Green Terrace', 'Infiniti', 76.04, 2138.34, 'Em uso', 13, 176, 2, true, 'Navio'),
+ (109, 15, '84 Cardinal Court', 'Nissan', 51.06, 9002.5, 'Disponivel', 62, 110, 10, true, 'Trem'),
+ (110, 20, '6 Bartelt Terrace', 'Porsche', 94.41, 360.43, 'Em uso', 42, 155, 9, true, 'Caminhão'),
+ (111, 8, '7312 Summit Park', 'Kia', 25.17, 3950.92, 'Em manutenção', 78, 160, 5, false, 'Caminhão'),
+ (112, 3, '025 Rowland Alley', 'Mitsubishi', 40.4, 5892.23, 'Em manutenção', 41, 60, 0, true, 'Navio'),
+ (113, 18, '292 Mcguire Park', 'Volkswagen', 93.04, 5140.23, 'Desmobilizado', 6, 182, 4, false, 'Navio'),
+ (114, 15, '4 Bonner Way', 'Chevrolet', 85.76, 6797.1, 'Em manutenção', 15, 106, 12, true, 'Navio'),
+ (115, 18, '363 Hoffman Hill', 'Honda', 43.57, 8564.26, 'Desmobilizado', 91, 4, 16, true, 'Navio'),
+ (116, 19, '2 Farwell Circle', 'Mitsubishi', 91.14, 1126.11, 'Em uso', 100, 172, 7, true, 'Navio'),
+ (117, 6, '50 Grim Road', 'Pontiac', 20.35, 7497.36, 'Desmobilizado', 89, 186, 5, false, 'Caminhão'),
+ (118, 7, '6 Raven Trail', 'Aston Martin', 84.49, 9877.65, 'Desmobilizado', 25, 158, 7, true, 'Trem'),
+ (119, 19, '46448 Washington Plaza', 'Oldsmobile', 25.91, 7784.64, 'Disponivel', 13, 217, 16, false, 'Navio'),
+ (120, 16, '41414 Ridgeway Place', 'Chevrolet', 60.95, 7810.06, 'Em manutenção', 43, 215, 12, true, 'Navio'),
+ (121, 4, '422 Steensland Terrace', 'Land Rover', 49.72, 8228.0, 'Desmobilizado', 16, 7, 4, false, 'Navio'),
+ (122, 7, '55810 Cody Trail', 'Lotus', 12.84, 4964.81, 'Desmobilizado', 32, 196, 5, false, 'Navio'),
+ (123, 4, '03 Towne Terrace', 'Chevrolet', 73.09, 6470.85, 'Disponivel', 68, 68, 0, false, 'Trem'),
+ (124, 12, '53 Knutson Street', 'Toyota', 28.09, 1914.16, 'Em manutenção', 18, 31, 4, false, 'Caminhão'),
+ (125, 2, '7282 Jay Junction', 'Studebaker', 59.43, 2959.54, 'Em uso', 3, 168, 1, true, 'Navio'),
+ (126, 2, '48 Hansons Place', 'Volkswagen', 2.35, 6279.01, 'Disponivel', 51, 81, 0, false, 'Caminhão'),
+ (127, 4, '25 Shasta Lane', 'Toyota', 81.53, 68.05, 'Disponivel', 27, 57, 0, false, 'Navio'),
+ (128, 15, '47293 Lakewood Junction', 'Pontiac', 64.74, 5362.98, 'Disponivel', 93, 43, 14, false, 'Caminhão'),
+ (129, 3, '9 Fairview Plaza', 'Isuzu', 22.5, 118.84, 'Disponivel', 65, 12, 3, false, 'Trem'),
+ (130, 2, '3938 Hovde Trail', 'Audi', 94.88, 8620.65, 'Em manutenção', 71, 131, 1, true, 'Navio'),
+ (131, 13, '5025 Crescent Oaks Pass', 'Chevrolet', 3.88, 8700.76, 'Em manutenção', 85, 185, 13, false, 'Trem'),
+ (132, 20, '107 Northridge Crossing', 'Mitsubishi', 42.71, 7321.02, 'Em manutenção', 77, 228, 12, false, 'Caminhão'),
+ (133, 2, '7 Norway Maple Drive', 'Lexus', 38.16, 3304.61, 'Desmobilizado', 81, 2, 1, false, 'Trem'),
+ (134, 7, '6436 Springs Crossing', 'Acura', 36.21, 9081.0, 'Disponivel', 51, 105, 3, false, 'Caminhão'),
+ (135, 12, '79060 Havey Alley', 'Buick', 54.8, 1746.67, 'Em manutenção', 22, 152, 4, false, 'Caminhão'),
+ (136, 14, '386 Ohio Court', 'Subaru', 25.84, 5913.6, 'Em uso', 62, 110, 10, false, 'Trem'),
+ (137, 18, '05 7th Pass', 'Chrysler', 93.56, 2750.49, 'Em manutenção', 7, 199, 17, true, 'Navio'),
+ (138, 3, '1 Basil Park', 'Ford', 51.99, 5064.13, 'Desmobilizado', 36, 128, 1, true, 'Trem'),
+ (139, 4, '56 Mifflin Place', 'Lamborghini', 38.93, 2413.28, 'Desmobilizado', 23, 113, 1, false, 'Caminhão'),
+ (140, 9, '0204 Welch Center', 'Nissan', 81.03, 7285.03, 'Em uso', 51, 46, 6, false, 'Caminhão'),
+ (141, 4, '81296 Westridge Parkway', 'Chevrolet', 61.81, 2674.53, 'Em manutenção', 63, 118, 3, false, 'Trem'),
+ (142, 9, '293 Westport Court', 'Honda', 65.03, 3139.33, 'Desmobilizado', 79, 36, 9, false, 'Trem'),
+ (143, 9, '854 Golden Leaf Plaza', 'Dodge', 88.39, 5299.9, 'Em manutenção', 38, 214, 1, true, 'Navio'),
+ (144, 2, '6 Eggendart Center', 'Chevrolet', 12.16, 7625.44, 'Desmobilizado', 96, 105, 2, false, 'Navio'),
+ (145, 20, '8218 Tony Hill', 'Nissan', 33.98, 2684.87, 'Em uso', 3, 121, 9, false, 'Trem'),
+ (146, 17, '4817 Almo Parkway', 'Chrysler', 88.46, 7057.86, 'Disponivel', 51, 40, 2, true, 'Navio'),
+ (147, 5, '485 Boyd Court', 'Nissan', 54.62, 1285.86, 'Disponivel', 9, 83, 3, false, 'Trem'),
+ (148, 18, '711 Lerdahl Parkway', 'Cadillac', 32.36, 9151.64, 'Em uso', 85, 185, 18, true, 'Caminhão'),
+ (149, 2, '0 Shopko Way', 'BMW', 33.12, 2776.8, 'Disponivel', 57, 174, 0, false, 'Caminhão'),
+ (150, 16, '83932 7th Crossing', 'Audi', 72.8, 5308.32, 'Em manutenção', 6, 224, 8, true, 'Navio');
 
 /*_____________________________TRANSPORTA_TRANSPORTE_____________________________________*/
 
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (149, 21, '2018-10-25', '2019-02-17');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (185, 98, '2018-03-08', '2019-01-29');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (184, 30, '2018-09-01', '2019-04-20');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (133, 123, '2018-12-22', '2019-03-22');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (96, 128, '2018-02-06', '2019-06-03');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (105, 119, '2018-02-26', '2019-03-14');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (185, 150, '2018-12-10', '2019-01-21');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (99, 148, '2018-08-25', '2019-03-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (97, 61, '2018-05-23', '2019-02-16');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (123, 100, '2018-09-14', '2019-04-25');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (122, 78, '2018-07-06', '2019-04-17');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (25, 87, '2018-06-10', '2019-01-24');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (146, 136, '2018-03-01', '2019-03-26');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (109, 15, '2018-03-18', '2019-05-31');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (145, 64, '2018-10-03', '2019-06-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (51, 17, '2018-06-18', '2019-05-21');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (132, 148, '2018-01-20', '2019-01-11');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (164, 35, '2018-09-08', '2019-03-31');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (13, 24, '2018-10-08', '2019-04-08');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (68, 143, '2018-05-12', '2019-05-18');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (20, 145, '2018-03-10', '2019-02-21');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (158, 111, '2018-01-12', '2019-03-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (105, 35, '2018-04-15', '2019-05-16');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (96, 140, '2018-04-23', '2019-04-15');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (37, 124, '2018-04-04', '2019-04-23');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (132, 117, '2018-02-05', '2019-01-13');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (165, 149, '2018-05-15', '2019-02-27');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (22, 30, '2018-09-22', '2019-01-11');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (71, 123, '2018-06-08', '2019-06-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (192, 126, '2018-09-14', '2019-01-29');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (29, 22, '2018-02-15', '2019-02-13');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (145, 140, '2018-12-01', '2019-05-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (64, 11, '2018-07-25', '2019-03-11');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (142, 96, '2018-01-24', '2019-04-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (145, 72, '2018-05-06', '2019-06-06');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (9, 117, '2018-01-27', '2019-02-10');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (156, 57, '2018-05-20', '2019-04-23');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (52, 130, '2018-06-03', '2019-01-27');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (53, 20, '2018-06-11', '2019-02-14');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (44, 7, '2018-04-17', '2019-05-24');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (92, 84, '2018-11-17', '2019-01-04');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (44, 123, '2018-09-25', '2019-02-21');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (171, 7, '2018-01-22', '2019-04-20');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (177, 101, '2018-05-07', '2019-01-01');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (134, 105, '2018-12-17', '2019-03-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (49, 24, '2018-10-29', '2019-02-21');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (154, 109, '2018-03-28', '2019-05-12');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (60, 94, '2018-06-08', '2019-02-10');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (5, 119, '2018-09-15', '2019-03-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (71, 96, '2018-09-14', '2019-04-14');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (65, 42, '2018-04-22', '2019-01-10');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (50, 95, '2018-03-23', '2019-05-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (107, 53, '2018-10-10', '2019-04-10');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (188, 64, '2018-09-14', '2019-01-25');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (10, 70, '2018-04-14', '2019-06-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (173, 52, '2018-02-07', '2019-05-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (103, 148, '2018-11-15', '2019-01-16');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (78, 32, '2018-11-22', '2019-02-13');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (78, 11, '2018-09-24', '2019-05-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (194, 102, '2018-03-11', '2019-04-30');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (34, 73, '2018-02-07', '2019-04-23');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (159, 120, '2018-04-02', '2019-02-20');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (113, 34, '2018-08-13', '2019-03-27');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (195, 145, '2018-05-19', '2019-05-06');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (69, 88, '2018-02-14', '2019-03-03');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (98, 105, '2018-06-15', '2019-01-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (103, 15, '2018-08-10', '2019-05-28');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (62, 95, '2018-07-11', '2019-02-26');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (128, 127, '2018-04-26', '2019-01-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (191, 57, '2018-12-30', '2019-01-25');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (118, 87, '2018-10-04', '2019-01-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (33, 51, '2018-08-17', '2019-02-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (70, 27, '2018-09-24', '2019-01-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (6, 144, '2018-04-06', '2019-02-06');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (131, 67, '2018-03-07', '2019-04-14');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (80, 99, '2018-02-21', '2019-05-03');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (55, 134, '2018-04-13', '2019-03-25');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (72, 134, '2018-01-25', '2019-05-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (12, 27, '2018-04-08', '2019-04-02');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (92, 44, '2018-06-05', '2019-04-11');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (8, 145, '2018-10-16', '2019-06-10');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (98, 43, '2018-03-06', '2019-04-01');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (138, 8, '2018-11-01', '2019-01-16');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (140, 101, '2018-08-20', '2019-02-06');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (8, 30, '2018-10-29', '2019-03-17');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (165, 143, '2018-06-18', '2019-05-13');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (161, 95, '2018-06-29', '2019-05-01');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (91, 140, '2018-01-28', '2019-03-25');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (9, 133, '2018-01-05', '2019-05-09');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (22, 73, '2018-05-13', '2019-04-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (159, 83, '2018-12-01', '2019-02-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (79, 13, '2018-08-07', '2019-03-11');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (62, 5, '2018-01-31', '2019-05-17');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (147, 109, '2018-11-03', '2019-05-24');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (145, 119, '2018-09-18', '2019-01-17');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (16, 53, '2018-06-18', '2019-06-05');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (105, 26, '2018-08-18', '2019-04-03');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (14, 134, '2018-07-13', '2019-03-07');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (108, 105, '2018-10-16', '2019-01-03');
-insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values (71, 102, '2018-05-01', '2019-05-08');
+ insert into Transporta_Transporte (idcontainer_spk, idveiculo_spk, datainicio, datafim) values
+ (149, 21, '2018-10-25', '2019-02-17'),
+ (185, 98, '2018-03-08', '2019-01-29'),
+ (184, 30, '2018-09-01', '2019-04-20'),
+ (133, 123, '2018-12-22', '2019-03-22'),
+ (96, 128, '2018-02-06', '2019-06-03'),
+ (105, 119, '2018-02-26', '2019-03-14'),
+ (185, 150, '2018-12-10', '2019-01-21'),
+ (99, 148, '2018-08-25', '2019-03-07'),
+ (97, 61, '2018-05-23', '2019-02-16'),
+ (123, 100, '2018-09-14', '2019-04-25'),
+ (122, 78, '2018-07-06', '2019-04-17'),
+ (25, 87, '2018-06-10', '2019-01-24'),
+ (146, 136, '2018-03-01', '2019-03-26'),
+ (109, 15, '2018-03-18', '2019-05-31'),
+ (145, 64, '2018-10-03', '2019-06-05'),
+ (51, 17, '2018-06-18', '2019-05-21'),
+ (132, 148, '2018-01-20', '2019-01-11'),
+ (164, 35, '2018-09-08', '2019-03-31'),
+ (13, 24, '2018-10-08', '2019-04-08'),
+ (68, 143, '2018-05-12', '2019-05-18'),
+ (20, 145, '2018-03-10', '2019-02-21'),
+ (158, 111, '2018-01-12', '2019-03-07'),
+ (105, 35, '2018-04-15', '2019-05-16'),
+ (96, 140, '2018-04-23', '2019-04-15'),
+ (37, 124, '2018-04-04', '2019-04-23'),
+ (132, 117, '2018-02-05', '2019-01-13'),
+ (165, 149, '2018-05-15', '2019-02-27'),
+ (22, 30, '2018-09-22', '2019-01-11'),
+ (71, 123, '2018-06-08', '2019-06-07'),
+ (192, 126, '2018-09-14', '2019-01-29'),
+ (29, 22, '2018-02-15', '2019-02-13'),
+ (145, 140, '2018-12-01', '2019-05-07'),
+ (64, 11, '2018-07-25', '2019-03-11'),
+ (142, 96, '2018-01-24', '2019-04-05'),
+ (145, 72, '2018-05-06', '2019-06-06'),
+ (9, 117, '2018-01-27', '2019-02-10'),
+ (156, 57, '2018-05-20', '2019-04-23'),
+ (52, 130, '2018-06-03', '2019-01-27'),
+ (53, 20, '2018-06-11', '2019-02-14'),
+ (44, 7, '2018-04-17', '2019-05-24'),
+ (92, 84, '2018-11-17', '2019-01-04'),
+ (44, 123, '2018-09-25', '2019-02-21'),
+ (171, 7, '2018-01-22', '2019-04-20'),
+ (177, 101, '2018-05-07', '2019-01-01'),
+ (134, 105, '2018-12-17', '2019-03-09'),
+ (49, 24, '2018-10-29', '2019-02-21'),
+ (154, 109, '2018-03-28', '2019-05-12'),
+ (60, 94, '2018-06-08', '2019-02-10'),
+ (5, 119, '2018-09-15', '2019-03-09'),
+ (71, 96, '2018-09-14', '2019-04-14'),
+ (65, 42, '2018-04-22', '2019-01-10'),
+ (50, 95, '2018-03-23', '2019-05-05'),
+ (107, 53, '2018-10-10', '2019-04-10'),
+ (188, 64, '2018-09-14', '2019-01-25'),
+ (10, 70, '2018-04-14', '2019-06-09'),
+ (173, 52, '2018-02-07', '2019-05-07'),
+ (103, 148, '2018-11-15', '2019-01-16'),
+ (78, 32, '2018-11-22', '2019-02-13'),
+ (78, 11, '2018-09-24', '2019-05-07'),
+ (194, 102, '2018-03-11', '2019-04-30'),
+ (34, 73, '2018-02-07', '2019-04-23'),
+ (159, 120, '2018-04-02', '2019-02-20'),
+ (113, 34, '2018-08-13', '2019-03-27'),
+ (195, 145, '2018-05-19', '2019-05-06'),
+ (69, 88, '2018-02-14', '2019-03-03'),
+ (98, 105, '2018-06-15', '2019-01-05'),
+ (103, 15, '2018-08-10', '2019-05-28'),
+ (62, 95, '2018-07-11', '2019-02-26'),
+ (128, 127, '2018-04-26', '2019-01-07'),
+ (191, 57, '2018-12-30', '2019-01-25'),
+ (118, 87, '2018-10-04', '2019-01-09'),
+ (33, 51, '2018-08-17', '2019-02-07'),
+ (70, 27, '2018-09-24', '2019-01-05'),
+ (6, 144, '2018-04-06', '2019-02-06'),
+ (131, 67, '2018-03-07', '2019-04-14'),
+ (80, 99, '2018-02-21', '2019-05-03'),
+ (55, 134, '2018-04-13', '2019-03-25'),
+ (72, 134, '2018-01-25', '2019-05-09'),
+ (12, 27, '2018-04-08', '2019-04-02'),
+ (92, 44, '2018-06-05', '2019-04-11'),
+ (8, 145, '2018-10-16', '2019-06-10'),
+ (98, 43, '2018-03-06', '2019-04-01'),
+ (138, 8, '2018-11-01', '2019-01-16'),
+ (140, 101, '2018-08-20', '2019-02-06'),
+ (8, 30, '2018-10-29', '2019-03-17'),
+ (165, 143, '2018-06-18', '2019-05-13'),
+ (161, 95, '2018-06-29', '2019-05-01'),
+ (91, 140, '2018-01-28', '2019-03-25'),
+ (9, 133, '2018-01-05', '2019-05-09'),
+ (22, 73, '2018-05-13', '2019-04-05'),
+ (159, 83, '2018-12-01', '2019-02-05'),
+ (79, 13, '2018-08-07', '2019-03-11'),
+ (62, 5, '2018-01-31', '2019-05-17'),
+ (147, 109, '2018-11-03', '2019-05-24'),
+ (145, 119, '2018-09-18', '2019-01-17'),
+ (16, 53, '2018-06-18', '2019-06-05'),
+ (105, 26, '2018-08-18', '2019-04-03'),
+ (14, 134, '2018-07-13', '2019-03-07'),
+ (108, 105, '2018-10-16', '2019-01-03'),
+ (71, 102, '2018-05-01', '2019-05-08');
 
 /*_____________________________CONTEM_____________________________________*/
 
-insert into Contem (idproduto_fk, idcontainer_fk) values (204, 45);
-insert into Contem (idproduto_fk, idcontainer_fk) values (171, 84);
-insert into Contem (idproduto_fk, idcontainer_fk) values (71, 186);
-insert into Contem (idproduto_fk, idcontainer_fk) values (96, 198);
-insert into Contem (idproduto_fk, idcontainer_fk) values (45, 34);
-insert into Contem (idproduto_fk, idcontainer_fk) values (279, 174);
-insert into Contem (idproduto_fk, idcontainer_fk) values (139, 200);
-insert into Contem (idproduto_fk, idcontainer_fk) values (67, 125);
-insert into Contem (idproduto_fk, idcontainer_fk) values (247, 104);
-insert into Contem (idproduto_fk, idcontainer_fk) values (293, 131);
-insert into Contem (idproduto_fk, idcontainer_fk) values (99, 186);
-insert into Contem (idproduto_fk, idcontainer_fk) values (86, 165);
-insert into Contem (idproduto_fk, idcontainer_fk) values (256, 150);
-insert into Contem (idproduto_fk, idcontainer_fk) values (168, 152);
-insert into Contem (idproduto_fk, idcontainer_fk) values (164, 162);
-insert into Contem (idproduto_fk, idcontainer_fk) values (265, 180);
-insert into Contem (idproduto_fk, idcontainer_fk) values (24, 98);
-insert into Contem (idproduto_fk, idcontainer_fk) values (156, 183);
-insert into Contem (idproduto_fk, idcontainer_fk) values (113, 166);
-insert into Contem (idproduto_fk, idcontainer_fk) values (176, 92);
-insert into Contem (idproduto_fk, idcontainer_fk) values (118, 60);
-insert into Contem (idproduto_fk, idcontainer_fk) values (238, 118);
-insert into Contem (idproduto_fk, idcontainer_fk) values (228, 125);
-insert into Contem (idproduto_fk, idcontainer_fk) values (113, 111);
-insert into Contem (idproduto_fk, idcontainer_fk) values (124, 99);
-insert into Contem (idproduto_fk, idcontainer_fk) values (244, 69);
-insert into Contem (idproduto_fk, idcontainer_fk) values (125, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (178, 52);
-insert into Contem (idproduto_fk, idcontainer_fk) values (170, 112);
-insert into Contem (idproduto_fk, idcontainer_fk) values (48, 19);
-insert into Contem (idproduto_fk, idcontainer_fk) values (181, 17);
-insert into Contem (idproduto_fk, idcontainer_fk) values (244, 10);
-insert into Contem (idproduto_fk, idcontainer_fk) values (212, 56);
-insert into Contem (idproduto_fk, idcontainer_fk) values (48, 4);
-insert into Contem (idproduto_fk, idcontainer_fk) values (122, 198);
-insert into Contem (idproduto_fk, idcontainer_fk) values (106, 21);
-insert into Contem (idproduto_fk, idcontainer_fk) values (71, 72);
-insert into Contem (idproduto_fk, idcontainer_fk) values (143, 161);
-insert into Contem (idproduto_fk, idcontainer_fk) values (11, 91);
-insert into Contem (idproduto_fk, idcontainer_fk) values (147, 113);
-insert into Contem (idproduto_fk, idcontainer_fk) values (85, 3);
-insert into Contem (idproduto_fk, idcontainer_fk) values (105, 17);
-insert into Contem (idproduto_fk, idcontainer_fk) values (238, 154);
-insert into Contem (idproduto_fk, idcontainer_fk) values (131, 129);
-insert into Contem (idproduto_fk, idcontainer_fk) values (117, 48);
-insert into Contem (idproduto_fk, idcontainer_fk) values (235, 73);
-insert into Contem (idproduto_fk, idcontainer_fk) values (275, 100);
-insert into Contem (idproduto_fk, idcontainer_fk) values (250, 50);
-insert into Contem (idproduto_fk, idcontainer_fk) values (180, 51);
-insert into Contem (idproduto_fk, idcontainer_fk) values (41, 139);
-insert into Contem (idproduto_fk, idcontainer_fk) values (254, 176);
-insert into Contem (idproduto_fk, idcontainer_fk) values (289, 119);
-insert into Contem (idproduto_fk, idcontainer_fk) values (239, 191);
-insert into Contem (idproduto_fk, idcontainer_fk) values (288, 195);
-insert into Contem (idproduto_fk, idcontainer_fk) values (247, 106);
-insert into Contem (idproduto_fk, idcontainer_fk) values (286, 157);
-insert into Contem (idproduto_fk, idcontainer_fk) values (261, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (53, 193);
-insert into Contem (idproduto_fk, idcontainer_fk) values (34, 96);
-insert into Contem (idproduto_fk, idcontainer_fk) values (253, 124);
-insert into Contem (idproduto_fk, idcontainer_fk) values (34, 49);
-insert into Contem (idproduto_fk, idcontainer_fk) values (57, 73);
-insert into Contem (idproduto_fk, idcontainer_fk) values (286, 121);
-insert into Contem (idproduto_fk, idcontainer_fk) values (165, 82);
-insert into Contem (idproduto_fk, idcontainer_fk) values (118, 125);
-insert into Contem (idproduto_fk, idcontainer_fk) values (60, 191);
-insert into Contem (idproduto_fk, idcontainer_fk) values (252, 33);
-insert into Contem (idproduto_fk, idcontainer_fk) values (144, 5);
-insert into Contem (idproduto_fk, idcontainer_fk) values (262, 83);
-insert into Contem (idproduto_fk, idcontainer_fk) values (30, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (4, 62);
-insert into Contem (idproduto_fk, idcontainer_fk) values (236, 177);
-insert into Contem (idproduto_fk, idcontainer_fk) values (91, 194);
-insert into Contem (idproduto_fk, idcontainer_fk) values (176, 193);
-insert into Contem (idproduto_fk, idcontainer_fk) values (45, 45);
-insert into Contem (idproduto_fk, idcontainer_fk) values (12, 144);
-insert into Contem (idproduto_fk, idcontainer_fk) values (7, 116);
-insert into Contem (idproduto_fk, idcontainer_fk) values (142, 96);
-insert into Contem (idproduto_fk, idcontainer_fk) values (166, 87);
-insert into Contem (idproduto_fk, idcontainer_fk) values (67, 182);
-insert into Contem (idproduto_fk, idcontainer_fk) values (137, 86);
-insert into Contem (idproduto_fk, idcontainer_fk) values (81, 53);
-insert into Contem (idproduto_fk, idcontainer_fk) values (230, 13);
-insert into Contem (idproduto_fk, idcontainer_fk) values (69, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (138, 45);
-insert into Contem (idproduto_fk, idcontainer_fk) values (168, 88);
-insert into Contem (idproduto_fk, idcontainer_fk) values (193, 197);
-insert into Contem (idproduto_fk, idcontainer_fk) values (221, 171);
-insert into Contem (idproduto_fk, idcontainer_fk) values (208, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (30, 173);
-insert into Contem (idproduto_fk, idcontainer_fk) values (64, 198);
-insert into Contem (idproduto_fk, idcontainer_fk) values (57, 170);
-insert into Contem (idproduto_fk, idcontainer_fk) values (287, 99);
-insert into Contem (idproduto_fk, idcontainer_fk) values (69, 6);
-insert into Contem (idproduto_fk, idcontainer_fk) values (259, 93);
-insert into Contem (idproduto_fk, idcontainer_fk) values (40, 197);
-insert into Contem (idproduto_fk, idcontainer_fk) values (245, 132);
-insert into Contem (idproduto_fk, idcontainer_fk) values (253, 44);
-insert into Contem (idproduto_fk, idcontainer_fk) values (96, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (177, 5);
-insert into Contem (idproduto_fk, idcontainer_fk) values (55, 25);
-insert into Contem (idproduto_fk, idcontainer_fk) values (75, 58);
-insert into Contem (idproduto_fk, idcontainer_fk) values (187, 26);
-insert into Contem (idproduto_fk, idcontainer_fk) values (15, 180);
-insert into Contem (idproduto_fk, idcontainer_fk) values (282, 33);
-insert into Contem (idproduto_fk, idcontainer_fk) values (170, 58);
-insert into Contem (idproduto_fk, idcontainer_fk) values (273, 47);
-insert into Contem (idproduto_fk, idcontainer_fk) values (126, 115);
-insert into Contem (idproduto_fk, idcontainer_fk) values (145, 57);
-insert into Contem (idproduto_fk, idcontainer_fk) values (157, 44);
-insert into Contem (idproduto_fk, idcontainer_fk) values (12, 146);
-insert into Contem (idproduto_fk, idcontainer_fk) values (269, 185);
-insert into Contem (idproduto_fk, idcontainer_fk) values (122, 155);
-insert into Contem (idproduto_fk, idcontainer_fk) values (21, 192);
-insert into Contem (idproduto_fk, idcontainer_fk) values (171, 67);
-insert into Contem (idproduto_fk, idcontainer_fk) values (287, 92);
-insert into Contem (idproduto_fk, idcontainer_fk) values (288, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (253, 116);
-insert into Contem (idproduto_fk, idcontainer_fk) values (100, 101);
-insert into Contem (idproduto_fk, idcontainer_fk) values (167, 73);
-insert into Contem (idproduto_fk, idcontainer_fk) values (216, 92);
-insert into Contem (idproduto_fk, idcontainer_fk) values (165, 61);
-insert into Contem (idproduto_fk, idcontainer_fk) values (70, 9);
-insert into Contem (idproduto_fk, idcontainer_fk) values (262, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (147, 6);
-insert into Contem (idproduto_fk, idcontainer_fk) values (16, 2);
-insert into Contem (idproduto_fk, idcontainer_fk) values (148, 77);
-insert into Contem (idproduto_fk, idcontainer_fk) values (284, 91);
-insert into Contem (idproduto_fk, idcontainer_fk) values (230, 127);
-insert into Contem (idproduto_fk, idcontainer_fk) values (214, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (225, 182);
-insert into Contem (idproduto_fk, idcontainer_fk) values (243, 1);
-insert into Contem (idproduto_fk, idcontainer_fk) values (178, 100);
-insert into Contem (idproduto_fk, idcontainer_fk) values (275, 195);
-insert into Contem (idproduto_fk, idcontainer_fk) values (142, 194);
-insert into Contem (idproduto_fk, idcontainer_fk) values (166, 114);
-insert into Contem (idproduto_fk, idcontainer_fk) values (61, 184);
-insert into Contem (idproduto_fk, idcontainer_fk) values (186, 37);
-insert into Contem (idproduto_fk, idcontainer_fk) values (69, 2);
-insert into Contem (idproduto_fk, idcontainer_fk) values (134, 188);
-insert into Contem (idproduto_fk, idcontainer_fk) values (232, 8);
-insert into Contem (idproduto_fk, idcontainer_fk) values (168, 72);
-insert into Contem (idproduto_fk, idcontainer_fk) values (44, 57);
-insert into Contem (idproduto_fk, idcontainer_fk) values (185, 139);
-insert into Contem (idproduto_fk, idcontainer_fk) values (236, 175);
-insert into Contem (idproduto_fk, idcontainer_fk) values (5, 166);
-insert into Contem (idproduto_fk, idcontainer_fk) values (90, 6);
-insert into Contem (idproduto_fk, idcontainer_fk) values (277, 75);
-insert into Contem (idproduto_fk, idcontainer_fk) values (255, 88);
-insert into Contem (idproduto_fk, idcontainer_fk) values (104, 119);
-insert into Contem (idproduto_fk, idcontainer_fk) values (297, 11);
-insert into Contem (idproduto_fk, idcontainer_fk) values (218, 150);
-insert into Contem (idproduto_fk, idcontainer_fk) values (115, 131);
-insert into Contem (idproduto_fk, idcontainer_fk) values (183, 153);
-insert into Contem (idproduto_fk, idcontainer_fk) values (295, 159);
-insert into Contem (idproduto_fk, idcontainer_fk) values (7, 149);
-insert into Contem (idproduto_fk, idcontainer_fk) values (76, 185);
-insert into Contem (idproduto_fk, idcontainer_fk) values (57, 119);
-insert into Contem (idproduto_fk, idcontainer_fk) values (109, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (136, 133);
-insert into Contem (idproduto_fk, idcontainer_fk) values (255, 138);
-insert into Contem (idproduto_fk, idcontainer_fk) values (39, 75);
-insert into Contem (idproduto_fk, idcontainer_fk) values (37, 33);
-insert into Contem (idproduto_fk, idcontainer_fk) values (14, 183);
-insert into Contem (idproduto_fk, idcontainer_fk) values (121, 140);
-insert into Contem (idproduto_fk, idcontainer_fk) values (157, 148);
-insert into Contem (idproduto_fk, idcontainer_fk) values (295, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (75, 130);
-insert into Contem (idproduto_fk, idcontainer_fk) values (263, 71);
-insert into Contem (idproduto_fk, idcontainer_fk) values (40, 166);
-insert into Contem (idproduto_fk, idcontainer_fk) values (76, 74);
-insert into Contem (idproduto_fk, idcontainer_fk) values (287, 33);
-insert into Contem (idproduto_fk, idcontainer_fk) values (59, 149);
-insert into Contem (idproduto_fk, idcontainer_fk) values (21, 178);
-insert into Contem (idproduto_fk, idcontainer_fk) values (284, 74);
-insert into Contem (idproduto_fk, idcontainer_fk) values (189, 116);
-insert into Contem (idproduto_fk, idcontainer_fk) values (27, 57);
-insert into Contem (idproduto_fk, idcontainer_fk) values (235, 163);
-insert into Contem (idproduto_fk, idcontainer_fk) values (196, 65);
-insert into Contem (idproduto_fk, idcontainer_fk) values (136, 39);
-insert into Contem (idproduto_fk, idcontainer_fk) values (82, 32);
-insert into Contem (idproduto_fk, idcontainer_fk) values (5, 4);
-insert into Contem (idproduto_fk, idcontainer_fk) values (165, 135);
-insert into Contem (idproduto_fk, idcontainer_fk) values (131, 166);
-insert into Contem (idproduto_fk, idcontainer_fk) values (280, 13);
-insert into Contem (idproduto_fk, idcontainer_fk) values (43, 183);
-insert into Contem (idproduto_fk, idcontainer_fk) values (222, 162);
-insert into Contem (idproduto_fk, idcontainer_fk) values (270, 21);
-insert into Contem (idproduto_fk, idcontainer_fk) values (296, 71);
-insert into Contem (idproduto_fk, idcontainer_fk) values (190, 176);
-insert into Contem (idproduto_fk, idcontainer_fk) values (207, 125);
-insert into Contem (idproduto_fk, idcontainer_fk) values (203, 144);
-insert into Contem (idproduto_fk, idcontainer_fk) values (136, 75);
-insert into Contem (idproduto_fk, idcontainer_fk) values (64, 181);
-insert into Contem (idproduto_fk, idcontainer_fk) values (17, 137);
-insert into Contem (idproduto_fk, idcontainer_fk) values (199, 34);
-insert into Contem (idproduto_fk, idcontainer_fk) values (86, 31);
-insert into Contem (idproduto_fk, idcontainer_fk) values (35, 118);
-insert into Contem (idproduto_fk, idcontainer_fk) values (192, 77);
-insert into Contem (idproduto_fk, idcontainer_fk) values (59, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (250, 43);
-insert into Contem (idproduto_fk, idcontainer_fk) values (285, 150);
-insert into Contem (idproduto_fk, idcontainer_fk) values (222, 151);
-insert into Contem (idproduto_fk, idcontainer_fk) values (100, 75);
-insert into Contem (idproduto_fk, idcontainer_fk) values (244, 40);
-insert into Contem (idproduto_fk, idcontainer_fk) values (201, 18);
-insert into Contem (idproduto_fk, idcontainer_fk) values (275, 108);
-insert into Contem (idproduto_fk, idcontainer_fk) values (56, 187);
-insert into Contem (idproduto_fk, idcontainer_fk) values (286, 74);
-insert into Contem (idproduto_fk, idcontainer_fk) values (234, 153);
-insert into Contem (idproduto_fk, idcontainer_fk) values (292, 168);
-insert into Contem (idproduto_fk, idcontainer_fk) values (259, 135);
-insert into Contem (idproduto_fk, idcontainer_fk) values (180, 149);
-insert into Contem (idproduto_fk, idcontainer_fk) values (239, 146);
-insert into Contem (idproduto_fk, idcontainer_fk) values (81, 187);
-insert into Contem (idproduto_fk, idcontainer_fk) values (204, 24);
-insert into Contem (idproduto_fk, idcontainer_fk) values (294, 194);
-insert into Contem (idproduto_fk, idcontainer_fk) values (175, 156);
-insert into Contem (idproduto_fk, idcontainer_fk) values (68, 181);
-insert into Contem (idproduto_fk, idcontainer_fk) values (30, 199);
-insert into Contem (idproduto_fk, idcontainer_fk) values (243, 166);
-insert into Contem (idproduto_fk, idcontainer_fk) values (231, 89);
-insert into Contem (idproduto_fk, idcontainer_fk) values (42, 158);
-insert into Contem (idproduto_fk, idcontainer_fk) values (96, 176);
-insert into Contem (idproduto_fk, idcontainer_fk) values (140, 51);
-insert into Contem (idproduto_fk, idcontainer_fk) values (85, 143);
-insert into Contem (idproduto_fk, idcontainer_fk) values (5, 126);
-insert into Contem (idproduto_fk, idcontainer_fk) values (126, 161);
-insert into Contem (idproduto_fk, idcontainer_fk) values (209, 15);
-insert into Contem (idproduto_fk, idcontainer_fk) values (130, 41);
-insert into Contem (idproduto_fk, idcontainer_fk) values (87, 135);
-insert into Contem (idproduto_fk, idcontainer_fk) values (269, 80);
-insert into Contem (idproduto_fk, idcontainer_fk) values (51, 142);
-insert into Contem (idproduto_fk, idcontainer_fk) values (138, 126);
-insert into Contem (idproduto_fk, idcontainer_fk) values (268, 137);
-insert into Contem (idproduto_fk, idcontainer_fk) values (96, 95);
-insert into Contem (idproduto_fk, idcontainer_fk) values (244, 188);
-insert into Contem (idproduto_fk, idcontainer_fk) values (268, 108);
-insert into Contem (idproduto_fk, idcontainer_fk) values (34, 113);
-insert into Contem (idproduto_fk, idcontainer_fk) values (285, 165);
-insert into Contem (idproduto_fk, idcontainer_fk) values (198, 63);
-insert into Contem (idproduto_fk, idcontainer_fk) values (198, 198);
-insert into Contem (idproduto_fk, idcontainer_fk) values (145, 174);
-insert into Contem (idproduto_fk, idcontainer_fk) values (180, 122);
-insert into Contem (idproduto_fk, idcontainer_fk) values (198, 78);
-insert into Contem (idproduto_fk, idcontainer_fk) values (265, 5);
-insert into Contem (idproduto_fk, idcontainer_fk) values (85, 176);
-insert into Contem (idproduto_fk, idcontainer_fk) values (101, 36);
-insert into Contem (idproduto_fk, idcontainer_fk) values (213, 8);
-insert into Contem (idproduto_fk, idcontainer_fk) values (13, 115);
-insert into Contem (idproduto_fk, idcontainer_fk) values (7, 139);
-insert into Contem (idproduto_fk, idcontainer_fk) values (40, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (74, 39);
-insert into Contem (idproduto_fk, idcontainer_fk) values (94, 133);
-insert into Contem (idproduto_fk, idcontainer_fk) values (109, 76);
-insert into Contem (idproduto_fk, idcontainer_fk) values (293, 124);
-insert into Contem (idproduto_fk, idcontainer_fk) values (154, 28);
-insert into Contem (idproduto_fk, idcontainer_fk) values (261, 113);
-insert into Contem (idproduto_fk, idcontainer_fk) values (109, 196);
-insert into Contem (idproduto_fk, idcontainer_fk) values (263, 139);
-insert into Contem (idproduto_fk, idcontainer_fk) values (269, 131);
-insert into Contem (idproduto_fk, idcontainer_fk) values (186, 49);
-insert into Contem (idproduto_fk, idcontainer_fk) values (169, 191);
-insert into Contem (idproduto_fk, idcontainer_fk) values (102, 83);
-insert into Contem (idproduto_fk, idcontainer_fk) values (188, 90);
-insert into Contem (idproduto_fk, idcontainer_fk) values (206, 66);
-insert into Contem (idproduto_fk, idcontainer_fk) values (260, 145);
-insert into Contem (idproduto_fk, idcontainer_fk) values (239, 6);
-insert into Contem (idproduto_fk, idcontainer_fk) values (119, 11);
-insert into Contem (idproduto_fk, idcontainer_fk) values (12, 149);
-insert into Contem (idproduto_fk, idcontainer_fk) values (25, 102);
-insert into Contem (idproduto_fk, idcontainer_fk) values (199, 13);
-insert into Contem (idproduto_fk, idcontainer_fk) values (218, 45);
-insert into Contem (idproduto_fk, idcontainer_fk) values (77, 158);
-insert into Contem (idproduto_fk, idcontainer_fk) values (12, 42);
-insert into Contem (idproduto_fk, idcontainer_fk) values (116, 161);
-insert into Contem (idproduto_fk, idcontainer_fk) values (165, 87);
-insert into Contem (idproduto_fk, idcontainer_fk) values (28, 47);
-insert into Contem (idproduto_fk, idcontainer_fk) values (13, 71);
-insert into Contem (idproduto_fk, idcontainer_fk) values (245, 14);
-insert into Contem (idproduto_fk, idcontainer_fk) values (283, 8);
-insert into Contem (idproduto_fk, idcontainer_fk) values (250, 92);
-insert into Contem (idproduto_fk, idcontainer_fk) values (52, 107);
-insert into Contem (idproduto_fk, idcontainer_fk) values (283, 49);
-insert into Contem (idproduto_fk, idcontainer_fk) values (52, 28);
-insert into Contem (idproduto_fk, idcontainer_fk) values (130, 118);
-insert into Contem (idproduto_fk, idcontainer_fk) values (103, 111);
-insert into Contem (idproduto_fk, idcontainer_fk) values (173, 135);
-insert into Contem (idproduto_fk, idcontainer_fk) values (205, 111);
-insert into Contem (idproduto_fk, idcontainer_fk) values (127, 50);
-insert into Contem (idproduto_fk, idcontainer_fk) values (107, 94);
-insert into Contem (idproduto_fk, idcontainer_fk) values (21, 27);
-insert into Contem (idproduto_fk, idcontainer_fk) values (280, 193);
-insert into Contem (idproduto_fk, idcontainer_fk) values (285, 108);
-insert into Contem (idproduto_fk, idcontainer_fk) values (193, 12);
-insert into Contem (idproduto_fk, idcontainer_fk) values (71, 189);
-insert into Contem (idproduto_fk, idcontainer_fk) values (105, 199);
-insert into Contem (idproduto_fk, idcontainer_fk) values (289, 26);
-insert into Contem (idproduto_fk, idcontainer_fk) values (173, 184);
-insert into Contem (idproduto_fk, idcontainer_fk) values (136, 29);
+ insert into Contem (idproduto_fk, idcontainer_fk) values
+ (204, 45),
+ (171, 84),
+ (71, 186),
+ (96, 198),
+ (45, 34),
+ (279, 174),
+ (139, 200),
+ (67, 125),
+ (247, 104),
+ (293, 131),
+ (99, 186),
+ (86, 165),
+ (256, 150),
+ (168, 152),
+ (164, 162),
+ (265, 180),
+ (24, 98),
+ (156, 183),
+ (113, 166),
+ (176, 92),
+ (118, 60),
+ (238, 118),
+ (228, 125),
+ (113, 111),
+ (124, 99),
+ (244, 69),
+ (125, 90),
+ (178, 52),
+ (170, 112),
+ (48, 19),
+ (181, 17),
+ (244, 10),
+ (212, 56),
+ (48, 4),
+ (122, 198),
+ (106, 21),
+ (71, 72),
+ (143, 161),
+ (11, 91),
+ (147, 113),
+ (85, 3),
+ (105, 17),
+ (238, 154),
+ (131, 129),
+ (117, 48),
+ (235, 73),
+ (275, 100),
+ (250, 50),
+ (180, 51),
+ (41, 139),
+ (254, 176),
+ (289, 119),
+ (239, 191),
+ (288, 195),
+ (247, 106),
+ (286, 157),
+ (261, 41),
+ (53, 193),
+ (34, 96),
+ (253, 124),
+ (34, 49),
+ (57, 73),
+ (286, 121),
+ (165, 82),
+ (118, 125),
+ (60, 191),
+ (252, 33),
+ (144, 5),
+ (262, 83),
+ (30, 90),
+ (4, 62),
+ (236, 177),
+ (91, 194),
+ (176, 193),
+ (45, 45),
+ (12, 144),
+ (7, 116),
+ (142, 96),
+ (166, 87),
+ (67, 182),
+ (137, 86),
+ (81, 53),
+ (230, 13),
+ (69, 90),
+ (138, 45),
+ (168, 88),
+ (193, 197),
+ (221, 171),
+ (208, 41),
+ (30, 173),
+ (64, 198),
+ (57, 170),
+ (287, 99),
+ (69, 6),
+ (259, 93),
+ (40, 197),
+ (245, 132),
+ (253, 44),
+ (96, 41),
+ (177, 5),
+ (55, 25),
+ (75, 58),
+ (187, 26),
+ (15, 180),
+ (282, 33),
+ (170, 58),
+ (273, 47),
+ (126, 115),
+ (145, 57),
+ (157, 44),
+ (12, 146),
+ (269, 185),
+ (122, 155),
+ (21, 192),
+ (171, 67),
+ (287, 92),
+ (288, 41),
+ (253, 116),
+ (100, 101),
+ (167, 73),
+ (216, 92),
+ (165, 61),
+ (70, 9),
+ (262, 41),
+ (147, 6),
+ (16, 2),
+ (148, 77),
+ (284, 91),
+ (230, 127),
+ (214, 41),
+ (225, 182),
+ (243, 1),
+ (178, 100),
+ (275, 195),
+ (142, 194),
+ (166, 114),
+ (61, 184),
+ (186, 37),
+ (69, 2),
+ (134, 188),
+ (232, 8),
+ (168, 72),
+ (44, 57),
+ (185, 139),
+ (236, 175),
+ (5, 166),
+ (90, 6),
+ (277, 75),
+ (255, 88),
+ (104, 119),
+ (297, 11),
+ (218, 150),
+ (115, 131),
+ (183, 153),
+ (295, 159),
+ (7, 149),
+ (76, 185),
+ (57, 119),
+ (109, 90),
+ (136, 133),
+ (255, 138),
+ (39, 75),
+ (37, 33),
+ (14, 183),
+ (121, 140),
+ (157, 148),
+ (295, 90),
+ (75, 130),
+ (263, 71),
+ (40, 166),
+ (76, 74),
+ (287, 33),
+ (59, 149),
+ (21, 178),
+ (284, 74),
+ (189, 116),
+ (27, 57),
+ (235, 163),
+ (196, 65),
+ (136, 39),
+ (82, 32),
+ (5, 4),
+ (165, 135),
+ (131, 166),
+ (280, 13),
+ (43, 183),
+ (222, 162),
+ (270, 21),
+ (296, 71),
+ (190, 176),
+ (207, 125),
+ (203, 144),
+ (136, 75),
+ (64, 181),
+ (17, 137),
+ (199, 34),
+ (86, 31),
+ (35, 118),
+ (192, 77),
+ (59, 41),
+ (250, 43),
+ (285, 150),
+ (222, 151),
+ (100, 75),
+ (244, 40),
+ (201, 18),
+ (275, 108),
+ (56, 187),
+ (286, 74),
+ (234, 153),
+ (292, 168),
+ (259, 135),
+ (180, 149),
+ (239, 146),
+ (81, 187),
+ (204, 24),
+ (294, 194),
+ (175, 156),
+ (68, 181),
+ (30, 199),
+ (243, 166),
+ (231, 89),
+ (42, 158),
+ (96, 176),
+ (140, 51),
+ (85, 143),
+ (5, 126),
+ (126, 161),
+ (209, 15),
+ (130, 41),
+ (87, 135),
+ (269, 80),
+ (51, 142),
+ (138, 126),
+ (268, 137),
+ (96, 95),
+ (244, 188),
+ (268, 108),
+ (34, 113),
+ (285, 165),
+ (198, 63),
+ (198, 198),
+ (145, 174),
+ (180, 122),
+ (198, 78),
+ (265, 5),
+ (85, 176),
+ (101, 36),
+ (213, 8),
+ (13, 115),
+ (7, 139),
+ (40, 90),
+ (74, 39),
+ (94, 133),
+ (109, 76),
+ (293, 124),
+ (154, 28),
+ (261, 113),
+ (109, 196),
+ (263, 139),
+ (269, 131),
+ (186, 49),
+ (169, 191),
+ (102, 83),
+ (188, 90),
+ (206, 66),
+ (260, 145),
+ (239, 6),
+ (119, 11),
+ (12, 149),
+ (25, 102),
+ (199, 13),
+ (218, 45),
+ (77, 158),
+ (12, 42),
+ (116, 161),
+ (165, 87),
+ (28, 47),
+ (13, 71),
+ (245, 14),
+ (283, 8),
+ (250, 92),
+ (52, 107),
+ (283, 49),
+ (52, 28),
+ (130, 118),
+ (103, 111),
+ (173, 135),
+ (205, 111),
+ (127, 50),
+ (107, 94),
+ (21, 27),
+ (280, 193),
+ (285, 108),
+ (193, 12),
+ (71, 189),
+ (105, 199),
+ (289, 26),
+ (173, 184),
+ (136, 29);
 
 /*_____________________________ACIDENTE_____________________________________*/
 
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (1, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '2019-04-16', 2, 130);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (2, 'Nulla tempus.', '2008-11-26', 18, 85);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (3, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', '2003-01-25', 44, 140);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (4, 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.', '2011-04-29', 19, 17);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (5, 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', '2017-06-14', 91, 52);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (6, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '2002-03-04', 20, 111);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (7, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '2012-05-09', 50, 93);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (8, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', '2019-06-04', 40, 76);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (9, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '2012-11-19', 32, 181);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (10, 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '2006-06-19', 79, 63);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (11, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', '2013-04-06', 77, 14);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (12, 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', '2004-11-30', 94, 166);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (13, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '2011-12-17', 30, 97);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (14, 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '2011-08-14', 60, 136);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (15, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2017-06-04', 2, 66);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (16, 'Etiam vel augue. Vestibulum rutrum rutrum neque.', '2013-03-04', 68, 38);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (17, 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '2004-11-13', 96, 124);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (18, 'Duis ac nibh.', '2012-06-04', 66, 59);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (19, 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '2010-07-29', 26, 37);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (20, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', '2017-04-02', 23, 190);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (21, 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '2006-08-21', 46, 133);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (22, 'Vivamus tortor. Duis mattis egestas metus.', '2009-01-03', 68, 135);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (23, 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '2009-12-01', 56, 168);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (24, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', '2002-11-22', 11, 99);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (25, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '2000-06-04', 36, 40);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (26, 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', '2018-02-22', 10, 188);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (27, 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '2017-07-29', 64, 85);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (28, 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', '2011-12-15', 61, 191);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (29, 'Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '2013-09-29', 21, 94);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (30, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', '2000-06-18', 48, 140);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (31, 'Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '2007-07-15', 15, 24);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (32, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '2012-11-07', 26, 190);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (33, 'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '2017-01-02', 1, 58);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (34, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', '2009-10-02', 41, 10);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (35, 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', '2016-12-10', 66, 28);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (36, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '2015-12-12', 82, 28);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (37, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '2007-06-22', 23, 2);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (38, 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.', '2003-05-30', 57, 3);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (39, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '2015-08-22', 61, 13);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (40, 'Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '2010-03-23', 43, 191);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (41, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '2013-09-03', 84, 145);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (42, 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', '2001-01-25', 8, 185);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (43, 'Pellentesque ultrices mattis odio. Donec vitae nisi.', '2004-01-05', 69, 138);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (44, 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '2013-08-15', 37, 80);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (45, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '2003-02-11', 89, 148);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (46, 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', '2011-10-15', 61, 134);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (47, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '2015-08-06', 45, 113);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (48, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', '2018-08-21', 66, 30);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (49, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '2003-11-03', 11, 122);
-insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values (50, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', '2003-08-17', 2, 49);
+insert into Acidente (idacidente_pk, descricao, data_acidente, id_seguradora_fk, id_pedido_fk) values 
+(1, 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '2019-04-16', 2, 130),
+(2, 'Nulla tempus.', '2008-11-26', 18, 85),
+(3, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', '2003-01-25', 44, 140),
+(4, 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.', '2011-04-29', 19, 17),
+(5, 'Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', '2017-06-14', 91, 52),
+(6, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '2002-03-04', 20, 111),
+(7, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '2012-05-09', 50, 93),
+(8, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', '2019-06-04', 40, 76),
+(9, 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '2012-11-19', 32, 181),
+(10, 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '2006-06-19', 79, 63),
+(11, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', '2013-04-06', 77, 14),
+(12, 'Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', '2004-11-30', 94, 166),
+(13, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '2011-12-17', 30, 97),
+(14, 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '2011-08-14', 60, 136),
+(15, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2017-06-04', 2, 66),
+(16, 'Etiam vel augue. Vestibulum rutrum rutrum neque.', '2013-03-04', 68, 38),
+(17, 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '2004-11-13', 96, 124),
+(18, 'Duis ac nibh.', '2012-06-04', 66, 59),
+(19, 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '2010-07-29', 26, 37),
+(20, 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', '2017-04-02', 23, 190),
+(21, 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '2006-08-21', 46, 133),
+(22, 'Vivamus tortor. Duis mattis egestas metus.', '2009-01-03', 68, 135),
+(23, 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '2009-12-01', 56, 168),
+(24, 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', '2002-11-22', 11, 99),
+(25, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '2000-06-04', 36, 40),
+(26, 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', '2018-02-22', 10, 188),
+(27, 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '2017-07-29', 64, 85),
+(28, 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', '2011-12-15', 61, 191),
+(29, 'Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '2013-09-29', 21, 94),
+(30, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', '2000-06-18', 48, 140),
+(31, 'Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '2007-07-15', 15, 24),
+(32, 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '2012-11-07', 26, 190),
+(33, 'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '2017-01-02', 1, 58),
+(34, 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', '2009-10-02', 41, 10),
+(35, 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', '2016-12-10', 66, 28),
+(36, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '2015-12-12', 82, 28),
+(37, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '2007-06-22', 23, 2),
+(38, 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.', '2003-05-30', 57, 3),
+(39, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '2015-08-22', 61, 13),
+(40, 'Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '2010-03-23', 43, 191),
+(41, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '2013-09-03', 84, 145),
+(42, 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', '2001-01-25', 8, 185),
+(43, 'Pellentesque ultrices mattis odio. Donec vitae nisi.', '2004-01-05', 69, 138),
+(44, 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '2013-08-15', 37, 80),
+(45, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '2003-02-11', 89, 148),
+(46, 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', '2011-10-15', 61, 134),
+(47, 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '2015-08-06', 45, 113),
+(48, 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', '2018-08-21', 66, 30),
+(49, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '2003-11-03', 11, 122),
+(50, 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', '2003-08-17', 2, 49);
 
 /*_____________________________PESSOAFISICA_____________________________________*/
 
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (19802619860, 494378802, 95);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (7603794135, 815752765, 33);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (69374880846, 226523751, 57);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (22111618097, 284671396, 4);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (99692157938, 834624873, 36);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (76050118708, 863394394, 13);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (83346601822, 238291132, 100);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (19775232918, 525894572, 78);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (32599235863, 940459602, 50);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (78737916158, 215873298, 61);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (85263085428, 994213613, 7);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (96378233081, 272564429, 51);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (21355714100, 916722009, 70);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (5915183837, 957914772, 34);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (65800656371, 174345641, 50);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (52312200561, 317281766, 44);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (39170677935, 244878786, 39);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (95931545205, 59775354, 54);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (78032874398, 691820973, 83);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (79310034235, 336636444, 65);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (50971401449, 274642792, 43);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (57703966882, 151251217, 96);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (90994246389, 34072709, 25);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (56420188829, 224997356, 96);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (13655312563, 641472584, 18);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (96885128070, 937531954, 88);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (74196884807, 677814439, 44);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (44337259528, 514006109, 10);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (98848181503, 52512049, 66);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (25679321044, 302550275, 7);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (23401491814, 149297498, 15);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (33103606397, 71416955, 64);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (12972546152, 932051080, 95);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (29092508747, 88041615, 47);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (43384364168, 639117430, 53);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (41627155551, 22481006, 33);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (86036565480, 587359137, 44);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (35335846557, 241422127, 39);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (45157766875, 6926259, 70);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (44820648138, 970885162, 98);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (50017597207, 593960385, 62);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (46138526255, 910339786, 82);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (75697977780, 845536694, 75);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (11356504307, 780563937, 14);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (84607996911, 267540703, 8);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (37782184371, 907998443, 36);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (8314488470, 968149045, 47);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (2665359904, 863568286, 51);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (85480296049, 597031808, 39);
-insert into PessoaFisica (cpf, rg, idcliente_spk) values (94899080709, 44840674, 4);
+ insert into PessoaFisica (cpf, rg, idcliente_spk) values
+ (19802619860, 494378802, 95),
+ (7603794135, 815752765, 33),
+ (69374880846, 226523751, 57),
+ (22111618097, 284671396, 4),
+ (99692157938, 834624873, 36),
+ (76050118708, 863394394, 13),
+ (83346601822, 238291132, 100),
+ (19775232918, 525894572, 78),
+ (32599235863, 940459602, 50),
+ (78737916158, 215873298, 61),
+ (85263085428, 994213613, 7),
+ (96378233081, 272564429, 51),
+ (21355714100, 916722009, 70),
+ (5915183837, 957914772, 34),
+ (65800656371, 174345641, 50),
+ (52312200561, 317281766, 44),
+ (39170677935, 244878786, 39),
+ (95931545205, 59775354, 54),
+ (78032874398, 691820973, 83),
+ (79310034235, 336636444, 65),
+ (50971401449, 274642792, 43),
+ (57703966882, 151251217, 96),
+ (90994246389, 34072709, 25),
+ (56420188829, 224997356, 96),
+ (13655312563, 641472584, 18),
+ (96885128070, 937531954, 88),
+ (74196884807, 677814439, 44),
+ (44337259528, 514006109, 10),
+ (98848181503, 52512049, 66),
+ (25679321044, 302550275, 7),
+ (23401491814, 149297498, 15),
+ (33103606397, 71416955, 64),
+ (12972546152, 932051080, 95),
+ (29092508747, 88041615, 47),
+ (43384364168, 639117430, 53),
+ (41627155551, 22481006, 33),
+ (86036565480, 587359137, 44),
+ (35335846557, 241422127, 39),
+ (45157766875, 6926259, 70),
+ (44820648138, 970885162, 98),
+ (50017597207, 593960385, 62),
+ (46138526255, 910339786, 82),
+ (75697977780, 845536694, 75),
+ (11356504307, 780563937, 14),
+ (84607996911, 267540703, 8),
+ (37782184371, 907998443, 36),
+ (8314488470, 968149045, 47),
+ (2665359904, 863568286, 51),
+ (85480296049, 597031808, 39),
+ (94899080709, 44840674, 4);
 
 /*_____________________________PESSOAJURIDICA_____________________________________*/
 
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (63296798231280, 'Hettinger Group', 74);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (41226035484860, 'Nicolas Group', 42);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (43954791202107, 'Kutch, Champlin and Swaniawski', 22);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (27829641910971, 'Nitzsche-Johns', 92);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (40535121733069, 'Metz, Beahan and Wilderman', 74);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (41688786787635, 'Pollich, Bosco and Witting', 66);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (83839754994196, 'Moore Group', 60);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (8846099990347, 'Armstrong, Feeney and Bergnaum', 67);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (33454924370574, 'Hoeger, Hayes and Wiza', 8);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (33150633610300, 'Strosin, Gaylord and Baumbach', 46);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (81976566834291, 'Larson, Feil and Abernathy', 9);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (69286188700634, 'Bergnaum-Turcotte', 57);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (63752461694735, 'Padberg and Sons', 44);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (6120632732066, 'Quitzon, Kris and Swift', 5);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (35622536740063, 'Nicolas and Sons', 17);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (64631747980708, 'Hettinger LLC', 6);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (25425647373974, 'Schamberger, D''Amore and Goyette', 12);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (36837222962334, 'Hilll, Spinka and Mitchell', 10);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (24043305832746, 'Ruecker, Boehm and Walker', 39);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (2879465116856, 'Grady, Stracke and Kuhic', 96);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (48536539558479, 'Krajcik Inc', 46);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (89071281123704, 'Bosco Inc', 96);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (97047970871348, 'Rempel, Rohan and Kreiger', 79);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (65574172719056, 'Cremin-Fritsch', 70);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (75018993746801, 'Hintz, Cole and Fadel', 62);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (98800199477174, 'Morissette-Walsh', 44);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (86351944892245, 'Thompson LLC', 59);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (86812544498036, 'Windler-Smitham', 12);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (5912499675835, 'Mills-Hodkiewicz', 16);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (33233975165257, 'Bechtelar LLC', 42);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (49197480874101, 'Pollich Group', 96);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (55539685245981, 'Friesen, Maggio and Goyette', 87);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (16104483813533, 'Reichert-Runolfsson', 38);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (45538931029273, 'Schmidt, Koss and Pacocha', 2);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (99764073548495, 'Kris Inc', 100);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (3164863417286, 'McGlynn-Renner', 62);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (81441447929580, 'Nader-Barrows', 35);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (45181916719999, 'McLaughlin-Larkin', 70);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (75621855982310, 'Trantow Inc', 32);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (74896793981971, 'Mayer LLC', 7);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (33589533625964, 'Murray Group', 40);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (53922422857377, 'Hilpert-Cremin', 86);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (27986776075539, 'Lang Inc', 13);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (35121972081650, 'Haag and Sons', 11);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (34953300299169, 'Kreiger-O''Connell', 35);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (68491446354114, 'Schinner-Kerluke', 27);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (31732596003871, 'O''Conner-Luettgen', 93);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (39903414121398, 'Ritchie and Sons', 1);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (89348159506734, 'Herman Group', 89);
-insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values (52398475314432, 'Fisher Group', 11);
+ insert into PessoaJuridica (cnpj, razaosocial, idcliente_spk) values
+ (63296798231280, 'Hettinger Group', 74),
+ (41226035484860, 'Nicolas Group', 42),
+ (43954791202107, 'Kutch, Champlin and Swaniawski', 22),
+ (27829641910971, 'Nitzsche-Johns', 92),
+ (40535121733069, 'Metz, Beahan and Wilderman', 74),
+ (41688786787635, 'Pollich, Bosco and Witting', 66),
+ (83839754994196, 'Moore Group', 60),
+ (8846099990347, 'Armstrong, Feeney and Bergnaum', 67),
+ (33454924370574, 'Hoeger, Hayes and Wiza', 8),
+ (33150633610300, 'Strosin, Gaylord and Baumbach', 46),
+ (81976566834291, 'Larson, Feil and Abernathy', 9),
+ (69286188700634, 'Bergnaum-Turcotte', 57),
+ (63752461694735, 'Padberg and Sons', 44),
+ (6120632732066, 'Quitzon, Kris and Swift', 5),
+ (35622536740063, 'Nicolas and Sons', 17),
+ (64631747980708, 'Hettinger LLC', 6),
+ (25425647373974, 'Schamberger, D''Amore and Goyette', 12),
+ (36837222962334, 'Hilll, Spinka and Mitchell', 10),
+ (24043305832746, 'Ruecker, Boehm and Walker', 39),
+ (2879465116856, 'Grady, Stracke and Kuhic', 96),
+ (48536539558479, 'Krajcik Inc', 46),
+ (89071281123704, 'Bosco Inc', 96),
+ (97047970871348, 'Rempel, Rohan and Kreiger', 79),
+ (65574172719056, 'Cremin-Fritsch', 70),
+ (75018993746801, 'Hintz, Cole and Fadel', 62),
+ (98800199477174, 'Morissette-Walsh', 44),
+ (86351944892245, 'Thompson LLC', 59),
+ (86812544498036, 'Windler-Smitham', 12),
+ (5912499675835, 'Mills-Hodkiewicz', 16),
+ (33233975165257, 'Bechtelar LLC', 42),
+ (49197480874101, 'Pollich Group', 96),
+ (55539685245981, 'Friesen, Maggio and Goyette', 87),
+ (16104483813533, 'Reichert-Runolfsson', 38),
+ (45538931029273, 'Schmidt, Koss and Pacocha', 2),
+ (99764073548495, 'Kris Inc', 100),
+ (3164863417286, 'McGlynn-Renner', 62),
+ (81441447929580, 'Nader-Barrows', 35),
+ (45181916719999, 'McLaughlin-Larkin', 70),
+ (75621855982310, 'Trantow Inc', 32),
+ (74896793981971, 'Mayer LLC', 7),
+ (33589533625964, 'Murray Group', 40),
+ (53922422857377, 'Hilpert-Cremin', 86),
+ (27986776075539, 'Lang Inc', 13),
+ (35121972081650, 'Haag and Sons', 11),
+ (34953300299169, 'Kreiger-O''Connell', 35),
+ (68491446354114, 'Schinner-Kerluke', 27),
+ (31732596003871, 'O''Conner-Luettgen', 93),
+ (39903414121398, 'Ritchie and Sons', 1),
+ (89348159506734, 'Herman Group', 89),
+ (52398475314432, 'Fisher Group', 11);
 
 /*_____________________________COBRE_____________________________________*/
 
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (77, 28, 35);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (131, 12, 34);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (96, 40, 23);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (157, 15, 95);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (57, 21, 88);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (173, 36, 43);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (183, 9, 15);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (135, 46, 52);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (114, 28, 19);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (8, 16, 98);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (155, 38, 36);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (83, 16, 46);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (75, 13, 80);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (120, 1, 11);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (68, 17, 51);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (69, 45, 72);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (116, 12, 62);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (124, 14, 51);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (46, 41, 41);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (21, 27, 38);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (12, 4, 26);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (50, 3, 37);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (71, 9, 33);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (62, 17, 97);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (183, 28, 50);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (106, 6, 1);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (150, 47, 99);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (15, 34, 79);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (123, 4, 100);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (26, 39, 26);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (78, 45, 85);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (110, 19, 16);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (138, 29, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (64, 35, 41);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (50, 29, 98);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (107, 28, 71);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (166, 27, 9);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (157, 48, 27);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (41, 20, 8);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (106, 44, 69);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (187, 28, 6);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (154, 17, 13);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (138, 8, 23);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (31, 43, 85);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (118, 49, 98);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (66, 19, 50);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (125, 21, 69);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (125, 15, 69);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (195, 21, 18);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (83, 42, 99);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (35, 45, 3);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (192, 24, 27);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (190, 24, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (170, 39, 60);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (137, 10, 7);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (99, 15, 61);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (57, 21, 26);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (111, 13, 82);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (185, 48, 14);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (46, 37, 34);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (18, 32, 51);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (35, 45, 58);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (115, 34, 91);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (121, 10, 26);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (19, 27, 5);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (70, 39, 12);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (31, 2, 53);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (9, 44, 42);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (153, 40, 42);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (15, 6, 14);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (13, 50, 14);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (151, 10, 85);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (94, 36, 38);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (19, 25, 99);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (191, 14, 5);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (181, 23, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (137, 24, 88);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (147, 39, 71);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (52, 44, 74);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (93, 4, 18);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (138, 33, 17);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (47, 8, 73);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (21, 27, 65);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (181, 22, 23);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (41, 44, 54);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (174, 22, 93);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (132, 48, 64);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (35, 32, 39);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (150, 39, 69);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (22, 24, 91);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (122, 35, 16);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (72, 27, 76);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (73, 47, 20);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (155, 24, 50);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (186, 35, 68);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (90, 3, 6);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (189, 30, 66);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (176, 4, 7);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (127, 15, 21);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (14, 38, 82);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (148, 24, 16);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (78, 1, 31);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (45, 37, 66);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (63, 27, 84);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (97, 10, 32);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (177, 47, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (165, 44, 26);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (7, 36, 2);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (193, 1, 96);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (188, 16, 11);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (187, 28, 56);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (122, 34, 82);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (20, 50, 77);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (113, 45, 79);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (167, 31, 11);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (62, 26, 17);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (70, 47, 46);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (154, 27, 55);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (198, 28, 4);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (132, 3, 91);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (49, 2, 83);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (199, 31, 84);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (36, 29, 66);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (29, 37, 86);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (129, 44, 100);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (8, 5, 53);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (35, 46, 91);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (80, 20, 4);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (83, 28, 94);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (147, 13, 49);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (11, 46, 25);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (162, 40, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (154, 34, 34);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (144, 26, 24);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (127, 12, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (168, 8, 81);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (5, 18, 14);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (135, 26, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (122, 15, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (148, 11, 18);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (118, 7, 55);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (157, 1, 18);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (103, 25, 47);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (41, 15, 64);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (193, 19, 34);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (95, 43, 62);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (19, 35, 37);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (53, 37, 89);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (181, 6, 48);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (190, 17, 1);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (17, 27, 43);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (64, 22, 33);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (63, 2, 78);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (26, 32, 44);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (39, 48, 22);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (42, 41, 41);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (152, 36, 30);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (34, 12, 67);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (91, 29, 17);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (6, 38, 2);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (17, 40, 96);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (43, 17, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (180, 28, 73);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (172, 37, 86);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (1, 24, 12);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (19, 31, 59);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (56, 14, 60);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (13, 2, 97);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (6, 38, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (183, 20, 36);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (87, 29, 51);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (114, 41, 75);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (76, 18, 45);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (24, 18, 66);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (43, 48, 49);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (57, 7, 47);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (126, 49, 48);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (104, 28, 70);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (50, 35, 98);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (61, 22, 82);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (128, 15, 79);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (108, 22, 8);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (46, 17, 96);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (46, 21, 8);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (92, 33, 87);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (72, 18, 7);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (99, 4, 57);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (52, 3, 93);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (194, 18, 18);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (182, 38, 7);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (14, 40, 20);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (96, 24, 79);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (106, 41, 31);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (117, 38, 82);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (104, 42, 66);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (84, 35, 41);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (168, 21, 19);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (189, 13, 25);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (169, 1, 7);
-insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values (165, 24, 90);
+insert into Cobre (idpedido_spk, idacidente_spk, idseguradora_spk) values 
+(77, 28, 35),
+ (131, 12, 34),
+ (96, 40, 23),
+ (157, 15, 95),
+ (57, 21, 88),
+ (173, 36, 43),
+ (183, 9, 15),
+ (135, 46, 52),
+ (114, 28, 19),
+ (8, 16, 98),
+ (155, 38, 36),
+ (83, 16, 46),
+ (75, 13, 80),
+ (120, 1, 11),
+ (68, 17, 51),
+ (69, 45, 72),
+ (116, 12, 62),
+ (124, 14, 51),
+ (46, 41, 41),
+ (21, 27, 38),
+ (12, 4, 26),
+ (50, 3, 37),
+ (71, 9, 33),
+ (62, 17, 97),
+ (183, 28, 50),
+ (106, 6, 1),
+ (150, 47, 99),
+ (15, 34, 79),
+ (123, 4, 100),
+ (26, 39, 26),
+ (78, 45, 85),
+ (110, 19, 16),
+ (138, 29, 44),
+ (64, 35, 41),
+ (50, 29, 98),
+ (107, 28, 71),
+ (166, 27, 9),
+ (157, 48, 27),
+ (41, 20, 8),
+ (106, 44, 69),
+ (187, 28, 6),
+ (154, 17, 13),
+ (138, 8, 23),
+ (31, 43, 85),
+ (118, 49, 98),
+ (66, 19, 50),
+ (125, 21, 69),
+ (125, 15, 69),
+ (195, 21, 18),
+ (83, 42, 99),
+ (35, 45, 3),
+ (192, 24, 27),
+ (190, 24, 44),
+ (170, 39, 60),
+ (137, 10, 7),
+ (99, 15, 61),
+ (57, 21, 26),
+ (111, 13, 82),
+ (185, 48, 14),
+ (46, 37, 34),
+ (18, 32, 51),
+ (35, 45, 58),
+ (115, 34, 91),
+ (121, 10, 26),
+ (19, 27, 5),
+ (70, 39, 12),
+ (31, 2, 53),
+ (9, 44, 42),
+ (153, 40, 42),
+ (15, 6, 14),
+ (13, 50, 14),
+ (151, 10, 85),
+ (94, 36, 38),
+ (19, 25, 99),
+ (191, 14, 5),
+ (181, 23, 87),
+ (137, 24, 88),
+ (147, 39, 71),
+ (52, 44, 74),
+ (93, 4, 18),
+ (138, 33, 17),
+ (47, 8, 73),
+ (21, 27, 65),
+ (181, 22, 23),
+ (41, 44, 54),
+ (174, 22, 93),
+ (132, 48, 64),
+ (35, 32, 39),
+ (150, 39, 69),
+ (22, 24, 91),
+ (122, 35, 16),
+ (72, 27, 76),
+ (73, 47, 20),
+ (155, 24, 50),
+ (186, 35, 68),
+ (90, 3, 6),
+ (189, 30, 66),
+ (176, 4, 7),
+ (127, 15, 21),
+ (14, 38, 82),
+ (148, 24, 16),
+ (78, 1, 31),
+ (45, 37, 66),
+ (63, 27, 84),
+ (97, 10, 32),
+ (177, 47, 44),
+ (165, 44, 26),
+ (7, 36, 2),
+ (193, 1, 96),
+ (188, 16, 11),
+ (187, 28, 56),
+ (122, 34, 82),
+ (20, 50, 77),
+ (113, 45, 79),
+ (167, 31, 11),
+ (62, 26, 17),
+ (70, 47, 46),
+ (154, 27, 55),
+ (198, 28, 4),
+ (132, 3, 91),
+ (49, 2, 83),
+ (199, 31, 84),
+ (36, 29, 66),
+ (29, 37, 86),
+ (129, 44, 100),
+ (8, 5, 53),
+ (35, 46, 91),
+ (80, 20, 4),
+ (83, 28, 94),
+ (147, 13, 49),
+ (11, 46, 25),
+ (162, 40, 44),
+ (154, 34, 34),
+ (144, 26, 24),
+ (127, 12, 44),
+ (168, 8, 81),
+ (5, 18, 14),
+ (135, 26, 87),
+ (122, 15, 87),
+ (148, 11, 18),
+ (118, 7, 55),
+ (157, 1, 18),
+ (103, 25, 47),
+ (41, 15, 64),
+ (193, 19, 34),
+ (95, 43, 62),
+ (19, 35, 37),
+ (53, 37, 89),
+ (181, 6, 48),
+ (190, 17, 1),
+ (17, 27, 43),
+ (64, 22, 33),
+ (63, 2, 78),
+ (26, 32, 44),
+ (39, 48, 22),
+ (42, 41, 41),
+ (152, 36, 30),
+ (34, 12, 67),
+ (91, 29, 17),
+ (6, 38, 2),
+ (17, 40, 96),
+ (43, 17, 87),
+ (180, 28, 73),
+ (172, 37, 86),
+ (1, 24, 12),
+ (19, 31, 59),
+ (56, 14, 60),
+ (13, 2, 97),
+ (6, 38, 87),
+ (183, 20, 36),
+ (87, 29, 51),
+ (114, 41, 75),
+ (76, 18, 45),
+ (24, 18, 66),
+ (43, 48, 49),
+ (57, 7, 47),
+ (126, 49, 48),
+ (104, 28, 70),
+ (50, 35, 98),
+ (61, 22, 82),
+ (128, 15, 79),
+ (108, 22, 8),
+ (46, 17, 96),
+ (46, 21, 8),
+ (92, 33, 87),
+ (72, 18, 7),
+ (99, 4, 57),
+ (52, 3, 93),
+ (194, 18, 18),
+ (182, 38, 7),
+ (14, 40, 20),
+ (96, 24, 79),
+ (106, 41, 31),
+ (117, 38, 82),
+ (104, 42, 66),
+ (84, 35, 41),
+ (168, 21, 19),
+ (189, 13, 25),
+ (169, 1, 7),
+ (165, 24, 90);
 
 /*_____________________________DESPACHA_____________________________________*/
 
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-13', '2018-08-16', 151, 89);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-05', '2018-10-11', 6, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-13', '2019-01-29', 143, 72);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-04', '2019-03-17', 79, 22);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-09', '2019-02-07', 145, 11);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-14', '2019-02-09', 20, 51);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-25', '2018-12-29', 81, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-17', '2018-12-21', 198, 19);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-28', '2019-01-30', 188, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-18', '2018-10-16', 92, 77);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-09', '2019-06-08', 21, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-15', '2019-05-31', 122, 57);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-22', '2019-02-01', 17, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-30', '2019-06-14', 165, 64);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-29', '2018-07-21', 139, 10);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-12', '2018-10-13', 75, 15);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-07', '2019-03-10', 53, 96);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-16', '2019-03-04', 153, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-25', '2018-07-05', 89, 63);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-02', '2018-11-15', 170, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-30', '2019-05-16', 20, 89);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-26', '2018-10-03', 42, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-15', '2018-10-12', 71, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-01', '2018-08-14', 176, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-09', '2019-01-06', 185, 2);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-19', '2018-09-01', 193, 48);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-14', '2019-01-12', 27, 5);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-29', '2019-02-15', 123, 48);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-27', '2018-10-17', 32, 94);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-24', '2018-09-23', 132, 34);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-19', '2019-01-09', 32, 43);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-09', '2018-09-10', 126, 99);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-26', '2018-10-02', 124, 34);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-01', '2018-09-14', 156, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-03', '2018-11-27', 75, 10);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-02', '2019-05-24', 94, 88);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-15', '2018-10-20', 158, 43);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-28', '2018-09-04', 148, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-04', '2018-08-10', 121, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-02', '2018-07-12', 76, 72);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-02', '2019-04-06', 195, 37);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-03', '2019-01-04', 32, 33);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-13', '2018-10-03', 132, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-22', '2018-06-26', 53, 40);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-28', '2018-12-28', 31, 64);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-15', '2018-08-18', 53, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-15', '2019-05-31', 75, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-10', '2019-03-25', 168, 87);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-08', '2019-05-30', 165, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-04', '2019-01-04', 69, 1);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-21', '2019-04-05', 149, 97);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-15', '2019-04-04', 54, 16);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-05', '2018-10-14', 13, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-23', '2019-03-23', 54, 73);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-22', '2019-03-09', 34, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-26', '2018-09-14', 12, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-28', '2018-12-03', 186, 51);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-16', '2018-06-24', 160, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-19', '2018-09-11', 200, 5);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-01', '2019-03-23', 58, 81);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-01', '2018-07-13', 185, 66);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-17', '2018-12-29', 126, 25);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-11', '2019-03-03', 15, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-16', '2019-01-13', 64, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-01', '2019-04-11', 88, 64);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-04', '2019-04-27', 141, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-04', '2018-07-01', 70, 55);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-22', '2019-02-22', 163, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-10', '2018-12-02', 185, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-17', '2018-11-22', 56, 5);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-22', '2018-06-17', 154, 72);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-24', '2018-12-05', 130, 44);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-02', '2019-02-02', 90, 1);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-06', '2018-07-30', 189, 67);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-27', '2019-04-27', 67, 28);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-24', '2019-03-15', 78, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-17', '2019-05-06', 151, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-16', '2019-01-04', 35, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-04', '2019-03-13', 111, 93);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-13', '2018-08-11', 96, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-08', '2018-10-29', 13, 92);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-11', '2019-03-21', 172, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-18', '2018-12-15', 71, 81);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-11', '2019-04-30', 93, 95);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-26', '2018-12-17', 22, 94);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-15', '2018-08-17', 97, 84);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-06', '2018-09-09', 194, 79);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-19', '2019-03-05', 138, 81);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-28', '2018-10-22', 92, 42);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-11', '2019-03-11', 188, 83);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-11', '2019-01-05', 7, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-22', '2018-06-16', 18, 67);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-13', '2019-03-11', 136, 22);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-19', '2019-04-07', 73, 83);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-26', '2018-10-04', 17, 31);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-05', '2019-05-18', 80, 62);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-26', '2019-02-04', 35, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-10', '2019-04-05', 23, 26);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-24', '2018-10-18', 69, 85);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-16', '2019-02-07', 66, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-13', '2018-08-06', 172, 34);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-07', '2018-11-26', 153, 34);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-06', '2019-02-28', 173, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-04', '2019-02-17', 13, 31);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-23', '2019-05-03', 154, 26);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-17', '2019-05-01', 86, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-24', '2019-05-01', 96, 63);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-13', '2019-04-06', 136, 92);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-05', '2018-09-16', 138, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-27', '2018-09-05', 38, 85);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-24', '2018-06-30', 122, 41);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-30', '2018-12-16', 95, 44);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-30', '2019-04-21', 102, 87);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-04', '2019-06-15', 169, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-07', '2018-06-16', 143, 70);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-25', '2018-08-07', 174, 3);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-26', '2018-07-30', 29, 25);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-11', '2018-12-19', 171, 57);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-02', '2018-12-29', 178, 28);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-16', '2019-03-15', 58, 11);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-06', '2018-08-25', 56, 64);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-11', '2019-06-05', 133, 95);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-01', '2019-02-03', 119, 28);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-18', '2018-12-26', 110, 78);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-31', '2019-02-06', 114, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-21', '2018-09-18', 79, 78);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-28', '2019-04-09', 108, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-20', '2019-03-13', 45, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-17', '2018-11-23', 158, 46);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-05', '2019-03-29', 58, 99);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-05', '2019-06-03', 75, 89);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-26', '2018-10-26', 183, 38);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-04', '2018-09-25', 126, 9);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-25', '2018-10-23', 165, 71);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-10', '2019-02-09', 104, 65);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-30', '2018-07-07', 70, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-24', '2019-03-01', 59, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-09', '2019-01-12', 158, 35);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-13', '2018-11-05', 142, 55);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-26', '2018-09-07', 166, 6);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-14', '2018-09-09', 99, 20);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-27', '2019-03-12', 174, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-26', '2019-03-21', 119, 89);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-22', '2018-07-23', 97, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-19', '2019-05-16', 134, 38);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-18', '2019-05-14', 128, 68);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-10', '2018-09-28', 146, 14);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-25', '2018-10-22', 146, 42);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-25', '2019-04-18', 200, 20);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-03', '2018-12-04', 195, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-01', '2019-04-16', 132, 71);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-06', '2018-10-04', 142, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-26', '2018-08-24', 145, 46);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-23', '2019-02-07', 12, 26);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-25', '2019-05-03', 31, 27);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-10', '2019-03-23', 90, 58);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-01', '2019-03-20', 76, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-20', '2018-12-16', 61, 35);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-26', '2019-03-12', 189, 94);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-15', '2018-08-06', 82, 2);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-16', '2018-07-09', 196, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-21', '2019-01-12', 148, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-11', '2018-08-14', 106, 6);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-16', '2018-12-16', 81, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-09', '2018-06-27', 145, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-28', '2018-11-27', 135, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-16', '2019-06-15', 125, 73);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-09', '2018-11-03', 142, 12);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-01', '2018-09-06', 52, 58);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-21', '2018-12-27', 55, 57);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-09', '2019-03-26', 191, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-17', '2019-01-31', 25, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-14', '2019-05-19', 98, 78);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-05', '2019-03-16', 8, 5);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-12', '2019-04-10', 184, 7);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-13', '2019-04-06', 42, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-22', '2019-05-01', 125, 65);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-12', '2018-07-29', 38, 94);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-27', '2019-06-14', 110, 93);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-13', '2018-11-05', 4, 88);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-12', '2019-03-19', 68, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-08', '2019-01-06', 7, 41);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-21', '2018-11-15', 50, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-25', '2018-10-07', 154, 58);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-20', '2018-08-16', 193, 81);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-18', '2019-02-15', 9, 79);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-23', '2018-12-07', 116, 60);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-19', '2018-07-29', 31, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-21', '2018-08-22', 91, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-04', '2019-01-27', 80, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-25', '2019-04-04', 65, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-23', '2019-02-17', 114, 78);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-01', '2019-01-05', 29, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-16', '2019-03-24', 21, 31);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-25', '2019-02-05', 82, 38);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-29', '2019-04-24', 34, 87);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-11', '2019-03-09', 14, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-17', '2018-12-06', 55, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-08', '2019-05-11', 105, 99);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-08', '2019-03-03', 81, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-29', '2018-12-26', 170, 85);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-26', '2019-01-16', 74, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-09', '2018-08-05', 69, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-01', '2018-12-30', 170, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-04', '2018-07-30', 30, 20);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-21', '2019-04-21', 28, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-09', '2018-07-07', 179, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-19', '2018-08-19', 193, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-09', '2018-08-18', 85, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-05', '2019-02-11', 123, 81);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-02', '2018-11-08', 128, 78);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-09', '2019-04-24', 18, 74);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-21', '2018-12-14', 46, 83);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-19', '2019-02-13', 122, 12);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-13', '2019-01-28', 90, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-21', '2019-04-11', 57, 46);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-21', '2018-07-02', 44, 63);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-16', '2018-12-27', 159, 88);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-23', '2019-03-13', 140, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-10', '2018-07-27', 121, 39);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-19', '2018-11-26', 144, 13);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-10', '2019-01-31', 24, 7);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-17', '2018-08-18', 166, 53);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-23', '2019-01-24', 151, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-11', '2018-12-08', 117, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-16', '2018-09-26', 118, 1);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-22', '2018-07-28', 20, 73);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-04', '2018-10-12', 153, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-26', '2019-05-22', 53, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-01', '2019-03-13', 141, 7);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-06', '2018-07-03', 26, 27);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-17', '2019-03-10', 20, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-08', '2018-08-02', 24, 12);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-14', '2019-05-11', 59, 55);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-13', '2018-08-09', 38, 94);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-21', '2018-09-20', 34, 96);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-14', '2019-03-17', 182, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-09', '2019-01-02', 126, 24);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-03', '2018-06-29', 95, 76);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-24', '2019-04-16', 17, 43);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-26', '2018-11-21', 140, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-14', '2018-08-12', 182, 51);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-31', '2018-11-21', 35, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-07', '2019-04-25', 191, 77);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-03', '2018-06-19', 118, 44);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-17', '2018-09-12', 21, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-28', '2018-11-09', 159, 96);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-16', '2018-12-24', 199, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-19', '2019-03-29', 41, 12);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-29', '2018-10-01', 103, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-08', '2018-09-09', 4, 64);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-11', '2019-06-04', 160, 56);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-13', '2019-02-23', 122, 45);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-03', '2018-08-19', 14, 93);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-16', '2019-05-18', 59, 22);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-22', '2018-12-26', 179, 91);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-17', '2018-07-01', 194, 97);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-05', '2019-06-13', 86, 60);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-18', '2019-03-06', 69, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-16', '2018-07-07', 106, 48);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-15', '2018-09-08', 188, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-30', '2019-01-25', 53, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-23', '2018-07-23', 147, 45);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-02', '2019-06-13', 59, 27);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-29', '2019-04-06', 165, 27);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-09', '2018-11-20', 66, 100);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-26', '2018-12-13', 14, 53);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-12', '2019-03-01', 165, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-21', '2018-09-30', 54, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-10', '2018-06-16', 68, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-05', '2018-06-30', 145, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-09', '2019-05-14', 26, 12);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-29', '2019-01-28', 31, 99);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-30', '2018-07-27', 122, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-17', '2019-03-31', 195, 82);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-05', '2018-12-14', 4, 16);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-27', '2018-08-29', 17, 35);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-25', '2019-05-10', 113, 31);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-10', '2019-05-24', 21, 76);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-01', '2018-07-29', 197, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-13', '2018-08-06', 198, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-16', '2019-01-21', 117, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-20', '2018-10-28', 151, 3);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-10', '2018-08-24', 147, 1);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-01', '2019-02-27', 161, 86);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-19', '2018-09-24', 15, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-03', '2019-05-05', 11, 14);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-04', '2019-05-11', 174, 97);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-08-02', '2019-04-21', 193, 68);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-06', '2019-04-14', 186, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-14', '2018-12-04', 145, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-11', '2019-03-05', 86, 76);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-29', '2019-01-29', 62, 42);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-27', '2019-06-02', 28, 47);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-28', '2018-10-17', 117, 25);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-19', '2019-05-22', 99, 37);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-26', '2018-10-06', 182, 28);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-19', '2019-01-10', 184, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-09', '2018-06-26', 23, 89);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-05', '2019-01-11', 189, 99);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-29', '2018-11-11', 153, 46);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-01', '2018-07-15', 121, 2);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-08', '2018-12-31', 197, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-02', '2018-08-14', 174, 48);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-30', '2019-02-26', 197, 19);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-29', '2018-08-19', 166, 4);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-14', '2018-06-27', 55, 46);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-22', '2019-02-11', 52, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-28', '2019-02-18', 182, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-10', '2018-10-11', 72, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-04', '2018-07-02', 151, 7);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-12', '2018-12-29', 34, 30);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-03', '2018-12-22', 167, 87);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-13', '2019-01-20', 144, 95);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-01', '2019-02-17', 78, 29);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-25', '2019-05-09', 127, 60);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-24', '2018-08-27', 9, 16);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-18', '2019-05-10', 146, 13);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-01', '2019-01-17', 187, 27);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-10', '2018-11-23', 124, 63);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-05', '2018-12-21', 82, 73);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-19', '2019-05-29', 193, 90);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-29', '2018-09-28', 89, 95);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-06', '2018-09-11', 25, 60);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-27', '2018-10-24', 127, 80);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-21', '2019-01-01', 162, 47);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-30', '2018-09-21', 97, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-09', '2018-11-26', 122, 36);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-19', '2019-03-16', 8, 20);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-18', '2018-06-19', 120, 58);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-07', '2018-09-28', 117, 49);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-06-25', '2018-08-14', 139, 19);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-06', '2019-02-23', 61, 58);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-25', '2018-10-20', 33, 43);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-02-03', '2018-12-29', 8, 88);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-14', '2019-03-16', 87, 33);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-30', '2019-02-17', 133, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-15', '2018-08-03', 75, 13);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-14', '2019-03-15', 107, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-09', '2018-08-24', 48, 8);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-10', '2019-01-22', 94, 79);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-30', '2018-08-29', 62, 71);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-26', '2019-01-09', 135, 97);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-06', '2019-05-19', 2, 16);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-13', '2018-12-30', 198, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-09', '2019-05-08', 150, 100);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-20', '2018-08-04', 45, 48);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-09', '2019-01-11', 170, 6);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-06', '2019-03-11', 66, 53);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-09', '2019-03-06', 48, 18);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-17', '2019-06-04', 171, 40);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-09-10', '2018-09-26', 110, 59);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-07', '2018-08-30', 144, 24);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-02', '2019-05-19', 112, 15);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-11', '2019-01-25', 84, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-02', '2018-12-26', 64, 14);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-09', '2018-10-05', 136, 57);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-25', '2018-10-22', 52, 65);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-22', '2018-09-01', 72, 19);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-23', '2018-10-31', 99, 33);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-11', '2019-04-07', 62, 43);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-07', '2018-08-27', 123, 1);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-16', '2018-07-04', 14, 93);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-28', '2019-06-03', 165, 62);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-06', '2019-01-20', 160, 36);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-24', '2018-11-30', 114, 26);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-12-11', '2019-02-25', 111, 32);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-11-05', '2019-02-18', 57, 34);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-24', '2018-09-17', 105, 18);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-02', '2019-05-16', 108, 11);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-21', '2018-12-25', 116, 55);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-10-24', '2018-12-24', 14, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-01-20', '2019-05-06', 97, 24);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-23', '2019-01-16', 130, 61);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-04-12', '2018-07-14', 29, 15);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-08-17', '2018-08-14', 79, 91);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-02', '2019-02-02', 84, 35);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-25', '2018-06-27', 172, 52);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-06-01', '2018-08-27', 156, 25);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-05-14', '2018-10-29', 187, 45);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-05', '2019-02-18', 31, 84);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-22', '2018-07-28', 100, 25);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-07-16', '2018-08-15', 116, 67);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-04-16', '2019-04-30', 107, 28);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-06', '2018-10-14', 42, 21);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-11', '2018-11-13', 99, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-11-29', '2019-03-19', 13, 75);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-04', '2018-12-10', 104, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-20', '2018-10-17', 117, 19);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2018-03-02', '2018-12-28', 4, 98);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-03-25', '2018-07-20', 123, 13);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-05-29', '2018-07-31', 163, 91);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-09-12', '2019-01-10', 40, 16);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-26', '2018-12-29', 14, 69);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-06-25', '2019-03-13', 142, 17);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2016-12-16', '2019-04-08', 153, 44);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-10-28', '2018-06-30', 99, 23);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-01-05', '2018-11-20', 162, 54);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-07-05', '2019-05-27', 120, 71);
-insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values ('2017-02-19', '2019-01-04', 100, 41);
+ insert into Despacha (datarecebimento, datadespacho, idpedido_fk, idunidade_fk) values
+ ('2017-11-13', '2018-08-16', 151, 89),
+ ('2018-01-05', '2018-10-11', 6, 61),
+ ('2017-04-13', '2019-01-29', 143, 72),
+ ('2016-10-04', '2019-03-17', 79, 22),
+ ('2016-12-09', '2019-02-07', 145, 11),
+ ('2017-02-14', '2019-02-09', 20, 51),
+ ('2018-05-25', '2018-12-29', 81, 56),
+ ('2017-12-17', '2018-12-21', 198, 19),
+ ('2016-06-28', '2019-01-30', 188, 75),
+ ('2017-11-18', '2018-10-16', 92, 77),
+ ('2017-09-09', '2019-06-08', 21, 75),
+ ('2017-03-15', '2019-05-31', 122, 57),
+ ('2018-01-22', '2019-02-01', 17, 56),
+ ('2017-07-30', '2019-06-14', 165, 64),
+ ('2017-06-29', '2018-07-21', 139, 10),
+ ('2017-11-12', '2018-10-13', 75, 15),
+ ('2017-09-07', '2019-03-10', 53, 96),
+ ('2017-08-16', '2019-03-04', 153, 56),
+ ('2016-06-25', '2018-07-05', 89, 63),
+ ('2016-09-02', '2018-11-15', 170, 56),
+ ('2017-01-30', '2019-05-16', 20, 89),
+ ('2017-08-26', '2018-10-03', 42, 29),
+ ('2017-05-15', '2018-10-12', 71, 52),
+ ('2017-11-01', '2018-08-14', 176, 98),
+ ('2018-06-09', '2019-01-06', 185, 2),
+ ('2018-03-19', '2018-09-01', 193, 48),
+ ('2018-01-14', '2019-01-12', 27, 5),
+ ('2017-01-29', '2019-02-15', 123, 48),
+ ('2017-03-27', '2018-10-17', 32, 94),
+ ('2016-06-24', '2018-09-23', 132, 34),
+ ('2018-05-19', '2019-01-09', 32, 43),
+ ('2018-01-09', '2018-09-10', 126, 99),
+ ('2018-04-26', '2018-10-02', 124, 34),
+ ('2017-12-01', '2018-09-14', 156, 69),
+ ('2016-07-03', '2018-11-27', 75, 10),
+ ('2016-07-02', '2019-05-24', 94, 88),
+ ('2016-12-15', '2018-10-20', 158, 43),
+ ('2017-12-28', '2018-09-04', 148, 82),
+ ('2016-10-04', '2018-08-10', 121, 82),
+ ('2016-11-02', '2018-07-12', 76, 72),
+ ('2018-04-02', '2019-04-06', 195, 37),
+ ('2018-06-03', '2019-01-04', 32, 33),
+ ('2017-12-13', '2018-10-03', 132, 61),
+ ('2018-02-22', '2018-06-26', 53, 40),
+ ('2016-11-28', '2018-12-28', 31, 64),
+ ('2017-06-15', '2018-08-18', 53, 4),
+ ('2017-10-15', '2019-05-31', 75, 90),
+ ('2016-12-10', '2019-03-25', 168, 87),
+ ('2017-05-08', '2019-05-30', 165, 69),
+ ('2017-02-04', '2019-01-04', 69, 1),
+ ('2016-08-21', '2019-04-05', 149, 97),
+ ('2017-06-15', '2019-04-04', 54, 16),
+ ('2017-10-05', '2018-10-14', 13, 4),
+ ('2018-05-23', '2019-03-23', 54, 73),
+ ('2016-11-22', '2019-03-09', 34, 86),
+ ('2017-02-26', '2018-09-14', 12, 59),
+ ('2017-03-28', '2018-12-03', 186, 51),
+ ('2018-04-16', '2018-06-24', 160, 59),
+ ('2018-04-19', '2018-09-11', 200, 5),
+ ('2016-08-01', '2019-03-23', 58, 81),
+ ('2017-05-01', '2018-07-13', 185, 66),
+ ('2017-11-17', '2018-12-29', 126, 25),
+ ('2018-04-11', '2019-03-03', 15, 4),
+ ('2016-08-16', '2019-01-13', 64, 30),
+ ('2017-07-01', '2019-04-11', 88, 64),
+ ('2018-06-04', '2019-04-27', 141, 75),
+ ('2018-06-04', '2018-07-01', 70, 55),
+ ('2017-03-22', '2019-02-22', 163, 29),
+ ('2017-09-10', '2018-12-02', 185, 90),
+ ('2017-11-17', '2018-11-22', 56, 5),
+ ('2016-08-22', '2018-06-17', 154, 72),
+ ('2016-12-24', '2018-12-05', 130, 44),
+ ('2018-05-02', '2019-02-02', 90, 1),
+ ('2017-06-06', '2018-07-30', 189, 67),
+ ('2018-04-27', '2019-04-27', 67, 28),
+ ('2016-06-24', '2019-03-15', 78, 23),
+ ('2017-10-17', '2019-05-06', 151, 98),
+ ('2018-04-16', '2019-01-04', 35, 82),
+ ('2016-12-04', '2019-03-13', 111, 93),
+ ('2017-04-13', '2018-08-11', 96, 52),
+ ('2017-02-08', '2018-10-29', 13, 92),
+ ('2017-03-11', '2019-03-21', 172, 82),
+ ('2017-06-18', '2018-12-15', 71, 81),
+ ('2016-09-11', '2019-04-30', 93, 95),
+ ('2017-05-26', '2018-12-17', 22, 94),
+ ('2017-08-15', '2018-08-17', 97, 84),
+ ('2017-06-06', '2018-09-09', 194, 79),
+ ('2017-03-19', '2019-03-05', 138, 81),
+ ('2016-07-28', '2018-10-22', 92, 42),
+ ('2018-05-11', '2019-03-11', 188, 83),
+ ('2016-08-11', '2019-01-05', 7, 86),
+ ('2016-12-22', '2018-06-16', 18, 67),
+ ('2016-08-13', '2019-03-11', 136, 22),
+ ('2018-04-19', '2019-04-07', 73, 83),
+ ('2017-01-26', '2018-10-04', 17, 31),
+ ('2016-07-05', '2019-05-18', 80, 62),
+ ('2017-07-26', '2019-02-04', 35, 75),
+ ('2017-01-10', '2019-04-05', 23, 26),
+ ('2016-08-24', '2018-10-18', 69, 85),
+ ('2018-03-16', '2019-02-07', 66, 80),
+ ('2017-01-13', '2018-08-06', 172, 34),
+ ('2017-09-07', '2018-11-26', 153, 34),
+ ('2017-11-06', '2019-02-28', 173, 52),
+ ('2017-10-04', '2019-02-17', 13, 31),
+ ('2016-06-23', '2019-05-03', 154, 26),
+ ('2017-11-17', '2019-05-01', 86, 8),
+ ('2017-09-24', '2019-05-01', 96, 63),
+ ('2017-03-13', '2019-04-06', 136, 92),
+ ('2016-10-05', '2018-09-16', 138, 30),
+ ('2017-05-27', '2018-09-05', 38, 85),
+ ('2016-09-24', '2018-06-30', 122, 41),
+ ('2016-08-30', '2018-12-16', 95, 44),
+ ('2016-07-30', '2019-04-21', 102, 87),
+ ('2017-04-04', '2019-06-15', 169, 29),
+ ('2016-12-07', '2018-06-16', 143, 70),
+ ('2016-08-25', '2018-08-07', 174, 3),
+ ('2017-10-26', '2018-07-30', 29, 25),
+ ('2018-01-11', '2018-12-19', 171, 57),
+ ('2018-05-02', '2018-12-29', 178, 28),
+ ('2017-08-16', '2019-03-15', 58, 11),
+ ('2016-10-06', '2018-08-25', 56, 64),
+ ('2017-02-11', '2019-06-05', 133, 95),
+ ('2016-08-01', '2019-02-03', 119, 28),
+ ('2017-05-18', '2018-12-26', 110, 78),
+ ('2017-07-31', '2019-02-06', 114, 4),
+ ('2018-03-21', '2018-09-18', 79, 78),
+ ('2017-07-28', '2019-04-09', 108, 23),
+ ('2017-08-20', '2019-03-13', 45, 17),
+ ('2018-04-17', '2018-11-23', 158, 46),
+ ('2016-12-05', '2019-03-29', 58, 99),
+ ('2017-07-05', '2019-06-03', 75, 89),
+ ('2016-06-26', '2018-10-26', 183, 38),
+ ('2017-08-04', '2018-09-25', 126, 9),
+ ('2017-03-25', '2018-10-23', 165, 71),
+ ('2018-01-10', '2019-02-09', 104, 65),
+ ('2016-08-30', '2018-07-07', 70, 61),
+ ('2018-02-24', '2019-03-01', 59, 23),
+ ('2017-06-09', '2019-01-12', 158, 35),
+ ('2016-07-13', '2018-11-05', 142, 55),
+ ('2017-12-26', '2018-09-07', 166, 6),
+ ('2017-02-14', '2018-09-09', 99, 20),
+ ('2018-04-27', '2019-03-12', 174, 59),
+ ('2016-07-26', '2019-03-21', 119, 89),
+ ('2016-08-22', '2018-07-23', 97, 69),
+ ('2018-04-19', '2019-05-16', 134, 38),
+ ('2018-03-18', '2019-05-14', 128, 68),
+ ('2016-07-10', '2018-09-28', 146, 14),
+ ('2016-10-25', '2018-10-22', 146, 42),
+ ('2017-04-25', '2019-04-18', 200, 20),
+ ('2017-11-03', '2018-12-04', 195, 30),
+ ('2016-10-01', '2019-04-16', 132, 71),
+ ('2017-03-06', '2018-10-04', 142, 82),
+ ('2017-01-26', '2018-08-24', 145, 46),
+ ('2017-12-23', '2019-02-07', 12, 26),
+ ('2017-10-25', '2019-05-03', 31, 27),
+ ('2016-11-10', '2019-03-23', 90, 58),
+ ('2017-01-01', '2019-03-20', 76, 8),
+ ('2016-08-20', '2018-12-16', 61, 35),
+ ('2017-05-26', '2019-03-12', 189, 94),
+ ('2017-01-15', '2018-08-06', 82, 2),
+ ('2017-01-16', '2018-07-09', 196, 29),
+ ('2017-04-21', '2019-01-12', 148, 69),
+ ('2017-04-11', '2018-08-14', 106, 6),
+ ('2017-03-16', '2018-12-16', 81, 30),
+ ('2016-12-09', '2018-06-27', 145, 21),
+ ('2017-10-28', '2018-11-27', 135, 52),
+ ('2017-04-16', '2019-06-15', 125, 73),
+ ('2018-04-09', '2018-11-03', 142, 12),
+ ('2017-01-01', '2018-09-06', 52, 58),
+ ('2017-05-21', '2018-12-27', 55, 57),
+ ('2018-02-09', '2019-03-26', 191, 98),
+ ('2018-01-17', '2019-01-31', 25, 29),
+ ('2018-02-14', '2019-05-19', 98, 78),
+ ('2017-04-05', '2019-03-16', 8, 5),
+ ('2017-04-12', '2019-04-10', 184, 7),
+ ('2017-04-13', '2019-04-06', 42, 23),
+ ('2018-02-22', '2019-05-01', 125, 65),
+ ('2016-12-12', '2018-07-29', 38, 94),
+ ('2017-06-27', '2019-06-14', 110, 93),
+ ('2016-11-13', '2018-11-05', 4, 88),
+ ('2018-02-12', '2019-03-19', 68, 17),
+ ('2016-07-08', '2019-01-06', 7, 41),
+ ('2017-08-21', '2018-11-15', 50, 69),
+ ('2017-06-25', '2018-10-07', 154, 58),
+ ('2017-08-20', '2018-08-16', 193, 81),
+ ('2016-10-18', '2019-02-15', 9, 79),
+ ('2016-06-23', '2018-12-07', 116, 60),
+ ('2017-12-19', '2018-07-29', 31, 23),
+ ('2017-11-21', '2018-08-22', 91, 86),
+ ('2018-04-04', '2019-01-27', 80, 75),
+ ('2018-02-25', '2019-04-04', 65, 23),
+ ('2017-10-23', '2019-02-17', 114, 78),
+ ('2018-02-01', '2019-01-05', 29, 29),
+ ('2017-12-16', '2019-03-24', 21, 31),
+ ('2017-11-25', '2019-02-05', 82, 38),
+ ('2017-10-29', '2019-04-24', 34, 87),
+ ('2016-09-11', '2019-03-09', 14, 98),
+ ('2017-12-17', '2018-12-06', 55, 54),
+ ('2017-02-08', '2019-05-11', 105, 99),
+ ('2017-11-08', '2019-03-03', 81, 17),
+ ('2016-09-29', '2018-12-26', 170, 85),
+ ('2017-04-26', '2019-01-16', 74, 80),
+ ('2017-01-09', '2018-08-05', 69, 82),
+ ('2016-10-01', '2018-12-30', 170, 52),
+ ('2017-02-04', '2018-07-30', 30, 20),
+ ('2016-06-21', '2019-04-21', 28, 90),
+ ('2016-11-09', '2018-07-07', 179, 86),
+ ('2017-05-19', '2018-08-19', 193, 75),
+ ('2017-12-09', '2018-08-18', 85, 29),
+ ('2016-10-05', '2019-02-11', 123, 81),
+ ('2018-02-02', '2018-11-08', 128, 78),
+ ('2017-08-09', '2019-04-24', 18, 74),
+ ('2018-04-21', '2018-12-14', 46, 83),
+ ('2017-12-19', '2019-02-13', 122, 12),
+ ('2017-12-13', '2019-01-28', 90, 69),
+ ('2017-02-21', '2019-04-11', 57, 46),
+ ('2017-08-21', '2018-07-02', 44, 63),
+ ('2017-01-16', '2018-12-27', 159, 88),
+ ('2016-12-23', '2019-03-13', 140, 4),
+ ('2016-10-10', '2018-07-27', 121, 39),
+ ('2018-01-19', '2018-11-26', 144, 13),
+ ('2017-01-10', '2019-01-31', 24, 7),
+ ('2018-04-17', '2018-08-18', 166, 53),
+ ('2017-11-23', '2019-01-24', 151, 90),
+ ('2016-10-11', '2018-12-08', 117, 86),
+ ('2016-12-16', '2018-09-26', 118, 1),
+ ('2017-12-22', '2018-07-28', 20, 73),
+ ('2016-09-04', '2018-10-12', 153, 56),
+ ('2016-11-26', '2019-05-22', 53, 86),
+ ('2017-11-01', '2019-03-13', 141, 7),
+ ('2017-09-06', '2018-07-03', 26, 27),
+ ('2017-05-17', '2019-03-10', 20, 30),
+ ('2017-07-08', '2018-08-02', 24, 12),
+ ('2017-02-14', '2019-05-11', 59, 55),
+ ('2016-11-13', '2018-08-09', 38, 94),
+ ('2016-12-21', '2018-09-20', 34, 96),
+ ('2017-06-14', '2019-03-17', 182, 86),
+ ('2017-03-09', '2019-01-02', 126, 24),
+ ('2018-03-03', '2018-06-29', 95, 76),
+ ('2016-11-24', '2019-04-16', 17, 43),
+ ('2017-08-26', '2018-11-21', 140, 54),
+ ('2017-02-14', '2018-08-12', 182, 51),
+ ('2018-01-31', '2018-11-21', 35, 8),
+ ('2017-09-07', '2019-04-25', 191, 77),
+ ('2017-07-03', '2018-06-19', 118, 44),
+ ('2017-02-17', '2018-09-12', 21, 8),
+ ('2017-12-28', '2018-11-09', 159, 96),
+ ('2016-10-16', '2018-12-24', 199, 98),
+ ('2017-09-19', '2019-03-29', 41, 12),
+ ('2018-05-29', '2018-10-01', 103, 21),
+ ('2016-10-08', '2018-09-09', 4, 64),
+ ('2016-09-11', '2019-06-04', 160, 56),
+ ('2016-10-13', '2019-02-23', 122, 45),
+ ('2018-01-03', '2018-08-19', 14, 93),
+ ('2016-06-16', '2019-05-18', 59, 22),
+ ('2017-09-22', '2018-12-26', 179, 91),
+ ('2017-05-17', '2018-07-01', 194, 97),
+ ('2018-04-05', '2019-06-13', 86, 60),
+ ('2016-06-18', '2019-03-06', 69, 80),
+ ('2016-08-16', '2018-07-07', 106, 48),
+ ('2016-09-15', '2018-09-08', 188, 98),
+ ('2016-11-30', '2019-01-25', 53, 82),
+ ('2017-06-23', '2018-07-23', 147, 45),
+ ('2017-09-02', '2019-06-13', 59, 27),
+ ('2017-12-29', '2019-04-06', 165, 27),
+ ('2016-12-09', '2018-11-20', 66, 100),
+ ('2017-03-26', '2018-12-13', 14, 53),
+ ('2017-04-12', '2019-03-01', 165, 23),
+ ('2018-02-21', '2018-09-30', 54, 75),
+ ('2018-01-10', '2018-06-16', 68, 8),
+ ('2016-12-05', '2018-06-30', 145, 21),
+ ('2017-10-09', '2019-05-14', 26, 12),
+ ('2016-12-29', '2019-01-28', 31, 99),
+ ('2016-10-30', '2018-07-27', 122, 61),
+ ('2017-01-17', '2019-03-31', 195, 82),
+ ('2017-08-05', '2018-12-14', 4, 16),
+ ('2017-12-27', '2018-08-29', 17, 35),
+ ('2016-12-25', '2019-05-10', 113, 31),
+ ('2017-02-10', '2019-05-24', 21, 76),
+ ('2016-07-01', '2018-07-29', 197, 59),
+ ('2017-06-13', '2018-08-06', 198, 80),
+ ('2017-01-16', '2019-01-21', 117, 75),
+ ('2016-10-20', '2018-10-28', 151, 3),
+ ('2017-05-10', '2018-08-24', 147, 1),
+ ('2017-10-01', '2019-02-27', 161, 86),
+ ('2017-08-19', '2018-09-24', 15, 21),
+ ('2018-02-03', '2019-05-05', 11, 14),
+ ('2017-02-04', '2019-05-11', 174, 97),
+ ('2016-08-02', '2019-04-21', 193, 68),
+ ('2018-05-06', '2019-04-14', 186, 69),
+ ('2017-07-14', '2018-12-04', 145, 59),
+ ('2016-10-11', '2019-03-05', 86, 76),
+ ('2018-04-29', '2019-01-29', 62, 42),
+ ('2016-10-27', '2019-06-02', 28, 47),
+ ('2017-02-28', '2018-10-17', 117, 25),
+ ('2017-08-19', '2019-05-22', 99, 37),
+ ('2017-07-26', '2018-10-06', 182, 28),
+ ('2017-05-19', '2019-01-10', 184, 80),
+ ('2018-01-09', '2018-06-26', 23, 89),
+ ('2017-03-05', '2019-01-11', 189, 99),
+ ('2017-03-29', '2018-11-11', 153, 46),
+ ('2018-01-01', '2018-07-15', 121, 2),
+ ('2016-11-08', '2018-12-31', 197, 54),
+ ('2017-01-02', '2018-08-14', 174, 48),
+ ('2016-11-30', '2019-02-26', 197, 19),
+ ('2016-07-29', '2018-08-19', 166, 4),
+ ('2018-02-14', '2018-06-27', 55, 46),
+ ('2017-03-22', '2019-02-11', 52, 61),
+ ('2017-09-28', '2019-02-18', 182, 54),
+ ('2017-04-10', '2018-10-11', 72, 90),
+ ('2016-12-04', '2018-07-02', 151, 7),
+ ('2018-04-12', '2018-12-29', 34, 30),
+ ('2018-06-03', '2018-12-22', 167, 87),
+ ('2017-02-13', '2019-01-20', 144, 95),
+ ('2017-12-01', '2019-02-17', 78, 29),
+ ('2018-01-25', '2019-05-09', 127, 60),
+ ('2016-06-24', '2018-08-27', 9, 16),
+ ('2017-04-18', '2019-05-10', 146, 13),
+ ('2017-04-01', '2019-01-17', 187, 27),
+ ('2017-02-10', '2018-11-23', 124, 63),
+ ('2018-05-05', '2018-12-21', 82, 73),
+ ('2016-11-19', '2019-05-29', 193, 90),
+ ('2018-04-29', '2018-09-28', 89, 95),
+ ('2017-08-06', '2018-09-11', 25, 60),
+ ('2017-03-27', '2018-10-24', 127, 80),
+ ('2017-01-21', '2019-01-01', 162, 47),
+ ('2016-10-30', '2018-09-21', 97, 61),
+ ('2016-07-09', '2018-11-26', 122, 36),
+ ('2016-11-19', '2019-03-16', 8, 20),
+ ('2016-11-18', '2018-06-19', 120, 58),
+ ('2017-10-07', '2018-09-28', 117, 49),
+ ('2016-06-25', '2018-08-14', 139, 19),
+ ('2017-08-06', '2019-02-23', 61, 58),
+ ('2017-01-25', '2018-10-20', 33, 43),
+ ('2018-02-03', '2018-12-29', 8, 88),
+ ('2017-05-14', '2019-03-16', 87, 33),
+ ('2016-12-30', '2019-02-17', 133, 54),
+ ('2018-03-15', '2018-08-03', 75, 13),
+ ('2017-08-14', '2019-03-15', 107, 21),
+ ('2018-01-09', '2018-08-24', 48, 8),
+ ('2017-06-10', '2019-01-22', 94, 79),
+ ('2016-10-30', '2018-08-29', 62, 71),
+ ('2017-12-26', '2019-01-09', 135, 97),
+ ('2017-11-06', '2019-05-19', 2, 16),
+ ('2017-03-13', '2018-12-30', 198, 17),
+ ('2016-11-09', '2019-05-08', 150, 100),
+ ('2017-01-20', '2018-08-04', 45, 48),
+ ('2017-12-09', '2019-01-11', 170, 6),
+ ('2017-07-06', '2019-03-11', 66, 53),
+ ('2018-01-09', '2019-03-06', 48, 18),
+ ('2017-11-17', '2019-06-04', 171, 40),
+ ('2017-09-10', '2018-09-26', 110, 59),
+ ('2017-11-07', '2018-08-30', 144, 24),
+ ('2016-12-02', '2019-05-19', 112, 15),
+ ('2017-06-11', '2019-01-25', 84, 54),
+ ('2016-11-02', '2018-12-26', 64, 14),
+ ('2017-06-09', '2018-10-05', 136, 57),
+ ('2017-03-25', '2018-10-22', 52, 65),
+ ('2018-04-22', '2018-09-01', 72, 19),
+ ('2017-08-23', '2018-10-31', 99, 33),
+ ('2016-07-11', '2019-04-07', 62, 43),
+ ('2017-10-07', '2018-08-27', 123, 1),
+ ('2017-06-16', '2018-07-04', 14, 93),
+ ('2017-06-28', '2019-06-03', 165, 62),
+ ('2017-03-06', '2019-01-20', 160, 36),
+ ('2018-03-24', '2018-11-30', 114, 26),
+ ('2017-12-11', '2019-02-25', 111, 32),
+ ('2017-11-05', '2019-02-18', 57, 34),
+ ('2017-03-24', '2018-09-17', 105, 18),
+ ('2016-12-02', '2019-05-16', 108, 11),
+ ('2016-09-21', '2018-12-25', 116, 55),
+ ('2016-10-24', '2018-12-24', 14, 17),
+ ('2018-01-20', '2019-05-06', 97, 24),
+ ('2017-01-23', '2019-01-16', 130, 61),
+ ('2018-04-12', '2018-07-14', 29, 15),
+ ('2017-08-17', '2018-08-14', 79, 91),
+ ('2016-11-02', '2019-02-02', 84, 35),
+ ('2016-11-25', '2018-06-27', 172, 52),
+ ('2018-06-01', '2018-08-27', 156, 25),
+ ('2018-05-14', '2018-10-29', 187, 45),
+ ('2017-10-05', '2019-02-18', 31, 84),
+ ('2017-01-22', '2018-07-28', 100, 25),
+ ('2016-07-16', '2018-08-15', 116, 67),
+ ('2017-04-16', '2019-04-30', 107, 28),
+ ('2016-12-06', '2018-10-14', 42, 21),
+ ('2016-12-11', '2018-11-13', 99, 54),
+ ('2016-11-29', '2019-03-19', 13, 75),
+ ('2016-09-04', '2018-12-10', 104, 17),
+ ('2017-01-20', '2018-10-17', 117, 19),
+ ('2018-03-02', '2018-12-28', 4, 98),
+ ('2017-03-25', '2018-07-20', 123, 13),
+ ('2017-05-29', '2018-07-31', 163, 91),
+ ('2016-09-12', '2019-01-10', 40, 16),
+ ('2017-10-26', '2018-12-29', 14, 69),
+ ('2017-06-25', '2019-03-13', 142, 17),
+ ('2016-12-16', '2019-04-08', 153, 44),
+ ('2017-10-28', '2018-06-30', 99, 23),
+ ('2017-01-05', '2018-11-20', 162, 54),
+ ('2017-07-05', '2019-05-27', 120, 71),
+ ('2017-02-19', '2019-01-04', 100, 41);
 
 /*_____________________________ESTOQUISTA_____________________________________*/
 
-insert into Estoquista (idfuncionario_spk) values (61);
-insert into Estoquista (idfuncionario_spk) values (80);
-insert into Estoquista (idfuncionario_spk) values (197);
-insert into Estoquista (idfuncionario_spk) values (73);
-insert into Estoquista (idfuncionario_spk) values (152);
-insert into Estoquista (idfuncionario_spk) values (46);
-insert into Estoquista (idfuncionario_spk) values (70);
-insert into Estoquista (idfuncionario_spk) values (74);
-insert into Estoquista (idfuncionario_spk) values (143);
-insert into Estoquista (idfuncionario_spk) values (55);
-insert into Estoquista (idfuncionario_spk) values (96);
-insert into Estoquista (idfuncionario_spk) values (186);
-insert into Estoquista (idfuncionario_spk) values (177);
-insert into Estoquista (idfuncionario_spk) values (120);
-insert into Estoquista (idfuncionario_spk) values (13);
-insert into Estoquista (idfuncionario_spk) values (106);
-insert into Estoquista (idfuncionario_spk) values (122);
-insert into Estoquista (idfuncionario_spk) values (131);
-insert into Estoquista (idfuncionario_spk) values (98);
-insert into Estoquista (idfuncionario_spk) values (60);
-insert into Estoquista (idfuncionario_spk) values (12);
-insert into Estoquista (idfuncionario_spk) values (83);
-insert into Estoquista (idfuncionario_spk) values (132);
-insert into Estoquista (idfuncionario_spk) values (165);
-insert into Estoquista (idfuncionario_spk) values (194);
-insert into Estoquista (idfuncionario_spk) values (77);
-insert into Estoquista (idfuncionario_spk) values (79);
-insert into Estoquista (idfuncionario_spk) values (166);
-insert into Estoquista (idfuncionario_spk) values (96);
-insert into Estoquista (idfuncionario_spk) values (160);
-insert into Estoquista (idfuncionario_spk) values (6);
-insert into Estoquista (idfuncionario_spk) values (32);
-insert into Estoquista (idfuncionario_spk) values (43);
-insert into Estoquista (idfuncionario_spk) values (102);
-insert into Estoquista (idfuncionario_spk) values (2);
-insert into Estoquista (idfuncionario_spk) values (156);
-insert into Estoquista (idfuncionario_spk) values (153);
-insert into Estoquista (idfuncionario_spk) values (28);
-insert into Estoquista (idfuncionario_spk) values (56);
-insert into Estoquista (idfuncionario_spk) values (180);
-insert into Estoquista (idfuncionario_spk) values (18);
-insert into Estoquista (idfuncionario_spk) values (17);
-insert into Estoquista (idfuncionario_spk) values (105);
-insert into Estoquista (idfuncionario_spk) values (144);
-insert into Estoquista (idfuncionario_spk) values (12);
-insert into Estoquista (idfuncionario_spk) values (127);
-insert into Estoquista (idfuncionario_spk) values (131);
-insert into Estoquista (idfuncionario_spk) values (161);
-insert into Estoquista (idfuncionario_spk) values (154);
-insert into Estoquista (idfuncionario_spk) values (140);
+ insert into Estoquista (idfuncionario_spk) values
+ (61),
+ (80),
+ (197),
+ (73),
+ (152),
+ (46),
+ (70),
+ (74),
+ (143),
+ (55),
+ (96),
+ (186),
+ (177),
+ (120),
+ (13),
+ (106),
+ (122),
+ (131),
+ (98),
+ (60),
+ (12),
+ (83),
+ (132),
+ (165),
+ (194),
+ (77),
+ (79),
+ (166),
+ (96),
+ (160),
+ (6),
+ (32),
+ (43),
+ (102),
+ (2),
+ (156),
+ (153),
+ (28),
+ (56),
+ (180),
+ (18),
+ (17),
+ (105),
+ (144),
+ (12),
+ (127),
+ (131),
+ (161),
+ (154),
+ (140);
 
 /*_____________________________ESTOCA_____________________________________*/
 
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-02-13 11:45:38', 466, 195, 43);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-10-31 04:15:52', 243, 43, 18);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-06-26 05:10:36', 386, 40, 186);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-10-08 12:35:27', 130, 36, 43);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-12 10:28:27', 157, 109, 166);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-01-21 18:37:50', 302, 57, 77);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-02-26 22:30:50', 381, 32, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-05-30 07:53:29', 78, 3, 154);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-02-19 11:24:14', 220, 106, 180);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-07-28 05:39:17', 26, 102, 56);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-10-12 06:48:20', 484, 99, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-07-09 20:25:46', 384, 134, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-11-16 17:22:20', 249, 151, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-03 11:46:41', 150, 128, 143);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-12-07 05:09:15', 486, 68, 96);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-11-15 00:30:33', 53, 3, 6);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-10 06:30:57', 182, 87, 194);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-01-30 04:10:42', 87, 80, 165);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-12-11 20:10:44', 6, 99, 74);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-03-12 07:46:43', 45, 163, 177);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-09-08 02:03:26', 403, 79, 55);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-08 22:13:54', 4, 63, 56);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-22 20:56:18', 95, 170, 180);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-07-18 09:13:53', 225, 71, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-02-20 04:42:06', 318, 125, 60);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-26 01:18:38', 449, 100, 55);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-04-01 00:15:15', 455, 182, 96);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-03 15:14:49', 58, 192, 73);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-12-25 15:48:28', 117, 126, 131);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-10 12:03:39', 44, 14, 17);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-13 23:34:53', 496, 10, 73);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-26 12:05:38', 200, 61, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-06 04:26:32', 259, 31, 74);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-21 02:30:46', 289, 174, 83);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-09-18 13:15:41', 347, 52, 105);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-09-18 15:42:52', 448, 149, 32);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-03-18 17:50:07', 124, 68, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-01 12:50:26', 99, 185, 144);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-06 21:32:16', 345, 98, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-05-30 08:02:39', 333, 47, 17);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-12-24 11:15:58', 339, 27, 17);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-15 02:01:13', 175, 112, 74);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-10-07 21:06:51', 272, 118, 156);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-03-20 16:20:18', 435, 168, 102);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-02-17 03:57:57', 200, 130, 140);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-12-25 20:01:24', 410, 173, 79);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-04-06 17:46:33', 422, 31, 98);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-04 07:51:32', 409, 129, 79);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-29 02:20:41', 105, 106, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-10-04 13:35:55', 142, 168, 32);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-06-06 13:34:41', 63, 101, 131);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-21 13:45:54', 438, 173, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-10-06 21:05:08', 200, 52, 197);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-12 20:38:55', 238, 174, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-06-19 06:31:49', 3, 8, 166);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-12 09:04:05', 259, 80, 166);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-12-17 10:40:46', 451, 29, 55);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-21 00:01:18', 397, 105, 83);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-05-13 16:28:56', 66, 51, 180);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-11-07 09:24:24', 11, 191, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-03-03 01:04:32', 322, 82, 156);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-07-20 04:16:15', 250, 44, 102);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-06-12 22:54:35', 351, 25, 18);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-02-07 08:54:26', 182, 50, 131);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-14 02:07:54', 413, 29, 156);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-03-24 14:01:03', 110, 132, 73);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-05-11 13:01:09', 349, 198, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-01-26 07:16:07', 311, 84, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-18 23:31:57', 483, 128, 56);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-05 00:38:37', 116, 22, 161);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-04-27 14:16:28', 57, 106, 152);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-01-16 17:30:31', 498, 170, 80);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-08-15 04:52:23', 350, 177, 152);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-10-19 21:22:31', 20, 81, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-02 08:23:10', 368, 181, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-11-11 10:08:05', 121, 195, 32);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-06-12 07:53:01', 230, 134, 180);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-06-10 00:22:05', 215, 64, 186);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-09-27 03:02:10', 157, 96, 13);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-05-20 17:35:32', 196, 77, 55);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-07-30 15:48:39', 436, 32, 77);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-05-11 07:30:49', 329, 138, 6);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-13 06:37:35', 433, 98, 131);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-03-23 13:52:09', 121, 152, 154);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-09-19 11:43:31', 249, 50, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-09-06 06:37:29', 92, 78, 96);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-06-28 23:25:44', 136, 38, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-03-13 13:34:22', 295, 156, 120);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-28 07:11:11', 230, 62, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-10-09 10:39:01', 357, 136, 153);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-12-18 03:05:42', 19, 65, 156);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-12-11 08:21:50', 121, 67, 140);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-09-16 07:48:06', 447, 198, 70);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-09 00:33:51', 133, 91, 28);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-11 01:30:01', 74, 171, 43);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-03-20 21:47:38', 102, 53, 12);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-08 16:21:37', 150, 126, 140);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-09-12 17:55:44', 236, 30, 18);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-11-30 01:19:39', 210, 103, 80);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-02-23 11:44:34', 54, 15, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-04-27 16:10:41', 246, 8, 13);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-17 22:59:25', 92, 110, 153);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-18 16:35:05', 56, 104, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-01-24 18:36:31', 225, 124, 131);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-08-10 12:02:40', 371, 138, 197);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-03 17:37:13', 14, 64, 17);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-04-21 00:32:20', 39, 180, 77);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-01-27 17:48:40', 138, 142, 61);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-30 09:48:11', 186, 160, 55);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-09-26 10:29:43', 199, 7, 144);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-11-23 10:36:16', 115, 10, 13);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-02-10 05:08:27', 301, 88, 152);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-09-22 07:40:09', 297, 7, 2);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-02-19 05:47:14', 327, 172, 6);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-02-26 15:03:19', 288, 95, 73);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-12-29 07:16:39', 223, 139, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-11-10 12:46:15', 275, 151, 152);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-06-07 02:17:41', 300, 58, 102);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-02-21 03:21:56', 353, 51, 98);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-02-20 16:38:52', 107, 113, 96);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-08 02:33:36', 167, 54, 156);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-01-02 17:00:42', 419, 44, 79);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-04 13:51:09', 264, 53, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-09-19 03:15:23', 295, 154, 18);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-04-18 10:12:03', 400, 184, 56);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-11-14 09:28:08', 185, 142, 140);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-05-02 05:34:20', 16, 117, 154);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-04-10 20:00:45', 35, 124, 77);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-08-28 08:42:27', 216, 51, 143);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-09-13 07:24:08', 470, 178, 102);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-04-27 08:45:54', 231, 22, 122);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-09 04:02:50', 420, 52, 74);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-17 15:46:30', 199, 192, 153);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-12-06 15:39:29', 144, 62, 165);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-12-25 18:07:04', 176, 195, 106);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-03 08:12:37', 18, 148, 73);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-10-30 11:00:13', 233, 92, 46);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-10-06 14:02:08', 98, 162, 79);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-02-03 10:20:15', 84, 111, 32);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-07-21 05:25:57', 446, 120, 180);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2019-05-27 09:21:24', 31, 100, 70);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2016-07-31 23:21:44', 491, 196, 127);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-06-28 05:07:19', 183, 192, 161);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2015-07-10 19:59:01', 55, 74, 152);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2018-08-09 13:04:59', 309, 166, 154);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-04-28 08:47:24', 51, 27, 98);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-05-13 14:11:53', 433, 8, 17);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-08-04 13:09:24', 219, 89, 160);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-12-22 19:33:19', 325, 104, 143);
-insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values ('2017-08-05 18:30:11', 30, 14, 143);
+ insert into Estoca (dataestoc, idlote_spk, idcontainer_spk, idestoquista_spk) values 
+ ('2016-02-13 11:45:38', 466, 195, 43),
+ ('2015-10-31 04:15:52', 243, 43, 18),
+ ('2015-06-26 05:10:36', 386, 40, 186),
+ ('2016-10-08 12:35:27', 130, 36, 43),
+ ('2017-09-12 10:28:27', 157, 109, 166),
+ ('2017-01-21 18:37:50', 302, 57, 77),
+ ('2019-02-26 22:30:50', 381, 32, 46),
+ ('2017-05-30 07:53:29', 78, 3, 154),
+ ('2016-02-19 11:24:14', 220, 106, 180),
+ ('2018-07-28 05:39:17', 26, 102, 56),
+ ('2017-10-12 06:48:20', 484, 99, 12),
+ ('2016-07-09 20:25:46', 384, 134, 160),
+ ('2015-11-16 17:22:20', 249, 151, 12),
+ ('2015-08-03 11:46:41', 150, 128, 143),
+ ('2015-12-07 05:09:15', 486, 68, 96),
+ ('2015-11-15 00:30:33', 53, 3, 6),
+ ('2015-08-10 06:30:57', 182, 87, 194),
+ ('2018-01-30 04:10:42', 87, 80, 165),
+ ('2017-12-11 20:10:44', 6, 99, 74),
+ ('2018-03-12 07:46:43', 45, 163, 177),
+ ('2016-09-08 02:03:26', 403, 79, 55),
+ ('2015-08-08 22:13:54', 4, 63, 56),
+ ('2015-08-22 20:56:18', 95, 170, 180),
+ ('2017-07-18 09:13:53', 225, 71, 12),
+ ('2016-02-20 04:42:06', 318, 125, 60),
+ ('2019-04-26 01:18:38', 449, 100, 55),
+ ('2016-04-01 00:15:15', 455, 182, 96),
+ ('2019-04-03 15:14:49', 58, 192, 73),
+ ('2018-12-25 15:48:28', 117, 126, 131),
+ ('2018-08-10 12:03:39', 44, 14, 17),
+ ('2017-06-13 23:34:53', 496, 10, 73),
+ ('2017-06-26 12:05:38', 200, 61, 12),
+ ('2017-09-06 04:26:32', 259, 31, 74),
+ ('2016-01-21 02:30:46', 289, 174, 83),
+ ('2016-09-18 13:15:41', 347, 52, 105),
+ ('2015-09-18 15:42:52', 448, 149, 32),
+ ('2019-03-18 17:50:07', 124, 68, 160),
+ ('2017-06-01 12:50:26', 99, 185, 144),
+ ('2017-09-06 21:32:16', 345, 98, 12),
+ ('2016-05-30 08:02:39', 333, 47, 17),
+ ('2017-12-24 11:15:58', 339, 27, 17),
+ ('2019-04-15 02:01:13', 175, 112, 74),
+ ('2017-10-07 21:06:51', 272, 118, 156),
+ ('2016-03-20 16:20:18', 435, 168, 102),
+ ('2019-02-17 03:57:57', 200, 130, 140),
+ ('2015-12-25 20:01:24', 410, 173, 79),
+ ('2017-04-06 17:46:33', 422, 31, 98),
+ ('2017-06-04 07:51:32', 409, 129, 79),
+ ('2015-08-29 02:20:41', 105, 106, 160),
+ ('2015-10-04 13:35:55', 142, 168, 32),
+ ('2018-06-06 13:34:41', 63, 101, 131),
+ ('2018-08-21 13:45:54', 438, 173, 160),
+ ('2018-10-06 21:05:08', 200, 52, 197),
+ ('2018-08-12 20:38:55', 238, 174, 12),
+ ('2016-06-19 06:31:49', 3, 8, 166),
+ ('2015-08-12 09:04:05', 259, 80, 166),
+ ('2018-12-17 10:40:46', 451, 29, 55),
+ ('2018-08-21 00:01:18', 397, 105, 83),
+ ('2017-05-13 16:28:56', 66, 51, 180),
+ ('2018-11-07 09:24:24', 11, 191, 106),
+ ('2018-03-03 01:04:32', 322, 82, 156),
+ ('2018-07-20 04:16:15', 250, 44, 102),
+ ('2016-06-12 22:54:35', 351, 25, 18),
+ ('2016-02-07 08:54:26', 182, 50, 131),
+ ('2015-07-14 02:07:54', 413, 29, 156),
+ ('2016-03-24 14:01:03', 110, 132, 73),
+ ('2018-05-11 13:01:09', 349, 198, 46),
+ ('2017-01-26 07:16:07', 311, 84, 46),
+ ('2017-09-18 23:31:57', 483, 128, 56),
+ ('2017-09-05 00:38:37', 116, 22, 161),
+ ('2016-04-27 14:16:28', 57, 106, 152),
+ ('2019-01-16 17:30:31', 498, 170, 80),
+ ('2017-08-15 04:52:23', 350, 177, 152),
+ ('2017-10-19 21:22:31', 20, 81, 160),
+ ('2015-07-02 08:23:10', 368, 181, 106),
+ ('2017-11-11 10:08:05', 121, 195, 32),
+ ('2019-06-12 07:53:01', 230, 134, 180),
+ ('2018-06-10 00:22:05', 215, 64, 186),
+ ('2015-09-27 03:02:10', 157, 96, 13),
+ ('2019-05-20 17:35:32', 196, 77, 55),
+ ('2017-07-30 15:48:39', 436, 32, 77),
+ ('2016-05-11 07:30:49', 329, 138, 6),
+ ('2016-01-13 06:37:35', 433, 98, 131),
+ ('2018-03-23 13:52:09', 121, 152, 154),
+ ('2017-09-19 11:43:31', 249, 50, 12),
+ ('2018-09-06 06:37:29', 92, 78, 96),
+ ('2018-06-28 23:25:44', 136, 38, 106),
+ ('2018-03-13 13:34:22', 295, 156, 120),
+ ('2016-01-28 07:11:11', 230, 62, 106),
+ ('2016-10-09 10:39:01', 357, 136, 153),
+ ('2018-12-18 03:05:42', 19, 65, 156),
+ ('2018-12-11 08:21:50', 121, 67, 140),
+ ('2018-09-16 07:48:06', 447, 198, 70),
+ ('2017-06-09 00:33:51', 133, 91, 28),
+ ('2017-06-11 01:30:01', 74, 171, 43),
+ ('2017-03-20 21:47:38', 102, 53, 12),
+ ('2019-04-08 16:21:37', 150, 126, 140),
+ ('2018-09-12 17:55:44', 236, 30, 18),
+ ('2018-11-30 01:19:39', 210, 103, 80),
+ ('2018-02-23 11:44:34', 54, 15, 160),
+ ('2017-04-27 16:10:41', 246, 8, 13),
+ ('2015-07-17 22:59:25', 92, 110, 153),
+ ('2015-07-18 16:35:05', 56, 104, 46),
+ ('2018-01-24 18:36:31', 225, 124, 131),
+ ('2015-08-10 12:02:40', 371, 138, 197),
+ ('2019-04-03 17:37:13', 14, 64, 17),
+ ('2019-04-21 00:32:20', 39, 180, 77),
+ ('2017-01-27 17:48:40', 138, 142, 61),
+ ('2016-01-30 09:48:11', 186, 160, 55),
+ ('2018-09-26 10:29:43', 199, 7, 144),
+ ('2018-11-23 10:36:16', 115, 10, 13),
+ ('2016-02-10 05:08:27', 301, 88, 152),
+ ('2016-09-22 07:40:09', 297, 7, 2),
+ ('2018-02-19 05:47:14', 327, 172, 6),
+ ('2019-02-26 15:03:19', 288, 95, 73),
+ ('2015-12-29 07:16:39', 223, 139, 46),
+ ('2016-11-10 12:46:15', 275, 151, 152),
+ ('2016-06-07 02:17:41', 300, 58, 102),
+ ('2019-02-21 03:21:56', 353, 51, 98),
+ ('2018-02-20 16:38:52', 107, 113, 96),
+ ('2016-01-08 02:33:36', 167, 54, 156),
+ ('2016-01-02 17:00:42', 419, 44, 79),
+ ('2017-06-04 13:51:09', 264, 53, 106),
+ ('2015-09-19 03:15:23', 295, 154, 18),
+ ('2018-04-18 10:12:03', 400, 184, 56),
+ ('2015-11-14 09:28:08', 185, 142, 140),
+ ('2017-05-02 05:34:20', 16, 117, 154),
+ ('2016-04-10 20:00:45', 35, 124, 77),
+ ('2017-08-28 08:42:27', 216, 51, 143),
+ ('2018-09-13 07:24:08', 470, 178, 102),
+ ('2017-04-27 08:45:54', 231, 22, 122),
+ ('2015-07-09 04:02:50', 420, 52, 74),
+ ('2018-08-17 15:46:30', 199, 192, 153),
+ ('2017-12-06 15:39:29', 144, 62, 165),
+ ('2017-12-25 18:07:04', 176, 195, 106),
+ ('2017-06-03 08:12:37', 18, 148, 73),
+ ('2016-10-30 11:00:13', 233, 92, 46),
+ ('2016-10-06 14:02:08', 98, 162, 79),
+ ('2019-02-03 10:20:15', 84, 111, 32),
+ ('2016-07-21 05:25:57', 446, 120, 180),
+ ('2019-05-27 09:21:24', 31, 100, 70),
+ ('2016-07-31 23:21:44', 491, 196, 127),
+ ('2017-06-28 05:07:19', 183, 192, 161),
+ ('2015-07-10 19:59:01', 55, 74, 152),
+ ('2018-08-09 13:04:59', 309, 166, 154),
+ ('2017-04-28 08:47:24', 51, 27, 98),
+ ('2017-05-13 14:11:53', 433, 8, 17),
+ ('2017-08-04 13:09:24', 219, 89, 160),
+ ('2017-12-22 19:33:19', 325, 104, 143),
+ ('2017-08-05 18:30:11', 30, 14, 143);
+
+
+/*SET FOREIGN_KEY_CHECKS = 1;*/

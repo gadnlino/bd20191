@@ -9,7 +9,6 @@
 */
 
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (1, 2, 48, 19);
-insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (2, 20, 48, 43);
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (3, 25, 10, 47);
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (4, 4, 9, 4);
 insert into Lote (idlote_pk, setor, posicao, idarmazem_fk) values (5, 9, 1, 20);
