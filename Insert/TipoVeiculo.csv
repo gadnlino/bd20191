@@ -1,0 +1,4 @@
+idTipoVeiculo_PK,nome,numMaxContainers
+1,Caminhão,1
+2,Navio,50
+3,Trem,20

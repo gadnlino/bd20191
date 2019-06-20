@@ -1,101 +1,21 @@
-idCliente_PK,cep,email,nome,endereco,telefone
-1,36590952,mphaup0@bigcartel.com,"Mona Phaup","9828 Crest Line Road",4428315486
-2,61465350,dwiddison1@furl.net,"Dimitri Widdison","9 Westend Court",4534232056
-3,16660081,sthyer2@techcrunch.com,"Sigfrid Thyer","998 Hansons Center",1866259845
-4,93833845,gzecchii3@indiegogo.com,"Grier Zecchii","25830 Sunnyside Park",4342044796
-5,40424620,kvolleth4@patch.com,"Kath Volleth","67521 Village Avenue",1924177935
-6,53932866,jtatersale5@e-recht24.de,"Justino Tatersale","232 8th Lane",4978905321
-7,11802176,tbritten6@earthlink.net,"Tony Britten","55102 Loomis Trail",4439602726
-8,42855265,nheimann7@digg.com,"Norman Heimann","0 Everett Plaza",3868907977
-9,79495054,apardie8@hp.com,"Angeline Pardie","339 Nova Avenue",7824786166
-10,76497847,msherebrook9@imageshack.us,"Marten Sherebrook","3745 New Castle Hill",8771968816
-11,14438715,cdumingosa@loc.gov,"Cassondra Dumingos","567 Cardinal Junction",7344442670
-12,9181099,eleb@biglobe.ne.jp,"Elwood Le Floch","4 Clemons Drive",3638300281
-13,89634656,khaysomc@dot.gov,"Kathryn Haysom","881 Heath Circle",1032974520
-14,163207,osethd@ezinearticles.com,"Omar Seth","4147 Glendale Crossing",2098769488
-15,89823680,dfrondte@earthlink.net,"Dedie Frondt","20 Fulton Road",1782498267
-16,17205391,corneblowf@amazonaws.com,"Corella Orneblow","9 Dahle Pass",3829907896
-17,75067833,rdeg@elpais.com,"Ramonda De la Perrelle","2590 Shoshone Terrace",7022247530
-18,89815684,bpilbeamh@state.gov,"Brenn Pilbeam","269 Ludington Alley",2343712088
-19,20351674,cpurcelli@desdev.cn,"Cullie Purcell","0920 Macpherson Plaza",8851409103
-20,36093411,ccadanyj@hugedomains.com,"Cicely Cadany","18 Holmberg Lane",1527954440
-21,25422657,nbrozk@comcast.net,"Nell Broz","5694 Vernon Road",8176349799
-22,28467114,fhubbisl@jugem.jp,"Fay Hubbis","652 Scoville Road",7403469249
-23,7532385,hharrollm@nature.com,"Harold Harroll","282 Golden Leaf Park",3423912357
-24,98348680,dkeeln@163.com,"Danyelle Keel","75419 Washington Pass",9052036479
-25,21635839,asnowdeno@earthlink.net,"Anthia Snowden","38352 Lawn Trail",6627694783
-26,95766923,gfudgerp@skyrock.com,"Glynn Fudger","34622 Thompson Court",5896569683
-27,59502253,lbrowettq@cyberchimps.com,"Lou Browett","96226 Linden Street",5005904092
-28,68991669,ffolbiggr@redcross.org,"Fabien Folbigg","70 Fairview Point",9658720546
-29,46574122,cbeethams@statcounter.com,"Cirillo Beetham","5418 Buhler Terrace",5091046572
-30,65917275,gsygrovet@feedburner.com,"Gale Sygrove","942 Springview Hill",2872796558
-31,64165671,lodyvoieu@hud.gov,"Ludovico O'Dyvoie","2625 Londonderry Street",3704868008
-32,73914909,jvestyv@booking.com,"Jocko Vesty","59 Washington Court",4135166123
-33,24727207,abecksonw@hud.gov,"Ayn Beckson","2360 Sunbrook Street",3935516864
-34,32229884,emcgennisx@mapy.cz,"Eddi McGennis","067 Pawling Plaza",2133843594
-35,99067388,rpaulischy@cafepress.com,"Rosanne Paulisch","5360 Redwing Road",5823918310
-36,63956988,abuglerz@com.com,"Abby Bugler","08363 Westport Junction",8938710665
-37,90619310,bskerman10@techcrunch.com,"Brnaba Skerman","80 Fair Oaks Terrace",4251400897
-38,53163077,dtunnoch11@flavors.me,"Dorene Tunnoch","66249 Grover Trail",3846781815
-39,27589451,rpatry12@artisteer.com,"Rudyard Patry","9226 Kennedy Center",2213287334
-40,67664953,lscales13@tinypic.com,"Lenci Scales","1391 Warner Center",9487584322
-41,35845480,mtruwert14@marketwatch.com,"Melitta Truwert","3679 Hintze Way",2042091926
-42,23445008,njiran15@phpbb.com,"Nalani Jiran","49 Messerschmidt Way",3245019306
-43,57598507,cvalentinuzzi16@pagesperso-orange.fr,"Chrisse Valentinuzzi","4 Goodland Road",9507748533
-44,79543911,mweatherhogg17@cloudflare.com,"Melonie Weatherhogg","9 Hollow Ridge Street",7522634070
-45,69931913,gsackur18@opensource.org,"Ginni Sackur","80 Russell Terrace",8881970579
-46,90535015,dcanner19@netvibes.com,"Domenico Canner","60164 Green Lane",8351921042
-47,82090521,nwhitter1a@paginegialle.it,"Newton Whitter","470 Cherokee Pass",3615579778
-48,1735837,ddannett1b@ucla.edu,"Diego Dannett","80923 Columbus Drive",4219939603
-49,42058815,ljacobsohn1c@dropbox.com,"Lusa Jacobsohn","599 Messerschmidt Trail",9155947259
-50,63481720,klackner1d@tumblr.com,"Kylila Lackner","33063 Weeping Birch Terrace",1833163600
-51,30019259,ajurgenson1e@elegantthemes.com,"Alair Jurgenson","5 Sloan Crossing",4974134728
-52,49273780,pkenward1f@berkeley.edu,"Pia Kenward","5184 Delladonna Trail",9034535378
-53,53598587,fclimer1g@wikimedia.org,"Farica Climer","3869 Lawn Hill",6831336650
-54,86840283,lmcgaugan1h@mediafire.com,"Lyda McGaugan","32012 Autumn Leaf Drive",3165821719
-55,37094254,elafoy1i@xing.com,"Ernesto Lafoy","7380 Anderson Terrace",6644657294
-56,3093942,qgreeno1j@bandcamp.com,"Quentin Greeno","1166 Carpenter Point",3201408120
-57,95059358,frubinovitsch1k@360.cn,"Faina Rubinovitsch","1580 Hollow Ridge Alley",2549303063
-58,10126220,tdelf1l@tripod.com,"Tiffi Delf","325 Farwell Court",4717146583
-59,25828742,lbools1m@economist.com,"Lind Bools","008 Eagan Park",8363362726
-60,36159698,fmease1n@instagram.com,"Farah Mease","214 Emmet Street",1682190489
-61,91230067,zyoxall1o@ucsd.edu,"Zonda Yoxall","88017 Emmet Drive",3695513795
-62,48220490,lfryatt1p@msu.edu,"Leighton Fryatt","10 Eggendart Park",6496905297
-63,93892035,gmccrisken1q@mapy.cz,"Gus McCrisken","62 La Follette Road",9524432485
-64,79679992,mfrusher1r@odnoklassniki.ru,"Maura Frusher","6 Killdeer Terrace",2818524024
-65,59224282,mgerriet1s@nytimes.com,"Miran Gerriet","8958 Eastlawn Parkway",8193121766
-66,28281665,wflaonier1t@1688.com,"Wye Flaonier","83 Kropf Drive",5139007583
-67,27731094,pjaggard1u@tmall.com,"Patrizius Jaggard","433 Main Way",1053785278
-68,6236426,ftasseler1v@sakura.ne.jp,"Friedrich Tasseler","5 Springview Lane",7579514384
-69,43796322,olorroway1w@businessinsider.com,"Oliy Lorroway","88212 Dorton Point",8804844650
-70,46045352,wpeiser1x@freewebs.com,"Wright Peiser","880 Sunfield Parkway",4843123001
-71,16259291,wabeles1y@blog.com,"Wakefield Abeles","3315 Rockefeller Road",1266802207
-72,3341856,enewtown1z@businesswire.com,"Erin Newtown","721 Nevada Park",2628738838
-73,53116014,rpermain20@omniture.com,"Rosabel Permain","550 Pankratz Park",1897915345
-74,96215737,llugton21@i2i.jp,"Leonanie Lugton","753 Colorado Street",6605299752
-75,71577430,lmanagh22@shareasale.com,"Lance Managh","036 Esker Crossing",5324559863
-76,33368108,wvaar23@geocities.com,"Wilone Vaar","1 Muir Street",2174899897
-77,10081981,cplewes24@nationalgeographic.com,"Chelsae Plewes","1 Buhler Street",8185663856
-78,53509400,wpaulin25@imdb.com,"Winthrop Paulin","8723 Dryden Plaza",2445836825
-79,8180798,rprime26@house.gov,"Reba Prime","064 Ludington Alley",1603405581
-80,1521939,kfarress27@zdnet.com,"Kori Farress","422 Hollow Ridge Crossing",4796366785
-81,18846587,mbalshen28@archive.org,"Maryanne Balshen","290 Anthes Trail",2224206936
-82,75522326,egibbon29@technorati.com,"Eleanor Gibbon","964 Quincy Crossing",8378227632
-83,95674678,ajoicey2a@alexa.com,"Archaimbaud Joicey","6 Autumn Leaf Center",4479995201
-84,55585101,mwoodyatt2b@imageshack.us,"Michaelina Woodyatt","291 Washington Hill",1548205244
-85,72620148,fbutterwick2c@jiathis.com,"Frasier Butterwick","2 Anderson Park",1168963857
-86,61876373,dcammack2d@senate.gov,"Doralynn Cammack","49409 Sauthoff Crossing",7466567530
-87,75897501,gmctiernan2e@ft.com,"Gaspar McTiernan","703 Calypso Park",8269639123
-88,99306912,csankey2f@wiley.com,"Cally Sankey","8356 Ludington Plaza",8657582254
-89,75532487,nludwig2g@4shared.com,"Nonah Ludwig","680 Stuart Trail",5144899880
-90,18793133,hpatise2h@mediafire.com,"Herrick Patise","77 Dapin Terrace",2352627003
-91,20534947,treagan2i@tumblr.com,"Tore Reagan","344 Doe Crossing Avenue",7809088170
-92,98143725,rreedyhough2j@furl.net,"Rosaleen Reedyhough","61041 Cascade Trail",8234609241
-93,8785173,btolmie2k@gizmodo.com,"Benn Tolmie","74 Ronald Regan Pass",8034248105
-94,55283112,sasif2l@soup.io,"Shaine Asif","4 Dahle Lane",7063722961
-95,56406796,dgonsalvez2m@theglobeandmail.com,"Delphine Gonsalvez","196 Beilfuss Street",3611785728
-96,52164975,csalliere2n@facebook.com,"Cash Salliere","68 Golf Course Avenue",2949233218
-97,99256094,hpreto2o@salon.com,"Hamish Preto","0 Harbort Avenue",5953151014
-98,30973218,nemmatt2p@friendfeed.com,"Nadeen Emmatt","5458 Anniversary Terrace",2421538941
-99,72945268,pattenbrough2q@nationalgeographic.com,"Petronilla Attenbrough","81528 Jackson Park",3569401864
-100,57355446,gielden2r@sciencedirect.com,"Godiva Ielden","9 Victoria Trail",5286434175
+idCliente_PK,cep,emailCliente,nome,endereco,telefone
+1,83108184,emaudling0@webs.com,"Emlyn Maudling","22 Tennessee Junction",2798678942
+2,37183203,gbeazer1@cam.ac.uk,"Garald Beazer","39829 Bunting Circle",8051765396
+3,43896814,yspick2@posterous.com,"Yettie Spick","7 Westerfield Street",8829909282
+4,25649381,esapauton3@cloudflare.com,"Edee Sapauton","10 Charing Cross Street",8604534377
+5,77457947,rughi4@java.com,"Richmound Ughi","9 Jay Road",8673124426
+6,27750592,phutcheon5@illinois.edu,"Preston Hutcheon","4 3rd Junction",3654571232
+7,34849688,cbirdseye6@bing.com,"Corrina Birdseye","1 Stephen Street",8064818857
+8,82523045,ijachimczak7@ebay.co.uk,"Irving Jachimczak","9 Coleman Court",4054188536
+9,90625202,wvarrow8@webs.com,"Whitney Varrow","3597 Cardinal Pass",6101164045
+10,93055668,keakins9@nydailynews.com,"Kathe Eakins","19937 Holy Cross Park",3209087201
+11,65230485,asimmersa@drupal.org,"Abba Simmers","728 Autumn Leaf Court",1817345215
+12,66854627,pnorleyb@ibm.com,"Penn Norley","9386 Fair Oaks Drive",7306192315
+13,15499180,mmartelc@vimeo.com,"Morissa Martel","161 4th Circle",9838998606
+14,86525872,tromerild@hexun.com,"Tad Romeril","626 Stang Crossing",1193683937
+15,71475425,kknollesgreene@shutterfly.com,"Kirsten Knolles-Green","53 Old Shore Parkway",4566570058
+16,61794903,echelleyf@icio.us,"Eve Chelley","54 Haas Road",7536856601
+17,79367324,jcampeyg@jimdo.com,"Juana Campey","90302 Clemons Parkway",8702819772
+18,93344329,rperassih@fda.gov,"Reilly Perassi","072 Onsgard Parkway",4956121253
+19,17882454,tmaggiorii@fda.gov,"Tine Maggiori","16 Scott Avenue",8256407048
+20,65651657,nburnessj@cbslocal.com,"Nobie Burness","86 Montana Court",3686211811

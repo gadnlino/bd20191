@@ -1,0 +1,6 @@
+idTipoProduto_PK,descricao
+1,Perecivel
+2,"Não perecivel"
+3,Frágil
+4,Inflamável
+5,"Substância tóxica"
