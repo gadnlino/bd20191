@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import empresa_containers.ExceptionCaller;
 import empresa_containers.modelo.Cliente;
 import empresa_containers.modelo.Container;
 
@@ -80,7 +81,13 @@ public class ClienteDAO {
 				clientes.add(c);
 			}
 			return clientes;
+		}		catch (SQLException ex) {
+			
+			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			
 		}
+		
+		return null;
 	}
 	
 

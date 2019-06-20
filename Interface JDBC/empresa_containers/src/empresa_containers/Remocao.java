@@ -1,5 +1,6 @@
 package empresa_containers;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -15,8 +16,9 @@ public class Remocao {
 	 * @param table Nome da tabela
 	 * @param condition Condicao para se deletar uma ou mais tuplas da tabela
 	 * @throws SQLException
+	 * @throws ConnectException 
 	 */
-	public static void removeTupla(String table, String condition) throws SQLException {
+	public static void removeTupla(String table, String condition) throws SQLException, Exception {
 		
 		Connection connection = new ConnectionPool().getConnection();
 		
@@ -34,7 +36,7 @@ public class Remocao {
 		connection.close();
 	}
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, Exception {
 
 
 		removeTupla("Container", "IdContainer_PK = 301" );

@@ -17,7 +17,7 @@ public class ConsultasParaUsuario {
 		
 		ArrayList<Integer> lista = new ArrayList<>();
 		
-		try(Connection connection = new ConnectionPool().getConnection()){
+		try(Connection conn = new ConnectionPool().connect()){
 			
 			int idMaximo;
 			
@@ -27,7 +27,7 @@ public class ConsultasParaUsuario {
 					"                                                where idCliente_PK in (select idCliente_SPK from PessoaFisica\r\n" + 
 					"                                                                        where cpf = '" + cpf +"')));";
 			
-			try(Statement statement = connection.createStatement()){
+			try(Statement statement = conn.createStatement()){
 				
 				statement.execute(sql);
 				
@@ -42,6 +42,10 @@ public class ConsultasParaUsuario {
 					
 				}
 				
+			}	catch (SQLException ex) {
+				
+				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				
 			}
 			
 			
@@ -51,12 +55,14 @@ public class ConsultasParaUsuario {
 
 		return ;
 	}
+
+
 	
 	public static void id_Dos_Produtos_PJ(String cnpj) throws SQLException {
 		
 		ArrayList<Integer> lista = new ArrayList<>();
 		
-		try(Connection connection = new ConnectionPool().getConnection()){
+		try(Connection connection = new ConnectionPool().connect()){
 			
 			int idMaximo;
 			
@@ -81,6 +87,10 @@ public class ConsultasParaUsuario {
 					
 				}
 				
+			}	catch (SQLException ex) {
+				
+				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				
 			}
 			
 			
@@ -93,7 +103,7 @@ public class ConsultasParaUsuario {
 	
 	public static void cliente_E_Pedidos_Afetados_Por_Acidente(String acidente) throws SQLException {
 		
-		try(Connection connection = new ConnectionPool().getConnection()){
+		try(Connection connection = new ConnectionPool().connect()){
 			
 			int idMaximo;
 			
@@ -116,6 +126,10 @@ public class ConsultasParaUsuario {
 					
 				}
 				
+			}	catch (SQLException ex) {
+				
+				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				
 			}
 			
 			
@@ -126,7 +140,7 @@ public class ConsultasParaUsuario {
 	
 	public static void proc_Insere_Pedido(String str1, String str2, String str3, String str4) throws SQLException {
 		
-		try(Connection connection = new ConnectionPool().getConnection()){
+		try(Connection connection = new ConnectionPool().connect()){
 			
 			int idMaximo;
 			
@@ -138,6 +152,10 @@ public class ConsultasParaUsuario {
 				statement.execute(sql);
 				
 				System.out.println("Pedido Inserido com sucesso!");
+			}	catch (SQLException ex) {
+				
+				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				
 			}
 			
 			

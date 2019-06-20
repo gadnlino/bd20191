@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import empresa_containers.ExceptionCaller;
 import empresa_containers.Insercao;
 import empresa_containers.modelo.Container;
 
@@ -59,13 +60,19 @@ public class ContainerDAO {
 			
 			System.out.println("Tupla adicionada com sucesso!");
 			
+		}	catch (SQLException ex) {
+			
+			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			
 		}
 		
 	}
 	
 	public List<Container> lista() throws SQLException {
+		
 		String sql = "SELECT * FROM Container";
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+			
 			stmt.execute();
 			ResultSet resultSet = stmt.getResultSet();
 			ArrayList<Container> containers = new ArrayList<>();
@@ -86,9 +93,16 @@ public class ContainerDAO {
 				Container c = new Container(at2, at3, at4, at5, at6, at7, at8, at9, at10, at11);
 				c.setIdContainer_PK(id);
 				containers.add(c);
+				
 			}
 			return containers;
+		}	catch (SQLException ex) {
+			
+			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			
 		}
+		
+		return null;
 	}
 	
 

@@ -19,7 +19,7 @@ public class TestaDAOs {
 
 	public static void main(String[] args) throws SQLException {
 		
-		try(Connection conn = new ConnectionPool().getConnection()){
+		try(Connection conn = new ConnectionPool().connect()){
 			
 			/*
 			SeguradoraDAO dao = new SeguradoraDAO(conn);
@@ -44,8 +44,8 @@ public class TestaDAOs {
 			
 			ArrayList<Integer> lista = new ArrayList<>();
 			*/
-			//ConsultasParaUsuario.id_Dos_Produtos_PF("5518517");
-			ConsultasParaUsuario.proc_Insere_Pedido("5558557", "9575572", "13327132813", "Rua do Rosário");
+			ConsultasParaUsuario.id_Dos_Produtos_PF("5518517");
+			//ConsultasParaUsuario.proc_Insere_Pedido("5558557", "9575572", "13327132813", "Rua do Rosário");
 			
 			
 			// ConsultasParaUsuario.cliente_E_Pedidos_Afetados_Por_Acidente("1");

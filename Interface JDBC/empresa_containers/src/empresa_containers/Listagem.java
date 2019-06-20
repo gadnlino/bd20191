@@ -1,5 +1,6 @@
 package empresa_containers;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,8 +17,9 @@ public class Listagem {
 	 * @param numeroLinha Numero da linha da tabela que se deseja receber os dados (comecando em 1)
 	 * @return Retorna uma String com linhas no formato "NomeDaColuna: Valor"
 	 * @throws SQLException
+	 * @throws ConnectException 
 	 */
-	public static String listaTupla (String table, int numeroLinha) throws SQLException {
+	public static String listaTupla (String table, int numeroLinha) throws SQLException, Exception {
 		
 		Connection connection = new ConnectionPool().getConnection();
 		
@@ -47,7 +49,7 @@ public class Listagem {
 		return str;
 	}
 	
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, Exception {
 		
 		String str;
 		// listaTupla (Conexao, Nome da Tabela, Numero Da Linha);

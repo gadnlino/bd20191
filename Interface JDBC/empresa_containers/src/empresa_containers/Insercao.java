@@ -1,5 +1,6 @@
 package empresa_containers;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,8 +51,9 @@ public class Insercao {
 	 * @param table Nome da tabela
 	 * @param strings N parametros, cada um contendo um valor de uma coluna da tabela
 	 * @throws SQLException
+	 * @throws ConnectException 
 	 */
-	public static void insereTupla(String table, String ...strings ) throws SQLException {
+	public static void insereTupla(String table, String ...strings ) throws SQLException, Exception {
 		
 		Connection connection = new ConnectionPool().getConnection();
 		
@@ -76,7 +78,7 @@ public class Insercao {
 	}
 
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, Exception {
 
 		
 		insereTupla("Seguradora", "101", "contato@vaique.com.br", "54781230257580", "Vai Que S/A", "Vai Que.. Seguradora", "21978445120" );
