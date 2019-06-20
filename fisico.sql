@@ -18,19 +18,15 @@ DROP TABLE IF exists Cliente;
 DROP TABLE IF exists Rota;
 DROP TABLE IF exists Estoca;
 DROP TABLE IF exists Estoquista;
-DROP TABLE IF exists Motorista;
 DROP TABLE IF exists Maquinista;
 DROP TABLE IF exists Capitao;
 DROP TABLE IF exists Caminhoneiro;
+DROP TABLE IF exists Motorista;
 DROP TABLE IF exists Funcionario;
 DROP TABLE IF exists TransportesDisponiveis;
 DROP TABLE IF exists Container;
 DROP TABLE IF exists Lote;
 DROP TABLE IF exists Armazem;
-DROP TABLE IF exists Caminhao;
-DROP TABLE IF exists Navio;
-DROP TABLE IF exists Trem;
-DROP TABLE IF exists Conduz;
 DROP TABLE IF exists Transporta_Transporte;
 DROP TABLE IF exists Veiculo;
 DROP TABLE IF exists TipoVeiculo;
@@ -72,10 +68,6 @@ CREATE TABLE Armazem (
 	idUnidade_FK INT NOT NULL
 );
 
-CREATE TABLE Caminhao (
-	idVeiculo_SPK INT PRIMARY KEY
-);
-
 CREATE TABLE Caminhoneiro (
 	cnh VARCHAR(11) UNIQUE,
 	idFuncionario_SPK INT PRIMARY KEY
@@ -100,13 +92,6 @@ CREATE TABLE Cliente (
 	nome VARCHAR(30),
 	endereco VARCHAR(30),
 	telefone VARCHAR(11)
-);
-
-CREATE TABLE Conduz (
-	/*Função: guarda info. de qual motorista conduziu qual tipo de veículo um motorista conduz.*/
-
-	/*Chave estrangeira, indica qual o tipo de véiculo*/
-	idVeiculo_FK INT
 );
 
 CREATE TABLE Container (
@@ -139,7 +124,9 @@ CREATE TABLE Container (
 
 CREATE TABLE ContainerSuporta(
 	idContainer_FK INT,
-	idTipoProduto_FK INT
+	idTipoProduto_FK INT,
+
+	PRIMARY KEY(idContainer_FK, idTipoProduto_FK)
 );
 
 CREATE TABLE Contem (
@@ -250,22 +237,6 @@ CREATE TABLE Funcionario (
 	idUnidade_FK INT
 );
 
-CREATE TABLE Leva (
-	dataInicio DATE,
-	dataFim DATE,
-
-	/*Checa se a data de inicio é menor do que a dataFim*/
-	CONSTRAINT CHK_dataFim
-		CHECK(dataInicio <= dataFim),
-
-	/*Checa de a dataFim não está no futuro*/
-	CONSTRAINT CHK_dataFimLeva_notInfuture
-		CHECK(dataFim <= DATE(SYSDATE())),
-	
-	idVeiculo_FK INT,
-	idContainer_FK INT
-);
-
 CREATE TABLE Lote (
 	/*Função: guarda informações sobre um espaço específico no armazem
 			(cada "vaga" no "estacionamento")*/
@@ -288,10 +259,6 @@ CREATE TABLE Maquinista (
 CREATE TABLE Motorista (
 	emViagem BOOLEAN,
 	idFuncionario_SPK INT PRIMARY KEY
-);
-
-CREATE TABLE Navio (
-	idVeiculo_SPK INT PRIMARY KEY
 );
 
 CREATE TABLE Pedido (
@@ -418,7 +385,7 @@ CREATE TABLE Transporta_Transporte (
 	CONSTRAINT CHK_dataFimTransporte_notInfuture
 		CHECK(dataFim <= DATE(SYSDATE())),
 
-	PRIMARY KEY(idContainer_SPK,idVeiculo_SPK)
+	PRIMARY KEY(idContainer_SPK, idVeiculo_SPK, dataInicio, dataFim)
 );
 
 CREATE TABLE TipoProduto (
@@ -433,10 +400,6 @@ CREATE TABLE TipoVeiculo (
 	nome VARCHAR(50),
 	numMaxContainers INT
 
-);
-
-CREATE TABLE Trem (
-	idVeiculo_SPK INT PRIMARY KEY
 );
 
 CREATE TABLE Unidade (
@@ -461,7 +424,7 @@ CREATE TABLE Unidade (
 CREATE TABLE Veiculo (
 	/*Função: guarda infos. gerais sobre um veiculo da empresa(carga maxima em quilos, 
 				numero máximo de containers, tipo do veículo, localização, unidade de origem, etc)*/
-	idVeiculo_PK INT,
+	idVeiculo_PK INT PRIMARY KEY,
 	localizacao VARCHAR(30),
 	fabricante VARCHAR(20),
 	capacidadeCombustivel DOUBLE,
@@ -485,9 +448,7 @@ CREATE TABLE Veiculo (
 		CHECK(lotacaoAtual <= numMaxContainers),*/
 
 	disponibilidade BOOLEAN,
-	idTipoVeiculo_FK INT,
-
-	PRIMARY KEY(idVeiculo_PK,idTipoVeiculo_FK)
+	idTipoVeiculo_FK INT
 );
 
 /*_________________________DEFINIÇÃO DE CHAVES ESTRANGEIRAS_________________________________*/
@@ -500,16 +461,12 @@ ALTER TABLE Acidente ADD FOREIGN KEY (idVeiculo_FK) REFERENCES Veiculo(idVeiculo
 ALTER TABLE Armazem ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK) 
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
-/*Chaves estrangeiras da tabela Caminhao*/
-ALTER TABLE Caminhao ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-
 /*Chaves estrangeiras da tabela Caminhoneiro*/
-ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+ALTER TABLE Caminhoneiro ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Motorista(idFuncionario_SPK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Capitao*/
-ALTER TABLE Capitao ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+ALTER TABLE Capitao ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Motorista (idFuncionario_SPK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Cobre*/
@@ -520,10 +477,6 @@ ALTER TABLE Cobre ADD FOREIGN KEY(idAcidente_SPK) REFERENCES Acidente(idAcidente
 ALTER TABLE Cobre ADD FOREIGN KEY(idSeguradora_SPK) REFERENCES Seguradora(idSeguradora_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
-/*Chaves estrangeiras da tabela Conduz*/
-ALTER TABLE Conduz ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-
 /*Chaves estrangeiras da tabela Container*/
 ALTER TABLE Container ADD FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK);
 
@@ -531,7 +484,7 @@ ALTER TABLE Container ADD FOREIGN KEY(idLote_FK) REFERENCES Lote (idLote_PK);
 ALTER TABLE ContainerSuporta ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE ContainerSuporta ADD FOREIGN KEY(idTipoProduto_FK) REFERENCES TipoProduto(idTipoProduto_PK)
-	ON UPDATE CASCADE ON DELETE SET NULL;
+	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Contem*/
 ALTER TABLE Contem ADD FOREIGN KEY(idProduto_FK) REFERENCES Produto (idProduto_PK)
@@ -561,26 +514,16 @@ ALTER TABLE Estoca ADD FOREIGN KEY(idEstoquista_SPK) REFERENCES Estoquista (idFu
 ALTER TABLE Funcionario ADD FOREIGN KEY(idUnidade_FK) REFERENCES Unidade (idUnidade_PK)
 	ON UPDATE CASCADE ON DELETE SET NULL;
 
-/*Chaves estrangeiras da tabela Leva*/
-ALTER TABLE Leva ADD FOREIGN KEY(idVeiculo_FK) REFERENCES Veiculo (idVeiculo_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE Leva ADD FOREIGN KEY(idContainer_FK) REFERENCES Container (idContainer_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-
 /*Chaves estrangeiras da tabela Lote*/
 ALTER TABLE Lote ADD FOREIGN KEY(idArmazem_FK) REFERENCES Armazem (idArmazem_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Maquinista*/
-ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
+ALTER TABLE Maquinista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Motorista (idFuncionario_SPK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Motorista*/
 ALTER TABLE Motorista ADD FOREIGN KEY(idFuncionario_SPK) REFERENCES Funcionario (idFuncionario_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-
-/*Chaves estrangeiras da tabela Navio*/
-ALTER TABLE Navio ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Pedido*/
@@ -605,10 +548,6 @@ ALTER TABLE Rota ADD FOREIGN KEY(idTipoVeiculo_FK) REFERENCES TipoVeiculo (idTip
 ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeOrigem_FK) REFERENCES Unidade (idUnidade_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE Rota ADD FOREIGN KEY(idUnidadeDestino_FK) REFERENCES Unidade (idUnidade_PK)
-	ON UPDATE CASCADE ON DELETE CASCADE;
-
-/*Chaves estrangeiras da tabela Trem*/
-ALTER TABLE Trem ADD FOREIGN KEY(idVeiculo_SPK) REFERENCES Veiculo (idVeiculo_PK)
 	ON UPDATE CASCADE ON DELETE CASCADE;
 
 /*Chaves estrangeiras da tabela Veiculo*/

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="https://www.db4free.net/phpMyAdmin/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="https://www.db4free.net/phpMyAdmin/favicon.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="logico_files/print.css"><title>Print view - phpMyAdmin 4.9.0.1</title><script data-cfasync="false" type="text/javascript" src="logico_files/jquery_006.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery-migrate.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/whitelist.php"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/sprintf.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/ajax.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/keyhandler.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery-ui.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/js.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery_005.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery_002.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery-ui-timepicker-addon.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery_003.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/jquery_004.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/menu-resizer.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/cross_framing_protection.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/rte.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/tracekit.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/error_report.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/messages.php"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/config.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/doclinks.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/functions.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/navigation.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/indexes.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/common.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/page_settings.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/shortcuts_handler.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/codemirror.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/sql.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/runmode.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/show-hint.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/sql-hint.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/lint.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/sql-lint.js"></script>
+<script data-cfasync="false" type="text/javascript" src="logico_files/console.js"></script>
+<script data-cfasync="false" type="text/javascript">// <![CDATA[
+PMA_commonParams.setAll({common_query:"",opendb_url:"db_structure.php",lang:"en",server:"1",table:"",db:"remote_mysql",token:"o-rRc/\\E,Sf;fJ>T",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:true,rootPath:"/phpMyAdmin/",arg_separator:"&",PMA_VERSION:"4.9.0.1",auth_type:"cookie",user:"lucas_sql"});
+ConsoleEnterExecutes=false
+AJAX.scriptHandler.add("vendor/jquery/jquery.min.js",0).add("vendor/jquery/jquery-migrate.js",0).add("whitelist.php",1).add("vendor/sprintf.js",1).add("ajax.js",0).add("keyhandler.js",1).add("vendor/jquery/jquery-ui.min.js",0).add("vendor/js.cookie.js",1).add("vendor/jquery/jquery.mousewheel.js",0).add("vendor/jquery/jquery.event.drag-2.2.js",0).add("vendor/jquery/jquery.validate.js",0).add("vendor/jquery/jquery-ui-timepicker-addon.js",0).add("vendor/jquery/jquery.ba-hashchange-1.3.js",0).add("vendor/jquery/jquery.debounce-1.0.5.js",0).add("menu-resizer.js",1).add("cross_framing_protection.js",0).add("rte.js",1).add("vendor/tracekit.js",1).add("error_report.js",1).add("messages.php",0).add("config.js",1).add("doclinks.js",1).add("functions.js",1).add("navigation.js",1).add("indexes.js",1).add("common.js",1).add("page_settings.js",1).add("shortcuts_handler.js",1).add("vendor/codemirror/lib/codemirror.js",0).add("vendor/codemirror/mode/sql/sql.js",0).add("vendor/codemirror/addon/runmode/runmode.js",0).add("vendor/codemirror/addon/hint/show-hint.js",0).add("vendor/codemirror/addon/hint/sql-hint.js",0).add("vendor/codemirror/addon/lint/lint.js",0).add("codemirror/addon/lint/sql-lint.js",0).add("console.js",1);
+$(function() {AJAX.fireOnload("whitelist.php");AJAX.fireOnload("vendor/sprintf.js");AJAX.fireOnload("keyhandler.js");AJAX.fireOnload("vendor/js.cookie.js");AJAX.fireOnload("menu-resizer.js");AJAX.fireOnload("rte.js");AJAX.fireOnload("vendor/tracekit.js");AJAX.fireOnload("error_report.js");AJAX.fireOnload("config.js");AJAX.fireOnload("doclinks.js");AJAX.fireOnload("functions.js");AJAX.fireOnload("navigation.js");AJAX.fireOnload("indexes.js");AJAX.fireOnload("common.js");AJAX.fireOnload("page_settings.js");AJAX.fireOnload("shortcuts_handler.js");AJAX.fireOnload("console.js");});
+// ]]></script><noscript><style>html{display:block}</style></noscript></head><body><noscript><div class="error"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_error" /> Javascript must be enabled past this point!</div></noscript><div id="page_content"><div>
+<h2>Acidente</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idAcidente_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">descricao</td><td class="nowrap" dir="ltr" lang="en">varchar(600)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataAcidente</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idVeiculo_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Veiculo -&gt; idVeiculo_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idAcidente_PK</td><td>10</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idVeiculo_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idVeiculo_FK</td><td>8</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Armazem</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">largura</td><td class="nowrap" dir="ltr" lang="en">float</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">altura</td><td class="nowrap" dir="ltr" lang="en">float</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idArmazem_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">numMaxContainers</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">comprimento</td><td class="nowrap" dir="ltr" lang="en">float</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">lotacaoAtual</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidade_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idArmazem_PK</td><td>20</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idUnidade_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idUnidade_FK</td><td>10</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Caminhoneiro</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">cnh</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idFuncionario_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Motorista -&gt; idFuncionario_SPK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_SPK</td><td>4</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">cnh</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>cnh</td><td>4</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Capitao</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">ARRAIS</td><td class="nowrap" dir="ltr" lang="en">varchar(10)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idFuncionario_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Motorista -&gt; idFuncionario_SPK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_SPK</td><td>3</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">ARRAIS</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>ARRAIS</td><td>3</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Cliente</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idCliente_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">cep</td><td class="nowrap" dir="ltr" lang="en">varchar(8)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">emailCliente</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">nome</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">endereco</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">telefone</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idCliente_PK</td><td>20</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Cobre</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idPedido_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Pedido -&gt; idPedido_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idAcidente_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Acidente -&gt; idAcidente_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idSeguradora_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Seguradora -&gt; idSeguradora_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="3">PRIMARY</td><td rowspan="3">BTREE</td><td rowspan="3">Yes</td><td rowspan="3">No</td><td>idPedido_SPK</td><td>3</td><td>A</td><td>No</td><td rowspan="3"></td></tr><tr class="noclick"><td>idAcidente_SPK</td><td>3</td><td>A</td><td>No</td></tr><tr class="noclick"><td>idSeguradora_SPK</td><td>3</td><td>A</td><td>No</td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idAcidente_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idAcidente_SPK</td><td>3</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idSeguradora_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idSeguradora_SPK</td><td>2</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Container</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idContainer_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataAquisicao</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">comprimento</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">altura</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">largura</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">capacidade</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">statusContainer</td><td dir="ltr" lang="en">enum('Em uso', 'Disponivel', 'Em manutenção', 'Desmobilizado')</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">vidaUtil</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">lotacaoAtual</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idLote_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Lote -&gt; idLote_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">disponibilidade</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idContainer_PK</td><td>7</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idLote_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idLote_FK</td><td>7</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>ContainerSuporta</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idContainer_FK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Container -&gt; idContainer_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idTipoProduto_FK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>TipoProduto -&gt; idTipoProduto_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="2">PRIMARY</td><td rowspan="2">BTREE</td><td rowspan="2">Yes</td><td rowspan="2">No</td><td>idContainer_FK</td><td>7</td><td>A</td><td>No</td><td rowspan="2"></td></tr><tr class="noclick"><td>idTipoProduto_FK</td><td>18</td><td>A</td><td>No</td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idTipoProduto_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idTipoProduto_FK</td><td>5</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Contem</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idProduto_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Produto -&gt; idProduto_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idContainer_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Container -&gt; idContainer_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">idProduto_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idProduto_FK</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idContainer_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idContainer_FK</td><td>5</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Despacha</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">dataRecebimento</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataDespacho</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idPedido_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Pedido -&gt; idPedido_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidade_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">idPedido_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idPedido_FK</td><td>12</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idUnidade_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idUnidade_FK</td><td>9</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Estoca</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">dataEstoc <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">datetime</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idLote_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Lote -&gt; idLote_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idContainer_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Container -&gt; idContainer_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idEstoquista_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Estoquista -&gt; idFuncionario_SPK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="4">PRIMARY</td><td rowspan="4">BTREE</td><td rowspan="4">Yes</td><td rowspan="4">No</td><td>idLote_SPK</td><td>4</td><td>A</td><td>No</td><td rowspan="4"></td></tr><tr class="noclick"><td>idContainer_SPK</td><td>8</td><td>A</td><td>No</td></tr><tr class="noclick"><td>idEstoquista_SPK</td><td>9</td><td>A</td><td>No</td></tr><tr class="noclick"><td>dataEstoc</td><td>10</td><td>A</td><td>No</td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idContainer_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idContainer_SPK</td><td>7</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idEstoquista_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idEstoquista_SPK</td><td>4</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Estoquista</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idFuncionario_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Funcionario -&gt; idFuncionario_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_SPK</td><td>4</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Funcionario</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">nome</td><td class="nowrap" dir="ltr" lang="en">varchar(50)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">emailFuncionario</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataContratacao</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">salario</td><td class="nowrap" dir="ltr" lang="en">float</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">endereco</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">matricula</td><td class="nowrap" dir="ltr" lang="en">varchar(10)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">rg</td><td class="nowrap" dir="ltr" lang="en">varchar(9)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idFuncionario_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">telefone</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataNascimento</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">departamento</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidade_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_PK</td><td>20</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">matricula</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>matricula</td><td>20</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">rg</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>rg</td><td>20</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idUnidade_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idUnidade_FK</td><td>8</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Lote</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idLote_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">setor <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">posicao <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idArmazem_FK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Armazem -&gt; idArmazem_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="4">PRIMARY</td><td rowspan="4">BTREE</td><td rowspan="4">Yes</td><td rowspan="4">No</td><td>idLote_PK</td><td>7</td><td>A</td><td>No</td><td rowspan="4"></td></tr><tr class="noclick"><td>idArmazem_FK</td><td>7</td><td>A</td><td>No</td></tr><tr class="noclick"><td>setor</td><td>7</td><td>A</td><td>No</td></tr><tr class="noclick"><td>posicao</td><td>7</td><td>A</td><td>No</td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idArmazem_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idArmazem_FK</td><td>2</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Maquinista</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">autorizacao</td><td class="nowrap" dir="ltr" lang="en">varchar(20)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idFuncionario_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Motorista -&gt; idFuncionario_SPK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_SPK</td><td>3</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Motorista</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">emViagem</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idFuncionario_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td>Funcionario -&gt; idFuncionario_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idFuncionario_SPK</td><td>10</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Pedido</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idPedido_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataEntrega</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataSolicitacao</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">destino</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">statusPedido</td><td dir="ltr" lang="en">enum('Não entregue', 'Em rota', 'Entregue')</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">destinatario</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idCliente_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Cliente -&gt; idCliente_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idPedido_PK</td><td>20</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idCliente_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idCliente_FK</td><td>15</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>PessoaFisica</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">cpf</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">rg</td><td class="nowrap" dir="ltr" lang="en">varchar(9)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idCliente_SPK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Cliente -&gt; idCliente_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">cpf</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>cpf</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">rg</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>rg</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idCliente_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idCliente_SPK</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>PessoaJuridica</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">cnpj</td><td class="nowrap" dir="ltr" lang="en">varchar(14)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">razaoSocial</td><td class="nowrap" dir="ltr" lang="en">varchar(50)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idCliente_SPK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Cliente -&gt; idCliente_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">cnpj</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>cnpj</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idCliente_SPK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idCliente_SPK</td><td>10</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Produto</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idProduto_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">comprimento</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">descricao</td><td class="nowrap" dir="ltr" lang="en">varchar(500)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">peso</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">largura</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">altura</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idPedido_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Pedido -&gt; idPedido_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">tipoProduto_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>TipoProduto -&gt; idTipoProduto_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idProduto_PK</td><td>20</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idPedido_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idPedido_FK</td><td>14</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">tipoProduto_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>tipoProduto_FK</td><td>5</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Rota</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idRota_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidadeOrigem_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidadeDestino_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idTipoVeiculo_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>TipoVeiculo -&gt; idTipoVeiculo_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idRota_PK</td><td>15</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idTipoVeiculo_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idTipoVeiculo_FK</td><td>3</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idUnidadeOrigem_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idUnidadeOrigem_FK</td><td>8</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idUnidadeDestino_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idUnidadeDestino_FK</td><td>9</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Seguradora</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idSeguradora_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">emailSeguradora</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">cnpj</td><td class="nowrap" dir="ltr" lang="en">varchar(14)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">razaoSocial</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">nome</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">telefone</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idSeguradora_PK</td><td>4</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">cnpj</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>cnpj</td><td>4</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>TipoProduto</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idTipoProduto_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">descricao</td><td class="nowrap" dir="ltr" lang="en">varchar(20)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idTipoProduto_PK</td><td>6</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>TipoVeiculo</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idTipoVeiculo_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">nome</td><td class="nowrap" dir="ltr" lang="en">varchar(50)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">numMaxContainers</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idTipoVeiculo_PK</td><td>3</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Transporta_Transporte</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idContainer_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idVeiculo_SPK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataInicio <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">date</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataFim <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">date</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="4">PRIMARY</td><td rowspan="4">BTREE</td><td rowspan="4">Yes</td><td rowspan="4">No</td><td>idContainer_SPK</td><td>7</td><td>A</td><td>No</td><td rowspan="4"></td></tr><tr class="noclick"><td>idVeiculo_SPK</td><td>20</td><td>A</td><td>No</td></tr><tr class="noclick"><td>dataInicio</td><td>20</td><td>A</td><td>No</td></tr><tr class="noclick"><td>dataFim</td><td>20</td><td>A</td><td>No</td></tr></tbody></table></div></div><div>
+<h2>Unidade</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">emailUnidade</td><td class="nowrap" dir="ltr" lang="en">varchar(60)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">endereco</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idUnidade_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">cep</td><td class="nowrap" dir="ltr" lang="en">varchar(8)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">telefone</td><td class="nowrap" dir="ltr" lang="en">varchar(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">caminhaoDisponivel</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">navioDisponivel</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">tremDisponivel</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idUnidade_PK</td><td>10</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>Veiculo</h2><br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idVeiculo_PK <em>(Primary)</em></td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">localizacao</td><td class="nowrap" dir="ltr" lang="en">varchar(30)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">fabricante</td><td class="nowrap" dir="ltr" lang="en">varchar(20)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">capacidadeCombustivel</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">cargaMaxima</td><td class="nowrap" dir="ltr" lang="en">double</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">statusVeiculo</td><td dir="ltr" lang="en">enum('Disponivel', 'Em uso', 'Em manutenção', 'Desmobilizado')</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">unidadeOrigem_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>Unidade -&gt; idUnidade_PK</td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">tempoUtilizacao</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">lotacaoAtual</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">disponibilidade</td><td class="nowrap" dir="ltr" lang="en">tinyint(1)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idTipoVeiculo_FK</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>TipoVeiculo -&gt; idTipoVeiculo_PK</td>
+    <td></td>
+    <td></td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="logico_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><div class="responsivetable jsresponsive"><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>idVeiculo_PK</td><td>14</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">unidadeOrigem_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>unidadeOrigem_FK</td><td>8</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">idTipoVeiculo_FK</td><td rowspan="1">BTREE</td><td rowspan="1">No</td><td rowspan="1">No</td><td>idTipoVeiculo_FK</td><td>2</td><td>A</td><td>Yes</td><td rowspan="1"></td></tr></tbody></table></div></div><div>
+<h2>VW_lotesVagosPorUnidade</h2>
+Table comments: VIEW<br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idUnidade</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idArmazem</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idLote</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">setor</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">posicao</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table></div><div>
+<h2>VW_pedidosEntreguePorCliente</h2>
+Table comments: VIEW<br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idCliente</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">idPedido</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataSolicitacao</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">dataEntrega</td><td class="nowrap" dir="ltr" lang="en">date</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">status</td><td dir="ltr" lang="en">enum('Não entregue', 'Em rota', 'Entregue')</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table></div><div>
+<h2>VW_produtoClientePorCpf</h2>
+Table comments: VIEW<br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idProduto</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">descricao</td><td class="nowrap" dir="ltr" lang="en">varchar(500)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table></div><div>
+<h2>VW_salarioFuncionarioPorUnidade</h2>
+Table comments: VIEW<br><br><table class="print" width="100%"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+    <th>MIME</th>
+</tr><tr><td class="nowrap">idUnidade</td><td class="nowrap" dir="ltr" lang="en">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">cep</td><td class="nowrap" dir="ltr" lang="en">varchar(8)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">matricula</td><td class="nowrap" dir="ltr" lang="en">varchar(10)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr><tr><td class="nowrap">salario</td><td class="nowrap" dir="ltr" lang="en">float</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td></td>
+    <td></td>
+</tr></tbody></table></div><p class="print_ignore"><input type="button" class="button" id="print" value="Print"></p></div><div id="selflink" class="print_ignore"><a href="https://www.db4free.net/phpMyAdmin/db_datadict.php?db=remote_mysql&amp;table=VW_salarioFuncionarioPorUnidade&amp;server=1&amp;target=" title="Open new phpMyAdmin window" target="_blank" rel="noopener noreferrer"><img src="logico_files/dot.gif" title="Open new phpMyAdmin window" alt="Open new phpMyAdmin window" class="icon ic_window-new"></a></div><div class="clearfloat" id="pma_errors"></div><script data-cfasync="false" type="text/javascript">// <![CDATA[
+var debugSQLInfo = 'null';
+AJAX.scriptHandler;
+$(function() {});
+// ]]></script></body></html>

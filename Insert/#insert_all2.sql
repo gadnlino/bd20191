@@ -90,8 +90,9 @@ insert into TipoProduto (idTipoProduto_PK, descricao) values
 (1, 'Perecivel'),
 (2, 'Não perecivel'),
 (3, 'Frágil'),
-(4,'Inflamável'),
-(5,'Substância tóxica');
+(4, 'Inflamável'),
+(5, 'Substância tóxica'),
+(6, 'Carga viva');
 
 /*_____________________________SEGURADORA_____________________________________*/
 
@@ -211,12 +212,10 @@ values
  (2, 4),
  (1, 5),
  (7, 1),
- (8, 5),
  (9, 4),
  (10, 2),
  (9, 1),
  (10, 1),
- (2, 4),
  (1, 1),
  (2, 1);
 
@@ -249,7 +248,6 @@ values
   insert into Veiculo (idveiculo_pk, localizacao, fabricante, capacidadecombustivel, cargamaxima, statusveiculo, unidadeorigem_fk, tempoutilizacao, lotacaoatual, disponibilidade, idTipoVeiculo_FK) values
 (23, '1 Waxwing Center', 'Devbug', 85.96, 945.74, 'Em uso', 7, 31, 12, true, 3),
  (56, '1906 Coolidge Street', 'Yamia', 37.02, 445.3, 'Em manutenção', 9, 6, 3, true, 2),
- (12, '38 Ridgeway Circle', 'Kwilith', 41.11, 439.04, 'Em uso', 1, 42, 21, false, 3),
  (54, '0750 Arizona Parkway', 'Tekfly', 13.57, 674.1, 'Em uso', 5, 39, 40, false, 2),
  (59, '2045 Weeping Birch Junction', 'Bubblebox', 31.92, 573.47, 'Em uso', 4, 41, 34, true, 3),
  (42, '873 Boyd Plaza', 'Quinu', 27.46, 801.64, 'Em uso', 4, 9, 41, true, 3),
@@ -415,3 +413,38 @@ insert into Estoquista(idFuncionario_SPK) values
  ('2015-07-19 18:28:40', 4, 8, 4),
  ('2016-01-13 17:46:32', 4, 10, 2),
  ('2016-11-23 16:00:25', 5, 3, 1);
+
+ /*_____________________________MOTORISTA_____________________________________*/
+
+insert into Motorista(emViagem, idFuncionario_SPK) values
+(false,5),
+(true,6),
+(false,7),
+(false,8),
+(true,9),
+(true,10),
+(true,11),
+(true,12),
+(false,13),
+(true,14);
+ /*_____________________________CAMINHONEIRO_____________________________________*/
+
+insert into Caminhoneiro(cnh, idFuncionario_SPK) VALUES
+(12345678912,5),
+(12345678913,6),
+(12345678914,7),
+(12345678915,8);
+
+ /*_____________________________CAPITAO_____________________________________*/
+
+insert into Capitao(ARRAIS, idFuncionario_SPK) values
+(0987654321,9),
+(0987654322,10),
+(0987654323,11);
+
+ /*_____________________________CAPITAO_____________________________________*/
+ 
+insert into Maquinista(autorizacao, idFuncionario_SPK) values
+(01234567899876543210,12),
+(01234567899876543211, 13),
+(01234567899876543212, 14);
