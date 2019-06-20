@@ -32,6 +32,21 @@ public class Insercao {
 		return sql;
 	}
 	
+	public static String preparedStatementPreForm_Procedure(String procedure, int strLength) {
+		
+		String sql = "CALL " + procedure + " (";
+		for(int i = 1; i <= strLength; i++) {
+			
+			if(i == strLength)
+				sql = sql + " ? ";
+			else
+				sql = sql + " ?, ";
+			
+		}
+		sql = sql + "); ";
+		return sql;
+	}
+	
 	/**
 	 * Preenche as "?"s da String gerada pelo preparedStatementPreForm_Insertion com os valores correspondentes
 	 * @param statement O preparedStatement ja deve ter recebido a string com "?"

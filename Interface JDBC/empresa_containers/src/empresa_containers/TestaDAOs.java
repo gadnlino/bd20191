@@ -44,7 +44,7 @@ public class TestaDAOs {
 			
 			ArrayList<Integer> lista = new ArrayList<>();
 			*/
-			ConsultasParaUsuario.id_Dos_Produtos_PF("5518517");
+			Consultas.estoquista_Que_Estocou_Produto(1);
 			//ConsultasParaUsuario.proc_Insere_Pedido("5558557", "9575572", "13327132813", "Rua do Rosário");
 			
 			
