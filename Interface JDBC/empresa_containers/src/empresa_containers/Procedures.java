@@ -27,7 +27,7 @@ public class Procedures {
 				System.out.println("Pedido Inserido com sucesso!");
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -60,7 +60,7 @@ public class Procedures {
 				System.out.println("Pedido Inserido com sucesso!");
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -91,7 +91,7 @@ public class Procedures {
 			System.out.println("Pedido Inserido com sucesso!");
 		}	catch (SQLException ex) {
 			
-			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 			
 		}
 		
@@ -122,7 +122,7 @@ public class Procedures {
 				System.out.println("Pedido Inserido com sucesso!");
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -153,7 +153,7 @@ public class Procedures {
 			System.out.println("Pedido Inserido com sucesso!");
 		}	catch (SQLException ex) {
 			
-			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 			
 		}
 		
@@ -184,7 +184,7 @@ public class Procedures {
 			System.out.println("Pedido Inserido com sucesso!");
 		}	catch (SQLException ex) {
 			
-			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 			
 		}
 		

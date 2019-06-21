@@ -1,5 +1,6 @@
 package empresa_containers;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ import empresa_containers.modelo.Seguradora;
 
 public class TestaDAOs {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, IOException {
 		
 		try(Connection conn = new ConnectionPool().connect()){
 			
@@ -44,7 +45,8 @@ public class TestaDAOs {
 			
 			ArrayList<Integer> lista = new ArrayList<>();
 			*/
-			Consultas.estoquista_Que_Estocou_Produto(1);
+
+			Relatorios.gerar_Todos_Relatorios();
 			//ConsultasParaUsuario.proc_Insere_Pedido("5558557", "9575572", "13327132813", "Rua do Rosário");
 			
 			

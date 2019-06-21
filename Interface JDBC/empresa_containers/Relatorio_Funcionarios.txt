@@ -1,0 +1,15 @@
+Relatório dos Funcionários: 
+
+
+
+Número total de funcionários: 20
+Número de dias do funcionário mais antigo na empresa: 359
+Número de capitães: 3
+Número de motoristas: 10
+Número de maquinistas: 3
+Número de estoquistas: 4
+Média salarial: R$5944,00
+Folha salarial mensal: R$118883,00
+
+
+Relatório gerado dia 21/06/2019

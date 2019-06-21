@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import empresa_containers.ExceptionCaller;
+import empresa_containers.ExceptionHandler;
 import empresa_containers.Insercao;
 import empresa_containers.modelo.Container;
 
@@ -62,7 +62,7 @@ public class ContainerDAO {
 			
 		}	catch (SQLException ex) {
 			
-			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 			
 		}
 		
@@ -98,7 +98,7 @@ public class ContainerDAO {
 			return containers;
 		}	catch (SQLException ex) {
 			
-			ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+			ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 			
 		}
 		

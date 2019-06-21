@@ -3,7 +3,7 @@ package empresa_containers;
 import java.net.ConnectException;
 import java.sql.SQLException;
 
-public class ExceptionCaller {
+public class ExceptionHandler {
 	
 	public static void connect_Exception(SQLException ex) {
 		int erroCode = ex.getErrorCode();

@@ -48,7 +48,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -97,7 +97,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -140,7 +140,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -184,7 +184,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -226,7 +226,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -267,7 +267,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -311,7 +311,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -354,7 +354,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -396,7 +396,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			
@@ -438,7 +438,7 @@ public class Consultas {
 				
 			}	catch (SQLException ex) {
 				
-				ExceptionCaller.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
+				ExceptionHandler.sqlString_Exception(ex, "Não foi possível executar o comando SQL desejado. \nErro número ");
 				
 			}
 			

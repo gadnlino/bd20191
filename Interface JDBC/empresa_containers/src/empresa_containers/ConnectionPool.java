@@ -46,9 +46,9 @@ public class ConnectionPool {
 		try {
 			conn = new ConnectionPool().getConnection();
 			}	catch(SQLException ex) {
-				ExceptionCaller.connect_Exception(ex);
+				ExceptionHandler.connect_Exception(ex);
 			}	catch(Exception ex) {
-				ExceptionCaller.connect_Exception(ex);
+				ExceptionHandler.connect_Exception(ex);
 			}
 		return conn;
 	}

@@ -1,0 +1,11 @@
+Relatório de Clientes: 
+
+
+
+Número de clientes: 20
+Número de clientes reincidentes: 4
+Média de pedidos por cliente 1.33
+Porcentagem dos clientes que voltam a empresa: 20.0%
+
+
+Relatório gerado dia 21/06/2019

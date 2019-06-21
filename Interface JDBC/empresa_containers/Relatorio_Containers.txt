@@ -1,0 +1,14 @@
+Relatório de Containers: 
+
+
+
+Número total de containers: 7
+Número de containers Disponíveis: 1
+Número de containers em uso: 2
+Número de containers em manutenção: 2
+Número de containers desmobilizados: 2
+Número de containers que passaram da meia-vida: 2
+Número de containers no último ano de utilização: 0
+
+
+Relatório gerado dia 21/06/2019
